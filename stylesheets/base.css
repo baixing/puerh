@@ -186,7 +186,7 @@ body{ min-width:1000px}
 .container{margin-left:auto;margin-right:auto;width:1000px}
 
 /* grid system */
-.grid{display:inline;float:left;position:relative;margin-left:5px;margin-right:5px}
+.grid{display:inline;float:left;position:relative;margin-left:10px;margin-right:10px}
 .grid-1{width:30px}
 .grid-2{width:80px}
 .grid-3{width:130px}
