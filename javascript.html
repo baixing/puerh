@@ -10,11 +10,48 @@
 
 <div class="container clearfix">
     <div id="header" class="grid grid-20">
-        <h1 id="logo">Puerh</h1>
-        <strong id="tagline">百姓网 UI 库</strong>
+        <div class="grid grid-4 first">
+            <h1 id="logo">Puerh</h1>
+            <strong id="tagline">百姓网 UI 库</strong>
+        </div>
+        <div class="grid grid-12 nav">
+            <a href="./index.html" id="index">HOME</a>
+            <a href="./css.html" id="css">CSS</a>
+            <a href="./javascript.html" id="javascript">JavaScript</a>
+        </div>
+        <div class="grid grid-4 last nav">Feedback：<a href="mailto:sundengjia@baixing.com">@登甲</a>
+        <a href="mailto:linjianfeng@baixing.com">@小鱼</a></div>
     </div> <!-- #header -->
     
-    
+    <p class="grid grid-20">
+    目前 Puerh 的大部分组件都使用 Twitter Bootstrap 库的自定义 Javascript 插件。删除了其中网站不常用的 Carousel 等组件，修改 Tips、Modals 等插件以适合百姓网需求，增加 Validator 和 Linkage 组件。
+    </p>
+    <table class="table" id="plugin-table">
+        <tr>
+            <th><a href="#Modals">Modals(弹出层)</a></th>
+            <th><a href="#Dropdowns">Dropdowns（下拉菜单）</a></th>
+            <th><a href="#Tabs">Tabs（标签切换）</a></th>
+            <th><a href="#Tips">Tips（浮层提示条）</a></th>
+        </tr>
+        <tr>
+            <th><a href="#Alert">Alert（可关闭消息）</a></th>
+            <th><a href="#Collapse">Collapse（折叠）</a></th>
+            <th><a href="#Typeahead">Typeahead（自动完成）</a></th>
+            <th><a href="#Scrollspy">Scrollspy（滚动生成）</a></th>
+        </tr>
+        <tr>
+            <th>Validator（表单验证）</th>
+            <th>Linkage（联动操作）</th>
+            <th>Lightbox（图片浏览浮层）</th>
+            <th></th>
+        </tr>
+        <tr>
+            <td colspan="4" class="table-ps"><small>注：API 接口使用可以参考：http://twitter.github.com/bootstrap/javascript.html</small></td>
+        </tr>
+    </table>
+    <div id="document" class="grid grid-20">
+        TODO: 文档等 CSS 组件完成后再编写
+    </div>
     
     <div id="footer" class="grid grid-20">
         <small>版权所有: 客齐集网络信息技术服务（上海）有限公司</small>

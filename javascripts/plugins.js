@@ -1,21 +1,8 @@
-/* ===================================================
- * bootstrap-transition.js v2.0.2
- * http://twitter.github.com/bootstrap/javascript.html#transitions
- * ===================================================
+/*
  * Copyright 2012 Twitter, Inc.
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- * ========================================================== */
+ * URL: http://twitter.github.com/bootstrap/javascript.html
+ * Licensed under the Apache License http://www.apache.org/licenses/LICENSE-2.0
+ */
 
 !function( $ ) {
 
@@ -23,8 +10,7 @@
 
     "use strict"
 
-    /* CSS TRANSITION SUPPORT (https://gist.github.com/373874)
-     * ======================================================= */
+    /* CopyRight: CSS TRANSITION SUPPORT (https://gist.github.com/373874)*/
 
     $.support.transition = (function () {
       var thisBody = document.body || document.documentElement
@@ -198,6 +184,14 @@
 
 }( window.jQuery );
 
+
+/* TODO
+ * modified by @sofish
+ * overview: 
+ *  - 窗口高度没有弹出层内容高时，把弹层上边与窗口上对齐(type: bug)
+ *  - 窗口太窄，弹层左边与窗口左边对齐
+ *  - CSS Hack: IE6 min-height
+ */
 !function( $ ){
 
   "use strict"
@@ -1186,3 +1180,11 @@
   })
 
 }( window.jQuery );
+
+/* TODO
+ * Validator Plugin
+ */
+
+/* TODO
+ * Linkage Plugin
+ */
