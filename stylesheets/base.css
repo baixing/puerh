@@ -206,7 +206,7 @@ body{ min-width:1000px}
 .grid-17{width:830px}
 .grid-18{width:880px}
 .grid-19{width:930px}
-.grid-20{width:980px}
+.grid-20{width:980px;}
 
 /* clear extra spaces */
 .first{margin-left:0}
