@@ -17,7 +17,7 @@ body{border-top:5px solid #666;}
 
 #plugin-table{width:980px;margin:0 10px 20px;color:#888;}
 #plugin-table td, #plugin-table th{padding-left:0;padding-right:20px;}
-#plugin-table th{width:25%;background:none;font-weight:700;vertical-align:text-bottom;}
+#plugin-table th{width:25%;background:none;vertical-align:text-bottom;}
 
 #logo{font:36px/1 Impact;}
 #tagline{color:#999;}
