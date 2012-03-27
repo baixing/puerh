@@ -14,6 +14,8 @@ body{border-top:5px solid #666;}
 .table a:hover, .table a:visited{text-decoration:none;color:#09f;}
 .table .table-ps{padding:15px 0 0;}
 
+.document-cell{margin-bottom:30px;}
+.document-cell-box{margin-bottom:15px;}
 
 #plugin-table{width:980px;margin:0 10px 20px;color:#888;}
 #plugin-table td, #plugin-table th{padding-left:0;padding-right:20px;}
