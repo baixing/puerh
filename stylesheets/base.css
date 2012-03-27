@@ -28,12 +28,15 @@ audio, canvas, video {
 
 /* 要注意表单元素并不继承父级 font 的问题 */
 body, button, input, select, textarea {
-	font: 14px/1.5 Georgia, "Microsoft Yahei", serif;
+	font: 14px/1.5 'Times and Roams', "Microsoft Yahei", serif;
 }
 
 input, select, textarea {
-	font-size: 1em;
+	font-size:1em;
+	vertical-align:middle;
 }
+button, input {*overflow: visible;line-height: normal;}
+button::-moz-focus-inner,input::-moz-focus-inner {padding:0;border:0;}
 
 /* 去掉各Table  cell 的边距并让其边重合 */
 table {
@@ -123,7 +126,7 @@ sub {
 }
 
 a{color:#06c;}
-a:visited{color:#5500bb;}
+
 /* 让链接在 hover 状态下显示下划线 */
 a:hover {
 	text-decoration: underline;
@@ -267,3 +270,71 @@ body{ min-width:1000px}
 .typo table thead th {
 	background: #f1f1f1;
 }
+
+/* Global
+ * author: sofish@163.com
+ */
+.visited a{color:#5500bb;}
+
+.red{color:red;}
+.green{color:green;}
+
+
+/* button 按钮
+ * author: sofish@163.com
+ */
+.button{}
+.button-middle{}
+.button-big{}
+.button-grey{}
+.button-green{}
+
+/* form 表单
+ * author: sofish@163.com
+ * require: button
+ */
+.form{
+    /* [hack firefox] form-select & form-input 1px vertical align bug*/
+    font-family:Arial;
+}
+.form-input, .form-search .form-select{display:inline-block;border:1px solid #cfcfcf;border-bottom-color:#e2e2e2;font-size:12px;}
+.form-input{width:240px;height:28px;padding:0 10px;}
+.form-input-small{height:22px;}
+.form-search .form-select{width:50px;line-height:28px;height:28px;border-left:none;position:relative;top:1px;left:-4px;padding:0 10px;}
+
+/* pagenav 分页
+ * author: sofish@163.com
+ */
+.pagenav{font-family:Arial;}
+.pagenav-cell{display:inline-block;border:1px solid #cfcfcf;padding:0 10px;height:24px;line-height:24px;}
+.pagenav-cell-ellipsis{border:none;padding:0;}
+.pagenav-cell-current{background:#eee;}
+.pagenav-cell-next{background:#5ba533;border-color:#4c8928;color:#fff;}
+.pagenav-cell:hover{background:#eee;text-decoration:none;}
+.pagenav-cell-ellipsis:hover{background:none;}
+.pagenav-cell-next:hover{background:#458324;}
+
+/* breadcrumb 面包屑导航
+ * author: sofish@163.com
+ */
+.bread{color:#999;font-size:12px;}
+.bread-cell-current{color:#333;}
+.bread-cell-cite{color:#888;}
+
+/* Group List 列表
+ * author: sofish@163.com
+ */
+#glist{margin-left:-20px;}
+.glist{margin-left:20px;width:180px;float:left;}
+.glist-title{background:#f8f8f8;padding:3px 5px;}
+.glist-title h3{display:inline-block;}
+.glist-title a{color:#333;}
+.glist-title a:hover{color:#888;text-decoration:none;}
+.glist-title cite{font:12px Arial;color:#888;}
+.glist-section{margin:5px 0;border-bottom:1px dotted #cfcfcf;padding-bottom:10px;}
+.glist-section-last{border:none;padding-bottom:0;}
+.glist-section a{display:inline-block;white-space:nowrap;_width:80px;_zoom:1;min-width:80px;padding:5px 0;}
+.glist-section .glist-section-block{display:block;}
+.glist-section-random a{width:auth;min-width:0;margin-right:10px;}
+
+
