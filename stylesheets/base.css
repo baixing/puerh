@@ -335,6 +335,35 @@ body{ min-width:1000px}
 .glist-section-last{border:none;padding-bottom:0;}
 .glist-section a{display:inline-block;white-space:nowrap;_width:80px;_zoom:1;min-width:80px;padding:5px 0;}
 .glist-section .glist-section-block{display:block;}
+.glist-section .glist-section-inlineblock{display:inline-block;_width:80px;_zoom:1;min-width:80px;}
 .glist-section-random a{width:auth;min-width:0;margin-right:10px;}
+
+/* Image List 图片列表
+ * author: sofish@163.com
+ */
+.imglist{margin-left:-10px;}
+.imglist-item{display:inline-block;float:left;margin-left:10px;width:64px;height:90px;text-align:center;}
+.imglist-item a:hover{text-decoration:none;color:red;}
+
+/* Tab
+ * author: sofish@163.com
+ */
+.tab{}
+.tab-title{border-bottom:1px solid #cfcfcf;padding-left:10px;}
+.tab-title-item{display:inline-block;float:left;height:28px;line-height:28px;padding:0 16px;border:1px solid #cfcfcf;border-bottom-color:#cfcfcf;border-right:0;margin-top:1px;position:relative;z-index:1;top:1px;background:#fbfbfb;}
+.tab-title-item-active{border-top:2px solid #5ba533;border-bottom-color:#fff;z-index:2;margin-top:0;background:#fff;}
+.tab-title-item-last{border-right:1px solid #cfcfcf;}
+.tab-title a{color:#333;}
+.tab-title a:hover{color:#5ba533;text-decoration:none;}
+
+/* Topbar 顶部导航
+ * author: sofish@163.com
+ */
+.topbar{background:#f8f8f8;height:24px;line-height:24px;color:#ccc;font-size:12px;}
+.topbar a{color:#333;}
+.topbar a:hover{color:red;}
+.topbar-left{float:left;}
+.topbar-right{float:right;}
+
 
 
