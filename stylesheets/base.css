@@ -279,6 +279,68 @@ body{ min-width:1000px}
 .red{color:red;}
 .green{color:green;}
 
+/* Icons
+ * author: sofish@163.com
+ */
+.icon{background:url("../images/icons.png") no-repeat 0 0;display:inline-block;font-size:0;}
+
+.icon-bag, .icon-car, .icon-house, .icon-friend, .icon-love, .icon-book, .icon-pet, .icon-doc, .icon-umbrella,.icon-time,.icon-play, .icon-mobile, .icon-connect, .icon-star, .icon-comment, .icon-flag{width:18px;height:18px;z-index:-1;}
+
+.icon-bag{background-position:2px 1px;}
+.icon-car{background-position:-41px 1px;}
+.icon-house{background-position:-84px 1px;}
+.icon-friend{background-position:-128px 2px;}
+.icon-love{background-position:-172px 2px;}
+.icon-book{background-position:-215px 1px;}
+.icon-pet{background-position:2px -23px;}
+.icon-doc{background-position:-43px -23px;}
+.icon-umbrella{background-position:-85px -23px;}
+.icon-time{background-position:-128px -23px;}
+.icon-play{background-position:-173px -23px;}
+
+.icon-mobile{background-position:-77px -51px;}
+.icon-connect{background-position:-106px -51px;}
+.icon-star{background-position:-137px -51px;}
+.icon-comment{background-position:-166px -51px;}
+.icon-flag{background-position:-196px -52px;}
+
+.icon-mobile:hover{background-position:-77px -75px;}
+.icon-connect:hover{background-position:-106px -74px;}
+.icon-star:hover{background-position:-137px -73px;}
+.icon-comment:hover{background-position:-167px -74px;}
+.icon-flag:hover{background-position:-196px -75px;}
+
+.icon-del, .icon-done, .icon-add, .icon-minus{width:13px;height:13px;}
+
+.icon-del{background-position:-1px -105px;}
+.icon-done{background-position:-24px -105px;}
+.icon-add{background-position:-49px -105px;}
+.icon-minus{background-position:-76px -105px;}
+
+.icon-del:hover{background-position:-1px -123px;}
+.icon-done:hover{background-position:-24px -123px;}
+.icon-add:hover{background-position:-49px -123px;}
+.icon-minus:hover{background-position:-76px -123px;}
+
+.icon-phone, .icon-id, .icon-trade{width:18px;height:18px;}
+
+.icon-phone{background-position:2px -76px;}
+.icon-trade{background-position:-22px -76px;}
+.icon-id{background-position:-50px -76px;}
+
+.icon-phone-done{background-position:2px -52px;}
+.icon-trade-done{background-position:-22px -52px;}
+.icon-id-done{background-position:-50px -52px;}
+
+/* arrow
+ * author: sofish@163.com
+ */
+.arrow{display:inline-block;font-size:0;width:0px;height:0px;border:5px solid #fff;position:relative;}
+.arrow-up{border-bottom:5px solid #ccc;border-top:none;top:-2px;} 
+.arrow-down{border-top:5px solid #ccc;border-bottom:none;top:3px;}
+.arrow-up:hover{border-bottom-color:#aaa;}
+.arrow-down:hover{border-top-color:#aaa;}
+
 
 /* button 按钮
  * author: sofish@163.com
