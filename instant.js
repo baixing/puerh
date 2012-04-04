@@ -14,4 +14,9 @@ $(function(){
     $(current)[0] && $(current).addClass('current');
 }();  
 
+
+// # Modals
+$('#tips').length && $('#tips').popover();
+
+
 })

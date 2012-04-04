@@ -5,8 +5,15 @@
 	<title>Puerh - 百姓网 UI 库</title>
 	<link rel="stylesheet" href="stylesheets/base.css" />
 	<link rel="stylesheet" href="style.css" />
+	<!--[if lt IE 9]>
+	<script type="text/javascript">
+    // html5shiv MIT @rem remysharp.com/html5-enabling-script
+    // iepp v1.6.2 MIT @jon_neal iecss.com/print-protector
+    /*@cc_on(function(a,b){function r(a){var b=-1;while(++b<f)a.createElement(e[b])}if(!(!window.attachEvent||!b.createStyleSheet||!function(){var a=document.createElement("div");a.innerHTML="<elem></elem>";return a.childNodes.length!==1}())){a.iepp=a.iepp||{};var c=a.iepp,d=c.html5elements||"abbr|article|aside|audio|canvas|datalist|details|figcaption|figure|footer|header|hgroup|mark|meter|nav|output|progress|section|summary|time|video",e=d.split("|"),f=e.length,g=new RegExp("(^|\\s)("+d+")","gi"),h=new RegExp("<(/*)("+d+")","gi"),i=/^\s*[\{\}]\s*$/,j=new RegExp("(^|[^\\n]*?\\s)("+d+")([^\\n]*)({[\\n\\w\\W]*?})","gi"),k=b.createDocumentFragment(),l=b.documentElement,m=l.firstChild,n=b.createElement("body"),o=b.createElement("style"),p=/print|all/,q;c.getCSS=function(a,b){if(a+""===undefined)return"";var d=-1,e=a.length,f,g=[];while(++d<e){f=a[d];if(f.disabled)continue;b=f.media||b,p.test(b)&&g.push(c.getCSS(f.imports,b),f.cssText),b="all"}return g.join("")},c.parseCSS=function(a){var b=[],c;while((c=j.exec(a))!=null)b.push(((i.exec(c[1])?"\n":c[1])+c[2]+c[3]).replace(g,"$1.iepp_$2")+c[4]);return b.join("\n")},c.writeHTML=function(){var a=-1;q=q||b.body;while(++a<f){var c=b.getElementsByTagName(e[a]),d=c.length,g=-1;while(++g<d)c[g].className.indexOf("iepp_")<0&&(c[g].className+=" iepp_"+e[a])}k.appendChild(q),l.appendChild(n),n.className=q.className,n.id=q.id,n.innerHTML=q.innerHTML.replace(h,"<$1font")},c._beforePrint=function(){o.styleSheet.cssText=c.parseCSS(c.getCSS(b.styleSheets,"all")),c.writeHTML()},c.restoreHTML=function(){n.innerHTML="",l.removeChild(n),l.appendChild(q)},c._afterPrint=function(){c.restoreHTML(),o.styleSheet.cssText=""},r(b),r(k);if(c.disablePP)return;m.insertBefore(o,m.firstChild),o.media="print",o.className="iepp-printshim",a.attachEvent("onbeforeprint",c._beforePrint),a.attachEvent("onafterprint",c._afterPrint)}})(this,document)@*/
+	</script>
+	<![endif]-->
 </head>
-<body>
+<body class="javascript">
 
 <div class="container clearfix">
     <div id="header" class="grid grid-20">
@@ -38,14 +45,14 @@
         </tr>
         <tr>
             <th><a href="#Alert">Alert（可关闭消息）</a></th>
-            <th><a href="#Collapse">Collapse（折叠）</a></th>
             <th><a href="#Typeahead">Typeahead（自动完成）</a></th>
             <th><a href="#Scrollspy">Scrollspy（滚动生成）</a></th>
+            <th>Lightbox（图片浏览浮层）</th>
         </tr>
         <tr>
             <th>Validator（表单验证）</th>
             <th>Linkage（联动操作）</th>
-            <th>Lightbox（图片浏览浮层）</th>
+            <th></th>
             <th></th>
         </tr>
         <tr>
@@ -54,10 +61,494 @@
     </table>
     <div id="document" class="grid grid-20">
         <div class="document-cell">
-            <h3 id="Modals">Modals(弹出层)</h3>
+            <h3 id="Modals" class="typo-h3"># Modals(弹出层)</h3>
+            <div class="document-cell-box typo">
+            <h4>一、如何使用：</h4>
+<pre>
+$('#myModal').modal(Options);
+</pre>
+			<p><strong>演示：</strong><button data-toggle="modal" data-target="#myModal">demo</button></p>
+			
+			<!-- demo start -->
+			<div class="fade hide" id="myModal">
+				<a data-dismiss="modal" class="close">×</a>
+				hello world
+            </div>
+            <!-- demo end -->
             
-        </div> <!-- .document-cell -->
-    </div>
+            <h4>二、Options 对象</h4>
+            
+            <p>Modal 只有唯一的方法：<code>.modal(Options)</code>。传入的 Options 可以是对象，也可以是字符串。当传入的 Options 是对象时，使用下面的属性：</p>
+            
+			<table>
+            <thead>
+             <tr>
+               <th>Name</th>
+               <th>type</th>
+               <th>default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>backdrop</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>当 options 中设置 <code>backdrop: 'static'</code> 时，点击背景的时候，不会关掉弹出框。设置为 <code>false</code> 的时候是不显示背景，不要混淆。</td>
+             </tr>
+             <tr>
+               <td>keyboard</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>是否允许用 Esc 键来关掉弹出框。</td>
+             </tr>
+             <tr>
+               <td>show</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>初始化时显示弹出框。</td>
+             </tr>
+            </tbody>
+          </table>
+          
+          <p>当传入的 Options 是字符串时，传入内容的用法如下：</p>
+          
+          <table>
+            <thead>
+             <tr>
+               <th>{String} Name</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>toggle</td>
+               <td>反复手动触发弹出层的打开/关闭。</td>
+             </tr>
+             <tr>
+               <td>hide</td>
+               <td>手动隐藏弹出层。</td>
+             </tr>
+             <tr>
+               <td>show</td>
+               <td>手动打开弹出层。</td>
+             </tr>
+            </tbody>
+          </table>
+          
+          <h4>三、HTML 标记：</h4>
+          <p>在触发弹出框的元素添加 <code>data-toggle="modal"</code>，添加 <code>data-target="#弹出框ID"</code> 或 <code>href="弹出框ID"</code> 来指定弹出框。如：</p>
+<pre>
+&lt;button data-toggle="modal" data-target="#myModal"&gt;demo&lt;/button&gt;
+
+// 目标
+&lt;div class="fade hide" id="myModal"&gt;
+	&lt;a data-dismiss="modal" class="close"&gt;×&lt;/a&gt;
+	hello world
+&lt;/div&gt;
+</pre>		
+			<p>如果想让弹出框有动画效果，只需要给目标元素添加 <code>.fade</code> 这个 class，如上代码所示。</p>
+            
+            <h4>四、支持事件</h4>
+            
+            <table>
+	            <thead>
+	             <tr>
+	               <th>Event</th>
+	               <th>Description</th>
+	             </tr>
+	            </thead>
+	            <tbody>
+	             <tr>
+	               <td>show</td>
+	               <td>使用 <code>show</code> 显示弹出层的时候，事件被触发。</td>
+	             </tr>
+	             <tr>
+	               <td>shown</td>
+	               <td>当弹出层可见的时候，事件被触发。不一定是由 <code>show</code> 触发，可能是 <code>toggle</code></td>
+	             </tr>
+	             <tr>
+	               <td>hide</td>
+	               <td>使用 <code>hide</code> 隐藏弹出层的时候，事件被触发。</td>
+	             </tr>
+	             <tr>
+	               <td>hidden</td>
+	               <td>当弹出层不可见的时候，事件被触发。不一定是由 <code>hide</code> 触发，可能是 <code>toggle</code></td>
+	             </tr>
+	            </tbody>
+	        </table>
+	        
+<pre>
+// 事件示例代码
+$('#myModal').on('hidden', function () {
+	// do something…
+})
+</pre>
+          
+            </div>
+        </div> <!-- .document-cell #Modals-->
+        
+        <div class="document-cell">
+            <h3 id="Dropdowns" class="typo-h3"># Dropdowns（下拉菜单）</h3>
+            <div class="document-cell-box typo">
+            <h4>一、如何使用：</h4>
+            <p>有两种方法，一种是使用 javascript 来设置：</p>
+<pre>
+$('.dropdown-toggle').dropdown()
+</pre>
+			<p>另一种方法是，使用 html 标记来直接设置：</p>
+	
+			<ul>
+				<li id="#myDropdown"><strong>演示：</strong><button data-toggle="dropdown" data-toggle="#myDropdown">dropdown</button>
+					<!-- demo start -->
+					<ul class="dropdown-menu">
+						<li><a href="#">item 1</a></li>
+						<li><a href="#">item 2</a></li>
+						<li><a href="#">item 3</a></li>
+		            </ul>
+		            <!-- demo end -->
+	            </li>
+			</ul>
+          
+            <h4>二、HTML 标记：</h4>
+            <p>在触发下拉框需要添加 <code>data-target="#下拉框ID"</code> 或 <code>href="下拉框ID"</code> 来指定下拉框。如：</p>
+<pre>
+&lt;ul&gt;
+	&lt;li id="#myDropdown"&gt;&lt;button data-toggle="dropdown" data-target="#myDropdown"&gt;dropdown&lt;/button&gt;
+		&lt;ul class="dropdown-menu"&gt;
+			&lt;li&gt;&lt;a href="#"&gt;item 1&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#"&gt;item 2&lt;/a&gt;&lt;/li&gt;
+			&lt;li&gt;&lt;a href="#"&gt;item 3&lt;/a&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/li&gt;
+&lt;/ul&gt;
+</pre>		
+          
+            </div>
+        </div> <!-- .document-cell #Dropdowns-->
+       
+		<div class="document-cell">
+            <h3 id="Tabs" class="typo-h3"># Tabs（标签切换）</h3>
+            <div class="document-cell-box typo">
+            <h4>一、如何使用：</h4>
+<pre>
+// javascript 方式触发
+$('#myTab').tab('show')
+</pre>
+			<p><strong>演示：</strong></p>
+			
+			<!-- demo start -->
+			<ul class="tab-title clearfix" id="tab">
+	            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
+	            <li><a data-toggle="tab" href="#profile">Profile</a></li>
+	            <li class="dropdown">
+	              <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown</a>
+	              <ul class="dropdown-menu">
+	                <li><a data-toggle="tab" href="#dropdown1">@fat</a></li>
+	                <li><a data-toggle="tab" href="#dropdown2">@mdo</a></li>
+	              </ul>
+	            </li>
+            </ul>
+            
+			<div class="tab-content" id="myTabContent">
+				<div id="home" class="tab-content-pane fade in active">
+				  <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+				</div>
+				<div id="profile" class="tab-content-pane fade">
+				  <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
+				</div>
+				<div id="dropdown1" class="tab-content-pane fade">
+				  <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
+				</div>
+				<div id="dropdown2" class="tab-content-pane fade">
+				  <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
+				</div>
+			</div>
+            <!-- demo end -->
+            
+          <h4>二、HTML 标记：</h4>
+          <p>在触发点添加 <code>data-toggle="tab"</code> 自动触发 Tab，添加 <code>data-target="#对应Tab内容的ID"</code> 或者 <code>href="#对应Tab内容的ID"</code> 来指定对应的 Tab 内容显示。</p>
+<pre>
+&lt;ul class="tab-title"&gt;
+	&lt;li class="active"&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#profile"&gt;Profile&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#messages"&gt;Messages&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;a href="#settings"&gt;Settings&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+ 
+&lt;div class="tab-content"&gt;
+	&lt;div class="tab-content-pane active" id="home"&gt;...&lt;/div&gt;
+	&lt;div class="tab-content-pane" id="profile"&gt;...&lt;/div&gt;
+	&lt;div class="tab-content-pane" id="messages"&gt;...&lt;/div&gt;
+	&lt;div class="tab-content-pane" id="settings"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+</pre>		
+			<p>也可以不使用 <code>data-toggle</code> 来触发，而是使用 javascript 手动触发。</p>
+            
+            <h4>三、支持事件</h4>
+            
+            <table>
+				<thead>
+				 <tr>
+				   <th>Event</th>
+				   <th>Description</th>
+				 </tr>
+				</thead>
+				<tbody>
+				 <tr>
+				   <td>show</td>
+				   <td>显示一个新的 tab 前触发此事件。可以用 <code>event.target</code> 和 <code>event.relatedTarget</code> 来追踪激活的 tab 和被关闭的 tab (如果有的话) 。</td>
+				</tr>
+				<tr>
+				   <td>shown</td>
+				   <td>显示一个新的 tab 后触发引事件。可以用 <code>event.target</code> 和 <code>event.relatedTarget</code> 来追踪激活的 tab 和被关闭的 tab (如果有的话) 。</td>
+				 </tr>
+				</tbody>
+			</table>
+	        
+<pre>
+// 事件示例代码
+$('a[data-toggle="tab"]').on('shown', function (e) {
+    e.target // 被激活的 tab
+    e.relatedTarget // 上一个激活（已经关闭）的 tab
+})
+</pre>
+          
+            </div>
+        </div> <!-- .document-cell #Tabs-->
+
+		<div class="document-cell">
+            <h3 id="Tips" class="typo-h3"># Tips（浮层提示条）</h3>
+            <div class="document-cell-box typo">
+            <h4>一、如何使用：</h4>
+<pre>
+// javasript 手动触发
+$('#tips').popover(options)
+</pre>
+			<p><strong>演示：</strong><button id="tips" data-content="Tips 的内容" title="标题">demo</button></p>
+            
+            <h4>二、Options 对象</h4>
+            
+            <p>Tips 只有唯一的方法：.popover(Options)。传入的 Options 可以是对象，也可以是字符串。当传入的 Options 是对象时，使用下面的属性：</p>
+            
+            <table>
+            <thead>
+             <tr>
+               <th>Name</th>
+               <th>type</th>
+               <th>default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+             <tr>
+               <td>animation</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>应用 CSS 动画</td>
+             </tr>
+             <tr>
+               <td>placement</td>
+               <td>string|function</td>
+               <td>'right'</td>
+               <td>显示的位置，可以是：top | bottom | left | right</td>
+             </tr>
+             <tr>
+               <td>selector</td>
+               <td>string</td>
+               <td>false</td>
+               <td>如果设定选择器，那 Tips 则只在该选择器上生效。</td>
+             </tr>
+             <tr>
+               <td>trigger</td>
+               <td>string</td>
+               <td>'hover'</td>
+               <td>触发 Tips 的事件，可以是：hover | focus | manual</td>
+             </tr>
+             <tr>
+               <td>title</td>
+               <td>string | function</td>
+               <td>''</td>
+               <td>如果没有 <code>title</code> 标签时默认值。</td>
+             </tr>
+             <tr>
+               <td>content</td>
+               <td>string | function</td>
+               <td>''</td>
+               <td>如果没有设置 <code>data-content</code> 时的默认值。</td>
+             </tr>
+             <tr>
+               <td>delay</td>
+               <td>number | object</td>
+               <td>0</td>
+               <td>
+                <p>显示和隐藏 Tips 的过渡时间，以 ms 为单位</p>
+                <p>如何只设定一个 {number}，则会同时应用到 <code>show/hide</code> 上。</p>
+                <p>可以以对象方式传值: <code>delay: { show: 500, hide: 100 }</code></p>
+               </td>
+             </tr>
+            </tbody>
+          </table>
+          
+          <p>当 Options 是一个字条串的时候，如下使用：</p>
+          
+          <table>
+          	<thead>
+          		<tr>
+          			<th>Name</th>
+          			<th>Description</th>
+          		</tr>
+          	</thead>
+          	<tbody>
+          		<tr>
+          			<td>show</td>
+          			<td>显示 Tips</td>
+          		</tr>
+          		<tr>
+          			<td>hide</td>
+          			<td>隐藏 Tips</td>
+          		</tr>
+          		<tr>
+          			<td>toggle</td>
+          			<td>反复显示/隐藏 Tips</td>
+          		</tr>
+          	</tbody>
+          </table>
+          
+          <h4>三、HTML 标记：</h4>
+<pre>
+&lt;button id="tips" data-content="Tips 的内容" title="标题"&gt;demo&lt;/button&gt;
+</pre>		
+            </div>
+        </div> <!-- .document-cell #Tips-->
+
+		<div class="document-cell">
+            <h3 class="typo-h3" id="Alert"># Alert（可关闭消息）</h3>
+            <div class="document-cell-box typo">
+            <h4>一、如何使用：</h4>
+<pre>
+// 如果不使用选择器，则直接关掉 <code>.close</code> 用 <code>class="alert"</code> 的标签
+$(".alert").alert(Options)
+</pre>
+			<p class="alert fade in">
+				<a class="close" data-dismiss="alert" href="#">&times;</a>
+				<strong>演示：</strong>hello world
+			</p>
+            
+            <h4>二、Options 对象</h4>
+            
+            <p>Modal 只有唯一的方法：<code>.modal(Options)</code>。传入的 Options 是字符串时，关闭这个 Alert Message。代码如下：</p>
+            
+<pre>$(".alert").alert('close');
+</pre>
+          
+          <h4>三、HTML 标记：</h4>
+          <p>添加关闭按钮：</p>
+<pre>&lt;a class="close" data-dismiss="alert" href="#"&gt;&times;&lt;/a&gt;
+
+// 目标：使用 javascript 指定目标，或者直接作为 <code>.close</code> 的父元素，添加 <code>class="alert"</code>
+&lt;p class="alert fade in"&gt;
+	&lt;a class="close" data-dismiss="alert" href="#"&gt;&times;&lt;/a&gt;
+	&lt;strong&gt;演示：&lt;/strong&gt;hello world
+&lt;/p&gt;
+</pre>		
+			<p>如果想让弹出框有动画效果，只需要给目标元素添加 <code>.fade</code> 这个 class，如上代码所示。</p>
+            
+            <h4>四、支持事件</h4>
+            
+            <table>
+	            <thead>
+	             <tr>
+	               <th>Event</th>
+	               <th>Description</th>
+	             </tr>
+	            </thead>
+	            <tbody>
+	             <tr>
+	               <td>close</td>
+	               <td>在块被关闭的瞬间触发。</td>
+	             </tr>
+	             <tr>
+	               <td>closed</td>
+	               <td>在块关闭，CSS 动画完成后触发。</td>
+	             </tr>
+	            </tbody>
+	        </table>
+	        
+<pre>// 事件示例代码
+$('#my-alert').bind('closed', function () {
+    // do something…
+})
+</pre>
+          
+            </div>
+        </div> <!-- #Alert -->
+        
+        <div class="document-cell">
+            <h3 id="Typeahead" class="typo-h3"># Typeahead（自动完成）</h3>
+            <div class="document-cell-box typo">
+            <h4>一、如何使用：</h4>
+<pre>$('.typeahead').typeahead();
+</pre>
+			<p><strong>演示：</strong> <input data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'></p>
+            <!-- demo end -->
+            
+            <h4>二、Options 对象</h4>
+            
+            <p>Typeahead 只有唯一的方法：<code>.typeahead(Options)</code>。传入的 Options 对象有以下属性/方法：</p>
+            
+			<table>
+            <thead>
+             <tr>
+               <th>Name</th>
+               <th>type</th>
+               <th>default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr>
+               <td>source</td>
+               <td>array</td>
+               <td>[ ]</td>
+               <td>自动完成的数据。</td>
+             </tr>
+             <tr>
+               <td>items</td>
+               <td>number</td>
+               <td>8</td>
+               <td>自动完成显示的最大数目。</td>
+             </tr>
+             <tr>
+               <td>matcher</td>
+               <td>function</td>
+               <td>case insensitive</td>
+               <td>匹配自动完成项。接受唯一的参数 <code>item</code> 以匹配当前完成的内容。可以使用 <code>this.query</code> 来得到当前自动完成的项。如果匹配到相应的选择，则返回一个布尔值：<code>true</code>。</td>
+             </tr>
+             <tr>
+               <td>sorter</td>
+               <td>function</td>
+               <td>exact match,<br> case sensitive,<br> case insensitive</td>
+               <td>用以排序自动完成项的方法。接受一个参数 <code>items</code>，可以使用 <code>this.query</code> 来得到当前自动完成的项。</td>
+             </tr>
+             <tr>
+               <td>highlighter</td>
+               <td>function</td>
+               <td>highlights all default matches</td>
+               <td>用以高亮匹配项的方法。接受一个参数 <code>item</code>。必须返回 html。</td>
+             </tr>
+            </tbody>
+          </table>
+          
+          <h4>三、HTML 标记：</h4>
+          <p>添加 <code>data-provide="typeahead"</code> 来获得自动完成。可以使用 <code>data-source="数组"</code> 来提供自动完成的项。也可以在 Options 中提供。</p>
+<pre>
+&lt;input type="text" data-provide="typeahead" /&gt;
+</pre>		
+            </div>
+        </div> <!-- .document-cell #Typeahead-->
+       
+    </div> <!-- #document -->
     
     <div id="footer" class="grid grid-20">
         <small>版权所有: 客齐集网络信息技术服务（上海）有限公司</small>
