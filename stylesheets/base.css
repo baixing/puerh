@@ -146,6 +146,9 @@ pre {
 	background: #fbfbfb;
 	padding: 10px;
 }
+code{
+	color:#080;
+}
 
 /* 底部印刷体、版本等标记 */
 small {
@@ -216,7 +219,7 @@ body{ min-width:1000px}
 .last{margin-right:0}
 
 /* 现代排版：保证块/段落之间的空白隔行 */
-.typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr {
+.typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr, .typo table {
 	margin: 0.6em 0 1em;
 }
 
@@ -278,6 +281,52 @@ body{ min-width:1000px}
 
 .red{color:red;}
 .green{color:green;}
+
+.hide {display: none;}
+.show{display: block;}
+.invisible {visibility: hidden;}
+
+.fade {
+  -webkit-transition: opacity 0.15s linear;
+  -moz-transition: opacity 0.15s linear;
+  -ms-transition: opacity 0.15s linear;
+  -o-transition: opacity 0.15s linear;
+  transition: opacity 0.15s linear;
+  opacity: 0;
+}
+.in {
+  opacity: 1;
+}
+.collapse {
+  -webkit-transition: height 0.35s ease;
+  -moz-transition: height 0.35s ease;
+  -ms-transition: height 0.35s ease;
+  -o-transition: height 0.35s ease;
+  transition: height 0.35s ease;
+  position: relative;
+  overflow: hidden;
+  height: 0;
+}
+.in {
+  height: auto;
+}
+.close {
+  float: right;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 18px;
+  color: #000000;
+  text-shadow: 0 1px 0 #ffffff;
+  opacity: 0.2;
+  filter: alpha(opacity=20);
+}
+.close:hover {
+  color: #000000;
+  text-decoration: none;
+  opacity: 0.4;
+  filter: alpha(opacity=40);
+  cursor: pointer;
+}
 
 /* Icons
  * author: sofish@163.com
@@ -436,7 +485,29 @@ body{ min-width:1000px}
 .filter .filter-item-cap{font-weight:700;color:#06c;}
 
 
+/* Dropdown 下拉菜单
+ * author: sofish@163.com
+ */
+.dropdown{}
+.dropdown-menu{display:none;}
+.open .dropdown-menu{display:block;}
 
+/* Tabs
+ * author: sofish@163.com
+ */
+.tab{}
+.tab-content-pane{display:none;}
+.tab-content .active{display:block;}
+
+/* Popover
+ * author: sofish@163.com
+ */
+.popover{position:absolute;}
+
+/* Popover
+ * author: sofish@163.com
+ */
+.typeahead{position:absolute;}
 
 
 

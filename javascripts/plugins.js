@@ -111,6 +111,10 @@
 }( window.jQuery );
 
 
+/* TODO
+ * modified by @sofish
+ * 真是写得一团糟，找时间重构一下
+ */
 !function( $ ){
 
   "use strict"
@@ -122,6 +126,7 @@
     , Dropdown = function ( element ) {
         var $el = $(element).on('click.dropdown.data-api', this.toggle)
         $('html').on('click.dropdown.data-api', function () {
+        console.log('iub')
           $el.parent().removeClass('open')
         })
       }
@@ -141,7 +146,7 @@
         selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') //strip for ie7
       }
 
-      $parent = $(selector)
+      $parent = $(selector);
       $parent.length || ($parent = $this.parent())
 
       isActive = $parent.hasClass('open')
@@ -705,7 +710,7 @@
   $.fn.popover.defaults = $.extend({} , $.fn.tooltip.defaults, {
     placement: 'right'
   , content: ''
-  , template: '<div class="popover"><div class="arrow"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+  , template: '<div class="popover"><div class="tip-angel"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
   })
 
 }( window.jQuery );

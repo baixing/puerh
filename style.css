@@ -1,4 +1,5 @@
 body{border-top:5px solid #666;}
+code{background:#f7f7f7;border:1px solid #ddd;padding:0 5px;border-radius:3px;}
 
 #header{margin:40px 10px 30px;height:69px;}
 #header .last{text-align:right;}
@@ -30,4 +31,12 @@ body{border-top:5px solid #666;}
 .grid-20{background:#fff;}
 
 .icon{background-color:#f7f7f7;}
+.in, .open{background:#ffc;}
+.javascript .typo-h3{color:#08c;}
 
+.typo #tab{margin-left:0;padding-left:0;}
+.typo #tab li{list-style:none;float:left;display:inline-block;margin-right:1px;background:#08c;padding:1px 5px;}
+.typo #tab li.active{background:#080;}
+.typo #tab li a{color:#fff;}
+
+.typeahead, .popover{border:1px solid #ddd;padding:10px;background:#ffc;}
