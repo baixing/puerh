@@ -16,6 +16,12 @@ $(function(){
 
 
 // # Modals
+$('#myModal').on('shown', function(){
+	$('.modal-open .modal-backdrop')[0].style.height = $('html').height() + 'px';
+})
+
+
+// # Tips
 $('#tips').length && $('#tips').popover();
 
 
