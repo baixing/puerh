@@ -179,6 +179,14 @@ small {
 	*zoom: 1
 }
 
+/* 让内容以 border-box 显示 */
+.border-box{
+	-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
 /*
 Variable Grid System.
 Learn more ~ http://www.spry-soft.com/grids/
@@ -333,7 +341,7 @@ body{ min-width:1000px}
  */
 .icon{background:url("../images/icons.png") no-repeat 0 0;display:inline-block;font-size:0;}
 
-.icon-bag, .icon-car, .icon-house, .icon-friend, .icon-love, .icon-book, .icon-pet, .icon-doc, .icon-umbrella,.icon-time,.icon-play, .icon-mobile, .icon-connect, .icon-star, .icon-comment, .icon-flag{width:18px;height:18px;z-index:-1;}
+.icon-bag, .icon-car, .icon-house, .icon-friend, .icon-love, .icon-book, .icon-pet, .icon-doc, .icon-umbrella,.icon-time,.icon-play, .icon-mobile, .icon-connect, .icon-star, .icon-comment, .icon-flag{width:18px;height:18px;}
 
 .icon-bag{background-position:2px 1px;}
 .icon-car{background-position:-41px 1px;}
@@ -348,16 +356,16 @@ body{ min-width:1000px}
 .icon-play{background-position:-173px -23px;}
 
 .icon-mobile{background-position:-77px -51px;}
-.icon-connect{background-position:-106px -51px;}
+.icon-connect{background-position:-105px -51px;}
 .icon-star{background-position:-137px -51px;}
 .icon-comment{background-position:-166px -51px;}
-.icon-flag{background-position:-196px -52px;}
+.icon-flag{background-position:-195px -52px;}
 
-.icon-mobile:hover{background-position:-77px -75px;}
-.icon-connect:hover{background-position:-106px -74px;}
-.icon-star:hover{background-position:-137px -73px;}
-.icon-comment:hover{background-position:-167px -74px;}
-.icon-flag:hover{background-position:-196px -75px;}
+.icon-mobile:hover, .button-hover .icon-mobile, .button:hover .icon-mobile{background-position:-77px -75px;}
+.icon-connect:hover, .button-hover .icon-connect, .button:hover .icon-connect{background-position:-105px -74px;}
+.icon-star:hover, .button-hover .icon-star, .button:hover .icon-star{background-position:-137px -73px;}
+.icon-comment:hover, .button-hover .icon-comment, .button:hover .icon-comment{background-position:-167px -74px;}
+.icon-flag:hover, .button-hover .icon-flag, .button:hover .icon-flag{background-position:-195px -75px;}
 
 .icon-del, .icon-done, .icon-add, .icon-minus{width:13px;height:13px;}
 
@@ -394,11 +402,43 @@ body{ min-width:1000px}
 /* button 按钮
  * author: sofish@163.com
  */
-.button{}
-.button-middle{}
-.button-big{}
-.button-grey{}
-.button-green{}
+.button{display:inline-block;border:1px solid #d1d1d1;height:28px;line-height:28px;padding:0 10px;vertical-align:baseline;font-size:12px;color:#333;cursor:pointer;}
+.button:hover, .button-hover{background:#f7f7f7;text-decoration:none;}
+.button-grey, .button-green{font:14px/2 sans-serif;}
+.button-medium{height:24px;line-height:24px;font-size:12px;}
+.button-grey{
+	border:1px solid #dadada;
+	background: -webkit-gradient(linear, left top, left bottom, from(#FAF9F5), to(#F0EFEB));
+	background: -moz-linear-gradient(top, #FAF9F5, #F0EFEB);
+	background: -o-linear-gradient(top, #FAF9F5, #F0EFEB);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAF9F5', endColorstr='#F0EFEB');
+}
+.button-grey:hover, .button-grey-hover{
+	border:1px solid #c1c1c1;
+	background: -webkit-gradient(linear, left top, left bottom, from(#F0EFEB), to(#FAF9F5));
+	background: -moz-linear-gradient(top, #F0EFEB, #FAF9F5);
+	background: -o-linear-gradient(top, #F0EFEB, #FAF9F5);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#F0EFEB', endColorstr='#FAF9F5');
+}
+.button-green{
+	color:#ffc;
+	border:1px solid #549812;
+	background: -webkit-gradient(linear, left top, left bottom, from(#59A905), to(#468A07));
+	background: -moz-linear-gradient(top, #59A905, #468A07);
+	background: -o-linear-gradient(top, #59A905, #468A07);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#59A905', endColorstr='#468A07');
+}
+.button-green:hover, .button-green-hover{
+	background: -webkit-gradient(linear, left top, left bottom, from(#468A07), to(#59A905));
+	background: -moz-linear-gradient(top, #468A07, #59A905);
+	background: -o-linear-gradient(top, #468A07, #59A905);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#468A07', endColorstr='#59A905');
+}
+.button-filter{border:1px solid #d1e98e;height:18px;line-height:18px;padding-right:22px;position:relative;background:#faffe9;cursor:default;}
+.button-filter:hover{background:#faffe9;}
+.button-filter .close{float:none;position:absolute;right:6px;top:0;font-size:18px;vertical-align:text-top;}
+.button-icon{position:relative;padding-left:30px;color:#333;}
+.button-icon .icon{position:absolute;left:8px;top:16%;}
 
 /* form 表单
  * author: sofish@163.com
@@ -483,7 +523,21 @@ body{ min-width:1000px}
 .filter a{color:#333;padding-right:3px;}
 .filter-item{float:left;width:326px;display:inline-block;margin-bottom:10px;}
 .filter .filter-item-cap{font-weight:700;color:#06c;}
+.filter-intype a{color:#06c;display:inline-block;margin-right:5px;}
+.filter-intype .filter-item{display:block;float:none;position:relative;padding-left:80px;width:auto;}
+.filter-intype .filter-item-cap{position:absolute;left:0;color:#333;}
+.filter-intype .filter-item-selected{color:#888;}
+.filter-block .filter-item{width:160px;padding-right:20px;font-size:12px;color:#888;}
+.filter-block .filter-item-cap{display:block;font-size:14px;}
 
+/* Dropdown 下拉菜单
+ * author: sofish@163.com
+ */
+.modal{position:absolute;z-index:11;border:4px solid #333;background:#fff;width:560px;}
+.modal-title{background:#eee;height:30px;line-height:30px;padding:0 20px;}
+.modal-content{padding:15px 20px;}
+.modal .close{position:absolute;top:6px;right:20px;}
+.modal-backdrop{position:absolute;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,0.6);z-index:10;}
 
 /* Dropdown 下拉菜单
  * author: sofish@163.com

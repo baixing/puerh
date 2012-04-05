@@ -190,7 +190,7 @@
 }( window.jQuery );
 
 
-/* TODO
+/* 
  * modified by @sofish
  * overview: 
  *  - 窗口高度没有弹出层内容高时，把弹层上边与窗口上对齐(type: bug)
@@ -219,11 +219,35 @@
       }
 
     , show: function () {
-        var that = this
+        var that = this,
+ 
+        	// add by @sofish
+        	// calculate the element height
+        	setPos = function(){
+        		var el = that.$element,
+		        	toTop = $(document).scrollTop(),
+		        	winHeight = $(window).height(),
+		        	winWidth = $(window).width(),
+		        	height = el.height(),
+		        	width = el.width();
+        		el.css({
+		        	'margin-left': -(winWidth > width ? parseInt(width/2, 10) : 0) + 'px',
+		        	'margin-top': -(winHeight > height ? parseInt(height/2) : 0) + 'px',
+		        	'top': (winHeight > height ? parseInt(winHeight/2) + toTop : toTop)+ 'px',
+		        	'left': (winWidth > width ? 50 : 0) + '%'
+		        });
+        	};
 
         if (this.isShown) return
 
-        $('body').addClass('modal-open')
+        $('body').addClass('modal-open');
+        
+        // add by @sofish
+        // set margin to adjust the window
+        setPos();
+        $(window).bind('scroll resize', function(){
+        	setPos();
+        });
 
         this.isShown = true
         this.$element.trigger('show')
@@ -306,7 +330,13 @@
       var doAnimate = $.support.transition && animate
 
       this.$backdrop = $('<div class="modal-backdrop ' + animate + '" />')
-        .appendTo(document.body)
+        .appendTo(document.body);
+        
+      // add by @sofish
+      // adjust backdrop height
+      var htmlHeight = $('html').height(),
+          backDrop = $('.modal-backdrop');
+	  backDrop.length && backDrop.height(htmlHeight);
 
       if (this.options.backdrop != 'static') {
         this.$backdrop.click($.proxy(this.hide, this))
