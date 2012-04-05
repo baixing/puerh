@@ -30,8 +30,8 @@ code{background:#f7f7f7;border:1px solid #ddd;padding:0 5px;border-radius:3px;}
 .grid .grid{margin-bottom:0;}
 .grid-20{background:#fff;}
 
-.icon{background-color:#f7f7f7;}
-.in, .open{background:#ffc;}
+/*.icon{background-color:#f7f7f7;}
+.in, .open{background:#ffc;}*/
 .javascript .typo-h3{color:#08c;}
 
 .typo #tab{margin-left:0;padding-left:0;}
@@ -40,6 +40,3 @@ code{background:#f7f7f7;border:1px solid #ddd;padding:0 5px;border-radius:3px;}
 .typo #tab li a{color:#fff;}
 
 .typeahead, .popover{border:1px solid #ddd;padding:10px;background:#ffc;}
-
-#myModal{position:fixed;width:46%;padding:2%;top:40%;left:30%;z-index:1000;}
-.modal-backdrop{position:absolute;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,0.6);z-index:10;}
