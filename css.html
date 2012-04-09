@@ -2,7 +2,7 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>Puerh - 百姓网 UI 库</title>
+	<title>CSS Modules &gt; Puerh - 百姓网 UI 库</title>
 	<link rel="stylesheet" href="stylesheets/base.css" />
 	<link rel="stylesheet" href="style.css" />
 	<!--[if lt IE 9]>
@@ -53,7 +53,7 @@
             <th><a href="#icons">Icons（小图标）</a></th>
             <th><a href="#button">Button（按钮）</a></th>
             <th><a href="#modal">Modal（弹出框）</a></th>
-            <th><a href="#filter">-</a></th>
+            <th><a href="#dropdown">Dropdown（下拉菜单）</a></th>
         </tr>
     </table>
     
@@ -299,7 +299,14 @@
                     <div class="topbar-right">
                         <a href="#">注册</a> | 
                         <a href="#">登录</a> - 
-                        <a href="#">用户中心</a> - 
+                        <a href="#">用户中心</a>
+                        <div class="dropdown dropdown-unibody" id="mydropdown2">
+						    <a href="#mydropdown2" data-toggle="dropdown" class="dropdown-trigger dropdown-trigger-active">消息<cite>8</cite><i class="arrow arrow-down"></i></a>
+							<ul class="dropdown-menu clearfix">
+								<li class="dropdown-menu-item"><cite>5</cite>条留言信息</li>
+								<li class="dropdown-menu-item"><cite>3</cite>条出价信息</li>
+							</ul>
+						</div>
                         <a href="#">付费推广</a> - 
                         <a href="#">帮助</a> - 
                         <a href="#">手机版</a>
@@ -439,8 +446,6 @@
         <div class="document-cell">
             <h3 id="icons" class="typo-h3"># Icons（小图标）</h3>
             <div class="document-cell-box">
-    
-            <p>
                 <span class="icon icon-bag">#</span>
                 <span class="icon icon-car">#</span>
                 <span class="icon icon-house">#</span>
@@ -452,33 +457,35 @@
                 <span class="icon icon-umbrella">#</span>
                 <span class="icon icon-time">#</span>
                 <span class="icon icon-play">#</span>
-            </p>
-            <p>
+            </div>
+            <div class="document-cell-box">
                 <a class="icon icon-mobile" href="###">#</a>
                 <a class="icon icon-connect" href="###">#</a>
                 <a class="icon icon-star"href="###">#</a>
                 <a class="icon icon-comment"href="###">#</a>
                 <a class="icon icon-flag"href="###">#</a>
-            </p>
-            <p>
+            </div>
+            <div class="document-cell-box">
                 <a class="icon icon-del" href="###">&times;</a>
                 <a class="icon icon-done" href="###">√</a>
                 <a class="icon icon-add"href="###">+</a>
                 <a class="icon icon-minus"href="###">-</a>
-            </p>
-            <p>
+            </div>
+            <div class="document-cell-box">
                 <a class="icon icon-phone icon-phone-done" href="###">手机认证</a>
                 <a class="icon icon-trade icon-trade-done" href="###">营业执照认证</a>
                 <a class="icon icon-id icon-id-done" href="###">个人认证</a>
                 <a class="icon icon-phone" href="###">手机认证</a>
                 <a class="icon icon-trade" href="###">营业执照认证</a>
                 <a class="icon icon-id" href="###">个人认证</a>
-            </p>
-            <a href="###" class="arrow arrow-up">&uarr;</a>
-            <a href="###" class="arrow arrow-down">&darr;</a>
-            
             </div>
-        </div> <!-- .document-cell #pagenav-->
+            <div class="document-cell-box">
+            
+            <p style="background:#eee;">up arrow <a href="###" class="arrow arrow-up">&uarr;</a>
+            down arrow<a href="###" class="arrow arrow-down">&darr;</a></p>
+
+            </div>
+        </div> <!-- .document-cell #icons-->
         
         <div class="document-cell">
             <h3 id="button" class="typo-h3"># Button（按钮）</h3>
@@ -537,7 +544,7 @@
 					<span href="###" class="button button-filter">法学院 <a class="close" href="###">&times;</a></span>
 					<span href="###" class="button button-filter">林建锋 <a class="close" href="###">&times;</a></span>
             </div>
-        </div> <!-- .document-cell #pagenav-->
+        </div> <!-- .document-cell #filter-->
         
         <div class="document-cell">
         	<h3 id="modal" class="typo-h3"># Modal（弹出框）</h3>
@@ -547,6 +554,25 @@
 			
 			</div>
         </div> <!-- .document-cell #modal -->
+        
+        <div class="document-cell">
+        	<h3 id="dropdown" class="typo-h3"># Dropdown（下拉菜单）</h3>
+			<div class="document-cell-box">
+				
+				<div class="dropdown" id="mydropdown">
+					
+					<span>一般下拉菜单 <a href="#mydropdown" data-toggle="dropdown" class="dropdown-trigger arrow arrow-down"></a></span>
+				
+					<ul class="dropdown-menu clearfix">
+						<li class="dropdown-menu-item">@sofish</li>
+						<li class="dropdown-menu-item">@dengjia</li>
+						<li class="dropdown-menu-item">@arch</li>
+					</ul>
+				
+				</div> 
+			
+			</div>
+        </div> <!-- .document-cell #dropdown -->
         
     </div> <!-- #document -->
     

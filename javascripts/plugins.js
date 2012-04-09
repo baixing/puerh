@@ -111,9 +111,10 @@
 }( window.jQuery );
 
 
-/* TODO
+/* 
  * modified by @sofish
- * 真是写得一团糟，找时间重构一下
+ * change class `open` to `dropdown-open`
+ * add multiple dom hierarchy support
  */
 !function( $ ){
 
@@ -126,8 +127,7 @@
     , Dropdown = function ( element ) {
         var $el = $(element).on('click.dropdown.data-api', this.toggle)
         $('html').on('click.dropdown.data-api', function () {
-        console.log('iub')
-          $el.parent().removeClass('open')
+          $el.parents('.dropdown-open').removeClass('dropdown-open')
         })
       }
 
@@ -146,13 +146,13 @@
         selector = selector && selector.replace(/.*(?=#[^\s]*$)/, '') //strip for ie7
       }
 
-      $parent = $(selector);
+      $parent = $(selector)
       $parent.length || ($parent = $this.parent())
 
-      isActive = $parent.hasClass('open')
+      isActive = $parent.hasClass('dropdown-open')
 
       clearMenus()
-      !isActive && $parent.toggleClass('open')
+      !isActive && $parent.toggleClass('dropdown-open')
 
       return false
     }
@@ -160,7 +160,7 @@
   }
 
   function clearMenus() {
-    $(toggle).parent().removeClass('open')
+    $(toggle).parents('.dropdown-open').removeClass('dropdown-open')
   }
 
 
@@ -987,6 +987,10 @@
       var val = this.$menu.find('.active').attr('data-value')
       this.$element.val(val)
       this.$element.change();
+      
+      // add by @sofish
+      // custom event: `selected`
+      this.$element.trigger('selected');
       return this.hide()
     }
 

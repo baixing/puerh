@@ -392,9 +392,9 @@ body{ min-width:1000px}
 /* arrow
  * author: sofish@163.com
  */
-.arrow{display:inline-block;font-size:0;width:0px;height:0px;border:5px solid #fff;position:relative;}
-.arrow-up{border-bottom:5px solid #ccc;border-top:none;top:-2px;} 
-.arrow-down{border-top:5px solid #ccc;border-bottom:none;top:3px;}
+.arrow{display:inline-block;font-size:0;width:0px;height:0px;border:5px solid transparent;position:relative;top:-3px;}
+.arrow-up, .dropdown-open .arrow-down{border-bottom:5px solid #ccc;border-top:none;} 
+.arrow-down, .dropdown-open .arrow-up{border-top:5px solid #ccc;border-bottom:none;vertical-align:middle;}
 .arrow-up:hover{border-bottom-color:#aaa;}
 .arrow-down:hover{border-top-color:#aaa;}
 
@@ -542,9 +542,23 @@ body{ min-width:1000px}
 /* Dropdown 下拉菜单
  * author: sofish@163.com
  */
-.dropdown{}
-.dropdown-menu{display:none;}
-.open .dropdown-menu{display:block;}
+.dropdown{position:relative;z-index:12;}
+.dropdown-menu{display:none;background:#fff;position:absolute;border:1px solid #cfcfcf;padding:5px;width:200px;z-index:12;}
+.dropdown-menu-item{display:inline-block;width:80px;float:left;padding:3px 10px;line-height:1.5;/* prevent overwrite */}
+.dropdown-menu-item:hover, .dropdown-menu-item-hover{background:#EAFDBC;text-decoration:none;cursor:pointer;}
+.dropdown-open .dropdown-menu{display:block;}
+.dropdown-unibody cite{color:#fff;background:#c30;display:inline-block;height:12px;width:12px;margin:0 3px;text-align:center;line-height:12px;border-radius:6px;}
+.dropdown-unibody .dropdown-menu{width:100px;margin-top:-3px;color:#333;}
+.dropdown-unibody .dropdown-menu-item{padding:2px 10px 2px 5px;}
+.dropdown-unibody .dropdown-trigger, .dropdown-unibody a{color:#333;}
+.dropdown-unibody .dropdown-trigger{position:relative;padding:1px 5px;background:#eee;color:#333;margin:2px 5px;border-radius:2px;}
+.dropdown-unibody .dropdown-trigger:hover{text-decoration:none;}
+.dropdown-open .dropdown-trigger-active{margin:0;padding:3px 9px;border:1px solid #cfcfcf;border-bottom:none;background:#fff;z-index:13;color:#333;}
+.dropdown-unibody .dropdown-trigger-active:hover{background:#888;color:#fff;}
+.dropdown-open .dropdown-trigger-active:hover{color:#333;background:#fff;}
+.dropdown-unibody .dropdown-trigger-active:hover cite{background:#fff;color:#333;}
+.dropdown-open cite{background:#080;color:#fff;}
+.dropdown-open .dropdown-trigger-active:hover cite{background:#080;color:#fff;}
 
 /* Tabs
  * author: sofish@163.com
@@ -562,6 +576,7 @@ body{ min-width:1000px}
  * author: sofish@163.com
  */
 .typeahead{position:absolute;}
+.typeahead .active{background:#ddd;}
 
 
 
