@@ -55,6 +55,12 @@
             <th><a href="#modal">Modal（弹出框）</a></th>
             <th><a href="#dropdown">Dropdown（下拉菜单）</a></th>
         </tr>
+        <tr>
+            <th><a href="#tips">Tips（可操作浮层）</a></th>
+            <th><a href="#alert">Alert Message（可操作消息）</a></th>
+            <th><a href="#flow">Flow（流程）</a></th>
+            <th><a href="#Listing">Listing（列表）</a></th>
+        </tr>
     </table>
     
     <div id="document" class="grid grid-20">
@@ -67,7 +73,7 @@
                     <div class="form-select">
                         <span class="form-select-selected">房屋租售<span>
                     </div>
-                    <input type="submit" value="搜索" class="form-submit" />
+                    <input type="submit" value="搜索" class="form-submit button button-grey" />
                 </form> <!-- .form -->
                 
             </div>
@@ -75,7 +81,7 @@
             
                 <form action="#" class="form from-search">
                     <input title="请输入类别名字或者关键字" placeholder="请输入类别名字或者关键字" class="form-input form-input-small" />
-                    <input type="submit" value="搜索" class="form-submit" />
+                    <input type="submit" value="搜索" class="form-submit button button-grey button-medium" />
                 </form> <!-- .form -->
             
             </div>
@@ -481,7 +487,7 @@
             </div>
             <div class="document-cell-box">
             
-            <p style="background:#eee;">up arrow <a href="###" class="arrow arrow-up">&uarr;</a>
+            <p style="background:#eee;line-height:18px;height:18px;">up arrow <a href="###" class="arrow arrow-up">&uarr;</a>
             down arrow<a href="###" class="arrow arrow-down">&darr;</a></p>
 
             </div>
@@ -573,6 +579,69 @@
 			
 			</div>
         </div> <!-- .document-cell #dropdown -->
+        
+        <div class="document-cell" style="position:relative;height:180px;">
+        	<h3 id="tips" class="typo-h3"># Tips（可操作浮层）</h3>
+			<div class="document-cell-box">
+				<div class="tips">
+					<span class="tips-angle diamond">+</span>
+					<div class="tips-text">
+						hello world
+					</div>
+					<span class="close" data-dismiss="alert">&times;</span>
+				</div>
+				
+				<div class="tips tips-right" id="tips1">
+					<span class="tips-angle diamond">+</span>
+					<div class="tips-text">
+						hello world
+					</div>
+					<span class="close" data-dismiss="alert">&times;</span>
+				</div>
+				
+				<div class="tips tips-left" id="tips2">
+					<span class="tips-angle diamond">+</span>
+					<div class="tips-text">
+						hello world
+					</div>
+					<span class="close" data-dismiss="alert">&times;</span>
+				</div>
+				
+				<div class="tips tips-bottom" id="tips3">
+					<span class="tips-angle diamond">+</span>
+					<div class="tips-text">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</div>
+					<span class="close" data-dismiss="alert">&times;</span>
+				</div>
+			
+			</div>
+        </div> <!-- .document-cell #tips -->
+        
+        <div class="document-cell">
+        	<h3 id="alert" class="typo-h3"># Alert（可操作消息）</h3>
+			<div class="document-cell-box">
+				<div class="alert alert-ok">
+					<div class="alert-text">
+						<h3 class="typo-h4 alert-title">这是一条 H4 标题</h3>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+					</div>
+					<span class="close" data-dismiss="alert">&times;</span>
+				</div>
+				
+				</div>
+				<div class="document-cell-box">
+				
+				<div class="alert">
+					<div class="alert-text">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+					</div>
+					<span class="close" data-dismiss="alert">&times;</span>
+				</div>
+				
+			</div>
+        </div> <!-- .document-cell #alert -->
+
         
     </div> <!-- #document -->
     
