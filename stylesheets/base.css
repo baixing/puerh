@@ -102,7 +102,9 @@ caption, th {
 
 /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
 h1, h2, h3, h4, h5, h6 {
-	font: 100%/1 Arial, "STXihei", Hei, "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
+	font:500 100%/1 Arial, "STXihei", Hei, "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
+	font-weight:700\9;
+	font-weight: 500\0;
 }
 
 q:before, q:after {
@@ -596,7 +598,7 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 .alert .close{top:10px;right:10px;}
 
 
-/* Popover
+/* TODO: Popover
  * author: sofish@163.com
  */
 .popover{position:absolute;}
