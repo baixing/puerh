@@ -1,5 +1,3 @@
-@charset "utf-8";
-
 /* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
 html {
 	color: #333;
@@ -104,7 +102,9 @@ caption, th {
 
 /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
 h1, h2, h3, h4, h5, h6 {
-	font: 100%/1 Arial, "STXihei", Hei, "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
+	font:500 100%/1 Arial, "STXihei", Hei, "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
+	font-weight:700\9;
+	font-weight: 500\0;
 }
 
 q:before, q:after {
@@ -337,13 +337,18 @@ body{ min-width:1000px}
   cursor: pointer;
 }
 
-/* Rotate 45 degree
+/* Diamond
  * author: sofish@163.com
  */
 .diamond{
 -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475, M12=-0.7071067811865477, M21=0.7071067811865477, M22=0.7071067811865475, SizingMethod='auto expand')";
-/* IE6 and 7 */ 
-filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.7071067811865477,M21=0.7071067811865477,M22=0.7071067811865475,SizingMethod='auto expand');
+filter: progid:DXImageTransform.Microsoft.Matrix(
+	M11=0.7071067811865475,
+	M12=-0.7071067811865477,
+	M21=0.7071067811865477,
+	M22=0.7071067811865475,
+	SizingMethod='auto expand'
+);
 -moz-transform: rotate(45deg);-o-transform: rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);
 }
 
@@ -355,7 +360,7 @@ filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.7
 .icon-bag, .icon-car, .icon-house, .icon-friend, .icon-love, .icon-book, .icon-pet, .icon-doc, .icon-umbrella,.icon-time,.icon-play, .icon-mobile, .icon-connect, .icon-star, .icon-comment, .icon-flag{width:18px;height:18px;}
 
 .icon-bag{background-position:2px 1px;}
-.icon-car{background-position:-41px 1px;}
+.icon-car{background-position:-41px 1px;} 
 .icon-house{background-position:-84px 1px;}
 .icon-friend{background-position:-128px 2px;}
 .icon-love{background-position:-172px 2px;}
@@ -593,7 +598,7 @@ filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.7
 .alert .close{top:10px;right:10px;}
 
 
-/* Popover
+/* TODO: Popover
  * author: sofish@163.com
  */
 .popover{position:absolute;}
