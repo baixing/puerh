@@ -227,7 +227,8 @@ body{ min-width:1000px}
 .last{margin-right:0}
 
 /* 现代排版：保证块/段落之间的空白隔行 */
-.typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr, .typo table {
+.typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr, .typo table,
+.typo-p, .typo-pre, .typo-ul, .typo-ol, .typo-dl, .typo-form, .typo-hr, .typo-table {
 	margin: 0.6em 0 1em;
 }
 
@@ -253,32 +254,32 @@ body{ min-width:1000px}
 }
 
 /* 在文章中，应该还原 ul 和 ol 的样式 */
-.typo ul {
+.typo ul, .typo-ul {
 	margin-left: 1.3em;
 	list-style: disc;
 }
-.typo ol {
+.typo ol, .typo-ol {
 	list-style: decimal;
 	margin-left: 1.9em;
 }
-.typo li ul, .typo li ol {
+.typo li ul, .typo li ol, .typo-ul ul, .typo-ol ol, .typo-ul ol, .typo-ol ul {
 	margin-top: 0;
 	margin-bottom: 0;
 	margin-left: 2em;
 }
-.typo li ul {
+.typo li ul, .typo-ul ul, .typo-ol ul {
 	list-style: circle;
 }
 
 /* 同 ul/ol，在文章中应用 table 基本格式 */
-.typo table th, .typo table td {
+.typo table th, .typo table td, .typo-table th, .typo-table td{
 	border: 1px solid #ddd;
 	padding: 5px 10px;
 }
-.typo table th {
+.typo table th, .typo-table-th {
 	background: #fbfbfb;
 }
-.typo table thead th {
+.typo table thead th, .typo-table thead th {
 	background: #f1f1f1;
 }
 
@@ -334,6 +335,16 @@ body{ min-width:1000px}
   opacity: 0.4;
   filter: alpha(opacity=40);
   cursor: pointer;
+}
+
+/* Rotate 45 degree
+ * author: sofish@163.com
+ */
+.diamond{
+-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475, M12=-0.7071067811865477, M21=0.7071067811865477, M22=0.7071067811865475, SizingMethod='auto expand')";
+/* IE6 and 7 */ 
+filter: progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.7071067811865477,M21=0.7071067811865477,M22=0.7071067811865475,SizingMethod='auto expand');
+-moz-transform: rotate(45deg);-o-transform: rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);
 }
 
 /* Icons
@@ -392,7 +403,7 @@ body{ min-width:1000px}
 /* arrow
  * author: sofish@163.com
  */
-.arrow{display:inline-block;font-size:0;width:0px;height:0px;border:5px solid transparent;position:relative;top:-3px;}
+.arrow{display:inline-block;font-size:0;width:0;height:0;border:5px solid transparent;position:relative;top:-3px;}
 .arrow-up, .dropdown-open .arrow-down{border-bottom:5px solid #ccc;border-top:none;} 
 .arrow-down, .dropdown-open .arrow-up{border-top:5px solid #ccc;border-bottom:none;vertical-align:middle;}
 .arrow-up:hover{border-bottom-color:#aaa;}
@@ -452,6 +463,9 @@ body{ min-width:1000px}
 .form-input{width:240px;height:28px;padding:0 10px;}
 .form-input-small{height:22px;}
 .form-search .form-select{width:50px;line-height:28px;height:28px;border-left:none;position:relative;top:1px;left:-4px;padding:0 10px;}
+.form-submit{vertical-align:middle;}
+.form .button-grey{height:30px;line-height:30px;padding:0 20px;}
+.form .button-medium{height:24px;line-height:24px;padding:0 10px;}
 
 /* pagenav 分页
  * author: sofish@163.com
@@ -506,6 +520,8 @@ body{ min-width:1000px}
 .tab-title-item-last{border-right:1px solid #cfcfcf;}
 .tab-title a{color:#333;}
 .tab-title a:hover{color:#5ba533;text-decoration:none;}
+.tab-content-pane{display:none;}
+.tab-content .active{display:block;}
 
 /* Topbar 顶部导航
  * author: sofish@163.com
@@ -547,25 +563,35 @@ body{ min-width:1000px}
 .dropdown-menu-item{display:inline-block;width:80px;float:left;padding:3px 10px;line-height:1.5;/* prevent overwrite */}
 .dropdown-menu-item:hover, .dropdown-menu-item-hover{background:#EAFDBC;text-decoration:none;cursor:pointer;}
 .dropdown-open .dropdown-menu{display:block;}
-.dropdown-unibody cite{color:#fff;background:#c30;display:inline-block;height:12px;width:12px;margin:0 3px;text-align:center;line-height:12px;border-radius:6px;}
+.dropdown-unibody cite{color:#fff;background:#080;display:inline-block;height:12px;width:12px;margin:0 3px;text-align:center;line-height:12px;border-radius:6px;}
 .dropdown-unibody .dropdown-menu{width:100px;margin-top:-3px;color:#333;}
-.dropdown-unibody .dropdown-menu-item{padding:2px 10px 2px 5px;}
+.dropdown-unibody .dropdown-menu-item{padding:2px 5px 2px 0;width:auto;}
+.dropdown-unibody .dropdown-menu-item:hover, .dropdown-unibody .dropdown-menu-item-hover{background:#fff;color:#f30;text-decoration:underline;}
 .dropdown-unibody .dropdown-trigger, .dropdown-unibody a{color:#333;}
-.dropdown-unibody .dropdown-trigger{position:relative;padding:1px 5px;background:#eee;color:#333;margin:2px 5px;border-radius:2px;}
+.dropdown-unibody .dropdown-trigger{display:inline-block;position:relative;padding:1px 5px;background:#eee;color:#333;margin:0 5px;border-radius:2px;line-height:16px;}
 .dropdown-unibody .dropdown-trigger:hover{text-decoration:none;}
-.dropdown-open .dropdown-trigger-active{margin:0;padding:3px 9px;border:1px solid #cfcfcf;border-bottom:none;background:#fff;z-index:13;color:#333;}
+.dropdown-open .dropdown-trigger-active{margin:0;padding:0 9px;line-height:19px;border:1px solid #cfcfcf;border-bottom:none;background:#fff;z-index:13;color:#333;}
 .dropdown-unibody .dropdown-trigger-active:hover{background:#888;color:#fff;}
 .dropdown-open .dropdown-trigger-active:hover{color:#333;background:#fff;}
 .dropdown-unibody .dropdown-trigger-active:hover cite{background:#fff;color:#333;}
 .dropdown-open cite{background:#080;color:#fff;}
 .dropdown-open .dropdown-trigger-active:hover cite{background:#080;color:#fff;}
 
-/* Tabs
+/* Tips + Alert
  * author: sofish@163.com
  */
-.tab{}
-.tab-content-pane{display:none;}
-.tab-content .active{display:block;}
+.tips, .alert{position:absolute;background: #fff8e8;border:1px solid #ffba00;padding:3px 25px 3px 10px;}
+.tips-angle{position:absolute;display:block;width:8px;height:8px;font-size:0;background:#fff8ef;border-left:1px solid #ffba00;border-top:1px solid #ffba00;top:-5px;left:10px;}
+.tips-right .tips-angle{right:-5px;left:auto;top:8px;border-left:none;border-right:1px solid #ffba00;}
+.tips-bottom .tips-angle{top:auto;bottom:-5px;border:none;border-right:1px solid #ffba00;border-bottom:1px solid #ffba00;}
+.tips-left .tips-angle{left:-5px;right:auto;top:8px;border-top:none;border-bottom:1px solid #ffba00;}
+.tips .close, .alert .close{position:absolute;right:5px;top:5px;}
+
+.alert{padding:15px;position:relative;}
+.alert-title{margin-top:0;}
+.alert-ok{border:1px solid #d9eb9f;background:#fbffed;}
+.alert .close{top:10px;right:10px;}
+
 
 /* Popover
  * author: sofish@163.com

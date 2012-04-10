@@ -43,3 +43,8 @@ code{background:#f7f7f7;border:1px solid #ddd;padding:0 5px;border-radius:3px;}
 .dropdown{margin-right: 30px;display:inline-block;}
 .topbar .dropdown{margin-right:auto;}
 #mydropdown1{background:#eee;}
+
+.tips{top:40px;}
+.tips-right{left:150px;}
+.tips-bottom{top:80px;}
+.tips-left{top:165px;}
