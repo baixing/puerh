@@ -350,6 +350,7 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 );
 -moz-transform: rotate(45deg);-o-transform: rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);
 }
+:root .diamond{filter:none\9;}
 
 /* Icons
  * author: sofish@163.com
