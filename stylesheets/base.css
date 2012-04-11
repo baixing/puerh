@@ -456,6 +456,16 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 .button-icon{position:relative;padding-left:30px;color:#333;}
 .button-icon .icon{position:absolute;left:8px;top:16%;}
 
+/* .tag
+ * author: sofish@163.com
+ */
+.tag{display:inline-block;padding:0 3px;background:#eee;margin:0 3px;border-radius:2px;}
+.tag-blue, .tag-green, .tag-red, a.tag:hover{color:#fff;}
+.tag-blue{background:#08c;}
+.tag-green{background:#080;}
+.tag-red{background:#f36;}
+a.tag:hover{background:#888;text-decoration:none;}
+
 /* form 表单
  * author: sofish@163.com
  * require: button
@@ -475,7 +485,7 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 /* pagenav 分页
  * author: sofish@163.com
  */
-.pagenav{font-family:Arial;}
+.pagenav{font-family:Arial;position:relative;text-align:right;}
 .pagenav-cell{display:inline-block;border:1px solid #cfcfcf;padding:0 10px;height:24px;line-height:24px;}
 .pagenav-cell-ellipsis{border:none;padding:0;}
 .pagenav-cell-current{background:#eee;}
@@ -515,15 +525,54 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 .imglist-item{display:inline-block;float:left;margin-left:10px;width:64px;height:90px;text-align:center;}
 .imglist-item a:hover{text-decoration:none;color:red;}
 
+/* Images（图片展栏）
+ * author: sofish@163.com
+ */
+.images{width:756px;position:relative;margin-left:-9px;}
+.images-item{display:inline-block;width:180px;float:left;overflow:hidden;margin:0 0 10px 9px;background:#f7f7f7;cursor:default;}
+.images-item em, .images-item img, .images-item strong{cursor:pointer;}
+.images-item:hover{text-decoration:none;background:#fcffee;}
+.images-item-caption{padding:0 5px 5px;}
+.images-item-caption strong{font-weight:500;display:block;width:170px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.images-item-caption-meta{overflow:hidden;position:relative;color:#888;font-size:12px;}
+.images-item-caption-meta cite{position:absolute;right:0;}
+.images-item:hover .images-item-caption-meta cite, .images-item:hover .images-item-caption em{color:#f50;}
+.images-item:hover .images-item-caption em, .images-item strong:hover{text-decoration:underline;}
+
+/* List
+ * author: sofish@163.com
+ */
+.list{width:756px;}
+.list-item{border-bottom:1px solid #ebebeb;padding:10px 0;}
+.list-item:nth-child(odd){background:#fcfcfc;}
+.list-item:hover, .list-item-hover{background:#fcffee!important;}
+.list-item-block{display:inline-block;float:left;min-width:80px;position:relative;}
+.list-item-block cite{color:#f50;}
+.list-item-block img{width:62px;height:64px;}
+.list-item-content{width:490px;margin-right:10px;float:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.list-item-title{background:none!important;}
+.list-item-title .list-item-block,
+.list-item-title .list-item-content,
+.list-thumb .list-item-title .list-item-block{font-weight:700;line-height:1.5;height:21px;}{line-height:1.5;height:21px;}
+.list i{color:olive;font-style:normal;}
+.list-item-content-meta{padding-top:10px;color:#888;}
+.list .tag{font-size:12px;}
+.list .close{float:none;position:absolute;right:0;height:22px;line-height:22px;}
+
+.list-thumb .list-item-block{height:64px;line-height:64px;}
+.list-thumb .list-item-content{padding-top:8px;}
+.list-thumb .list-item-title .list-item-content{padding:0;}
+.list-thumb .close{line-height:64px;}
+
 /* Tab
  * author: sofish@163.com
  */
 .tab{}
 .tab-title{border-bottom:1px solid #cfcfcf;padding-left:10px;}
-.tab-title-item{display:inline-block;float:left;height:28px;line-height:28px;padding:0 16px;border:1px solid #cfcfcf;border-bottom-color:#cfcfcf;border-right:0;margin-top:1px;position:relative;z-index:1;top:1px;background:#fbfbfb;}
-.tab-title-item-active{border-top:2px solid #5ba533;border-bottom-color:#fff;z-index:2;margin-top:0;background:#fff;}
+.tab-title-item{display:inline-block;float:left;height:28px;line-height:28px;border:1px solid #cfcfcf;border-bottom-color:#cfcfcf;border-right:0;margin-top:1px;position:relative;z-index:1;top:1px;background:#fbfbfb;}
+.tab-title .active{border-top:2px solid #5ba533;border-bottom-color:#fff;z-index:2;margin-top:0;background:#fff;}
 .tab-title-item-last{border-right:1px solid #cfcfcf;}
-.tab-title a{color:#333;}
+.tab-title a{color:#333;padding:0 16px;line-height:28px;}
 .tab-title a:hover{color:#5ba533;text-decoration:none;}
 .tab-content-pane{display:none;}
 .tab-content .active{display:block;}
@@ -597,17 +646,32 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 .alert-ok{border:1px solid #d9eb9f;background:#fbffed;}
 .alert .close{top:10px;right:10px;}
 
+/* Flow
+ * author: sofish@163.com
+ */
+.flow{position:relative;height:40px;width:600px;margin:0 auto;height:80px}
+.flow-hr{height:8px;position:absolute;background:#eee;top:16px;width:100%;}
+.flow-item{position:relative;z-index:2;width:24px;height:24px;text-align:center;line-height:24px;float:left;background:#fff;border:8px solid #eee;border-radius:20px;margin-right:240px;}
+.flow-item cite{font:16px/24px Arial;color:#666;}
+.flow-item-status{position:absolute;margin-top:15px;white-space:nowrap;left:-63%;line-height:1.5;}
+.flow-item-active{background:#9c0;color:#9c0;font-weight:800;}
+.flow-item-last{float:right;margin-right:0;}
+.flow-item-active cite{color:#fff;}
+
+.flow-5{}
+.flow-5 .flow-item{margin-right:100px;}
+.flow-5 .flow-item-last{margin-right:0;}
+
+/* TODO: Typeahead
+ * author: sofish@163.com
+ */
+.typeahead{position:absolute;}
+.typeahead .active{background:#ddd;}
 
 /* TODO: Popover
  * author: sofish@163.com
  */
 .popover{position:absolute;}
-
-/* Popover
- * author: sofish@163.com
- */
-.typeahead{position:absolute;}
-.typeahead .active{background:#ddd;}
 
 
 
