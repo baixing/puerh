@@ -35,6 +35,7 @@ input, select, textarea {
 }
 button, input {*overflow: visible;line-height: normal;}
 button::-moz-focus-inner,input::-moz-focus-inner {padding:0;border:0;}
+input:focus{}
 
 /* 去掉各Table  cell 的边距并让其边重合 */
 table {
@@ -103,7 +104,7 @@ caption, th {
 /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
 h1, h2, h3, h4, h5, h6 {
 	font:500 100%/1 Arial, "STXihei", Hei, "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
-	font-weight:700\9;
+	font-weight:700\9; /* todo: make some font-family detection */
 }
 
 q:before, q:after {
@@ -155,6 +156,9 @@ small {
 	color: #888;
 }
 
+/* 去虚线框 */
+:focus{outline:none;}
+
 /* 清理浮动 */
 .clear {
 	clear: both;
@@ -196,10 +200,10 @@ Licensed under GPL and MIT.
 body{ min-width:1000px}
 
 /* layout container for the grid */
-.container{margin-left:auto;margin-right:auto;width:1000px}
+.container{margin-left:auto;margin-right:auto;width:1000px;zoom:1;}
 
 /* grid system */
-.grid{display:inline;float:left;position:relative;margin-left:10px;margin-right:10px}
+.grid{display:inline;float:left;margin-left:10px;margin-right:10px}
 .grid-1{width:30px}
 .grid-2{width:80px}
 .grid-3{width:130px}
@@ -320,8 +324,11 @@ body{ min-width:1000px}
 }
 .close {
   float: right;
+  font-family:Impact!important;
+  _font-family:Tahoma!important;
   font-size: 20px;
-  font-weight: bold;
+  _font-size: 16px;
+  font-weight: blod;
   line-height: 18px;
   color: #000000;
   text-shadow: 0 1px 0 #ffffff;
@@ -355,7 +362,7 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 /* Icons
  * author: sofish@163.com
  */
-.icon{background:url("../images/icons.png") no-repeat 0 0;display:inline-block;font-size:0;}
+.icon{background:url("../images/icons.png") no-repeat 0 0;display:inline-block;*display:inline;*zoom:1;overflow:hidden;font-size:0;*line-height:0;/* fix 1px font bug in ie */}
 
 .icon-bag, .icon-car, .icon-house, .icon-friend, .icon-love, .icon-book, .icon-pet, .icon-doc, .icon-umbrella,.icon-time,.icon-play, .icon-mobile, .icon-connect, .icon-star, .icon-comment, .icon-flag{width:18px;height:18px;}
 
@@ -408,9 +415,9 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 /* arrow
  * author: sofish@163.com
  */
-.arrow{display:inline-block;font-size:0;width:0;height:0;border:5px solid transparent;position:relative;top:-3px;}
+.arrow{display:inline-block;*display:inline;*zoom:1;overflow:hidden;font-size:0;width:0;height:0;border:5px solid #fff;position:relative;top:-3px;*top:-2px;}
 .arrow-up, .dropdown-open .arrow-down{border-bottom:5px solid #ccc;border-top:none;} 
-.arrow-down, .dropdown-open .arrow-up{border-top:5px solid #ccc;border-bottom:none;vertical-align:middle;}
+.arrow-down, .dropdown-open .arrow-up{border-top:5px solid #ccc;border-bottom:none;}
 .arrow-up:hover{border-bottom-color:#aaa;}
 .arrow-down:hover{border-top-color:#aaa;}
 
@@ -418,7 +425,7 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 /* button 按钮
  * author: sofish@163.com
  */
-.button{display:inline-block;border:1px solid #d1d1d1;height:28px;line-height:28px;padding:0 10px;vertical-align:baseline;font-size:12px;color:#333;cursor:pointer;}
+.button{display:inline-block;border:1px solid #d1d1d1;height:28px;line-height:28px;padding:0 10px;font-size:12px;color:#333;cursor:pointer;vertical-align:baseline;}
 .button:hover, .button-hover{background:#f7f7f7;text-decoration:none;}
 .button-grey, .button-green{font:14px/2 sans-serif;}
 .button-medium{height:24px;line-height:24px;font-size:12px;}
@@ -450,9 +457,10 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 	background: -o-linear-gradient(top, #468A07, #59A905);
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#468A07', endColorstr='#59A905');
 }
-.button-filter{border:1px solid #d1e98e;height:18px;line-height:18px;padding-right:22px;position:relative;background:#faffe9;cursor:default;}
+.button-filter{border:1px solid #d1e98e;padding:0 22px 0 5px;height:20px;line-height:20px;position:relative;background:#faffe9;cursor:default;}
+.button-filter{*height:16px;*padding-top:5px;*overflow:hidden;}
 .button-filter:hover{background:#faffe9;}
-.button-filter .close{float:none;position:absolute;right:6px;top:0;font-size:18px;vertical-align:text-top;}
+.button-filter .close{float:none;position:absolute;right:6px;top:0;*top:-2px;font-size:18px;vertical-align:text-top;}
 .button-icon{position:relative;padding-left:30px;color:#333;}
 .button-icon .icon{position:absolute;left:8px;top:16%;}
 
@@ -474,19 +482,21 @@ a.tag:hover{background:#888;text-decoration:none;}
     /* [hack firefox] form-select & form-input 1px vertical align bug*/
     font-family:Arial;
 }
-.form-input, .form-search .form-select{display:inline-block;border:1px solid #cfcfcf;border-bottom-color:#e2e2e2;font-size:12px;}
-.form-input{width:240px;height:28px;padding:0 10px;}
+.form-input, .form-search .form-select{display:inline-block;*display:inline;*zoom:1;border:1px solid #cfcfcf;border-bottom-color:#e2e2e2;font-size:12px;}
+.form-input{width:240px;height:28px;padding:0 10px;line-height:28px;}
 .form-input-small{height:22px;}
 .form-search .form-select{width:50px;line-height:28px;height:28px;border-left:none;position:relative;top:1px;left:-4px;padding:0 10px;}
-.form-submit{vertical-align:middle;}
+.form-submit{
+	vertical-align:middle;
+}
 .form .button-grey{height:30px;line-height:30px;padding:0 20px;}
 .form .button-medium{height:24px;line-height:24px;padding:0 10px;}
 
 /* pagenav 分页
  * author: sofish@163.com
  */
-.pagenav{font-family:Arial;position:relative;text-align:right;}
-.pagenav-cell{display:inline-block;border:1px solid #cfcfcf;padding:0 10px;height:24px;line-height:24px;}
+.pagenav{font-family:Arial;height:24px;}
+.pagenav-cell{display:inline-block;border:1px solid #cfcfcf;padding:0 10px;height:24px;line-height:24px;float:left;margin-right:5px;}
 .pagenav-cell-ellipsis{border:none;padding:0;}
 .pagenav-cell-current{background:#eee;}
 .pagenav-cell-next{background:#5ba533;border-color:#4c8928;color:#fff;}
@@ -504,25 +514,28 @@ a.tag:hover{background:#888;text-decoration:none;}
 /* Group List 列表
  * author: sofish@163.com
  */
-#glist{margin-left:-20px;}
+#glist{margin-left:-20px;_margin-left:-40px;}
 .glist{margin-left:20px;width:180px;float:left;}
 .glist-title{background:#f8f8f8;padding:3px 5px;}
-.glist-title h3{display:inline-block;}
+.glist-title h3{display:inline-block;*display:inline;*zoom:1;line-height:1.5;}
 .glist-title a{color:#333;}
 .glist-title a:hover{color:#888;text-decoration:none;}
 .glist-title cite{font:12px Arial;color:#888;}
-.glist-section{margin:5px 0;border-bottom:1px dotted #cfcfcf;padding-bottom:10px;}
+.glist-section{margin:5px 0;border-bottom:1px dotted #cfcfcf;padding-bottom:10px;
+_position:relative; /* fix 多一只猪的问题 */
+}
 .glist-section-last{border:none;padding-bottom:0;}
-.glist-section a{display:inline-block;white-space:nowrap;_width:80px;_zoom:1;min-width:80px;padding:5px 0;}
+.glist-section a{display:inline-block;white-space:nowrap;_display:inline-block;_width:80px;min-width:80px;padding:5px 0;}
 .glist-section .glist-section-block{display:block;}
 .glist-section .glist-section-inlineblock{display:inline-block;_width:80px;_zoom:1;min-width:80px;}
-.glist-section-random a{width:auth;min-width:0;margin-right:10px;}
+.glist-section-random a{width:auto;min-width:0;margin-right:10px;}
 
 /* Image List 图片列表
  * author: sofish@163.com
  */
 .imglist{margin-left:-10px;}
 .imglist-item{display:inline-block;float:left;margin-left:10px;width:64px;height:90px;text-align:center;}
+*html .imglist-item img{display:block;height:64px;margin-bottom:3px;}
 .imglist-item a:hover{text-decoration:none;color:red;}
 
 /* Images（图片展栏）
@@ -543,10 +556,10 @@ a.tag:hover{background:#888;text-decoration:none;}
  * author: sofish@163.com
  */
 .list{width:756px;}
-.list-item{border-bottom:1px solid #ebebeb;padding:10px 0;}
+.list-item{border-bottom:1px solid #ebebeb;padding:10px 0;*display:inline;*zoom:1;width:100%;}
 .list-item:nth-child(odd){background:#fcfcfc;}
 .list-item:hover, .list-item-hover{background:#fcffee!important;}
-.list-item-block{display:inline-block;float:left;min-width:80px;position:relative;}
+.list-item-block{display:inline-block;_display:inline;_zoom:1;float:left;_width:80px;min-width:80px;position:relative;}
 .list-item-block cite{color:#f50;}
 .list-item-block img{width:62px;height:64px;}
 .list-item-content{width:490px;margin-right:10px;float:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
@@ -557,12 +570,12 @@ a.tag:hover{background:#888;text-decoration:none;}
 .list i{color:olive;font-style:normal;}
 .list-item-content-meta{padding-top:10px;color:#888;}
 .list .tag{font-size:12px;}
-.list .close{float:none;position:absolute;right:0;height:22px;line-height:22px;}
+.list .close{float:none;position:absolute;right:0;*right:10px;*margin-top:-3px;height:22px;line-height:22px;}
 
 .list-thumb .list-item-block{height:64px;line-height:64px;}
 .list-thumb .list-item-content{padding-top:8px;}
 .list-thumb .list-item-title .list-item-content{padding:0;}
-.list-thumb .close{line-height:64px;}
+.list-thumb .close{line-height:64px;*line-height:1;}
 
 /* Tab
  * author: sofish@163.com
@@ -585,6 +598,7 @@ a.tag:hover{background:#888;text-decoration:none;}
 .topbar a:hover{color:red;}
 .topbar-left{float:left;}
 .topbar-right{float:right;}
+.topbar .dropdown{display:inline!important;}
 
 /* Filter 类目筛选
  * author: sofish@163.com
@@ -618,7 +632,7 @@ a.tag:hover{background:#888;text-decoration:none;}
 .dropdown-menu-item:hover, .dropdown-menu-item-hover{background:#EAFDBC;text-decoration:none;cursor:pointer;}
 .dropdown-open .dropdown-menu{display:block;}
 .dropdown-unibody cite{color:#fff;background:#080;display:inline-block;height:12px;width:12px;margin:0 3px;text-align:center;line-height:12px;border-radius:6px;}
-.dropdown-unibody .dropdown-menu{width:100px;margin-top:-3px;color:#333;}
+.dropdown-unibody .dropdown-menu{width:100px;margin-top:-4px;color:#333;}
 .dropdown-unibody .dropdown-menu-item{padding:2px 5px 2px 0;width:auto;}
 .dropdown-unibody .dropdown-menu-item:hover, .dropdown-unibody .dropdown-menu-item-hover{background:#fff;color:#f30;text-decoration:underline;}
 .dropdown-unibody .dropdown-trigger, .dropdown-unibody a{color:#333;}
@@ -635,10 +649,10 @@ a.tag:hover{background:#888;text-decoration:none;}
  * author: sofish@163.com
  */
 .tips, .alert{position:absolute;background: #fff8e8;border:1px solid #ffba00;padding:3px 25px 3px 10px;}
-.tips-angle{position:absolute;display:block;width:8px;height:8px;font-size:0;background:#fff8ef;border-left:1px solid #ffba00;border-top:1px solid #ffba00;top:-5px;left:10px;}
-.tips-right .tips-angle{right:-5px;left:auto;top:8px;border-left:none;border-right:1px solid #ffba00;}
-.tips-bottom .tips-angle{top:auto;bottom:-5px;border:none;border-right:1px solid #ffba00;border-bottom:1px solid #ffba00;}
-.tips-left .tips-angle{left:-5px;right:auto;top:8px;border-top:none;border-bottom:1px solid #ffba00;}
+.tips-angle{position:absolute;display:block;width:8px;height:8px;font-size:0;overflow:hidden;background:#fff8ef;border-left:1px solid #ffba00;border-top:1px solid #ffba00;top:2px;*top:0;left:10px;margin-top:-7px;margin-top:-9px\0/;}
+.tips-right .tips-angle{right:2px;*right:0;margin-right:-7px;margin-right:-5px\0/;left:auto;top:13px;border-left:none;border-right:1px solid #ffba00;}
+.tips-bottom .tips-angle{top:auto;bottom:2px;*bottom:0;margin-bottom:-7px;margin-bottom:-5px\0/;border:none;border-right:1px solid #ffba00;border-bottom:1px solid #ffba00;}
+.tips-left .tips-angle{left:2px;*left:0;right:auto;top:13px;margin-left:-7px;margin-left:-9px\0/;border-top:none;border-bottom:1px solid #ffba00;}
 .tips .close, .alert .close{position:absolute;right:5px;top:5px;}
 
 .alert{padding:15px;position:relative;}
@@ -649,8 +663,8 @@ a.tag:hover{background:#888;text-decoration:none;}
 /* Flow
  * author: sofish@163.com
  */
-.flow{position:relative;height:40px;width:600px;margin:0 auto;height:80px}
-.flow-hr{height:8px;position:absolute;background:#eee;top:16px;width:100%;}
+.flow{position:relative;width:600px;margin:0 auto;height:80px}
+.flow-hr{height:8px;position:absolute;_position:relative;;background:#eee;top:16px;_overflow:hidden;_top:24px;*left:0;width:100%;}
 .flow-item{position:relative;z-index:2;width:24px;height:24px;text-align:center;line-height:24px;float:left;background:#fff;border:8px solid #eee;border-radius:20px;margin-right:240px;}
 .flow-item cite{font:16px/24px Arial;color:#666;}
 .flow-item-status{position:absolute;margin-top:15px;white-space:nowrap;left:-63%;line-height:1.5;}
