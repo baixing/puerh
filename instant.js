@@ -10,6 +10,7 @@ $(function(){
         case 'index': current += 'index'; break;
         case 'css': current += 'css'; break;
         case 'javascript': current += 'javascript'; break;
+        default: current += 'getting-start';
     }
     $(current)[0] && $(current).addClass('current');
 }();  
