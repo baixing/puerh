@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="getting-start">
+<head>
+	<meta charset="utf-8" />
+	<title>Getting Start &gt; Puerh - 百姓网 UI 库</title>
+	<link rel="stylesheet" href="stylesheets/base.css" />
+	<link rel="stylesheet" href="style.css" />
+	<!--[if lt IE 9]>
+	<script type="text/javascript">
+    // html5shiv MIT @rem remysharp.com/html5-enabling-script
+    // iepp v1.6.2 MIT @jon_neal iecss.com/print-protector
+    /*@cc_on(function(a,b){function r(a){var b=-1;while(++b<f)a.createElement(e[b])}if(!(!window.attachEvent||!b.createStyleSheet||!function(){var a=document.createElement("div");a.innerHTML="<elem></elem>";return a.childNodes.length!==1}())){a.iepp=a.iepp||{};var c=a.iepp,d=c.html5elements||"abbr|article|aside|audio|canvas|datalist|details|figcaption|figure|footer|header|hgroup|mark|meter|nav|output|progress|section|summary|time|video",e=d.split("|"),f=e.length,g=new RegExp("(^|\\s)("+d+")","gi"),h=new RegExp("<(/*)("+d+")","gi"),i=/^\s*[\{\}]\s*$/,j=new RegExp("(^|[^\\n]*?\\s)("+d+")([^\\n]*)({[\\n\\w\\W]*?})","gi"),k=b.createDocumentFragment(),l=b.documentElement,m=l.firstChild,n=b.createElement("body"),o=b.createElement("style"),p=/print|all/,q;c.getCSS=function(a,b){if(a+""===undefined)return"";var d=-1,e=a.length,f,g=[];while(++d<e){f=a[d];if(f.disabled)continue;b=f.media||b,p.test(b)&&g.push(c.getCSS(f.imports,b),f.cssText),b="all"}return g.join("")},c.parseCSS=function(a){var b=[],c;while((c=j.exec(a))!=null)b.push(((i.exec(c[1])?"\n":c[1])+c[2]+c[3]).replace(g,"$1.iepp_$2")+c[4]);return b.join("\n")},c.writeHTML=function(){var a=-1;q=q||b.body;while(++a<f){var c=b.getElementsByTagName(e[a]),d=c.length,g=-1;while(++g<d)c[g].className.indexOf("iepp_")<0&&(c[g].className+=" iepp_"+e[a])}k.appendChild(q),l.appendChild(n),n.className=q.className,n.id=q.id,n.innerHTML=q.innerHTML.replace(h,"<$1font")},c._beforePrint=function(){o.styleSheet.cssText=c.parseCSS(c.getCSS(b.styleSheets,"all")),c.writeHTML()},c.restoreHTML=function(){n.innerHTML="",l.removeChild(n),l.appendChild(q)},c._afterPrint=function(){c.restoreHTML(),o.styleSheet.cssText=""},r(b),r(k);if(c.disablePP)return;m.insertBefore(o,m.firstChild),o.media="print",o.className="iepp-printshim",a.attachEvent("onbeforeprint",c._beforePrint),a.attachEvent("onafterprint",c._afterPrint)}})(this,document)@*/
+	</script>
+	<![endif]-->
+</head>
+<body class="javascript">
+
+<div class="container clearfix">
+    <div id="header" class="grid grid-20">
+        <div class="grid grid-4 first">
+            <h1 id="logo">Puerh</h1>
+            <strong id="tagline">百姓网 UI 库</strong>
+        </div>
+        <div class="grid grid-11 nav">
+            <a href="./index.html" id="index">HOME</a>
+            <a href="./css.html" id="css">CSS</a>
+            <a href="./javascript.html" id="javascript">JavaScript</a>
+            <a href="./getting-start.html" id="getting-start">Getting Start</a>
+        </div>
+        <div class="grid grid-5 last nav">Feedback：
+            <a href="http://arch.baixing.com/Puerh/faq.html">FAQ</a>
+            <a href="mailto:sundengjia@baixing.com">@登甲</a>
+            <a href="mailto:linjianfeng@baixing.com">@小鱼</a>
+        </div>
+    </div> <!-- #header -->
+    
+    <div id="document" class="grid grid-20 typo">
+	    <p>
+	    Puerh 是百姓网 UI 库的简称。名字源自于在想为框架命名时办公桌上的一包普尔茶，因此取名“普尔（Puerh）”，希望所构建的百姓网 UI 简洁但像普尔茶一样有韵味。这个文档将介绍如何使用 Puerh 来构建 Web 界面。
+	    </p>
+	    <h2>一、CSS 组件</h2>
+	    <p>所有组件均通过兼容测试、使用统一的命名注释规范。包括栅格系统、排版样式和组件样式。所有组件样式包含于 <code>base.css</code> 中。</p>
+	    <blockquote>组件兼容要求：Mac/Win 系统下的 IE6+ / Google Chrome / Firefox / Safari</blockquote>
+	    <h3>1、命名规范</h3>
+	    <p>使用嵌套式命名法（暂且这样称呼吧）。组件是一个整体，理应包含于一个容器中；为了便于重用，在 CSS 中我们配合 class 选择器来做模块；另外为了使命名更长度和语义上更易懂。做如下约定：</p>
+	    <ul>
+	    	<li><b>HTML class 属性：</b>使用小写字母作为 class 名，使用嵌套式命名。
+	    		<p>统一命名规范，让属性值与 HTML 属性一致，均使用小写。所谓的嵌套式命名，即以父级元素的名字作为子元素的命名前缀。比如 <code>.tab</code> 组件名的子模块，应该是 <code>.tab-模块名</code>，而模块的下一级则是 <code>.tab-模块名-子模块名</code>。每一级都以上一级名称加上“-”作为前缀使用。</p>
+	    	</li>
+	    	<li><b>组件：</b>使用单个单词
+	    		<p>尽量使用一个单词命名，比如 <code>.list</code>、<code>.flow</code>、<code>.filter</code> 等，不要使用像 <code>headerMeta</code>、<code>header-meta</code>这样的写法，一来命名太长，二来不符合嵌套规范。</p>
+	    	</li>
+	    	<li><b>模块</b> = 组件名 + 模块名
+	    		<p>假设我们需要写一个 Tab 组件，Tab 是一个整体，包含在 <code>.tab</code> 这个 class 中，有触发点 <code>.tab-trigger</code> 和内容区 <code>.tab-content</code>。触发点中有不同的点，内容区中有不同的内容模块。使用嵌套式的命名方法，有这样的结构：</p>
+	    		<pre>
+&lt;div class="<b>tab</b>"&gt;							--- 组件名
+	&lt;ul class="<b>tab-trigger</b>"&gt;					--- 模块名
+		&lt;li class="tab-trigger-item"&gt;item 1&lt;/li&gt;		
+		&lt;li class="<b>tab-trigger-item</b>"&gt;item 2&lt;/li&gt;		--- 子模块
+		&lt;li class="tab-trigger-item"&gt;item 3&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;div class="<b>tab-content</b>"&gt;					--- 模块名
+		&lt;div class="tab-content-item"&gt;content 1&lt;/div&gt;		
+		&lt;div class="<b>tab-content-item</b>"&gt;content 2&lt;/div&gt;		--- 子模块
+		&lt;div class="tab-content-item"&gt;content 3&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt; &lt;!-- .tab --&gt;</pre>
+	    	</li>
+	    	<li><b>扩展</b> = 组件名 + 扩展名
+	    		<p>假设我们有一个竖排的 Tab 组件，除了把 Tab 的触发点从上面移到左边，外观上并没有其他变化。这时复用模块将可以减少重复的代码并且只作局部调整省去重复劳动。可以给组件增加一个扩展名。如：</p>
+	    		<pre>
+&lt;div class="tab <b>tab-vertical</b>"&gt;				--- 组件名 + 扩展名
+	&lt;ul class="tab-trigger"&gt;					
+		...
+	&lt;/ul&gt;
+	&lt;div class="tab-content"&gt;					
+		...
+	&lt;/div&gt;
+&lt;/div&gt; &lt;!-- .tab .tab-vertical--&gt;</pre>
+	    	</li>
+	    	<li><b>状态</b> = 模块名 + 状态名
+	    		<p>仍以 Tab 为例。触发点是有状态的。激活状态的标签通常和其他标签显示不同的样式，非激活状态的内容更是明显，一般都是隐藏的。因此我们需要给模块一个状态。会有这样的代码：</p>
+	    		<pre>
+&lt;div class="tab"&gt;							
+	&lt;ul class="tab-trigger"&gt;
+		&lt;li class="tab-trigger-item <b>.tab-trigger-item-active</b>"&gt;item 1&lt;/li&gt;	--- 状态名
+		&lt;li class="tab-trigger-item"&gt;item 2&lt;/li&gt;
+		&lt;li class="tab-trigger-item"&gt;item 3&lt;/li&gt;
+	&lt;/ul&gt;
+	&lt;div class="tab-content"&gt;
+		&lt;div class="tab-content-item <b>tab-content-item-active</b>"&gt;content 1&lt;/div&gt;	--- 状态名
+		&lt;div class="tab-content-item"&gt;content 2&lt;/div&gt;
+		&lt;div class="tab-content-item"&gt;content 3&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt; &lt;!-- .tab --&gt;</pre>
+			<p>另外，值得一提的是，模块和组件一样，都可以有扩展名，命名方法同扩展命名。</p>
+	    	</li>
+	    </ul>
+	    <h4>命名中的注意点：</h4>
+		    <ul>
+		    	<li>同组件不嵌套，即 .tab > .tab 的方式是不被允许的，可以是 .tab1 > .tab2 的方式</li>
+		    	<li>组件层级嵌套最好不要超过4级，1-2-3-4，如果大于4级，则考虑是否将一个组件分拆成多个</li>
+		    	<li>icon 使用统一的命名方式</li>
+		    </ul>
+		<h4>Icons 的命名方式：</h4>
+		<p>所有小图标均使用 <code>.icon</code> 命名。使用 CSS Sprites 方式合并图片，用 <code>.icon .icon-扩展</code> 来设定图片的背景位置。具体可以参考 Icons 组件的实现。</p>
+		
+		<h3>2、注释规范</h3>
+		<p>注释旨在指明团队协作中的创作、个性者和代码作用。在 CSS 中，无论块组还是单行注释，均使用 <code>/* 注释 */</code>。由于中文注释可能导致代码失效，但中文作为团队最有效的沟通文字，最好的使用方法是，保证在 <code>/*</code> 和 <code>*/</code> 之间的中文前后都有空格，以保证 CSS 不会失效。</p>
+		<p>在组件中，主要使用的两种注释如下：</p>
+		<pre>
+/* form 表单								--- 简单描述
+ * author: sofish@163.com						--- 作者
+ * require: button							--- 依赖（可选）
+ */
+.form{
+    font-family:serif\0/; /* solution:win7 ie8 line-height bug */	--- 行内注释
+}
+…		</pre>
+		
+		<h3>3、栅格系统</h3>
+		<p>Puerh 使用 980px 宽、20 栏、10px 间隙的栅格系统。内容区域为 980px，撑开宽度为 1000px。所有栅格必须包含到 <code>.container</code> 内。使用 <code>.grid</code> 模块，扩展名 <code>.grid-N</code> N 代表 1~20 中的任意整数。</p>具体的使用如下：
+		<pre>
+// 包含于 <b>.container</b> 中
+&lt;div class="container"&gt;
+	&lt;div class="grid grid-20"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+
+// 嵌套使用：需要用于 <b>.first/.last</b> 类
+&lt;div class="container"&gt;
+	&lt;div class="grid grid-20"&gt;
+		&lt;div class="grid grid-5 <b>first</b>"&gt;…&lt;/div&gt;	--- 第一个容器
+		&lt;div class="grid grid-5"&gt;…&lt;/div&gt;	--- 中间可以多个
+		&lt;div class="grid grid-10 <b>last</b>"&gt;…&lt;/div&gt;	--- 最后一个容器
+	&lt;/div&gt;
+&lt;/div&gt;</pre>
+		
+		<h3>4、排版类：TYPO.CSS</h3>
+		<p>在 Puerh 中使用开源的 TYPO.CSS 作为排版样式。这个库不同于一般的 CSS Reset，在提供 Reset 的同时，提供适合中文并且最大化兼容种系统的排版方法。在需要排版的地方使用 <code>.typo</code> 作为父容器的类，或在单独需要使用的时候，使用 <code>.typo-TAGNAME</code> 的方式单独使用。具体使用方式参考：</p>
+		<pre>
+// 在 <b>.typo</b> 内使用标签，将对应相应语义显示
+&lt;div class="typo"&gt;
+	&lt;h3&gt;Title&lt;/h3&gt;
+	&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;
+	&lt;ul&gt;
+		&lt;li&gt;item 1&lt;/li&gt;
+		&lt;li&gt;item 2&lt;/li&gt;
+	&lt;/ul&gt;
+	...
+&lt;/div&gt;
+
+// 在没有 .typo 的情况下使用 <b>.typo-TAGNAME</b>
+&lt;h3 class="typo-h3"&gt;Title&lt;/h3&gt;
+&lt;ul class="typo-ul"&gt;
+	&lt;li&gt;item 1&lt;/li&gt;
+	&lt;li&gt;item 2&lt;/li&gt;
+&lt;/ul&gt;</pre>
+
+		<h3>5、小工具</h3>
+		<ul>
+			<li><b>CLEARFIX</b>: 清理浮动，在浮动元素的父节点添加
+				<pre>
+&lt;ul class="<b>clearfix</b>"&gt;
+	&lt;li class="float-item"&gt;…&lt;/li&gt;
+	&lt;li class="float-item"&gt;…&lt;/li&gt;
+	...
+&lt;/ul&gt;				</pre>
+			</li>
+			<li><b>DIAMOND</b>: 创建一个菱形
+				<pre>
+// 效果请看 Tips 和 Flow 组件的实现
+&lt;ul class="<b>diamond</b>"&gt;
+	…
+&lt;/div&gt;				</pre>
+			</li>
+			<li><b>CLOSE</b>: 关闭按钮
+				<pre>
+&lt;ul class="<b>close</b>" data-dismiss="alert"&gt;&times;&lt;/div&gt;				</pre>
+			</li>
+		</ul>
+		
+		<h3>6、兼容：CSS Hack</h3>
+		<p>兼容是 CSS 中最大的难点。各种 hack 可以帮助你快速解决问题，但不一定是解决问题的真正方法。所以，hack 应该尽量避免使用。很多时候都是写法决定 bug，在有时间允许的情况下，请多进行测试以找到最佳方式。</p>
+		<pre>
+.all-IE{property:value\9;}
+:root .IE-9{property:value\0/;}
+.gte-IE-8{property:value\0;}
+.lte-IE-7{*property:value;}
+.IE-7{+property:value;}
+.IE-6{_property:value;}
+.not-IE{property//:value;}
+@-moz-document url-prefix() { .firefox{property:value;} }
+@media all and (-webkit-min-device-pixel-ratio:0) { .webkit{property:value;} }
+@media all and (-webkit-min-device-pixel-ratio:10000),not all and (-webkit-min-device-pixel-ratio:0) { .opera{property:value;} }
+@media screen and (max-device-width: 480px) { .iphone-or-mobile-s-webkit{property:value;} }</pre>
+
+		<h2>二、JavaScript 组件</h2>
+		<p>目前 Puerh 的大部分组件都使用 Twitter Bootstrap 库的自定义 Javascript 插件。删除了其中网站不常用的 Carousel 等组件，修改 Tips、Modals 等插件以适合百姓网需求，增加 Validator 和 Linkage 组件。</p>
+		<p>具体使用方法参见：<a href="./javascript.html">JavaScript 组件&raquo;</a></p>
+    
+    	<h2>三、反馈</h2>
+    	<p>Puerh 将会一直在使用、一直测试完善。在使用过程中遇到问题，请优先查阅 <a href="http://arch.baixing.com/Puerh/faq.html">FAQ</a>。在此基础中，如若有任何问题、建议、批评，或者要请吃饭的，外观设计中的找 <a href="mailto:sundengjia@baixing.com">@登甲</a>，在使用和代码上的问题请找 <a href="mailto:linjianfeng@baixing.com">@小鱼</a>。</p>
+    
+    </div> <!-- #document -->
+    
+    
+    <div id="footer" class="grid grid-20">
+        <small>版权所有: 客齐集网络信息技术服务（上海）有限公司</small>
+    </div>
+</div> <!-- .container -->
+
+<script type="text/javascript" src="./javascripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="./javascripts/plugins.js"></script>
+<script type="text/javascript" src="instant.js"></script>
+</body>
+</html>
