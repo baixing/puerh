@@ -347,10 +347,7 @@ body{ min-width:1000px}
  * author: sofish@163.com
  */
 .diamond{
--ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,
-		M12=-0.7071067811865477, M21=0.7071067811865477,
-		M22=0.7071067811865475,
-		SizingMethod='auto expand')";
+-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.7071067811865477, M21=0.7071067811865477,M22=0.7071067811865475,SizingMethod='auto expand')";
 filter: progid:DXImageTransform.Microsoft.Matrix(
 	M11=0.7071067811865475,
 	M12=-0.7071067811865477,
@@ -679,7 +676,29 @@ _position:relative; /* fix 多一只猪的问题 */
 /* Flow
  * author: sofish@163.com
  */
+.flow{margin-left:15px;}
+.flow-item{display:inline-block;*display:inline;*zoom:1;float:left;padding:4px 0;text-align:center;width:321px;margin-right:20px;border:1px solid #cfcfcf;position:relative;margin-left:-15px;background:#f7f7f7;}
+.flow-item-done{border-color:#d9eb9f;background:#fbffed;}
+.flow-item-current{background:#6ab302;border-color:#589803;color:#fff;font-weight:700;}
+.flow-item-last{margin-right:0;}
+.flow .diamond{height:20px;width:20px;background:#fff;position:absolute;left:-10px;left:-15px\9;border-right:1px solid #cfcfcf;border-top:1px solid #cfcfcf;top:4px;top:0\9;z-index:2;}
+.flow .diamond-next{left:auto;border:none;background:#f7f7f7;right:-12px;right:-8px\9;*right:-16px;*z-index:3;border-top:1px solid #cfcfcf;border-right:1px solid #cfcfcf;}
+.flow-item-first .diamond{display:none;}
+.flow-item-first .diamond-next{display:block;}
+.flow-item-done .diamond{border-color:#d9eb9f;background:#fff;}
+.flow-item-done .diamond-next{display:block;background:#fbffed;border-color:#d9eb9f;}
+.flow-item-current .diamond{border-color:#589803;}
+.flow-item-current .diamond-next{background:#6ab302;}
+.flow-item-last .diamond-next{display:none;}
+.flow-item-1{z-index:5;}
+.flow-item-2{z-index:4;}
+.flow-item-3{z-index:3;}
+.flow-item-4{z-index:2;}
+.flow-item-5{z-index:1;}
 
+.flow-5{height:150px;}
+.flow-5 .flow-item, .flow-item-menu{width:150px;}
+.flow-item-menu{position:absolute;top:35px;color:#333;line-height:36px;left:0\9;}
 
 /* TODO: Typeahead
  * author: sofish@163.com
