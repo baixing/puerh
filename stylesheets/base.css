@@ -575,7 +575,7 @@ _position:relative; /* fix 多一只猪的问题 */
 .list-item-block cite{color:#f50;}
 .list-item-block img{width:62px;height:64px;}
 .list-item-content{width:490px;margin-right:10px;float:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.list-item-title{background:none!important;}
+.list-item-title, .list-item-title:hover{background:none!important;}
 .list-item-title .list-item-block,
 .list-item-title .list-item-content,
 .list-thumb .list-item-title .list-item-block{font-weight:700;line-height:1.5;height:21px;}{line-height:1.5;height:21px;}
