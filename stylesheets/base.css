@@ -689,7 +689,7 @@ _position:relative; /* fix 多一只猪的问题 */
 .flow-item-last{margin-right:0;}
 .flow .diamond{height:20px;width:20px;background:#fff;position:absolute;left:-10px;left:-15px\9;border-right:1px solid #cfcfcf;border-top:1px solid #cfcfcf;top:4px;top:0\9;z-index:2;}
 .flow .diamond-next{left:auto;border:none;background:#f7f7f7;right:-12px;right:-8px\9;*right:-16px;*z-index:3;border-top:1px solid #cfcfcf;border-right:1px solid #cfcfcf;}
-:root .flow .diamond{top:4px\9;}
+:root .flow .diamond{top:4px\9;left:-10px\9;}
 :root .flow .diamond-next{right:-12px\9;}
 
 .flow-item-first .diamond{display:none;}
