@@ -646,6 +646,7 @@ _position:relative; /* fix 多一只猪的问题 */
 .dropdown-unibody cite{color:#fff;background:#080;display:inline-block;height:12px;width:12px;margin:0 3px;text-align:center;line-height:12px;border-radius:6px;}
 .dropdown-unibody .dropdown-menu{width:100px;margin-top:-4px;margin-top:-2px\9;*margin-top:-4px;*top:25px;color:#333;z-index:2;}
 .dropdown-unibody .dropdown-menu-item{padding:2px 5px 2px 0;width:auto;}
+:root .dropdown-unibody .dropdown-menu{margin-top:-3px\9;}
 .dropdown-unibody .dropdown-menu-item:hover, .dropdown-unibody .dropdown-menu-item-hover{background:#fff;color:#f30;text-decoration:underline;}
 .dropdown-unibody .dropdown-trigger, .dropdown-unibody a{color:#333;}
 .dropdown-unibody .dropdown-trigger{display:inline-block;position:relative;z-index:3;padding:1px 5px;background:#eee;color:#333;margin:0 5px;border-radius:2px;line-height:16px;_display:inline;_zoom:1;_height:16px;_padding-top:3px;_top:2px;}
