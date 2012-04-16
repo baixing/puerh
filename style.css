@@ -21,6 +21,7 @@ code{background:#f7f7f7;border:1px solid #ddd;padding:0 5px;border-radius:3px;}
 #plugin-table{width:980px;margin:0 10px 20px;color:#888;}
 #plugin-table td, #plugin-table th{padding-left:0;padding-right:20px;}
 #plugin-table th{width:25%;background:none;vertical-align:text-bottom;}
+.index #plugin-table{margin:0;}
 
 #logo{font:36px/1 Impact;}
 #tagline{color:#999;}
