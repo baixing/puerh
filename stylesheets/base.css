@@ -355,9 +355,9 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 	M22=0.7071067811865475,
 	SizingMethod='auto expand'
 );
--moz-transform: rotate(45deg);-o-transform: rotate(45deg);-webkit-transform: rotate(45deg);transform: rotate(45deg);
+-moz-transform: rotate(45deg);-o-transform: rotate(45deg);-webkit-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg);
 }
-:root .diamond{filter:none\9;}
+:root .diamond{filter:none;}
 
 /* Icons
  * author: sofish@163.com
