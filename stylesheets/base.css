@@ -490,7 +490,7 @@ a.tag:hover{background:#888;text-decoration:none;}
  * require: button
  */
 .form{
-    font-family:serif\0; /* solution:win7 ie8 line-height bug */
+    font-family:Times New Roman, serif\0; /* solution:win7 ie8 line-height bug */
 }
 .form-input, .form-search .form-select{display:inline-block;*display:inline;*zoom:1;border:1px solid #cfcfcf;border-bottom-color:#e2e2e2;font-size:12px;}
 .form-input{width:240px;height:28px;padding:0 10px;line-height:28px;}
