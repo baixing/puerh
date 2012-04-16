@@ -668,6 +668,11 @@ _position:relative; /* fix 多一只猪的问题 */
 .tips-bottom .tips-angle{top:auto;bottom:2px;*bottom:0;margin-bottom:-7px;margin-bottom:-5px\0/;border:none;border-right:1px solid #ffba00;border-bottom:1px solid #ffba00;}
 .tips-left .tips-angle{left:2px;*left:0;right:auto;top:13px;margin-left:-7px;margin-left:-9px\0/;border-top:none;border-bottom:1px solid #ffba00;}
 .tips .close, .alert .close{position:absolute;right:5px;top:5px;}
+:root .tips-angle{margin-top:-7px;}
+:root .tips-right .tips-angle{margin-right:-7px;}
+:root .tips-bottom .tips-angle{margin-bottom:-7px;}
+:root .tips-left .tips-angle{margin-left:-7px;}
+
 
 .alert{padding:15px;position:relative;}
 .alert-title{margin-top:0;}
@@ -684,6 +689,9 @@ _position:relative; /* fix 多一只猪的问题 */
 .flow-item-last{margin-right:0;}
 .flow .diamond{height:20px;width:20px;background:#fff;position:absolute;left:-10px;left:-15px\9;border-right:1px solid #cfcfcf;border-top:1px solid #cfcfcf;top:4px;top:0\9;z-index:2;}
 .flow .diamond-next{left:auto;border:none;background:#f7f7f7;right:-12px;right:-8px\9;*right:-16px;*z-index:3;border-top:1px solid #cfcfcf;border-right:1px solid #cfcfcf;}
+:root .flow .diamond{top:4px\9;}
+:root .flow .diamond-next{right:-12px\9;}
+
 .flow-item-first .diamond{display:none;}
 .flow-item-first .diamond-next{display:block;}
 .flow-item-done .diamond{border-color:#d9eb9f;background:#fff;}
