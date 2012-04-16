@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="index">
 <head>
 	<meta charset="utf-8" />
 	<title>Puerh - 百姓网 UI 库</title>
@@ -34,41 +34,66 @@
     </div> <!-- #header -->
     
     <div id="main" class="grid grid-20">
-        <p>百姓网是国内最大的分类信息网站，在中国百姓网经过6年的发展，我们已经发展为一个年收入上千万，月浏览量近20亿、每月新增信息量超过1000万条的超大型网站。在2008年我们被著名的红鲱鱼杂志评为亚洲100强；在2009年百姓网被国内顶级商学院长江商学院作为经济学经典案例进入商学院教材；在2010年我们作为中国唯一的互联网企业参加了美国的财富论坛。</p>
+        <p>Puerh，百姓网 UI 库。旨在建立稳定、简洁、兼容的前端框架。已经通过 Mac/Windows 下的 IE6+ / Firefox / Google Chrome 浏览器测试。Puerh 的目标是构建一套适合百姓网的前端解决方案。整套方案整合 TYPO.CSS 排版，基于与视觉稿一致的 980px Grid System 布局，包含各种 UI 组件，使用 Twitter Bootstrap 的 JavaScript 组件。</p>
     </div> <!-- grid-20 -->
-    <div class="grid grid-20 typo">
-        <div class="grid grid-10 first">
-            <h3>我们的企业文化</h3>
-            <p>百姓网的企业文化可以总结为以下3个词：</p>
-            <ul>
-                <li>永不停步，是我们的学习发展态度。</li>
-                <li>较真，是我们的做事态度和方式。</li>
-                <li>有话直说，是我们的沟通方式。</li>
-            </ul>
-            <p>想了解更多关于百姓网的事情，请访问我们的官方博客(<a href="http://blog.baixing.com">http://blog.baixing.com</a>), 这里记录着我们的点点滴滴。</p>
-        </div> <!-- .grid-10 first typo -->
-        <div class="grid grid-10 last">
-            <blockquote>
-                <h3>如果你</h3>
-                热爱互联网，喜欢研究和探索新事物 <br />
-                享受在高压下不断成长的过程 <br />
-                喜欢和优秀的人一起工作 <br />
-                ……
-                <p><strong>那么，欢迎你加入我们！</strong></p>
-            </blockquote>
-        </div> <!-- .grid-10 last -->
+    <div class="grid grid-20">
+	    <h3 class="typo-h3">一、CSS 组件</h3>
+	    <table class="table" id="plugin-table">
+	        <tr>
+	            <th><a href="/css.html/#Search">Search(搜索框)</a></th>
+	            <th><a href="/css.html/#Pagenav">PageNav（分页）</a></th>
+	            <th><a href="/css.html/#Bread">Breadcrumb（面包屑导航）</a></th>
+	            <th><a href="/css.html/#gList">Group List（首页大列表）</a></th>
+	        </tr>
+	        <tr>
+	            <th><a href="/css.html/#imgList">Image List（图片列表）</a></th>
+	            <th><a href="/css.html/#tab">Tab</a></th>
+	            <th><a href="/css.html/#topbar">Topbar（顶部导航）</a></th>
+	            <th><a href="/css.html/#filter">Filter（类目过滤）</a></th>
+	        </tr>
+	        <tr>
+	            <th><a href="/css.html/#icons">Icons（小图标）</a></th>
+	            <th><a href="/css.html/#tag">Tag（小标签）</a></th>
+	            <th><a href="/css.html/#button">Button（按钮）</a></th>
+	            <th><a href="/css.html/#modal">Modal（弹出框）</a></th>
+	        </tr>
+	        <tr>
+	        	<th><a href="/css.html/#dropdown">Dropdown（下拉菜单）</a></th>
+	            <th><a href="/css.html/#tips">Tips（可操作浮层）</a></th>
+	            <th><a href="/css.html/#alert">Alert Message（可操作消息）</a></th>
+	            <th><a href="/css.html/#flow">Flow（流程）</a></th>
+	        </tr>
+	        <tr>
+	            <th><a href="/css.html/#Listing">Listing（列表）</a></th>
+	            <th><a href="/css.html/#images">Images(图片展栏)</a></th>
+	            <th><a href="/css.html/#flow">Flow（流程）</a></th>
+	            <th><a href="/css.html/#Listing">-</a></th>
+	        </tr>
+	    </table>
     </div>
-    <div class="grid grid-20 typo">
-        <div class="grid grid-10 first">
-            <p><img src="http://static.baixing.net/images/logo_w_bg5.gif" alt="百姓网" /></p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div> <!-- .grid-8 first -->
-        <div class="grid grid-5">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div> <!-- .grid-6 -->
-        <div class="grid grid-5 last">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div> <!-- .grid-6 .last -->
+    <div class="grid grid-20">
+        <h3 class="typo-h3">二、JavaScript 组件</h3>
+	    <table class="table" id="plugin-table">
+	        <tr>
+	            <th><a href="/javascript.html/#Modals">Modals(弹出层)</a></th>
+	            <th><a href="/javascript.html/#Dropdowns">Dropdowns（下拉菜单）</a></th>
+	            <th><a href="/javascript.html/#Tabs">Tabs（标签切换）</a></th>
+	            <th><a href="/javascript.html/#Tips">Tips（浮层提示条）</a></th>
+	        </tr>
+	        <tr>
+	            <th><a href="/javascript.html/#Alert">Alert（可关闭消息）</a></th>
+	            <th><a href="/javascript.html/#Typeahead">Typeahead（自动完成）</a></th>
+	            <th><a href="/javascript.html/#Scrollspy">Scrollspy（滚动生成）</a></th>
+	            <th>Lightbox（图片浏览浮层）</th>
+	        </tr>
+	        <tr>
+	            <th>Validator（表单验证）</th>
+	            <th>Linkage（联动操作）</th>
+	            <th></th>
+	            <th></th>
+	        </tr>
+
+	    </table>
     </div> <!-- .grid-20 -->
     <div id="footer" class="grid grid-20">
         <small>版权所有: 客齐集网络信息技术服务（上海）有限公司</small>
