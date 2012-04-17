@@ -716,7 +716,7 @@ _position:relative; /* fix 多一只猪的问题 */
 /* Logo
  * author: sofish@163.com
  */
-.logo{width:260px;height:54px;vertical-align:text-bottom;font:12px/1.5 Arial;}
+.logo{width:260px;height:54px;vertical-align:text-bottom;font-size:12px;}
 .logo h1{float:left;width:130px;height:54px;}
 .logo-side{vertical-align:bottom;padding-top:18px;}
 .logo-side-current{font-size:14px;color:#333;}
