@@ -633,7 +633,7 @@ _position:relative; /* fix 多一只猪的问题 */
 .modal-title{background:#eee;height:30px;line-height:30px;padding:0 20px;}
 .modal-content{padding:15px 20px;}
 .modal .close{position:absolute;top:6px;right:20px;}
-.modal-backdrop{position:absolute;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,0.6);z-index:10;}
+.modal-backdrop{position:absolute;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,0.6);z-index:998;}
 
 /* Dropdown 下拉菜单
  * author: sofish@163.com
