@@ -589,6 +589,9 @@ _position:relative; /* fix 多一只猪的问题 */
 .list-thumb .list-item-title .list-item-content{padding:0;}
 .list-thumb .close{line-height:64px;*line-height:1;}
 
+.list-5 .list-item-content{width:245px;}
+.list-5 .list-item-content-small a{font-size:12px;color:#888;}
+
 /* Tab
  * author: sofish@163.com
  */
