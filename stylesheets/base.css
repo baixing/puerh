@@ -431,7 +431,7 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 /* button 按钮
  * author: sofish@163.com
  */
-.button{display:inline-block;border:1px solid #d1d1d1;height:28px;line-height:28px;padding:0 10px;font-size:12px;color:#333;cursor:pointer;vertical-align:text-top;_overflow:visible;_overflow-y:hidden;/* fixed ie6 input bug */}
+.button{display:inline-block;border:1px solid #d1d1d1;height:28px;line-height:28px;padding:0 10px;font-size:12px;color:#333;cursor:pointer;vertical-align:baseline;_overflow:visible;_overflow-y:hidden;/* fixed ie6 input bug */}
 .button:hover, .button-hover{background:#f7f7f7;text-decoration:none;}
 .button-grey, .button-green{font:14px/2 sans-serif;}
 .button-medium{height:24px;line-height:24px;font-size:12px;}
@@ -629,7 +629,7 @@ _position:relative; /* fix 多一只猪的问题 */
 /* Dropdown 下拉菜单
  * author: sofish@163.com
  */
-.modal{position:absolute;z-index:11;border:4px solid #333;background:#fff;width:560px;}
+.modal{position:absolute;z-index:999;border:4px solid #333;background:#fff;width:560px;}
 .modal-title{background:#eee;height:30px;line-height:30px;padding:0 20px;}
 .modal-content{padding:15px 20px;}
 .modal .close{position:absolute;top:6px;right:20px;}
