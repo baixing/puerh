@@ -713,6 +713,15 @@ _position:relative; /* fix 多一只猪的问题 */
 .flow-5 .flow-item, .flow-item-menu{width:150px;}
 .flow-item-menu{position:absolute;top:35px;color:#333;line-height:36px;left:0\9;}
 
+/* Logo
+ * author: sofish@163.com
+ */
+.logo{width:260px;height:54px;vertical-align:text-bottom;font:12px/1.5 Arial;}
+.logo h1{float:left;width:130px;height:54px;}
+.logo-side{vertical-align:bottom;padding-top:18px;}
+.logo-side-current{font-size:14px;color:#333;}
+.logo-side-slogan{display:block;color:#888;}
+
 /* TODO: Typeahead
  * author: sofish@163.com
  */
