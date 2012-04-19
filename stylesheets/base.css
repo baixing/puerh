@@ -496,9 +496,10 @@ a.tag:hover{background:#888;text-decoration:none;}
 .form-input{height:28px;padding:0 10px;line-height:28px;}
 .form-input-small{height:22px;line-height:22px;}
 .form-search .form-select{width:50px;line-height:28px;height:28px;border-left:none;position:relative;top:1px;*top:-1px;left:-4px;padding:0 10px;
-left:-5px\0;/* solution:win7 ie8 line-height bug */
+left:-5px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
 }
-.form-search .form-input{width:210px;}
+.form-search{position:relative;}
+.form-search .form-input{width:200px;}
 .form-submit{
 	vertical-align:middle;
 }
@@ -643,13 +644,13 @@ _position:relative; /* fix 多一只猪的问题 */
  * author: sofish@163.com
  * TODO: 需要更通用，ie bug fix 的比较不好看。重构！
  */
-.dropdown{position:relative;z-index:12;}
+.dropdown{position:relative;z-index:12;+zoom:1;}
 .dropdown-menu{display:none;background:#fff;position:absolute;left:0;border:1px solid #cfcfcf;padding:5px;width:200px;z-index:12;}
 .dropdown-menu-item{display:inline-block;width:80px;float:left;padding:3px 10px;line-height:1.5;/* prevent overwrite */}
 .dropdown-menu-item:hover, .dropdown-menu-item-hover{background:#EAFDBC;text-decoration:none;cursor:pointer;}
 .dropdown-open .dropdown-menu{display:block;}
 .dropdown-unibody cite{color:#fff;background:#080;display:inline-block;height:12px;width:12px;margin:0 3px;text-align:center;line-height:12px;border-radius:6px;}
-.dropdown-unibody .dropdown-menu{width:100px;margin-top:-4px;margin-top:-2px\9;*margin-top:-4px;*top:25px;color:#333;z-index:2;}
+.dropdown-unibody .dropdown-menu{width:100px;margin-top:-4px;margin-top:-3px\9;*margin-top:-4px;*top:25px;color:#333;z-index:2;}
 .dropdown-unibody .dropdown-menu-item{padding:2px 5px 2px 0;width:auto;}
 :root .dropdown-unibody .dropdown-menu{margin-top:-3px\9;}
 .dropdown-unibody .dropdown-menu-item:hover, .dropdown-unibody .dropdown-menu-item-hover{background:#fff;color:#f30;text-decoration:underline;}
@@ -738,12 +739,13 @@ _position:relative; /* fix 多一只猪的问题 */
  */
 .vote{width:350px;margin:0 auto;text-align:center;background:#eee;padding:15px 0;color:#666;}
 .vote-title{font:500 12px/1.5 serif;}
-.vote-link{margin:8px 0 3px;}
+.vote-link{margin:8px 0 0px;display:none;}
 .vote-link a{background:#ddd;padding:3px 8px;}
 .vote-link a:hover{background:#fff;color:#08c;text-decoration:none;}
-.vote-tips span{display:inline-block;width:86px;font-size:12px;}
-.vote-tips-1{text-align:left;}
-.vote-tips-3{text-align:right;}
+.vote-link-tips{padding-top:5px;}
+.vote-link-tips span{display:inline-block;width:86px;font-size:12px;}
+.vote-link-tips-1{text-align:left;}
+.vote-link-tips-3{text-align:right;}
 
 
 /* TODO: Typeahead
