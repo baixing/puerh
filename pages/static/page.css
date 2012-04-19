@@ -1,4 +1,4 @@
-#topbar{background:#f7f7f7;margin-bottom:10px;}
+#topbar{background:#f7f7f7;margin-bottom:10px;_zoom:1;line-height:1;}
 
 #header{height:54px;margin-bottom:20px;}
 #header .form-search{padding-top:24px;}
@@ -17,3 +17,7 @@
 #footlinks a{color:#888;padding-right:5px;}
 #footlinks th{font-weight:700;width:80px;vertical-align:text-top;}
 #footlinks th, #footlinks th a{color:#666;}
+
+#footer{text-align:center;margin-bottom:20px;font-size:12px;color:#888;}
+#footer .copyright{margin:10px;}
+#footer small{padding-right:20px;}
