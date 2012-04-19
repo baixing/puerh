@@ -21,13 +21,13 @@
             <h1 id="logo">Puerh</h1>
             <strong id="tagline">百姓网 UI 库</strong>
         </div>
-        <div class="grid grid-11 nav">
+        <div class="grid grid-11 navi">
             <a href="./index.html" id="index">HOME</a>
             <a href="./css.html" id="css">CSS</a>
             <a href="./javascript.html" id="javascript">JavaScript</a>
             <a href="./getting-start.html" id="getting-start">Getting Start</a>
         </div>
-        <div class="grid grid-5 last nav">Feedback：
+        <div class="grid grid-5 last navi">Feedback：
             <a href="http://arch.baixing.com/Puerh/faq.html">FAQ</a>
             <a href="mailto:sundengjia@baixing.com">@登甲</a>
             <a href="mailto:linjianfeng@baixing.com">@小鱼</a>
@@ -52,7 +52,7 @@
 	    	</li>
 	    	<li><b>模块</b> = 组件名 + 模块名
 	    		<p>假设我们需要写一个 Tab 组件，Tab 是一个整体，包含在 <code>.tab</code> 这个 class 中，有触发点 <code>.tab-trigger</code> 和内容区 <code>.tab-content</code>。触发点中有不同的点，内容区中有不同的内容模块。使用嵌套式的命名方法，有这样的结构：</p>
-	    		<pre>
+	    		<pre class="prettyprint">
 &lt;div class="<b>tab</b>"&gt;							--- 组件名
 	&lt;ul class="<b>tab-trigger</b>"&gt;					--- 模块名
 		&lt;li class="tab-trigger-item"&gt;item 1&lt;/li&gt;		
@@ -68,7 +68,7 @@
 	    	</li>
 	    	<li><b>扩展</b> = 组件名 + 扩展名
 	    		<p>假设我们有一个竖排的 Tab 组件，除了把 Tab 的触发点从上面移到左边，外观上并没有其他变化。这时复用模块将可以减少重复的代码并且只作局部调整省去重复劳动。可以给组件增加一个扩展名。如：</p>
-	    		<pre>
+	    		<pre class="prettyprint">
 &lt;div class="tab <b>tab-vertical</b>"&gt;				--- 组件名 + 扩展名
 	&lt;ul class="tab-trigger"&gt;					
 		...
@@ -80,7 +80,7 @@
 	    	</li>
 	    	<li><b>状态</b> = 模块名 + 状态名
 	    		<p>仍以 Tab 为例。触发点是有状态的。激活状态的标签通常和其他标签显示不同的样式，非激活状态的内容更是明显，一般都是隐藏的。因此我们需要给模块一个状态。会有这样的代码：</p>
-	    		<pre>
+	    		<pre class="prettyprint">
 &lt;div class="tab"&gt;							
 	&lt;ul class="tab-trigger"&gt;
 		&lt;li class="tab-trigger-item <b>tab-trigger-item-active</b>"&gt;item 1&lt;/li&gt;	--- 状态名
@@ -108,7 +108,7 @@
 		<h3>2、注释规范</h3>
 		<p>注释旨在指明团队协作中的创作、个性者和代码作用。在 CSS 中，无论块组还是单行注释，均使用 <code>/* 注释 */</code>。由于中文注释可能导致代码失效，但中文作为团队最有效的沟通文字，最好的使用方法是，保证在 <code>/*</code> 和 <code>*/</code> 之间的中文前后都有空格，以保证 CSS 不会失效。</p>
 		<p>在组件中，主要使用的两种注释如下：</p>
-		<pre>
+		<pre class="prettyprint">
 /* form 表单								--- 简单描述
  * author: sofish@163.com						--- 作者
  * require: button							--- 依赖（可选）
@@ -120,7 +120,7 @@
 		
 		<h3>3、栅格系统</h3>
 		<p>Puerh 使用 980px 宽、20 栏、10px 间隙的栅格系统。内容区域为 980px，撑开宽度为 1000px。所有栅格必须包含到 <code>.container</code> 内。使用 <code>.grid</code> 模块，扩展名 <code>.grid-N</code> N 代表 1~20 中的任意整数。</p>具体的使用如下：
-		<pre>
+		<pre class="prettyprint">
 // 包含于 <b>.container</b> 中
 &lt;div class="container"&gt;
 	&lt;div class="grid grid-20"&gt;...&lt;/div&gt;
@@ -137,7 +137,7 @@
 		
 		<h3>4、排版类：TYPO.CSS</h3>
 		<p>在 Puerh 中使用开源的 TYPO.CSS 作为排版样式。这个库不同于一般的 CSS Reset，在提供 Reset 的同时，提供适合中文并且最大化兼容种系统的排版方法。在需要排版的地方使用 <code>.typo</code> 作为父容器的类，或在单独需要使用的时候，使用 <code>.typo-TAGNAME</code> 的方式单独使用。具体使用方式参考：</p>
-		<pre>
+		<pre class="prettyprint">
 // 在 <b>.typo</b> 内使用标签，将对应相应语义显示
 &lt;div class="typo"&gt;
 	&lt;h3&gt;Title&lt;/h3&gt;
@@ -159,7 +159,7 @@
 		<h3>5、小工具</h3>
 		<ul>
 			<li><b>CLEARFIX</b>: 清理浮动，在浮动元素的父节点添加
-				<pre>
+				<pre class="prettyprint">
 &lt;ul class="<b>clearfix</b>"&gt;
 	&lt;li class="float-item"&gt;…&lt;/li&gt;
 	&lt;li class="float-item"&gt;…&lt;/li&gt;
@@ -167,21 +167,21 @@
 &lt;/ul&gt;				</pre>
 			</li>
 			<li><b>DIAMOND</b>: 创建一个菱形
-				<pre>
+				<pre class="prettyprint">
 // 效果请看 Tips 和 Flow 组件的实现
 &lt;div class="<b>diamond</b>"&gt;
 	…
 &lt;/div&gt;				</pre>
 			</li>
 			<li><b>CLOSE</b>: 关闭按钮
-				<pre>
+				<pre class="prettyprint">
 &lt;div class="<b>close</b>" data-dismiss="alert"&gt;&times;&lt;/div&gt;				</pre>
 			</li>
 		</ul>
 		
 		<h3>6、兼容：CSS Hack</h3>
 		<p>兼容是 CSS 中最大的难点。各种 hack 可以帮助你快速解决问题，但不一定是解决问题的真正方法。所以，hack 应该尽量避免使用。很多时候都是写法决定 bug，在有时间允许的情况下，请多进行测试以找到最佳方式。</p>
-		<pre>
+		<pre class="prettyprint">
 .all-IE{property:value\9;}
 :root .IE-9{property:value\0/;}
 .gte-IE-8{property:value\0;}

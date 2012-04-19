@@ -21,13 +21,13 @@
             <h1 id="logo">Puerh</h1>
             <strong id="tagline">百姓网 UI 库</strong>
         </div>
-        <div class="grid grid-11 nav">
+        <div class="grid grid-11 navi">
             <a href="./index.html" id="index">HOME</a>
             <a href="./css.html" id="css">CSS</a>
             <a href="./javascript.html" id="javascript">JavaScript</a>
             <a href="./getting-start.html" id="getting-start">Getting Start</a>
         </div>
-        <div class="grid grid-5 last nav">Feedback：
+        <div class="grid grid-5 last navi">Feedback：
             <a href="http://arch.baixing.com/Puerh/faq.html">FAQ</a>
             <a href="mailto:sundengjia@baixing.com">@登甲</a>
             <a href="mailto:linjianfeng@baixing.com">@小鱼</a>
@@ -65,17 +65,10 @@
             <h3 id="Modals" class="typo-h3"># Modals(弹出层)</h3>
             <div class="document-cell-box typo">
             <h4>一、如何使用：</h4>
-<pre>
+<pre class="prettyprint">
 $('#myModal').modal(Options);
 </pre>
 			<p><strong>演示：</strong><button data-toggle="modal" data-target="#myModal">demo</button></p>
-			
-			<!-- demo start -->
-			<div class="fade hide" id="myModal">
-				<a data-dismiss="modal" class="close">×</a>
-				hello world
-            </div>
-            <!-- demo end -->
             
             <h4>二、Options 对象</h4>
             
@@ -139,7 +132,7 @@ $('#myModal').modal(Options);
           
           <h4>三、HTML 标记：</h4>
           <p>在触发弹出框的元素添加 <code>data-toggle="modal"</code>，添加 <code>data-target="#弹出框ID"</code> 或 <code>href="弹出框ID"</code> 来指定弹出框。如：</p>
-<pre>
+<pre class="prettyprint">
 &lt;button data-toggle="modal" data-target="#myModal"&gt;demo&lt;/button&gt;
 
 // 目标
@@ -179,7 +172,7 @@ $('#myModal').modal(Options);
 	            </tbody>
 	        </table>
 	        
-<pre>
+<pre class="prettyprint">
 // 事件示例代码
 $('#myModal').on('hidden', function () {
 	// do something…
@@ -194,26 +187,35 @@ $('#myModal').on('hidden', function () {
             <div class="document-cell-box typo">
             <h4>一、如何使用：</h4>
             <p>有两种方法，一种是使用 javascript 来设置：</p>
-<pre>
+<pre class="prettyprint">
 $('.dropdown-toggle').dropdown()
 </pre>
 			<p>另一种方法是，使用 html 标记来直接设置：</p>
 	
-			<ul>
-				<li id="#myDropdown"><strong>演示：</strong><button data-toggle="dropdown" data-toggle="#myDropdown">dropdown</button>
-					<!-- demo start -->
-					<ul class="dropdown-menu">
-						<li><a href="#">item 1</a></li>
-						<li><a href="#">item 2</a></li>
-						<li><a href="#">item 3</a></li>
-		            </ul>
-		            <!-- demo end -->
-	            </li>
-			</ul>
+			<div class="topbar clearfix">
+                <div class="topbar-left">
+                text place on the left side
+                </div> <!-- topbar-left -->
+                <div class="topbar-right">
+                    <a href="#">注册</a> | 
+                    <a href="#">登录</a> - 
+                    <a href="#">用户中心</a>
+                    <div class="dropdown dropdown-unibody" id="mydropdown2">
+					    <a href="#mydropdown2" hidefocus data-toggle="dropdown" class="dropdown-trigger dropdown-trigger-active">消息<cite>8</cite><i class="arrow arrow-down"></i></a>
+						<ul class="dropdown-menu clearfix">
+							<li class="dropdown-menu-item"><cite>5</cite>条留言信息</li>
+							<li class="dropdown-menu-item"><cite>3</cite>条出价信息</li>
+						</ul>
+					</div>
+                    <a href="#">付费推广</a> - 
+                    <a href="#">帮助</a> - 
+                    <a href="#">手机版</a>
+                </div> <!-- topbar-right -->
+            </div> <!-- .topbar --> 
           
             <h4>二、HTML 标记：</h4>
             <p>在触发下拉框需要添加 <code>data-target="#下拉框ID"</code> 或 <code>href="下拉框ID"</code> 来指定下拉框。如：</p>
-<pre>
+<pre class="prettyprint">
 &lt;ul&gt;
 	&lt;li id="#myDropdown"&gt;&lt;button data-toggle="dropdown" data-target="#myDropdown"&gt;dropdown&lt;/button&gt;
 		&lt;ul class="dropdown-menu"&gt;
@@ -232,44 +234,25 @@ $('.dropdown-toggle').dropdown()
             <h3 id="Tabs" class="typo-h3"># Tabs（标签切换）</h3>
             <div class="document-cell-box typo">
             <h4>一、如何使用：</h4>
-<pre>
+<pre class="prettyprint">
 // javascript 方式触发
 $('#myTab').tab('show')
 </pre>
 			<p><strong>演示：</strong></p>
 			
 			<!-- demo start -->
-			<ul class="tab-title clearfix" id="tab">
-	            <li class="active"><a data-toggle="tab" href="#home">Home</a></li>
-	            <li><a data-toggle="tab" href="#profile">Profile</a></li>
-	            <li class="dropdown">
-	              <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown</a>
-	              <ul class="dropdown-menu">
-	                <li><a data-toggle="tab" href="#dropdown1">@fat</a></li>
-	                <li><a data-toggle="tab" href="#dropdown2">@mdo</a></li>
-	              </ul>
-	            </li>
-            </ul>
-            
-			<div class="tab-content" id="myTabContent">
-				<div id="home" class="tab-content-pane fade in active">
-				  <p>Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
-				</div>
-				<div id="profile" class="tab-content-pane fade">
-				  <p>Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</p>
-				</div>
-				<div id="dropdown1" class="tab-content-pane fade">
-				  <p>Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</p>
-				</div>
-				<div id="dropdown2" class="tab-content-pane fade">
-				  <p>Trust fund seitan letterpress, keytar raw denim keffiyeh etsy art party before they sold out master cleanse gluten-free squid scenester freegan cosby sweater. Fanny pack portland seitan DIY, art party locavore wolf cliche high life echo park Austin. Cred vinyl keffiyeh DIY salvia PBR, banh mi before they sold out farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral, mustache readymade thundercats keffiyeh craft beer marfa ethical. Wolf salvia freegan, sartorial keffiyeh echo park vegan.</p>
-				</div>
-			</div>
+			<div class="tab">
+                    <ul class="tab-title clearfix">
+                        <li class="tab-title-item"><a href="#" data-toggle="tab">全部</a></li>
+                        <li class="tab-title-item active"><a href="＃" data-toggle="tab">个人</a></li>
+                        <li class="tab-title-item tab-title-item-last"><a href="#" data-toggle="tab">商家</a></li>
+                    </ul>
+                </div> <!-- .tab -->
             <!-- demo end -->
             
           <h4>二、HTML 标记：</h4>
           <p>在触发点添加 <code>data-toggle="tab"</code> 自动触发 Tab，添加 <code>data-target="#对应Tab内容的ID"</code> 或者 <code>href="#对应Tab内容的ID"</code> 来指定对应的 Tab 内容显示。</p>
-<pre>
+<pre class="prettyprint">
 &lt;ul class="tab-title"&gt;
 	&lt;li class="active"&gt;&lt;a href="#home"&gt;Home&lt;/a&gt;&lt;/li&gt;
 	&lt;li&gt;&lt;a href="#profile"&gt;Profile&lt;/a&gt;&lt;/li&gt;
@@ -307,7 +290,7 @@ $('#myTab').tab('show')
 				</tbody>
 			</table>
 	        
-<pre>
+<pre class="prettyprint">
 // 事件示例代码
 $('a[data-toggle="tab"]').on('shown', function (e) {
     e.target // 被激活的 tab
@@ -322,7 +305,7 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
             <h3 id="Tips" class="typo-h3"># Tips（浮层提示条）</h3>
             <div class="document-cell-box typo">
             <h4>一、如何使用：</h4>
-<pre>
+<pre class="prettyprint">
 // javasript 手动触发
 $('#tips').popover(options)
 </pre>
@@ -417,7 +400,7 @@ $('#tips').popover(options)
           </table>
           
           <h4>三、HTML 标记：</h4>
-<pre>
+<pre class="prettyprint">
 &lt;button id="tips" data-content="Tips 的内容" title="标题"&gt;demo&lt;/button&gt;
 </pre>		
             </div>
@@ -427,7 +410,7 @@ $('#tips').popover(options)
             <h3 class="typo-h3" id="Alert"># Alert（可关闭消息）</h3>
             <div class="document-cell-box typo">
             <h4>一、如何使用：</h4>
-<pre>
+<pre class="prettyprint">
 // 如果不使用选择器，则直接关掉 <code>.close</code> 用 <code>class="alert"</code> 的标签
 $(".alert").alert(Options)
 </pre>
@@ -440,12 +423,12 @@ $(".alert").alert(Options)
             
             <p>Modal 只有唯一的方法：<code>.modal(Options)</code>。传入的 Options 是字符串时，关闭这个 Alert Message。代码如下：</p>
             
-<pre>$(".alert").alert('close');
+<pre class="prettyprint">$(".alert").alert('close');
 </pre>
           
           <h4>三、HTML 标记：</h4>
           <p>添加关闭按钮：</p>
-<pre>&lt;a class="close" data-dismiss="alert" href="#"&gt;&times;&lt;/a&gt;
+<pre class="prettyprint">&lt;a class="close" data-dismiss="alert" href="#"&gt;&times;&lt;/a&gt;
 
 // 目标：使用 javascript 指定目标，或者直接作为 <code>.close</code> 的父元素，添加 <code>class="alert"</code>
 &lt;p class="alert fade in"&gt;
@@ -476,7 +459,7 @@ $(".alert").alert(Options)
 	            </tbody>
 	        </table>
 	        
-<pre>// 事件示例代码
+<pre class="prettyprint">// 事件示例代码
 $('#my-alert').bind('closed', function () {
     // do something…
 })
@@ -489,7 +472,7 @@ $('#my-alert').bind('closed', function () {
             <h3 id="Typeahead" class="typo-h3"># Typeahead（自动完成）</h3>
             <div class="document-cell-box typo">
             <h4>一、如何使用：</h4>
-<pre>$('.typeahead').typeahead();
+<pre class="prettyprint">$('.typeahead').typeahead();
 </pre>
 			<p><strong>演示：</strong> <input data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'></p>
             <!-- demo end -->
@@ -543,7 +526,7 @@ $('#my-alert').bind('closed', function () {
           
           <h4>三、HTML 标记：</h4>
           <p>添加 <code>data-provide="typeahead"</code> 来获得自动完成。可以使用 <code>data-source="数组"</code> 来提供自动完成的项。也可以在 Options 中提供。</p>
-<pre>
+<pre class="prettyprint">
 &lt;input type="text" data-provide="typeahead" /&gt;
 </pre>		
             </div>
@@ -555,6 +538,14 @@ $('#my-alert').bind('closed', function () {
         <small>版权所有: 客齐集网络信息技术服务（上海）有限公司</small>
     </div>
 </div> <!-- .container -->
+
+<div class="modal fade hide" id="myModal">
+	<h4 class="modal-title">本操作需要您先注册百姓网</h4>
+	<a class="close" data-dismiss="modal" href="###">&times;</a>
+	<div class="modal-content">
+		Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+	</div>
+</div> <!-- .modal -->
 
 <script type="text/javascript" src="./javascripts/jquery-1.7.1.min.js"></script>
 <script type="text/javascript" src="./javascripts/plugins.js"></script>

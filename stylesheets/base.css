@@ -362,7 +362,7 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 /* Icons
  * author: sofish@163.com
  */
-.icon{background:url("../images/icons.png") no-repeat 0 0;display:inline-block;*display:inline;*zoom:1;overflow:hidden;font-size:0;*line-height:0;/* fix 1px font bug in ie */}
+.icon{background:url("../images/icons.png") no-repeat 0 0;display:inline-block;*display:inline;*zoom:1;overflow:hidden;vertical-align:text-bottom;font-size:0;*line-height:0;/* fix 1px font bug in ie */}
 
 .icon-bag, .icon-car, .icon-house, .icon-friend, .icon-love, .icon-book, .icon-pet, .icon-doc, .icon-umbrella,.icon-time,.icon-play, .icon-mobile, .icon-connect, .icon-star, .icon-comment, .icon-flag{width:18px;height:18px;}
 
@@ -451,13 +451,13 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#F0EFEB', endColorstr='#FAF9F5')
 			 chroma(color=black);
 }
-.button-green{
+.button-green, .nav{
 	color:#ffc;
 	border:1px solid #549812;
-	background: -webkit-gradient(linear, left top, left bottom, from(#59A905), to(#468A07));
-	background: -moz-linear-gradient(top, #59A905, #468A07);
-	background: -o-linear-gradient(top, #59A905, #468A07);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#59A905', endColorstr='#468A07')
+	background: -webkit-gradient(linear, left top, left bottom, from(#59A905), to(#4a8A07));
+	background: -moz-linear-gradient(top, #59A905, #4a8A07);
+	background: -o-linear-gradient(top, #59A905, #4a8A07);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#59A905', endColorstr='#4a8A07')
 			 chroma(color=black);
 }
 .button-green:hover, .button-green-hover{
@@ -493,11 +493,12 @@ a.tag:hover{background:#888;text-decoration:none;}
     font-family:serif\0/; /* solution:win7 ie8 line-height bug */
 }
 .form-input, .form-search .form-select{display:inline-block;*display:inline;*zoom:1;border:1px solid #cfcfcf;border-bottom-color:#e2e2e2;font-size:12px;}
-.form-input{width:240px;height:28px;padding:0 10px;line-height:28px;}
+.form-input{height:28px;padding:0 10px;line-height:28px;}
 .form-input-small{height:22px;line-height:22px;}
 .form-search .form-select{width:50px;line-height:28px;height:28px;border-left:none;position:relative;top:1px;*top:-1px;left:-4px;padding:0 10px;
 left:-5px\0;/* solution:win7 ie8 line-height bug */
 }
+.form-search .form-input{width:210px;}
 .form-submit{
 	vertical-align:middle;
 }
@@ -526,7 +527,7 @@ left:-5px\0;/* solution:win7 ie8 line-height bug */
 /* Group List 列表
  * author: sofish@163.com
  */
-#glist{margin-left:-20px;_margin-left:-40px;}
+#glist{margin-left:-20px;_margin-left:-40px;font-family:Arial, sans-serif;}
 .glist{margin-left:20px;width:180px;float:left;}
 .glist-title{background:#f8f8f8;padding:3px 5px;}
 .glist-title h3{display:inline-block;*display:inline;*zoom:1;line-height:1.5;}
@@ -608,10 +609,10 @@ _position:relative; /* fix 多一只猪的问题 */
 /* Topbar 顶部导航
  * author: sofish@163.com
  */
-.topbar{background:#f8f8f8;height:24px;line-height:24px;color:#ccc;font-size:12px;}
+.topbar{background:#f8f8f8;height:24px;line-height:24px;color:#ccc;font-size:12px;width:980px;margin:0 auto;}
 .topbar a{color:#333;}
 .topbar a:hover{color:red;}
-.topbar-left{float:left;}
+.topbar-left{float:left;color:#333;}
 .topbar-right{float:right;}
 .topbar .dropdown{display:inline!important;}
 
@@ -716,11 +717,34 @@ _position:relative; /* fix 多一只猪的问题 */
 /* Logo
  * author: sofish@163.com
  */
-.logo{width:260px;height:54px;vertical-align:text-bottom;font-size:12px;}
+.logo{height:54px;vertical-align:text-bottom;font:12px/1.5 Tahoma, "Microsoft Yahei", sans-serif;}
 .logo h1{float:left;width:130px;height:54px;}
-.logo-side{vertical-align:bottom;padding-top:18px;}
-.logo-side-current{font-size:14px;color:#333;}
+.logo-side{padding-top:18px;vertical-align:middle;}
+.logo-side a, .logo-side{color:#888;line-height:1.4;}
+.logo-side .logo-side-current{font-size:14px;color:#333;}
 .logo-side-slogan{display:block;color:#888;}
+
+/* Nav
+ * author: sofish@163.com
+ */
+.nav{border:1px solid #549712;border-bottom:3px solid #336609;padding-left:10px;}
+.nav-item{float:left;display:inline-block;float:left;height:35px;overflow:hidden;}
+.nav-item-link{display:inline-block;height:35px;line-height:35px;line-height:38px\9;padding:0 16px;color:#ffc;font-family:'Mircosoft Yahei', sans-serif;}
+:root .nav-item-link{line-height:35px\9/;}
+.nav-item-link:hover, .nav-item-current .nav-item-link{color:#fff;background:#4A7E09;border-left:1px solid #336609;border-right:1px solid #336609;padding:0 15px;text-decoration:none;}
+
+/* Nav
+ * author: sofish@163.com
+ */
+.vote{width:350px;margin:0 auto;text-align:center;background:#eee;padding:15px 0;color:#666;}
+.vote-title{font:500 12px/1.5 serif;}
+.vote-link{margin:8px 0 3px;}
+.vote-link a{background:#ddd;padding:3px 8px;}
+.vote-link a:hover{background:#fff;color:#08c;text-decoration:none;}
+.vote-tips span{display:inline-block;width:86px;font-size:12px;}
+.vote-tips-1{text-align:left;}
+.vote-tips-3{text-align:right;}
+
 
 /* TODO: Typeahead
  * author: sofish@163.com
