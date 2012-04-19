@@ -22,3 +22,13 @@
 #footer .copyright{margin:10px;}
 #footer small{padding-right:20px;}
 
+#breadcrumb{padding:15px 0 10px;border-bottom:1px solid #ddd;}
+
+#filter{margin-bottom:10px;padding-bottom:15px;border-bottom:1px solid #ddd;}
+#filter .filter{margin-bottom:5px;}
+#filter .form-input{width:230px;}
+#filter .form-submit{margin-right:20px;}
+
+#content{overflow:hidden;}
+
+#aside{text-align:right;}
