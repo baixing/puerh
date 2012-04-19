@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>一级类目 - 百姓网</title>
+	<link rel="stylesheet" href="../stylesheets/base.css" />
+	<link rel="stylesheet" href="./static/page.css" />
+	<!--[if lt IE 9]>
+	<script type="text/javascript">
+    // html5shiv MIT @rem remysharp.com/html5-enabling-script
+    // iepp v1.6.2 MIT @jon_neal iecss.com/print-protector
+    /*@cc_on(function(a,b){function r(a){var b=-1;while(++b<f)a.createElement(e[b])}if(!(!window.attachEvent||!b.createStyleSheet||!function(){var a=document.createElement("div");a.innerHTML="<elem></elem>";return a.childNodes.length!==1}())){a.iepp=a.iepp||{};var c=a.iepp,d=c.html5elements||"abbr|article|aside|audio|canvas|datalist|details|figcaption|figure|footer|header|hgroup|mark|meter|nav|output|progress|section|summary|time|video",e=d.split("|"),f=e.length,g=new RegExp("(^|\\s)("+d+")","gi"),h=new RegExp("<(/*)("+d+")","gi"),i=/^\s*[\{\}]\s*$/,j=new RegExp("(^|[^\\n]*?\\s)("+d+")([^\\n]*)({[\\n\\w\\W]*?})","gi"),k=b.createDocumentFragment(),l=b.documentElement,m=l.firstChild,n=b.createElement("body"),o=b.createElement("style"),p=/print|all/,q;c.getCSS=function(a,b){if(a+""===undefined)return"";var d=-1,e=a.length,f,g=[];while(++d<e){f=a[d];if(f.disabled)continue;b=f.media||b,p.test(b)&&g.push(c.getCSS(f.imports,b),f.cssText),b="all"}return g.join("")},c.parseCSS=function(a){var b=[],c;while((c=j.exec(a))!=null)b.push(((i.exec(c[1])?"\n":c[1])+c[2]+c[3]).replace(g,"$1.iepp_$2")+c[4]);return b.join("\n")},c.writeHTML=function(){var a=-1;q=q||b.body;while(++a<f){var c=b.getElementsByTagName(e[a]),d=c.length,g=-1;while(++g<d)c[g].className.indexOf("iepp_")<0&&(c[g].className+=" iepp_"+e[a])}k.appendChild(q),l.appendChild(n),n.className=q.className,n.id=q.id,n.innerHTML=q.innerHTML.replace(h,"<$1font")},c._beforePrint=function(){o.styleSheet.cssText=c.parseCSS(c.getCSS(b.styleSheets,"all")),c.writeHTML()},c.restoreHTML=function(){n.innerHTML="",l.removeChild(n),l.appendChild(q)},c._afterPrint=function(){c.restoreHTML(),o.styleSheet.cssText=""},r(b),r(k);if(c.disablePP)return;m.insertBefore(o,m.firstChild),o.media="print",o.className="iepp-printshim",a.attachEvent("onbeforeprint",c._beforePrint),a.attachEvent("onafterprint",c._afterPrint)}})(this,document)@*/
+	</script>
+	<![endif]-->
+</head>
+<body>
+
+<div id="topbar">
+	<div class="topbar clearfix">
+        <div class="topbar-left">
+        百姓网，找得到，卖得掉
+        </div> <!-- topbar-left -->
+        <div class="topbar-right">
+            <a href="#">注册</a> | 
+            <a href="#">登录</a> - 
+            <a href="#">用户中心</a>
+            <div class="dropdown dropdown-unibody" id="mydropdown2">
+			    <a href="#mydropdown2" hidefocus data-toggle="dropdown" class="dropdown-trigger dropdown-trigger-active">消息<cite>8</cite><i class="arrow arrow-down"></i></a>
+				<ul class="dropdown-menu clearfix">
+					<li class="dropdown-menu-item"><cite>5</cite>条留言信息</li>
+					<li class="dropdown-menu-item"><cite>3</cite>条出价信息</li>
+				</ul>
+			</div>
+            <a href="#">付费推广</a> - 
+            <a href="#">帮助</a> - 
+            <a href="#">手机版</a>
+        </div> <!-- topbar-right -->
+    </div> <!-- .topbar -->
+</div> <!-- #topbar -->
+
+<div class="container clearfix">
+	<div id="header" class="grid grid-20">
+		<div class="logo clearfix grid grid-6 first">
+			<h1><a href="http://baixing.com"><img src="http://static.baixing.net/images/logo_w_bg5.gif" alt="百姓网" /></a></h1>
+			<div class="logo-side">        				
+				<a class="logo-side-current" href="/" class="cityName">克拉玛依</a> <br />
+				[<a href="http://www.baixing.com/?changeLocation=yes&amp;sheng=%E6%89%80%E6%9C%89%E5%9F%8E%E5%B8%82">切换城市</a>]
+				<!-- <strong class="logo-side-slogan">找得到，卖得掉！</strong> -->
+			</div>
+		</div> <!-- .logo -->
+		<div class="grid grid-8">
+			<form class="form form-search" action="#">
+                <input class="form-input" placeholder="请输入类别名字或者关键字" title="请输入类别名字或者关键字">
+                <div class="form-select">
+                    <span class="form-select-selected">房屋租售<span>
+                </span></span></div>
+                <input type="submit" class="form-submit button button-grey" value="搜索">
+            </form>
+		</div>
+		<div class="grid grid-6 last">			
+			<a href="###" class="button button-green">免费发布信息</a>
+			<a href="###" class="button button-grey">修改/删除信息</a>
+		</div>
+	</div> <!-- #header -->
+	
+	<div id="nav" class="grid grid-20">
+		<ul class="nav clearfix">
+			<li class="nav-item nav-item-home"><a class="nav-item-link" href="/">首页</a></li>
+			<li class="nav-item"><a class="nav-item-link" href="/ershou/">物品交易</a></li>
+			<li class="nav-item nav-item-hover"><a class="nav-item-link" href="/cheliang/">车辆买卖</a></li>
+			<li class="nav-item"><a class="nav-item-link" href="/fang/">房屋租售</a></li>
+			<li class="nav-item"><a class="nav-item-link" href="/gongzuo/">全职招聘</a></li>
+			<li class="nav-item nav-item-current"><a class="nav-item-link" href="/jianzhi/">兼职招聘</a></li>
+			<li class="nav-item"><a class="nav-item-link" href="/qiuzhi/">求职简历</a></li>
+			<li class="nav-item"><a class="nav-item-link" href="/huodong/">交友活动</a></li>
+			<li class="nav-item"><a class="nav-item-link" href="/chongwuleimu/">宠物</a></li>
+			<li class="nav-item"><a class="nav-item-link" href="/fuwu/">生活服务</a></li>
+			<li class="nav-item"><a class="nav-item-link" href="/jiaoyupeixun/">教育培训</a></li>
+		</ul> <!-- .nav -->
+	</div> <!-- #nav -->
+	
+	<div id="breadcrumb" class="bread grid grid-20">
+        <a class="bread-cell" href="#">上海百姓网</a> &gt; 
+        <a class="bread-cell" href="#">上海物品交易</a> &gt; 
+        <span class="bread-cell bread-cell-current">上海电脑配件/宽带<cite class="bread-cell-cite">（6262条信息）</cite></span>
+    </div> <!-- .bread -->
+	
+	<div id="filter" class="grid grid-20">
+		<h3 class="typo-h3 title">上海车辆买卖 <cite>全国最大的二手车交易和服务平台，帮你卖的合算，买的放心。</cite></h3>
+        <ul class="filter clearfix">
+        	<li class="filter-item">
+            	<a href="/ershouqiche/" class="filter-item-cap">二手轿车:</a>
+            	<a href="/ershouqiche/">全部</a><a href="/ershouqiche/m9687/">大众</a><a href="/ershouqiche/m9352/">别克</a><a href="/ershouqiche/m14525/">奇瑞</a><a href="/ershouqiche/m7890/">宝马</a><a href="/ershouqiche/m16821/">现代</a>
+        	</li>
+        	<li class="filter-item">
+            	<a href="/ershougongchengche/" class="filter-item-cap">货车/工程车:</a>
+            	<a href="/ershougongchengche/">全部</a><a href="/ershougongchengche/m37392/">叉车</a><a href="/ershougongchengche/m37389/">厢式货车</a><a href="/ershougongchengche/m37397/">平板车</a>
+        	</li>
+        	<li class="filter-item">
+            	<a href="/ershoukache/" class="filter-item-cap">面包车/客车:</a>
+            	<a href="/ershoukache/">全部</a><a href="/ershoukache/m37623/">金杯</a><a href="/ershoukache/m37621/">五菱</a><a href="/ershoukache/m37622/">长安</a><a href="/ershoukache/m37626/">金龙</a><a href="/ershoukache/m37629/">依维柯</a>
+        	</li>
+        	<li class="filter-item">
+            	<a href="/xiaxianche/" class="filter-item-cap">本地下线车:</a>
+            	<a href="/xiaxianche/">全部</a><a href="/xiaxianche/m9687/">大众</a><a href="/xiaxianche/m16821/">现代</a><a href="/xiaxianche/m9352/">别克</a><a href="/xiaxianche/m14861/">起亚</a><a href="/xiaxianche/m18297/">中华</a>
+        	</li>
+        	<li class="filter-item">
+            	<a href="/xincheyouhui/" class="filter-item-cap">新车优惠/4S店:</a>
+            	<a href="/xincheyouhui/">全部</a><a href="/xincheyouhui/m13550/">力帆</a><a href="/xincheyouhui/m9011/">比亚迪</a><a href="/xincheyouhui/m8445/">奔驰</a><a href="/xincheyouhui/m9687/">大众</a>
+        	</li>
+        	<li class="filter-item">
+            	<a href="/tuolaji/" class="filter-item-cap">拖拉机/收割机:</a>
+            	<a href="/tuolaji/">全部</a><a href="/tuolaji/m37402/">拖拉机</a><a href="/tuolaji/m37403/">水稻收割机</a>
+        	</li>
+        	<li class="filter-item">
+            	<a href="/qicheyongpin/" class="filter-item-cap">汽车用品:</a>
+            	<a href="/qicheyongpin/">全部</a><a href="/qicheyongpin/m37411/">配件</a><a href="/qicheyongpin/m37410/">GPS</a><a href="/qicheyongpin/m37409/">坐垫/脚垫</a><a href="/qicheyongpin/m37413/">内饰</a>
+        	</li>
+        	<li class="filter-item">
+            	<a href="/ershoumotuoche/" class="filter-item-cap">摩托车/燃气车:</a>
+            	<a href="/ershoumotuoche/">全部</a><a href="/ershoumotuoche/m37417/">雅马哈</a><a href="/ershoumotuoche/m37429/">小未战</a><a href="/ershoumotuoche/m37419/">踏板</a><a href="/ershoumotuoche/m37435/">猎鹰</a>
+        	</li>
+        	<li class="filter-item">
+            	<a href="/ershoudiandongche/" class="filter-item-cap">电动车:</a>
+            	<a href="/ershoudiandongche/">全部</a><a href="/ershoudiandongche/?%E6%88%90%E8%89%B2="></a><a href="/ershoudiandongche/?%E6%88%90%E8%89%B2=%E5%85%A8%E6%96%B0">全新</a><a href="/ershoudiandongche/?%E6%88%90%E8%89%B2=9.5%E6%88%90%E6%96%B0">9.5成新</a><a href="/ershoudiandongche/?%E6%88%90%E8%89%B2=9%E6%88%90%E6%96%B0">9成新</a><a href="/ershoudiandongche/?%E6%88%90%E8%89%B2=8%E6%88%90%E6%96%B0">8成新</a>
+        	</li>
+        	<li class="filter-item">
+            	<a href="/ershouzixingche/" class="filter-item-cap">自行车:</a>
+            	<a href="/ershouzixingche/">全部</a><a href="/ershouzixingche/m37562/">山地车</a><a href="/ershouzixingche/m37563/">折叠车</a><a href="/ershouzixingche/m37564/">休闲车</a><a href="/ershouzixingche/m37567/">自行车</a><a href="/ershouzixingche/m37565/">跑车</a>
+        	</li>
+        	<li class="filter-item">
+            	<a href="/shangpaiyanche/" class="filter-item-cap">过户上牌:</a>
+            	<a href="/shangpaiyanche/">全部</a><a href="/shangpaiyanche/?%E7%B1%BB%E5%9E%8B=%E5%B9%B4%E6%A3%80">年检</a><a href="/shangpaiyanche/?%E7%B1%BB%E5%9E%8B=%E8%BF%87%E6%88%B7">过户</a><a href="/shangpaiyanche/?%E7%B1%BB%E5%9E%8B=%E4%B8%8A%E7%89%8C">上牌</a><a href="/shangpaiyanche/?%E7%B1%BB%E5%9E%8B=%E8%BD%A6%E9%99%A9">车险</a><a href="/shangpaiyanche/?%E7%B1%BB%E5%9E%8B=%E8%BD%AC%E7%B1%8D">转籍</a>
+        	</li>
+        	<li class="filter-item">
+            	<a href="/cheliangpinggu/" class="filter-item-cap">评估师:</a>
+            	<a href="/cheliangpinggu/">全部</a>
+        	</li>
+        	<li class="filter-item">
+            	<a href="/gerenzuche/" class="filter-item-cap">租车:</a>
+            	<a href="/gerenzuche/">全部</a><a href="/gerenzuche/m36013/">商务租车</a><a href="/gerenzuche/m37017/">带司机租车</a><a href="/gerenzuche/m36014/">旅游租车</a>
+        	</li>
+        </ul> <!-- .filter --> 
+        
+        <form class="form from-search" action="#">
+            <input class="form-input form-input-small" placeholder="请输入类别名字或者关键字" title="请输入类别名字或者关键字">
+            <input type="submit" class="form-submit button button-grey button-medium" value="搜索">
+            热门：
+            <a href="http://shanghai.baixing.com/fang/?query=%E6%AF%9B%E5%9D%AF">毛坯</a>
+            <a href="http://shanghai.baixing.com/fang/?query=%E5%AE%BD%E5%B8%A6">宽带</a>
+            <a href="http://shanghai.baixing.com/fang/?query=%E9%97%A8%E9%9D%A2">门面</a>
+            <a href="http://shanghai.baixing.com/fang/?query=%E5%88%AB%E5%A2%85">别墅</a>
+            <a href="http://shanghai.baixing.com/fang/?query=%E5%B0%8F%E5%90%83%E5%BA%97">小吃店</a>
+            <a href="http://shanghai.baixing.com/fang/?query=%E4%B8%8A%E6%B5%B7%E5%BA%B7%E5%9F%8E">上海康城</a>
+        </form>
+        
+	</div> <!-- #filter -->
+	
+	<div id="gridlist" class="grid grid-20">
+		<div id="content" class="grid grid-15 first">
+			<div class="catbox clearfix">
+            	<div class="catbox-item">
+	            	<h4 class="catbox-item-title">二手轿车</h4>
+	            	<ul class="imglist clearfix">
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                </ul> <!-- .imglist --> 
+	            	<ul class="list list-2">
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        	</ul> <!-- .list .list-2 -->
+		        	
+		        	<a class="button button-blue">查看全部</a>
+	            </div> <!-- .catbox-item -->
+	            
+	            <div class="catbox-item">
+	            	<h4 class="catbox-item-title">二手轿车</h4>
+	            	<ul class="imglist clearfix">
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                </ul> <!-- .imglist --> 
+	            	<ul class="list list-2">
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        	</ul> <!-- .list .list-2 -->
+		        	<a class="button button-blue">查看全部</a>
+	            </div> <!-- .catbox-item -->
+	            
+	            <div class="catbox-item">
+	            	<h4 class="catbox-item-title">二手轿车</h4>
+	            	<ul class="imglist clearfix">
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                </ul> <!-- .imglist --> 
+	            	<ul class="list list-2">
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        	</ul> <!-- .list .list-2 -->
+		        	<a class="button button-blue">查看全部</a>
+	            </div> <!-- .catbox-item -->
+	            
+	            <div class="catbox-item">
+	            	<h4 class="catbox-item-title">二手轿车</h4>
+	            	<ul class="imglist clearfix">
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                    <li class="imglist-item">
+	                        <a href="#"><img src="http://tu.baixing.net/m/8dde045e2717c67ab3f894318c97d304_sq.jpg" alt="" />3500元</a>
+	                    </li>
+	                </ul> <!-- .imglist --> 
+	            	<ul class="list list-2">
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        		<li class="list-item clearfix">
+		        			<div class="list-item-content">
+		        				<a href="/yanyuan/a174844128.html" class="topicLink" target="_blank">诚聘美美演唱组和美美舞蹈团和歌手键盘手吉他手等</a>
+		        			</div>
+		        			<span class="list-item-block"><cite>2600-3500</cite> 元</span>
+		        		</li>
+		        	</ul> <!-- .list .list-2 -->
+		        	
+		        	<a class="button button-blue">查看全部</a>
+	            </div> <!-- .catbox-item -->
+            </div><!-- .catbox -->
+		</div> <!-- #content -->
+		
+		<div id="aside" class="grid grid-5 last clearfix">
+			<a target="_blank" href="/mkt/app/fengxiaogang?src=chemo"><img src="http://static.baixing.net/images/mkt/fengerche.gif"></a>
+			<div class="aside">
+				<div class="aside-box">
+					<h4 class="typo-h4">热点类目</h4>
+					<p>						
+						<a href="/zhengzu/?%E4%BB%B7%E6%A0%BC_min=&amp;%E4%BB%B7%E6%A0%BC_max=2000&amp;query=&amp;cater=zhengzu#src=redian" target="_blank">便宜租房</a>	｜		
+		                <a href="/ershouqiche/?%E4%BB%B7%E6%A0%BC_min=&amp;%E4%BB%B7%E6%A0%BC_max=&amp;query=%E6%8E%92%E9%87%8F%3A0.8%E5%8D%87+OR+%E6%8E%92%E9%87%8F%3A1.0%E5%8D%87+OR+%E6%8E%92%E9%87%8F%3A1.1%E5%8D%87+OR+%E6%8E%92%E9%87%8F%3A1.2%E5%8D%87+OR+%E6%8E%92%E9%87%8F%3A1.3%E5%8D%87+OR+%E6%8E%92%E9%87%8F%3A1.4%E5%8D%87+OR+%E6%8E%92%E9%87%8F%3A1.5%E5%8D%87+OR+%E6%8E%92%E9%87%8F%3A1.6%E5%8D%87&amp;cater=ershouqiche" target="_blank">省油车型</a>
+		                 
+		                 <br />
+		                 
+						<a href="/zhoubianyou/#src=redian" target="_blank">春游踏青</a>	｜	
+					    <a href="/zufangbibei/#src=redian" target="_blank">租房必备</a>
+					</p>
+				</div> <!-- .aside-box -->
+				
+				<div class="aside-box">
+					<h4 class="typo-h4">快速发布</h4>
+					<a href="http://www.baixing.com/fabu/shanghai/?category=cheliang&amp;src=listing">免费发布车辆买卖信息</a>
+				</div>
+				
+				<div class="aside-box">					
+					<h4 class="typo-h4">置顶推广</h4>
+					<p>
+						获得6倍于普通信息的效果，始终出现在列表页面的最顶部。<br>
+						销售热线：400-108-9157<br>
+						<a class="aside-box-higher" href="http://www.baixing.com/pay/selectdingad/?src=listingpro">了解更多</a>
+					</p>
+				</div>
+				
+				<div class="aside-box">
+					<h4 class="typo-h4">友情提醒</h4>
+					不要提前转账或汇款！
+				</div>
+				
+				<div class="aside-box aside-box-noborder">
+					<h4 class="typo-h4">小调查</h4>
+					您对上海车辆买卖类目满意吗？<br />
+					<p class="aside-box-higher">
+						<a href="＃">满意</a> <a href="＃">不满意</a>
+					</p>
+				</div>
+				
+			</div> <!-- .aside -->
+		</div> <!-- #aside -->
+	</div> <!-- #gridlist -->
+	
+	<div id="footlinks" class="grid grid-20">
+		<table>
+		  <tbody>
+		    <tr>
+		      <th>周边城市</th>
+		      <td><a href="http://suzhou.baixing.com/">苏州</a> <a href="http://wuxi.baixing.com/">无锡</a> <a href="http://jiaxing.baixing.com/">嘉兴</a> <a href="http://nantong.baixing.com/">南通</a> <a href="http://huzhou.baixing.com/">湖州</a> <a href="http://zhoushan.baixing.com/">舟山</a> <a href="http://shaoxing.baixing.com/">绍兴</a> <a href="http://hangzhou.baixing.com/">杭州</a> <a href="http://changzhou.baixing.com/">常州</a> <a href="http://ningbo.baixing.com/">宁波</a> <a href="http://tz.baixing.com/">泰州</a> <a href="http://zhenjiang.baixing.com/">镇江</a> <a href="http://yangzhou.baixing.com/">扬州</a> <a href="http://xuancheng.baixing.com/">宣城</a> <a href="http://yancheng.baixing.com/">盐城</a> <a href="http://nanjing.baixing.com/">南京</a> <a href="http://maanshan.baixing.com/">马鞍山</a> <a href="http://wuhu.baixing.com/">芜湖</a> <a href="http://jinhua.baixing.com/">金华</a> <a href="http://taizhou.baixing.com/">台州</a> <a href="http://chuzhou.baixing.com/">滁州</a> <a href="http://huaian.baixing.com/">淮安</a> <a href="http://huangshan.baixing.com/">黄山</a> <a href="http://wenzhou.baixing.com/">温州</a></td>
+		    </tr>
+		    <tr>
+		      <th>热门城市</th>
+		      <td><a href="http://shanghai.baixing.com/">上海</a> <a href="http://beijing.baixing.com/">北京</a> <a href="http://guangzhou.baixing.com/">广州</a> <a href="http://shenzhen.baixing.com/">深圳</a> <a href="http://suzhou.baixing.com/">苏州</a> <a href="http://xian.baixing.com/">西安</a> <a href="http://zhengzhou.baixing.com/">郑州</a> <a href="http://wuxi.baixing.com/">无锡</a> <a href="http://hangzhou.baixing.com/">杭州</a> <a href="http://dongguan.baixing.com/">东莞</a> <a href="http://shenyang.baixing.com/">沈阳</a> <a href="http://zibo.baixing.com/">淄博</a> <a href="http://dalian.baixing.com/">大连</a> <a href="http://wuhan.baixing.com/">武汉</a> <a href="http://chengdu.baixing.com/">成都</a> <a href="http://tianjin.baixing.com/">天津</a> <a href="http://qingdao.baixing.com/">青岛</a> <a href="http://jinan.baixing.com/">济南</a> <a href="http://shijiazhuang.baixing.com/">石家庄</a> <a href="http://changsha.baixing.com/">长沙</a> <a href="http://weifang.baixing.com/">潍坊</a> <a href="http://nanning.baixing.com/">南宁</a> <a href="http://nanjing.baixing.com/">南京</a> <a href="http://zhongshan.baixing.com/">中山</a> <a href="http://fuzhou.baixing.com/">福州</a> <a href="http://ningbo.baixing.com/">宁波</a> <a href="http://www.baixing.com/?changeLocation=yes">所有城市</a></td>
+		    </tr>
+		    <tr id="outerlinks">
+		      <th><a target="_blank" href="http://www.baixing.com/pages/business/">友情链接</a></th>
+		      <td><a target="_blank" href="http://cn.openrice.com/shanghai">开饭喇</a><a target="_blank" href="http://www.dingfangle.com/">订房乐</a><a target="_blank" href="http://www.qy400.cn/">400电话办理</a><a target="_blank" href="http://sh.wed114.cn/">上海婚纱摄影</a><a target="_blank" href="http://shanghai.bitauto.com/">上海汽车网</a><a target="_blank" href="http://www.liketry.com/">喜试网</a><a target="_blank" href="http://shanghai.pupuwang.cn/">上海商铺</a><a target="_blank" href="http://www.spider.com.cn">蜘蛛网</a><a target="_blank" href="http://invest.china.cn/">投资中国</a><a target="_blank" href="http://2.zol.com.cn/">二手</a><a target="_blank" href="http://cloud.zol.com.cn/">云计算</a><a target="_blank" href="http://news.sh.soufun.com/">上海房地产新闻</a><a target="_blank" href="http://www.bx918.com/">百姓团 </a><a target="_blank" href="http://www.uker.net/">英国留学</a><a target="_blank" href="http://shanghai.cncn.com/">上海旅游</a><a target="_blank" href="http://www.chinabgao.com">报告</a><a target="_blank" href="http://www.xingshi110.com/">刑事律师</a><a target="_blank" href="http://sh.fang.city8.com/">上海二手房</a><a target="_blank" href="http://sh.uzai.com/">上海旅游</a><a target="_blank" href="http://www.soqi.cn">搜企网</a><a target="_blank" href="http://sh.h2h.cn/">上海分类信息网</a><a target="_blank" href="http://yushouqi.tieyou.com/">火车票预售期</a><a target="_blank" href="http://www.hao224.com/">好团网</a><a target="_blank" href="http://www.zufang.com/">Zufang.Com </a><a target="_blank" href="http://zhongkao.xdf.cn/">中考满分作文</a><a target="_blank" href="http://sh.yuloo.com/">人力资源管理师</a><a target="_blank" href="http://www.stone.tm/">石材</a><a target="_blank" href="http://www.gbs.cn/">电子商务</a><a target="_blank" href="http://www.eshanghai.cn">e上海</a><a target="_blank" href="http://ele.me/">外卖</a><a target="_blank" href="http://sh.offcn.com/">上海中公教育</a><a target="_blank" href="http://www.sh414.com/">上海信息港</a><a target="_blank" href="http://sh.51f.com/">上海二手房</a><a target="_blank" href="http://sh.fangjia.com/">上海租房</a><a target="_blank" href="http://www.xixik.com/">肯德基优惠券</a><a target="_blank" href="http://www.lomge.com/">黄花梨网</a><a target="_blank" href="http://www.sunnybtoc.com/">上海电子商务网站建设</a><a target="_blank" href="http://www.searchina.net.cn/">新秦调查</a><a target="_blank" href="http://www.ceramicschina.com/">陶瓷网</a><a target="_blank" href="http://www.manaren.com/">企业管理</a></td>
+		    </tr>
+		    <tr>
+		      <th>关于我们</th>
+		      <td><a rel="nofollow" href="http://jobs.baixing.com/?page_id=2" target="_blank">关于百姓网</a> <a href="http://www.baixing.com/pages/bangui/" target="_blank">百姓网公约</a> <a href="http://www.baixing.com/pages/agreement" target="_blank">百姓网用户协议</a> <a href="http://jobs.baixing.com/" target="_blank">招贤纳士</a> <a href="http://blog.baixing.com/" target="_blank">官方博客</a> <a href="http://www.baixing.com/pay/entrance/?src=footer" target="_blank">商家推广</a> <a rel="nofollow" href="http://www.baixing.com/feedback/daoyong/?src=footer" target="_blank">电话被冒用</a> <a rel="nofollow" href="http://www.baixing.com/pages/business/" target="_blank">商务合作</a> <a rel="nofollow" href="http://www.baixing.com/pages/media/" target="_blank">媒体联系</a> <a href="http://t.sina.com.cn/baixingweibo" target="_blank">关注百姓网</a> <span>沪ICP备06019413号</span> <span>沪ICP证B2-20080088</span></td>
+		    </tr>
+		  </tbody>
+		</table>
+	</div> <!-- #footlinks -->
+	
+	<div id="footer" class="grid grid-20">
+		<div class="vote">
+			<h5 class="vote-title">您是否愿意向您的朋友或同事推荐百姓网？</h5>
+			<div class="vote-link">
+				<a href="＃">1</a>
+				<a href="＃">2</a>
+				<a href="＃">3</a>
+				<a href="＃">4</a>
+				<a href="＃">5</a>
+				<a href="＃">6</a>
+				<a href="＃">7</a>
+				<a href="＃">8</a>
+				<a href="＃">9</a>
+				<a href="＃">10</a>
+				<div class="vote-link-tips">
+					<span class="vote-link-tips-1">绝不</span>
+					<span>无所谓</span>
+					<span class="vote-link-tips-3">力荐</span>
+				</div>
+			</div>
+		</div> <!-- .vote -->
+		
+		<p class="copyright">
+			<small>© 2012 百姓网</small> 客服：021-61971099 (周一至周日9:00-18:00) 
+		</p>
+		
+		<p class="gov">
+			<a href="http://www.sgs.gov.cn/lz/licenseLink.do?method=licenceView&amp;entyId=20111025095406671"><img src="http://static.baixing.net/images/sgs.gif" border="0"></a>
+			<a href="http://www.zx110.org" target="_blank"><img src="http://static.baixing.net/images/zxx.gif" border="0"></a>
+		</p>
+	</div> <!-- #footer -->
+	
+</div> <!-- .container -->
+
+<script type="text/javascript" src="../javascripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../javascripts/plugins.js"></script>
+<script type="text/javascript" src="./static/page.js"></script>
+</body>
+</html>

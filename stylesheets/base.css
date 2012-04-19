@@ -471,9 +471,19 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 .button-filter{*height:16px;*padding-top:5px;*overflow:hidden;}
 .button-filter:hover{background:#faffe9;}
 .button-filter .close{float:none;position:absolute;right:6px;top:0;*top:-2px;font-size:18px;vertical-align:text-top;}
+
+.button-blue{border:1px solid #4185e1;background:#61A4EF;color:#fff;height:24px;line-height:24px;}
+.button-blue:hover{background:#08c;border:1px solid #06c;text-decoration:none;}
+
 .button-icon{position:relative;padding-left:30px;color:#333;}
 .button-icon .icon{position:absolute;left:8px;top:16%;}
 :root button{filter:none!important\9;}
+
+/* Title
+ * author: sofish@163.com
+ */
+.title{margin-bottom:20px;}
+.title cite{color:#888;font:500 12px serif;}
 
 /* .tag
  * author: sofish@163.com
@@ -547,8 +557,8 @@ _position:relative; /* fix 多一只猪的问题 */
 /* Image List 图片列表
  * author: sofish@163.com
  */
-.imglist{margin-left:-10px;}
-.imglist-item{display:inline-block;float:left;margin-left:10px;width:64px;height:90px;text-align:center;}
+.imglist{margin-left:-5px;_margin-left:-10px;}
+.imglist-item{display:inline-block;float:left;margin-left:5px;width:64px;height:90px;text-align:center;}
 .imglist-item img{*display:block;*height:64px;*margin-bottom:3px;}
 .imglist-item a:hover{text-decoration:none;color:red;}
 
@@ -593,6 +603,13 @@ _position:relative; /* fix 多一只猪的问题 */
 
 .list-5 .list-item-content{width:245px;}
 .list-5 .list-item-content-small a{font-size:12px;color:#888;}
+
+.list-2{width:330px;}
+.list-2 .list-item{border:none;_padding-bottom:0;}
+.list-2 .list-item-content{width:269px;}
+.list-2 .list-item-block{width:50px;text-align:right;overflow:hidden;text-overflow:ellipsis;min-width:0;white-space:nowrap;}
+.list-2 .list-item:nth-child(odd){background:none;}
+.list-2 .list-item:hover, .list-2 .list-item-hover{background:none!important;}
 
 /* Tab
  * author: sofish@163.com
@@ -747,6 +764,21 @@ _position:relative; /* fix 多一只猪的问题 */
 .vote-link-tips-1{text-align:left;}
 .vote-link-tips-3{text-align:right;}
 
+/* Category Box
+ * author: sofish@163.com
+ */
+.catbox{margin-left:-10px;position:relative;width:780px;}
+.catbox-item{width:365px;padding:10px;float:left;border-bottom:10px solid #fff;}
+.catbox-item-hover, .catbox-item:hover{background:#F3F8FF;}
+.catbox-item-title{margin-bottom: 10px;}
+
+/* aside
+ * author: sofish@163.com
+ */
+.aside{float:right;width:170px;border:1px solid #ddd;padding:0 20px;font-size:12px;text-align:left;}
+.aside-box{padding-bottom:10px;margin-bottom:10px;border-bottom:1px solid #eee;}
+.aside-box-noborder{border-bottom:none;}
+.aside-box-higher{line-height:2;}
 
 /* TODO: Typeahead
  * author: sofish@163.com
