@@ -292,7 +292,7 @@ body{ min-width:1000px}
 .visited a{color:#5500bb;}
 
 .red{color:red;}
-.green{color:green;}
+.green{color:#5ba533;}
 
 .hide {display: none;}
 .show{display: block;}
@@ -491,7 +491,7 @@ filter: progid:DXImageTransform.Microsoft.Matrix(
 .tag{display:inline-block;padding:0 3px;background:#eee;margin:0 3px;border-radius:2px;}
 .tag-blue, .tag-green, .tag-red, a.tag:hover{color:#fff;}
 .tag-blue{background:#08c;}
-.tag-green{background:#080;}
+.tag-green{background:#5ba533;}
 .tag-red{background:#f36;}
 a.tag:hover{background:#888;text-decoration:none;}
 
@@ -502,6 +502,7 @@ a.tag:hover{background:#888;text-decoration:none;}
 .form{
     font-family:serif\0/; /* solution:win7 ie8 line-height bug */
 }
+.form-inline{display:inline-block;top:-3px;*display:inline;}
 .form-input, .form-search .form-select{display:inline-block;*display:inline;*zoom:1;border:1px solid #cfcfcf;border-bottom-color:#e2e2e2;font-size:12px;}
 .form-input{height:28px;padding:0 10px;line-height:28px;}
 .form-input-small{height:22px;line-height:22px;}
@@ -510,6 +511,7 @@ left:-5px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
 }
 .form-search{position:relative;}
 .form-search .form-input{width:200px;}
+.form-search .form-input-90{width:90px;}
 .form-submit{
 	vertical-align:middle;
 }
