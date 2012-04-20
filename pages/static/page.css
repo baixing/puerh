@@ -1,34 +1,59 @@
+/* 顶部导航 */
 #topbar{background:#f7f7f7;margin-bottom:10px;_zoom:1;line-height:1;}
 
+/* 头部 */
 #header{height:54px;margin-bottom:20px;}
 #header .form-search{padding-top:24px;}
 #header .last{text-align: right;padding-top:25px;}
 
+/* 面包屑导航 */
+#breadcrumb{padding:15px 0 10px;border-bottom:1px solid #ddd;}
+
+/* 首页热门推荐 */
 #hot{border:1px solid #cfcfcf;border-top:none;width:968px;padding:5px;margin-bottom:20px;}
 #hot table{margin:5px 0 0 10px;}
 #hot .grid-4{width:160px;}
 #hot .sperator{width:30px;text-align:center;color:#aaa;}
 #hot .grid-4 a{white-space:nowrap;line-height:2;}
 
+/* 首页列表 */
 #gcats{margin-bottom:20px;}
 
+/* 友情链接 */
 #footlinks{font-size:12px;border-top:1px solid #ddd;border-bottom:1px solid #ddd;padding:10px 0;margin-bottom:20px;color:#888;}
 #footlinks td{padding-bottom:5px;line-height:1.8;}
 #footlinks a{color:#888;padding-right:5px;}
 #footlinks th{font-weight:700;width:80px;vertical-align:text-top;}
 #footlinks th, #footlinks th a{color:#666;}
 
+/* 页脚 */
 #footer{text-align:center;margin-bottom:20px;font-size:12px;color:#888;}
 #footer .copyright{margin:10px;}
 #footer small{padding-right:20px;}
 
-#breadcrumb{padding:15px 0 10px;border-bottom:1px solid #ddd;}
-
-#filter{margin-bottom:10px;padding-bottom:15px;border-bottom:1px solid #ddd;}
+/* 一、二级类目 filter */
+#filter{margin-bottom:10px;border-bottom:1px solid #ddd;}
 #filter .filter{margin-bottom:5px;}
+#filter .filter-intype{margin:15px 0 5px;}
+#filter .form-search{margin-bottom:15px;}
+#filter .form-inline{margin-bottom: 0;}
 #filter .form-input{width:230px;}
+#filter .form-inline .form-input{width:60px;}
 #filter .form-submit{margin-right:20px;}
 
-#content{overflow:hidden;}
+/* 3rd Parth ad */
+.adsense{margin-bottom:10px;*zoom:1;}
+.adsense li{display:block;width:730px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-bottom:10px;}
 
+/* 类目主栏 */
+#content{overflow:hidden; /* hack ie6 下侧栏掉到页面底部 bug */}
+#content #filter{border-bottom-color:#fff;}
+#content .tab-title{margin-bottom:10px;}
+#content .list-thumb, #content .pagenav{margin-bottom:15px;}
+
+.endtips{margin:15px 0;}
+
+/* 侧栏 */
 #aside{text-align:right;}
+
+
