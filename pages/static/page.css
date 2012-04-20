@@ -50,8 +50,8 @@
 #content #filter{border-bottom-color:#fff;}
 #content .tab-title{margin-bottom:10px;}
 #content .list-thumb, #content .pagenav{margin-bottom:15px;}
-
-.endtips{margin:15px 0;}
+#content .images{padding:10px 0;zoom:1;}
+#content .endtips{margin:15px 0;}
 
 /* 侧栏 */
 #aside{text-align:right;}

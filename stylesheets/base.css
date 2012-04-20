@@ -616,13 +616,15 @@ _position:relative; /* fix 多一只猪的问题 */
 /* Tab
  * author: sofish@163.com
  */
-.tab{}
+.tab{position:relative;}
 .tab-title{border-bottom:1px solid #cfcfcf;padding-left:10px;}
 .tab-title-item{display:inline-block;float:left;height:28px;line-height:28px;border:1px solid #cfcfcf;border-bottom-color:#cfcfcf;border-right:0;margin-top:1px;position:relative;z-index:1;top:1px;background:#fbfbfb;}
 .tab-title .active{border-top:2px solid #5ba533;border-bottom-color:#fff;z-index:2;margin-top:0;background:#fff;}
 .tab-title-item-last{border-right:1px solid #cfcfcf;}
 .tab-title a{color:#333;padding:0 16px;line-height:28px;}
-.tab-title a:hover{color:#5ba533;text-decoration:none;}
+.tab-title a:hover{color:#5ba533;text-decoration:none;} 
+.tab-fix{position:absolute;right:0;top:5px;color:#ddd;}
+.tab-fix strong{color:#888;}
 .tab-content-pane{display:none;}
 .tab-content .active{display:block;}
 
