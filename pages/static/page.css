@@ -66,4 +66,17 @@
 .agreement ol ul{margin:8px 0 5px 0;}
 .agreement ul li{font-weight:500;padding:0;font-family:serif;list-style:none;}
 
+/* View Ad */
+.viewad{}
+.viewad-title{font-size:20px;margin:20px 0 5px;}
+.viewad-meta{font-size:12px;color:#888;margin-bottom:15px;}
+.viewad-info .typo-table{width:100%;}
+.viewad-info td{width:33%;}
+.viewad-entry-contact img{vertical-align:middle;}
+.viewad-share{margin-bottom:30px;}
+.viewad-relative{margin-bottom:10px;}
+.viewad-relative h4{margin-bottom:10px;padding-bottom:10px;border-bottom:1px solid #ddd;}
+
+
+
 
