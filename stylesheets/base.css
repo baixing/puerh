@@ -567,8 +567,8 @@ _position:relative; /* fix 多一只猪的问题 */
 /* Images（图片展栏）
  * author: sofish@163.com
  */
-.images{width:756px;position:relative;margin-left:-9px;}
-.images-item{display:inline-block;width:180px;float:left;overflow:hidden;margin:0 0 10px 9px;background:#f7f7f7;cursor:default;}
+.images{width:736px;position:relative;margin-left:-9px;}
+.images-item{display:inline-block;width:180px;float:left;overflow:hidden;margin:0 0 10px 4px;background:#f7f7f7;cursor:default;}
 .images-item img{height:180px;display:inline-block;}
 .images-item em, .images-item img, .images-item strong{cursor:pointer;}
 .images-item:hover{text-decoration:none;background:#fcffee;}
