@@ -593,7 +593,7 @@ _position:relative; /* fix 多一只猪的问题 */
 .list-item-title, .list-item-title:hover{background:none!important;}
 .list-item-title .list-item-block,
 .list-item-title .list-item-content,
-.list-thumb .list-item-title .list-item-block{font-weight:700;line-height:1.5;height:21px;}{line-height:1.5;height:21px;}
+.list-thumb .list-item-title .list-item-block{font-weight:700;line-height:1.5;height:21px;}
 .list i{color:olive;font-style:normal;}
 .list-item-content-meta{padding-top:10px;color:#888;}
 .list .tag{font-size:12px;}
@@ -602,7 +602,7 @@ _position:relative; /* fix 多一只猪的问题 */
 .list-thumb .list-item-block{height:64px;line-height:64px;}
 .list-thumb .list-item-content{padding-top:8px;}
 .list-thumb .list-item-title .list-item-content{padding:0;}
-.list-thumb .close{line-height:64px;*line-height:1;}
+.list-thumb .close{line-height:64px;line-height:1\9;}
 
 .list-5 .list-item-content{width:232px;}
 .list-5 .list-item-content-small a{font-size:12px;color:#888;}
