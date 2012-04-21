@@ -569,6 +569,7 @@ _position:relative; /* fix 多一只猪的问题 */
  */
 .images{width:756px;position:relative;margin-left:-9px;}
 .images-item{display:inline-block;width:180px;float:left;overflow:hidden;margin:0 0 10px 9px;background:#f7f7f7;cursor:default;}
+.images-item img{height:180px;display:inline-block;}
 .images-item em, .images-item img, .images-item strong{cursor:pointer;}
 .images-item:hover{text-decoration:none;background:#fcffee;}
 .images-item-caption{padding:0 5px 5px;}
@@ -779,7 +780,7 @@ _position:relative; /* fix 多一只猪的问题 */
 /* aside
  * author: sofish@163.com
  */
-.aside{float:right;width:170px;border:1px solid #ddd;padding:0 20px;font-size:12px;text-align:left;}
+.aside{float:right;width:170px;border:1px solid #ddd;padding:0 20px;margin-bottom:20px;font-size:12px;text-align:left;}
 .aside-box{padding-bottom:10px;margin-bottom:10px;border-bottom:1px solid #eee;}
 .aside-box-noborder{border-bottom:none;}
 .aside-box-higher{line-height:2;}
