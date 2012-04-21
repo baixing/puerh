@@ -602,7 +602,8 @@ _position:relative; /* fix 多一只猪的问题 */
 .list-thumb .list-item-block{height:64px;line-height:64px;}
 .list-thumb .list-item-content{padding-top:8px;}
 .list-thumb .list-item-title .list-item-content{padding:0;}
-.list-thumb .close{line-height:64px;line-height:1\9;}
+.list-thumb .close{line-height:64px;line-height:1\9;top:21px\0/;}
+:root .list-thumb .close{line-height:64px\9;top:auto\9;}
 
 .list-5 .list-item-content{width:232px;}
 .list-5 .list-item-content-small a{font-size:12px;color:#888;}
