@@ -91,9 +91,10 @@
 
 /* 发布 */
 #publish-flow{margin-bottom:20px;}
-#publish{width:948px;border:1px solid #ddd;padding:15px;margin-bottom:20px;}
+#publish{width:948px;border:1px solid #ddd;padding:30px 15px 20px;margin-bottom:20px;}
 #publish-title, .selects, .selects-cat, .selects-subcat, .selects-seprator, .selects .tab{float: left;}
-#publish-title{margin-right:10px;}
+#publish .selects{*float:none;*margin-left:120px;}
+#publish-title{margin-right:10px;padding-left:30px;width:80px;}
 
 .selects-map{display:none;margin-bottom:10px;}
 .selects-map-on{display:block;}
@@ -113,8 +114,18 @@
 .selects .tab-content{padding:10px 5px;border-top:none;}
 .selects .tab .selects-box a{width:110px;float:left;}
 
-.selects .form{clear:both;border-top:20px solid #fff;border-bottom:10px solid #fff;}
-.selects .form p{font-size:12px;padding-bottom:8px;}
-.selects .form-input{width:240px;}
+.selects .form-search{clear:both;border-top:20px solid #fff;border-bottom:10px solid #fff;}
+.selects .form-search p{font-size:12px;padding-bottom:8px;}
+.selects .form-search .form-input{width:240px;}
 
-
+.publish-detail{clear:both;}
+.publish-detail input{vertical-align:baseline;*vertical-align:middle;}
+.publish-detail label{padding-right:10px;}
+.publish-detail select{margin-right:8px;}
+.publish-detail .form-input{margin-right:10px;}
+.p-label{display:inline-block;width:110px;text-align:right;font-weight:700;padding:0;}
+.p-line{padding:10px 0;}
+.p-tip{display:block;height:40px;line-height:3;}
+.p-tip, .p-submit{padding-left:120px;}
+.p-submit{margin-bottom:15px;}
+.p-note{font-size:12px;}
