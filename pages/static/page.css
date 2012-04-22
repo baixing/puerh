@@ -89,6 +89,32 @@
 .aside .store-verify li{color:#080;line-height:2;}
 .aside .store-verify a{position:relative;top:2px;margin-right:5px;}
 
+/* 发布 */
+#publish-flow{margin-bottom:20px;}
+#publish{width:948px;border:1px solid #ddd;padding:15px;margin-bottom:20px;}
+#publish-title, .selects, .selects-cat, .selects-subcat, .selects-seprator, .selects .tab{float: left;}
+#publish-title{margin-right:10px;}
 
+.selects-map{display:none;margin-bottom:10px;}
+.selects-map-on{display:block;}
+.selects-cat{width:120px;border:1px solid #cfcfcf;padding:5px;}
+.selects-box a{display:block;height:30px;line-height:30px;padding:0 10px;color:#333;}
+.selects-box a:hover{background:#D1E98E;text-decoration:none;}
+.selects-seprator{width:18px;padding:140px 15px 0;}
+
+.selects-box{width:130px;height:300px;border:1px solid #cfcfcf;padding:5px;}
+.selects-box-2{width:260px;}
+.selects-box-4{width:600px;}
+.selects-box-tab{height:259px;}
+
+.selects .tab .clearfix{*zoom:0;}
+.selects .tab-title-item{*display:inline;*float:none;}
+.selects .tab-title{padding:0 20px 0 0;}
+.selects .tab-content{padding:10px 5px;border-top:none;}
+.selects .tab .selects-box a{width:110px;float:left;}
+
+.selects .form{clear:both;border-top:20px solid #fff;border-bottom:10px solid #fff;}
+.selects .form p{font-size:12px;padding-bottom:8px;}
+.selects .form-input{width:240px;}
 
 

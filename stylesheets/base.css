@@ -627,6 +627,7 @@ _position:relative; /* fix 多一只猪的问题 */
 .tab-title a:hover{color:#5ba533;text-decoration:none;} 
 .tab-fix{position:absolute;right:0;top:5px;color:#ddd;}
 .tab-fix strong{color:#888;}
+.tab-content{border:1px solid #cfcfcf;border-top:none;padding:10px 15px;}
 .tab-content-pane{display:none;}
 .tab-content .active{display:block;}
 
