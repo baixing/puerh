@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>发布 - 百姓网</title>
+	<link rel="stylesheet" href="../stylesheets/base.css" />
+	<link rel="stylesheet" href="./static/page.css" />
+	<!--[if lt IE 9]>
+	<script type="text/javascript">
+    // html5shiv MIT @rem remysharp.com/html5-enabling-script
+    // iepp v1.6.2 MIT @jon_neal iecss.com/print-protector
+    /*@cc_on(function(a,b){function r(a){var b=-1;while(++b<f)a.createElement(e[b])}if(!(!window.attachEvent||!b.createStyleSheet||!function(){var a=document.createElement("div");a.innerHTML="<elem></elem>";return a.childNodes.length!==1}())){a.iepp=a.iepp||{};var c=a.iepp,d=c.html5elements||"abbr|article|aside|audio|canvas|datalist|details|figcaption|figure|footer|header|hgroup|mark|meter|nav|output|progress|section|summary|time|video",e=d.split("|"),f=e.length,g=new RegExp("(^|\\s)("+d+")","gi"),h=new RegExp("<(/*)("+d+")","gi"),i=/^\s*[\{\}]\s*$/,j=new RegExp("(^|[^\\n]*?\\s)("+d+")([^\\n]*)({[\\n\\w\\W]*?})","gi"),k=b.createDocumentFragment(),l=b.documentElement,m=l.firstChild,n=b.createElement("body"),o=b.createElement("style"),p=/print|all/,q;c.getCSS=function(a,b){if(a+""===undefined)return"";var d=-1,e=a.length,f,g=[];while(++d<e){f=a[d];if(f.disabled)continue;b=f.media||b,p.test(b)&&g.push(c.getCSS(f.imports,b),f.cssText),b="all"}return g.join("")},c.parseCSS=function(a){var b=[],c;while((c=j.exec(a))!=null)b.push(((i.exec(c[1])?"\n":c[1])+c[2]+c[3]).replace(g,"$1.iepp_$2")+c[4]);return b.join("\n")},c.writeHTML=function(){var a=-1;q=q||b.body;while(++a<f){var c=b.getElementsByTagName(e[a]),d=c.length,g=-1;while(++g<d)c[g].className.indexOf("iepp_")<0&&(c[g].className+=" iepp_"+e[a])}k.appendChild(q),l.appendChild(n),n.className=q.className,n.id=q.id,n.innerHTML=q.innerHTML.replace(h,"<$1font")},c._beforePrint=function(){o.styleSheet.cssText=c.parseCSS(c.getCSS(b.styleSheets,"all")),c.writeHTML()},c.restoreHTML=function(){n.innerHTML="",l.removeChild(n),l.appendChild(q)},c._afterPrint=function(){c.restoreHTML(),o.styleSheet.cssText=""},r(b),r(k);if(c.disablePP)return;m.insertBefore(o,m.firstChild),o.media="print",o.className="iepp-printshim",a.attachEvent("onbeforeprint",c._beforePrint),a.attachEvent("onafterprint",c._afterPrint)}})(this,document)@*/
+	</script>
+	<![endif]-->
+</head>
+<body>
+
+<div id="topbar">
+	<div class="topbar clearfix">
+        <div class="topbar-left">
+        百姓网，找得到，卖得掉
+        </div> <!-- topbar-left -->
+        <div class="topbar-right">
+            <a href="#">注册</a> | 
+            <a href="#">登录</a> - 
+            <a href="#">用户中心</a>
+            <div class="dropdown dropdown-unibody" id="mydropdown2">
+			    <a href="#mydropdown2" hidefocus data-toggle="dropdown" class="dropdown-trigger dropdown-trigger-active">消息<cite>8</cite><i class="arrow arrow-down"></i></a>
+				<ul class="dropdown-menu clearfix">
+					<li class="dropdown-menu-item"><cite>5</cite>条留言信息</li>
+					<li class="dropdown-menu-item"><cite>3</cite>条出价信息</li>
+				</ul>
+			</div>
+            <a href="#">付费推广</a> - 
+            <a href="#">帮助</a> - 
+            <a href="#">手机版</a>
+        </div> <!-- topbar-right -->
+    </div> <!-- .topbar -->
+</div> <!-- #topbar -->
+
+<div class="container clearfix">
+	<div id="header" class="grid grid-20">
+		<div class="logo clearfix">
+			<h1><a href="http://baixing.com"><img src="http://static.baixing.net/images/logo_w_bg5.gif" alt="百姓网" /></a></h1>
+			<div class="logo-side">        				
+				<a class="logo-side-current" href="/" class="cityName">克拉玛依</a> <br />
+				[<a href="http://www.baixing.com/?changeLocation=yes&amp;sheng=%E6%89%80%E6%9C%89%E5%9F%8E%E5%B8%82">切换城市</a>]
+				<!-- <strong class="logo-side-slogan">找得到，卖得掉！</strong> -->
+			</div>
+		</div> <!-- .logo -->
+	</div> <!-- #header -->
+	
+	<div id="publish-flow" class="grid grid-20">
+		<ul class="flow clearfix">
+			<li class="flow-item flow-item-current flow-item-first flow-item-1">
+				1.选择类目
+				<i class="diamond"></i>
+				<i class="diamond diamond-next"></i>
+			</li>
+			<li class="flow-item flow-item-2">
+				2.填写信息
+				<i class="diamond"></i>
+				<i class="diamond diamond-next"></i>
+			</li>
+			<li class="flow-item flow-item-last flow-item-3">
+				3.发布成功
+				<i class="diamond"></i>
+				<i class="diamond diamond-next"></i>
+			</li>
+		</ul> <!-- flow -->
+	</div>
+	
+	<div class="grid grid-20" id="publish">
+		
+		<p id="publish-title"><cite class="red">*</cite><strong>选择项目:</strong></p>
+		
+		<div class="selects">
+			<p class="selects-map selects-map-on">车辆买卖 &gt; 二手轿车 <a href="#">重选类目</a></p>
+			<div class="selects-cat selects-box">
+				<a href="/fabu/shanghai/?category=ershou" hidefocus="true">物品交易</a>
+				<a href="/fabu/shanghai/?category=cheliang" hidefocus="true">车辆买卖</a>
+				<a href="/fabu/shanghai/?category=fang" hidefocus="true">房屋租售</a>
+				<a href="/fabu/shanghai/?category=gongzuo" hidefocus="true">全职招聘</a>
+				<a href="/fabu/shanghai/?category=jianzhi" hidefocus="true">兼职招聘</a>
+				<a href="/fabu/shanghai/?category=qiuzhi" hidefocus="true">求职简历</a>
+				<a href="/fabu/shanghai/?category=huodong" hidefocus="true">交友活动</a>
+				<a href="/fabu/shanghai/?category=chongwuleimu" hidefocus="true">宠物</a>
+				<a href="/fabu/shanghai/?category=fuwu" hidefocus="true">生活服务</a>
+				<a href="/fabu/shanghai/?category=jiaoyupeixun" hidefocus="true">教育培训</a>
+			</div> <!-- selects-cat -->
+			<div class="selects-subcat">
+				<div class="selects-seprator">
+					<span class="icon icon-play">#</span>
+				</div> <!-- .selects-seprator -->
+				<div class="tab">
+                    <ul class="tab-title clearfix">
+                        <li class="tab-title-item active"><a data-toggle="tab" href="#">全部</a></li>
+                        <li class="tab-title-item"><a data-toggle="tab" href="＃">苹果专区</a></li>
+                        <li class="tab-title-item"><a data-toggle="tab" href="＃">3C数码</a></li>
+                        <li class="tab-title-item"><a data-toggle="tab" href="＃">家居生活</a></li>
+                        <li class="tab-title-item"><a data-toggle="tab" href="＃">女人街</a></li>
+						<li class="tab-title-item"><a data-toggle="tab" href="＃">男人帮</a></li>
+                        <li class="tab-title-item tab-title-item-last"><a data-toggle="tab" href="#">文化玩乐</a></li>
+                    </ul>
+                    <div class="tab-content selects-box selects-box-4 selects-box-tab clearfix">
+                		<a href="/fabu/shanghai/?category=shouji" hidefocus="true" >二手手机</a>
+						<a href="/fabu/shanghai/?category=shoujihaoma" hidefocus="true" >手机号码</a>
+						<a href="/fabu/shanghai/?category=diannao" hidefocus="true" >台式电脑</a>
+						<a href="/fabu/shanghai/?category=diannaopeijian" hidefocus="true" >电脑配件/宽带</a>
+						<a href="/fabu/shanghai/?category=bijiben" hidefocus="true" >笔记本</a>
+						<a href="/fabu/shanghai/?category=pingbandiannao" hidefocus="true" >平板电脑/iPad</a>
+						<a href="/fabu/shanghai/?category=zhaoxiangji" hidefocus="true" >摄影摄像</a>
+						<a href="/fabu/shanghai/?category=shuma" hidefocus="true" >MP3/游戏机</a>
+						<a href="/fabu/shanghai/?category=jiaju" hidefocus="true" >家具</a>
+						<a href="/fabu/shanghai/?category=dianqi" hidefocus="true" >家电</a>
+						<a href="/fabu/shanghai/?category=riyongpin" hidefocus="true" >日用品</a>
+						<a href="/fabu/shanghai/?category=xianzhishipin" hidefocus="true" >食品</a>
+						<a href="/fabu/shanghai/?category=bangongyongpin" hidefocus="true" >办公家具/耗材</a>
+						<a href="/fabu/shanghai/?category=shoucang" hidefocus="true" >收藏品/工艺品</a>
+						<a href="/fabu/shanghai/?category=fushi" hidefocus="true" >服装/配饰</a>
+						<a href="/fabu/shanghai/?category=peishi" hidefocus="true" >手表/首饰</a>
+						<a href="/fabu/shanghai/?category=huazhuangpin" hidefocus="true" >化妆品</a>
+						<a href="/fabu/shanghai/?category=xiemao" hidefocus="true" >鞋子</a>
+						<a href="/fabu/shanghai/?category=xiangbao" hidefocus="true" >箱包</a>
+						<a href="/fabu/shanghai/?category=yinger" hidefocus="true" >母婴/幼儿/玩具</a>
+						<a href="/fabu/shanghai/?category=shu" hidefocus="true" >书报/音像</a>
+						<a href="/fabu/shanghai/?category=yueqi" hidefocus="true" >乐器/文具</a>
+						<a href="/fabu/shanghai/?category=yundongqicai" hidefocus="true" >运动器材</a>
+						<a href="/fabu/shanghai/?category=xuniwupin" hidefocus="true" >虚拟物品/QQ号</a>
+						<a href="/fabu/shanghai/?category=menpiao" hidefocus="true" >门票/电影票</a>
+						<a href="/fabu/shanghai/?category=quan" hidefocus="true" >消费卡/优惠券</a>
+						<a href="/fabu/shanghai/?category=qichepiao" hidefocus="true" >汽车票</a>
+						<a href="/fabu/shanghai/?category=nongchanpin" hidefocus="true" >农产品</a>
+						<a href="/fabu/shanghai/?category=gongyeshebei" hidefocus="true" >工业设备</a>
+						<a href="/fabu/shanghai/?category=qiumai" hidefocus="true" >求购</a>
+						<a href="/fabu/shanghai/?category=qitazhuanrang" hidefocus="true" >其它物品</a>
+                	</div>
+                </div> <!-- .tab -->
+			</div> <!-- .selects-subcat -->
+			
+			<form class="form form-search" action="#">
+				<p>找不到合适类目？ 输入关键词搜搜看吧</p>
+                <input class="form-input form-input-small" placeholder="请输入类别名字或者关键字" title="请输入类别名字或者关键字">
+                <input type="submit" class="form-submit button button-grey button-medium" value="搜索">
+            </form>
+		</div> <!-- .selects -->
+		
+	</div> <!-- #publish -->
+	
+	<div id="footer" class="grid grid-20">
+		
+		<div class="copyright">
+			<small>© 2012 百姓网</small> 客服：021-61971099 (周一至周日9:00-18:00) 
+		</div>
+		
+	</div> <!-- #footer -->
+	
+</div> <!-- .container -->
+
+<script type="text/javascript" src="../javascripts/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="../javascripts/plugins.js"></script>
+<script type="text/javascript" src="./static/page.js"></script>
+</body>
+</html>
