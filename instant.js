@@ -21,6 +21,13 @@ $('#myModal').on('shown', function(){
 	//$('.modal-open .modal-backdrop')[0].style.height = $('html').height() + 'px';
 })
 
+// form select
+$('.form-select').length && $('.form-select').hover(function(){
+	$(this).addClass('form-select-open');
+}, function(){
+	$(this).removeClass('form-select-open');
+});
+
 
 // # Tips
 $('#tips').length && $('#tips').popover();
