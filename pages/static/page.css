@@ -51,7 +51,7 @@
 .adsense li{display:block;width:730px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;margin-bottom:10px;}
 
 /* 类目主栏 */
-#content{overflow:hidden; /* hack ie6 下侧栏掉到页面底部 bug */}
+#content{_overflow:hidden; /* hack ie6 下侧栏掉到页面底部 bug */}
 #content #filter{border-bottom-color:#fff;}
 #content .tab-title{margin-bottom:10px;}
 #content .list-thumb, #content .pagenav{margin-bottom:15px;}
