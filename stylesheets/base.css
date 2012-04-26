@@ -35,7 +35,6 @@ input, select, textarea {
 }
 button, input {*overflow: visible;line-height: normal;}
 button::-moz-focus-inner,input::-moz-focus-inner {padding:0;border:0;}
-input:focus{}
 
 /* 去掉各Table  cell 的边距并让其边重合 */
 table {
@@ -348,13 +347,7 @@ body{ min-width:1000px}
  */
 .diamond{
 -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.7071067811865477, M21=0.7071067811865477,M22=0.7071067811865475,SizingMethod='auto expand')";
-filter: progid:DXImageTransform.Microsoft.Matrix(
-	M11=0.7071067811865475,
-	M12=-0.7071067811865477,
-	M21=0.7071067811865477,
-	M22=0.7071067811865475,
-	SizingMethod='auto expand'
-);
+*filter:"progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.7071067811865477,M21=0.7071067811865477,M22=0.7071067811865475,SizingMethod='auto expand')";
 -moz-transform: rotate(45deg);-o-transform: rotate(45deg);-webkit-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg);
 }
 :root .diamond{filter:none;}
@@ -506,6 +499,7 @@ a.tag:hover{background:#888;text-decoration:none;}
 .form-input, .form-textarea, .form-search .form-select{display:inline-block;*display:inline;*zoom:1;border:1px solid #cfcfcf;border-bottom-color:#e2e2e2;font-size:12px;}
 .form-input{height:28px;padding:0 10px;line-height:28px;}
 .form-input-90{width:90px;}
+.form-input-150{width:150px;}
 .form-input-400{width:400px;}
 .form-error{border-color:#f30;}
 .form-textarea{height:90px;line-height:1.5;padding:5px 10px;vertical-align:text-top;}
@@ -624,6 +618,15 @@ _position:relative; /* fix 多一只猪的问题 */
 .list-2 .list-item-block{width:50px;text-align:right;overflow:hidden;text-overflow:ellipsis;min-width:0;white-space:nowrap;}
 .list-2 .list-item:nth-child(odd){background:none;}
 .list-2 .list-item:hover, .list-2 .list-item-hover{background:none!important;}
+
+.list-wo{width:auto;border-top:1px solid #ebebeb;}
+.list-wo .list-item-content{padding-left:10px;padding-top:5px;}
+.list-wo .list-item-block{width:236px;text-align:right;height:50px;line-height:50px;font-size:12px;}
+.list-wo .label{width:100px;height:32px;line-height:32px;font-size:14px;}
+.list-wo .list-item-content-meta{font-size:12px;}
+.list-wo .list-item-content-meta a{color:#888;}
+
+.list-mc {width:auto;border-top:1px solid #ebebeb;padding:5px;font-size:12px;}
 
 /* Tab
  * author: sofish@163.com
@@ -768,7 +771,7 @@ _position:relative; /* fix 多一只猪的问题 */
 :root .nav-item-link{line-height:35px\9/;}
 .nav-item-link:hover, .nav-item-current .nav-item-link{color:#fff;background:#4A7E09;border-left:1px solid #336609;border-right:1px solid #336609;padding:0 15px;text-decoration:none;}
 
-/* Nav
+/* .vote
  * author: sofish@163.com
  */
 .vote{width:350px;margin:0 auto;text-align:center;background:#eee;padding:15px 0;color:#666;}
