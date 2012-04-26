@@ -130,3 +130,18 @@
 .p-tip, .p-submit{padding-left:120px;}
 .p-submit{margin-bottom:15px;}
 .p-note{font-size:12px;}
+
+/* 认证 */
+#certify{margin-top:15px;}
+#certify .p-tip{line-height:1;}
+#certify .tab{margin-bottom:20px;}
+
+/* 用户中心
+ * @author: hejiachen@baixing.com
+ */
+.aside-box-wo li{padding-bottom:1px;}
+.aside-box-wo li a, .aside-box-wo .active span {display:block;height:28px;line-height:28px;padding:0 10px;margin:0 -10px;position:relative;} 
+.aside-box-wo li a:hover, .aside-box-wo .active span {background:#D1E98E;text-decoration:none;}
+.aside-box-wo li a:hover {background:#eefcc7;color:#333;}
+.aside-box-avatar {padding-top: 10px;}
+.aside-box-avatar img {float:left;margin-right:10px;}

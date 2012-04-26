@@ -22,11 +22,30 @@ $('#myModal').on('shown', function(){
 })
 
 // form select
-$('.form-select').length && $('.form-select').hover(function(){
-	$(this).addClass('form-select-open');
-}, function(){
-	$(this).removeClass('form-select-open');
-});
+var formSelect = $('.form-select');
+if(formSelect.length) {
+
+	var menu = $('.form-select-menu', formSelect),
+		form = formSelect.parents('form');
+
+	formSelect.hover(function(){
+		$(this).addClass('form-select-open');
+	}, function(){
+		$(this).removeClass('form-select-open');
+	});
+	
+	menu.delegate('li', 'click', function(){
+		var li = $(this),
+			action = li.attr('data-action') || '/root/',
+			text = li.text(),
+			placeholder = $('.form-select-selected', formSelect);
+		
+		placeholder.text(text);
+		formSelect.removeClass('form-select-open');
+		form.attr('action', action);
+	})
+}
+
 
 
 // # Tips
