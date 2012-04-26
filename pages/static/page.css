@@ -10,7 +10,7 @@
 #breadcrumb{padding:15px 0 10px;border-bottom:1px solid #ddd;}
 
 /* 首页热门推荐 */
-#hot{border:1px solid #cfcfcf;border-top:none;width:968px;padding:5px;margin-bottom:20px;position:relative;}
+#hot{border:1px solid #cfcfcf;border-top:none;width:968px;height:103px;padding:5px;margin-bottom:20px;position:relative;}
 #hot table{margin:5px 0 0 10px;}
 #hot .grid-4{width:160px;}
 #hot .sperator{width:30px;text-align:center;color:#aaa;}

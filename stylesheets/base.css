@@ -514,7 +514,8 @@ a.tag:hover{background:#888;text-decoration:none;}
 left:-5px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
 }
 .form-search .form-select-open{height:auto;}
-.form-select-open .form-select-menu{display:block;position:absolute;width:68px;padding:0 1px;text-align:left;right:-1px;top:-1px;border: 1px solid #cfcfcf;background:#fff;}
+.form-search .form-select iframe{width:70px;height:300px;background:#F30;border:1px solid #f30;position:absolute;top:0;left:0;z-index:-1;}
+.form-select-open .form-select-menu{display:block;position:absolute;width:68px;padding:0 1px;text-align:left;right:-1px;top:-1px;border: 1px solid #cfcfcf;background:#fff;z-index:2;}
 .form-select-menu{background:#fff;display:none;}
 .form-select-menu li{display:block;height:28px;line-height:28px;padding-left:10px;}
 .form-select-menu li:hover, .form-select-menu li.hover{background:#eee;}
