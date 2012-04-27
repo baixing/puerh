@@ -102,7 +102,7 @@ caption, th {
 
 /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
 h1, h2, h3, h4, h5, h6 {
-	font:500 100%/1 Arial, "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
+	font:500 100%/1 Arial, "Microsoft Yahei", sans-serif;
 	font-weight:700\9; /* todo: make some font-family detection */
 }
 
@@ -426,7 +426,7 @@ body{ min-width:1000px}
  */
 .button{display:inline-block;border:1px solid #d1d1d1;height:28px;line-height:28px;padding:0 10px;font-size:12px;color:#333;cursor:pointer;vertical-align:baseline;_overflow:visible;_overflow-y:hidden;/* fixed ie6 input bug */}
 .button:hover, .button-hover{background:#f7f7f7;text-decoration:none;}
-.button-grey, .button-green{font:14px/2 sans-serif;}
+.button-grey, .button-green{font-size:14px;line-height:2;}
 .button-medium{height:24px;line-height:24px;font-size:12px;}
 .button-grey{
 	border:1px solid #dadada;
@@ -476,7 +476,7 @@ body{ min-width:1000px}
  * author: sofish@163.com
  */
 .title{margin-bottom:20px;}
-.title cite{color:#888;font:500 12px serif;}
+.title cite{color:#888;font-size:12px;font-weight:500;}
 
 /* .tag
  * author: sofish@163.com
@@ -550,7 +550,7 @@ left:-5px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
 .glist-title h3{display:inline-block;*display:inline;*zoom:1;line-height:1.5;}
 .glist-title a{color:#333;}
 .glist-title a:hover{color:#888;text-decoration:none;}
-.glist-title cite{font:12px Arial;color:#888;}
+.glist-title cite{font-size:12px;color:#888;}
 .glist-section{margin:5px 0;border-bottom:1px dotted #cfcfcf;padding-bottom:10px;
 _position:relative; /* fix 多一只猪的问题 */
 }
@@ -775,7 +775,7 @@ _position:relative; /* fix 多一只猪的问题 */
  * author: sofish@163.com
  */
 .vote{width:350px;margin:0 auto;text-align:center;background:#eee;padding:15px 0;color:#666;}
-.vote-title{font:500 12px/1.5 serif;}
+.vote-title{font-size:12px;;}
 .vote-link{margin:8px 0 0px;display:none;}
 .vote-link a{background:#ddd;padding:3px 8px;}
 .vote-link a:hover{background:#fff;color:#08c;text-decoration:none;}
