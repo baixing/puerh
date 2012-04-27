@@ -551,10 +551,10 @@ left:-5px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
 .glist-title a{color:#333;}
 .glist-title a:hover{color:#888;text-decoration:none;}
 .glist-title cite{font-size:12px;color:#888;}
-.glist-section{margin:5px 0;border-bottom:1px dotted #cfcfcf;padding-bottom:10px;
+.glist-section{
 _position:relative; /* fix 多一只猪的问题 */
 }
-.glist-section-last{border:none;padding-bottom:0;}
+.glist-section-border{border-bottom:1px dotted #cfcfcf;padding-bottom:5px;margin:0 0 5px;}
 .glist-section a{display:inline-block;white-space:nowrap;_display:inline-block;_width:80px;min-width:80px;padding:5px 0;}
 .glist-section .glist-section-block{display:block;}
 .glist-section .glist-section-inlineblock{display:inline-block;_width:80px;_zoom:1;min-width:80px;}
