@@ -8,18 +8,43 @@ $(function(){
 		$('.vote-link').show(300);
 	});
 	
-	// form-select
-	$('#header .form-select').length && $('#header .form-select').hover(function(){
-		$(this).addClass('form-select-open');
-	}, function(){
-		$(this).removeClass('form-select-open');
-	});
+	var formSelect = $('.form-select');
+	if(formSelect.length) {
+	
+		var menu = $('.form-select-menu', formSelect),
+			form = formSelect.parents('form');
+	
+		formSelect.hover(function(){
+			$(this).addClass('form-select-open');
+		}, function(){
+			$(this).removeClass('form-select-open');
+		});
+		
+		$('li', formSelect).hover(function(){
+			$(this).addClass('hover');
+		}, function(){
+			$(this).removeClass('hover');
+		});
+		
+		menu.delegate('li', 'click', function(){
+			var li = $(this),
+				action = li.attr('data-action') || '/root/',
+				text = li.text(),
+				placeholder = $('.form-select-selected', formSelect);
+			
+			placeholder.text(text);
+			formSelect.removeClass('form-select-open');
+			form.attr('action', action);
+		});
+	}
 	
 	$(window).on('load', function(){
+		var headline = $('headline');
+		if(!headline.length) return;
 		if (GetSwfVer() != -1) {	
-			document.getElementById('headline').innerHTML = fmObjectActivateWrite("Slider", "http://static.baixing.net/media/swf/hpadgalleryPhase3_5__38179__.swf?appServerPath=http%3A%2F%2Fshanghai.baixing.com&postAdMessage=&defaultImage=&version=20101201","100%", "97", "true", "high", "#FFFFCC", ".");	
+			headline.innerHTML = fmObjectActivateWrite("Slider", "http://static.baixing.net/media/swf/hpadgalleryPhase3_5__38179__.swf?appServerPath=http%3A%2F%2Fshanghai.baixing.com&postAdMessage=&defaultImage=&version=20101201","100%", "97", "true", "high", "#FFFFCC", ".");	
 		} else {	
-			document.getElementById('headline').style.display = 'none';	
+			headline.style.display = 'none';	
 		}
 	})
 
