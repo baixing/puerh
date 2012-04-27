@@ -34,6 +34,12 @@ if(formSelect.length) {
 		$(this).removeClass('form-select-open');
 	});
 	
+	$('li', formSelect).hover(function(){
+		$(this).addClass('hover');
+	}, function(){
+		$(this).removeClass('hover');
+	});
+	
 	menu.delegate('li', 'click', function(){
 		var li = $(this),
 			action = li.attr('data-action') || '/root/',
@@ -43,7 +49,7 @@ if(formSelect.length) {
 		placeholder.text(text);
 		formSelect.removeClass('form-select-open');
 		form.attr('action', action);
-	})
+	});
 }
 
 

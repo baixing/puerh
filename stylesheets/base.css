@@ -26,7 +26,7 @@ audio, canvas, video {
 
 /* 要注意表单元素并不继承父级 font 的问题 */
 body, button, input, select, textarea {
-	font: 14px/1.5 'Times New Roman', "Microsoft Yahei", serif;
+	font: 14px/1.5 'Arial';
 }
 
 input, select, textarea {
@@ -102,7 +102,7 @@ caption, th {
 
 /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
 h1, h2, h3, h4, h5, h6 {
-	font:500 100%/1 Arial, "STXihei", Hei, "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
+	font:500 100%/1 Arial, "WenQuanYi Micro Hei", "Microsoft Yahei", sans-serif;
 	font-weight:700\9; /* todo: make some font-family detection */
 }
 
@@ -525,7 +525,7 @@ left:-5px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
 /* pagenav 分页
  * author: sofish@163.com
  */
-.pagenav{font-family:Arial;height:24px;}
+.pagenav{height:24px;}
 .pagenav-cell{display:inline-block;border:1px solid #cfcfcf;padding:0 10px;height:24px;line-height:24px;float:left;margin-right:5px;}
 .pagenav-cell-ellipsis{border:none;padding:0;}
 .pagenav-cell-current{background:#eee;}
@@ -544,7 +544,7 @@ left:-5px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
 /* Group List 列表
  * author: sofish@163.com
  */
-#glist{margin-left:-20px;_margin-left:-40px;font-family:Arial, sans-serif;}
+#glist{margin-left:-20px;_margin-left:-40px;}
 .glist{margin-left:20px;width:180px;float:left;}
 .glist-title{background:#f8f8f8;padding:3px 5px;}
 .glist-title h3{display:inline-block;*display:inline;*zoom:1;line-height:1.5;}
