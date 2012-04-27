@@ -767,7 +767,7 @@ _position:relative; /* fix 多一只猪的问题 */
  */
 .nav{border:1px solid #549712;border-bottom:3px solid #336609;padding-left:10px;}
 .nav-item{float:left;display:inline-block;float:left;height:35px;overflow:hidden;}
-.nav-item-link{display:inline-block;height:35px;line-height:35px;line-height:38px\9;padding:0 16px;color:#ffc;font-family:'Mircosoft Yahei', sans-serif;}
+.nav-item-link{display:inline-block;height:35px;line-height:35px;line-height:38px\9;padding:0 16px;color:#ffc;}
 :root .nav-item-link{line-height:35px\9/;}
 .nav-item-link:hover, .nav-item-current .nav-item-link{color:#fff;background:#4A7E09;border-left:1px solid #336609;border-right:1px solid #336609;padding:0 15px;text-decoration:none;}
 
