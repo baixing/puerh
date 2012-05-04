@@ -346,8 +346,8 @@ body{ min-width:1000px}
  * author: linjianfeng@baixing.com
  */
 .diamond{
--ms-filter: "progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.7071067811865477, M21=0.7071067811865477,M22=0.7071067811865475,SizingMethod='auto expand')";
-*filter:"progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.7071067811865477,M21=0.7071067811865477,M22=0.7071067811865475,SizingMethod='auto expand')";
+filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.7071067811865477,M21=0.7071067811865477,M22=0.7071067811865475, sizingMethod="auto expand");
+-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)"; 
 -moz-transform: rotate(45deg);-o-transform: rotate(45deg);-webkit-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg);
 }
 :root .diamond{filter:none;}
