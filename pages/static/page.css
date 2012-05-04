@@ -75,6 +75,7 @@
 .viewad-title-nometa{margin-bottom:20px;}
 .viewad-meta{font-size:12px;color:#888;margin-bottom:15px;}
 .viewad-info .typo-table{width:100%;}
+.viewad-info-list img{vertical-align:middle;}
 .viewad-info td{width:33%;}
 .viewad-entry-contact img{vertical-align:middle;}
 .viewad-share{margin-bottom:30px;}
@@ -95,7 +96,7 @@
 #publish{width:948px;border:1px solid #ddd;padding:30px 15px 20px;margin-bottom:20px;}
 #publish-title, .selects, .selects-cat, .selects-subcat, .selects-seprator, .selects .tab{float: left;}
 #publish .selects{*float:none;*margin-left:120px;}
-#publish-title{margin-right:10px;padding-left:30px;width:80px;}
+#publish-title{padding-right:10px;text-align:right;width:110px;}
 
 .selects-map{display:none;margin-bottom:10px;}
 .selects-map-on{display:block;}
@@ -145,3 +146,9 @@
 .aside-box-wo li a:hover {background:#eefcc7;color:#333;}
 .aside-box-avatar {padding-top: 10px;}
 .aside-box-avatar img {float:left;margin-right:10px;}
+
+/* 登录 */
+#login{padding-top:60px;margin-bottom:30px;width:300px;}
+#login .tab-title{padding-left:0;}
+#login .tab-content{padding-top:30px;}
+.login-line{margin-bottom:15px;}
