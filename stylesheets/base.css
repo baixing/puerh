@@ -32,6 +32,7 @@ body, button, input, select, textarea {
 input, select, textarea {
 	font-size:1em;
 	vertical-align:middle;
+	color:#666;
 }
 button, input {*overflow: visible;line-height: normal;}
 button::-moz-focus-inner,input::-moz-focus-inner {padding:0;border:0;}
@@ -128,6 +129,7 @@ a{color:#06c;}
 
 /* 让链接在 hover 状态下显示下划线 */
 a:hover {
+	color:#f50;
 	text-decoration: underline;
 }
 
@@ -290,7 +292,7 @@ body{ min-width:1000px}
  */
 .visited a{color:#5500bb;}
 
-.red{color:red;}
+.red, .highlight{color:#f50;}
 .green{color:#5ba533;}
 
 .hide {display: none;}
@@ -347,7 +349,7 @@ body{ min-width:1000px}
  */
 .diamond{
 filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.7071067811865477,M21=0.7071067811865477,M22=0.7071067811865475, sizingMethod="auto expand");
--ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)"; 
+-ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)";
 -moz-transform: rotate(45deg);-o-transform: rotate(45deg);-webkit-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg);
 }
 :root .diamond{filter:none;}
@@ -424,7 +426,7 @@ filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.70
 /* button 按钮
  * author: linjianfeng@baixing.com
  */
-.button{display:inline-block;border:1px solid #d1d1d1;height:28px;line-height:28px;padding:0 10px;font-size:12px;color:#333;cursor:pointer;vertical-align:baseline;_overflow:visible;_overflow-y:hidden;/* fixed ie6 input bug */}
+.button{display:inline-block;border:1px solid #d1d1d1;height:28px;line-height:28px;padding:0 10px;font-size:12px;color:#333;cursor:pointer;vertical-align:middle;_overflow:visible;_overflow-y:hidden;/* fixed ie6 input bug */}
 .button:hover, .button-hover{background:#f7f7f7;text-decoration:none;}
 .button-grey, .button-green{font-size:14px;line-height:2;}
 .button-medium{height:24px;line-height:24px;font-size:12px;}
@@ -437,6 +439,7 @@ filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.70
 			 chroma(color=black);
 }
 .button-grey:hover, .button-grey-hover{
+	color:#333;
 	border:1px solid #c1c1c1;
 	background: -webkit-gradient(linear, left top, left bottom, from(#F0EFEB), to(#FAF9F5));
 	background: -moz-linear-gradient(top, #F0EFEB, #FAF9F5);
@@ -454,6 +457,7 @@ filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.70
 			 chroma(color=black);
 }
 .button-green:hover, .button-green-hover{
+	color:#fff;
 	background: -webkit-gradient(linear, left top, left bottom, from(#468A07), to(#59A905));
 	background: -moz-linear-gradient(top, #468A07, #59A905);
 	background: -o-linear-gradient(top, #468A07, #59A905);
@@ -462,11 +466,11 @@ filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.70
 }
 .button-filter{border:1px solid #d1e98e;padding:0 22px 0 5px;height:20px;line-height:20px;position:relative;background:#faffe9;cursor:default;}
 .button-filter{*height:16px;*padding-top:5px;*overflow:hidden;}
-.button-filter:hover{background:#faffe9;}
+.button-filter:hover{background:#faffe9;color:#333;}
 .button-filter .close{float:none;position:absolute;right:6px;top:0;*top:-2px;font-size:18px;vertical-align:text-top;}
 
 .button-blue{border:1px solid #4185e1;background:#61A4EF;color:#fff;height:24px;line-height:24px;}
-.button-blue:hover{background:#08c;border:1px solid #06c;text-decoration:none;}
+.button-blue:hover{background:#08c;border:1px solid #06c;text-decoration:none;color:#fff;}
 
 .button-icon{position:relative;padding-left:30px;color:#333;}
 .button-icon .icon{position:absolute;left:8px;top:16%;}
@@ -496,14 +500,16 @@ a.tag:hover{background:#888;text-decoration:none;}
     font-family:serif\0/; /* solution:win7 ie8 line-height bug */
 }
 .form-inline{display:inline-block;top:-3px;*display:inline;}
-.form-input, .form-textarea, .form-search .form-select{display:inline-block;*display:inline;*zoom:1;border:1px solid #cfcfcf;border-bottom-color:#e2e2e2;font-size:12px;}
-.form-input{height:28px;padding:0 10px;line-height:28px;}
+.form-input, .form-textarea, .form-search .form-select{display:inline-block;*display:inline;*zoom:1;border:1px solid #cfcfcf;border-color:#CFCFCF #E2E2E2 #E2E2E2 #CFCFCF;font-size:12px;}
+.form-input-big{height:28px;padding:0 10px;line-height:28px;}
+.form-input-35{width:35px;}
 .form-input-90{width:90px;}
 .form-input-150{width:150px;}
+.form-input-230{width:230px;}
 .form-input-400{width:400px;}
 .form-error{border-color:#f30;}
-.form-textarea{height:90px;line-height:1.5;padding:5px 10px;vertical-align:text-top;}
-.form-input-small{height:22px;line-height:22px;}
+.form-textarea{height:90px;line-height:1.5;padding:5px 5px;vertical-align:text-top;}
+.form-input, .form-input-small{height:24px;line-height:24px;padding:0 5px;}
 .form-search .form-select{width:70px;line-height:28px;height:28px;position:relative;*top:-1px;left:-5px;left:-9px\9;cursor:pointer;text-align:center;background:#fff;
 left:-6px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
 }
@@ -515,7 +521,7 @@ left:-6px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
 .form-select-menu li{display:block;height:28px;line-height:28px;padding-left:10px;}
 .form-select-menu li:hover, .form-select-menu li.hover{background:#eee;}
 .form-search{position:relative;}
-.form-search .form-input{width:200px;}
+.form-search .form-input, .form-search .form-input-small{width:200px;height:28px;line-height:28px;}
 .form-search .form-input-90{width:90px;}
 .form-submit{
 	vertical-align:middle;
@@ -615,12 +621,36 @@ _position:relative; /* fix 多一只猪的问题 */
 .list-5 .list-item-content{width:232px;}
 .list-5 .list-item-content-small a{font-size:12px;color:#888;}
 
+.list-3 .list-item-content{width:392px;}
+.list-3 .list-item-content-small a{font-size:12px;color:#888;}
+
 .list-2{width:330px;}
 .list-2 .list-item{border:none;_padding-bottom:0;}
 .list-2 .list-item-content{width:269px;}
 .list-2 .list-item-block{width:50px;text-align:right;overflow:hidden;text-overflow:ellipsis;min-width:0;white-space:nowrap;}
 .list-2 .list-item:nth-child(odd){background:none;}
 .list-2 .list-item:hover, .list-2 .list-item-hover{background:none!important;}
+
+/* MicroControl List
+ * author: hejiachen@baixing.com
+ */
+.list-mc {width:auto;border-top:1px solid #ebebeb;padding:5px;font-size:12px;}
+
+/* Ads List
+ * author: hejiachen@baixing.com
+ */
+.list-ads .list-item-title {text-align:right}
+.list-ads .list-item-title a {color: black; font-weight: bold;}
+.list-ads .list-item em {font-size: 12px;color:#666;padding-left:3px;}
+
+/* 侧边
+ * author: hejiachen@baixing.com
+ */
+.list-aside {width:auto;}
+.list-aside .list-item {padding:5px 0;border:none;}
+.list-aside .list-item:nth-child(odd){background:none;}
+.list-aside .list-item:hover, .list-aside .list-item-hover{background:none!important;}
+.list-aside .list-item-more a {color: #666;}
 
 .list-wo{width:auto;border-top:1px solid #ebebeb;}
 .list-wo .list-item-content{padding-left:10px;padding-top:5px;}
@@ -676,11 +706,11 @@ _position:relative; /* fix 多一只猪的问题 */
 /* Dropdown 下拉菜单
  * author: linjianfeng@baixing.com
  */
-.modal{position:absolute;z-index:999;border:4px solid #333;background:#fff;width:560px;}
+.modal{position:absolute;z-index:1002;border:4px solid #434343;background:#fff;width:560px;}
 .modal-title{background:#eee;height:30px;line-height:30px;padding:0 20px;}
 .modal-content{padding:15px 20px;}
 .modal .close{position:absolute;top:6px;right:20px;}
-.modal-backdrop{position:absolute;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,0.6);z-index:998;}
+.modal-backdrop{position:absolute;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,0.6);z-index:1001;}
 
 /* Dropdown 下拉菜单
  * author: linjianfeng@baixing.com
@@ -691,7 +721,7 @@ _position:relative; /* fix 多一只猪的问题 */
 .dropdown-menu-item{display:inline-block;width:80px;float:left;padding:3px 10px;line-height:1.5;/* prevent overwrite */}
 .dropdown-menu-item:hover, .dropdown-menu-item-hover{background:#EAFDBC;text-decoration:none;cursor:pointer;}
 .dropdown-open .dropdown-menu{display:block;}
-.dropdown-unibody cite{color:#fff;background:#080;display:inline-block;height:12px;width:12px;margin:0 3px;text-align:center;line-height:12px;border-radius:6px;}
+.dropdown-unibody cite{color:#fff;background:#080;display:inline-block;height:12px;padding:0 5px;margin:0 3px;text-align:center;line-height:12px;border-radius:6px;}
 .dropdown-unibody .dropdown-menu{width:100px;margin-top:-4px;margin-top:-3px\9;*margin-top:-4px;*top:25px;color:#333;z-index:2;}
 .dropdown-unibody .dropdown-menu-item{padding:2px 5px 2px 0;width:auto;}
 :root .dropdown-unibody .dropdown-menu{margin-top:-3px\9;}
@@ -723,7 +753,7 @@ _position:relative; /* fix 多一只猪的问题 */
 :root .tips-left .tips-angle{margin-left:-7px;}
 
 
-.alert{padding:15px;position:relative;}
+.alert{padding:10px;position:relative;}
 .alert-title{margin-top:0;}
 .alert-ok{border:1px solid #d9eb9f;background:#fbffed;}
 .alert .close{top:10px;right:10px;}
@@ -755,7 +785,8 @@ _position:relative; /* fix 多一只猪的问题 */
 .flow-item-5{z-index:1;}
 
 .flow-5{height:150px;}
-.flow-5 .flow-item, .flow-item-menu{width:150px;}
+.flow-5 .flow-item, .flow-item-menu{width:140px;}
+.flow-item-head{color:#333}
 .flow-item-menu{position:absolute;top:35px;color:#333;line-height:36px;left:0\9;}
 
 /* Logo
@@ -816,14 +847,4 @@ _position:relative; /* fix 多一只猪的问题 */
  * author: linjianfeng@baixing.com
  */
 .popover{position:absolute;}
-
-
-
-
-
-
-
-
-
-
-
+.spar {color:#ABCD72;border-bottom:1px #59A905 solid;background-color: none!important;line-height: 3;border-top:10px solid #fff;}
