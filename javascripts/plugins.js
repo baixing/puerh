@@ -214,29 +214,28 @@
 
       constructor: Modal
 
-    , toggle: function () {
-        return this[!this.isShown ? 'show' : 'hide']()
+    , toggle: function (data) {
+        return this[!this.isShown ? 'show' : 'hide'](data)
       }
+	// 
+	// add by @sofish
+    // calculate the element height
+    , setPos: function(el){
+		var toTop = $(document).scrollTop(),
+			winHeight = $(window).height(),
+			winWidth = $(window).width(),
+			height = el.height(),
+			width = el.width();
+		el.css({
+			'margin-left': -(winWidth > width ? parseInt(width/2, 10) : 0) + 'px',
+			'margin-top': -(winHeight > height ? parseInt(height/2) : 0) + 'px',
+			'top': (winHeight > height ? parseInt(winHeight/2) + toTop : toTop)+ 'px',
+			'left': (winWidth > width ? 50 : 0) + '%'
+		});
+	}
 
-    , show: function () {
-        var that = this,
- 
-        	// add by @sofish
-        	// calculate the element height
-        	setPos = function(){
-        		var el = that.$element,
-		        	toTop = $(document).scrollTop(),
-		        	winHeight = $(window).height(),
-		        	winWidth = $(window).width(),
-		        	height = el.height(),
-		        	width = el.width();
-        		el.css({
-		        	'margin-left': -(winWidth > width ? parseInt(width/2, 10) : 0) + 'px',
-		        	'margin-top': -(winHeight > height ? parseInt(height/2) : 0) + 'px',
-		        	'top': (winHeight > height ? parseInt(winHeight/2) + toTop : toTop)+ 'px',
-		        	'left': (winWidth > width ? 50 : 0) + '%'
-		        });
-        	};
+    , show: function (data) {
+        var that = this
 
         if (this.isShown) return
 
@@ -244,13 +243,15 @@
         
         // add by @sofish
         // set margin to adjust the window
-        setPos();
+        this.setPos(that.$element);
         $(window).bind('scroll resize', function(){
-        	setPos();
+        	that.setPos(that.$element);
         });
+		
+		if(data) data['setPos'] = this.setPos;
 
         this.isShown = true
-        this.$element.trigger('show')
+        this.$element.trigger('show', data);
 
         escape.call(this)
         backdrop.call(this, function () {
@@ -268,8 +269,8 @@
           that.$element.addClass('in')
 
           transition ?
-            that.$element.one($.support.transition.end, function () { that.$element.trigger('shown') }) :
-            that.$element.trigger('shown')
+            that.$element.one($.support.transition.end, function () {that.$element.trigger('shown')}) :
+            that.$element.trigger('shown', data)
 
         })
       }
@@ -314,13 +315,13 @@
     })
   }
 
-  function hideModal( that ) {
-    this.$element
-      .hide()
+	function hideModal( that ) {
+		this.$element
+			.hide()
       .trigger('hidden')
 
-    backdrop.call(this)
-  }
+		backdrop.call(this)
+	}
 
   function backdrop( callback ) {
     var that = this
@@ -335,8 +336,11 @@
       // add by @sofish
       // adjust backdrop height
       var htmlHeight = $('html').height(),
-          backDrop = $('.modal-backdrop');
-	  backDrop.length && backDrop.height(htmlHeight);
+		  winHeight = $(window).height(),
+          backDrop = $('.modal-backdrop'),
+		  bdHeight = Math.max(htmlHeight, winHeight);
+		  
+	  backDrop.length && backDrop.height(bdHeight);
 
       if (this.options.backdrop != 'static') {
         this.$backdrop.click($.proxy(this.hide, this))
@@ -382,14 +386,14 @@
  /* MODAL PLUGIN DEFINITION
   * ======================= */
 
-  $.fn.modal = function ( option ) {
+  $.fn.modal = function ( option, extra_data ) {
     return this.each(function () {
       var $this = $(this)
         , data = $this.data('modal')
         , options = $.extend({}, $.fn.modal.defaults, $this.data(), typeof option == 'object' && option)
       if (!data) $this.data('modal', (data = new Modal(this, options)))
-      if (typeof option == 'string') data[option]()
-      else if (options.show) data.show()
+      if (typeof option == 'string') data[option](extra_data)
+      else if (options.show) data.show(extra_data)
     })
   }
 
@@ -409,10 +413,10 @@
     $('body').on('click.modal.data-api', '[data-toggle="modal"]', function ( e ) {
       var $this = $(this), href
         , $target = $($this.attr('data-target') || (href = $this.attr('href')) && href.replace(/.*(?=#[^\s]+$)/, '')) //strip for ie7
-        , option = $target.data('modal') ? 'toggle' : $.extend({}, $target.data(), $this.data())
+        , option = $target.data('modal') ? 'toggle' : $.extend({}, $target.data())
 
       e.preventDefault()
-      $target.modal(option)
+      $target.modal(option, $this.data())
     })
   })
 
@@ -450,7 +454,7 @@
       }
 
       this.options.selector ?
-        (this._options = $.extend({}, this.options, { trigger: 'manual', selector: '' })) :
+        (this._options = $.extend({}, this.options, {trigger: 'manual', selector: ''})) :
         this.fixTitle()
     }
 
@@ -522,7 +526,7 @@
 
         $tip
           .remove()
-          .css({ top: 0, left: 0, display: 'block' })
+          .css({top: 0, left: 0, display: 'block'})
           .appendTo(inside ? this.$element : document.body)
 
         pos = this.getPosition(inside)
@@ -531,23 +535,23 @@
         actualHeight = $tip[0].offsetHeight
 
         switch (inside ? placement.split(' ')[1] : placement) {
-          case 'bottom':
+          case 'top':
             tp = {top: pos.top + pos.height, left: pos.left + pos.width / 2 - actualWidth / 2}
             break
-          case 'top':
+          case 'bottom':
             tp = {top: pos.top - actualHeight, left: pos.left + pos.width / 2 - actualWidth / 2}
             break
-          case 'left':
+          case 'right':
             tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth}
             break
-          case 'right':
+          case 'left':
             tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width}
             break
         }
 
         $tip
           .css(tp)
-          .addClass(placement)
+          .addClass('tips-' + placement)
           .addClass('in')
       }
     }
@@ -555,7 +559,7 @@
   , setContent: function () {
       var $tip = this.tip()
       $tip.find('.tooltip-inner').html(this.getTitle())
-      $tip.removeClass('fade in top bottom left right')
+      $tip.removeClass('fade in tips-top tips-bottom tips-left tips-right')
     }
 
   , hide: function () {
@@ -689,10 +693,9 @@
         , title = this.getTitle()
         , content = this.getContent()
 
-      $tip.find('.popover-title')[ $.type(title) == 'object' ? 'append' : 'html' ](title)
-      $tip.find('.popover-content > *')[ $.type(content) == 'object' ? 'append' : 'html' ](content)
+      $tip.find('.tips-text')[ $.type(content) == 'object' ? 'append' : 'html' ](content)
 
-      $tip.removeClass('fade top bottom left right in')
+      $tip.removeClass('fade tips-top tips-bottom tips-left tips-right in')
     }
 
   , hasContent: function () {
@@ -740,7 +743,7 @@
   $.fn.popover.defaults = $.extend({} , $.fn.tooltip.defaults, {
     placement: 'right'
   , content: ''
-  , template: '<div class="popover"><div class="tip-angel"></div><div class="popover-inner"><h3 class="popover-title"></h3><div class="popover-content"><p></p></div></div></div>'
+  , template: '<div class="tips"><span class="tips-angle diamond"></span><div class="tips-text"></div></div>'
   })
 
 }( window.jQuery );
@@ -1166,7 +1169,7 @@
 
   , blur: function (e) {
       var that = this
-      setTimeout(function () { that.hide() }, 150)
+      setTimeout(function () {that.hide()}, 150)
     }
 
   , click: function (e) {

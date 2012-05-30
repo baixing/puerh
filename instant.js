@@ -50,8 +50,22 @@ if(formSelect.length) {
 		formSelect.removeClass('form-select-open');
 		form.attr('action', action);
 	});
+	
 }
 
+if($('.container').length){
+	var cnt = $('.container'),
+		vertical= ['top', 'bottom'],
+		horizonal = ['left', 'right'];
+	cnt.delegate('a', 'click', function(e){
+		e.preventDefault();
+		var a = $(this),
+			html = a.html();
+		if(!/<span>/.test(html)){
+			a.html('<span>' + html + '</span>');
+		}
+	})
+}
 
 
 // # Tips
