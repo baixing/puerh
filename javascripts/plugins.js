@@ -245,7 +245,7 @@
         // set margin to adjust the window
         this.setPos(that.$element);
         $(window).bind('scroll resize', function(){
-        	that.setPos(that.$element);
+			that.setPos(that.$element);
         });
 		
 		if(data) data['setPos'] = this.setPos;
@@ -335,7 +335,7 @@
         
       // add by @sofish
       // adjust backdrop height
-      var htmlHeight = $('html').height(),
+      var htmlHeight = $(document).height(),
 		  winHeight = $(window).height(),
           backDrop = $('.modal-backdrop'),
 		  bdHeight = Math.max(htmlHeight, winHeight);
