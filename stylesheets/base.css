@@ -638,7 +638,6 @@ _position:relative; /* fix 多一只猪的问题 */
 /* List
  * author: linjianfeng@baixing.com
  */
-.list{width:730px;}
 .list-item{border-bottom:1px solid #ebebeb;padding:10px 0;*display:inline;*zoom:1;width:100%;}
 .list-item:nth-child(odd){background:#fcfcfc;}
 .list-item:hover, .list-item-hover{background:#fcffee!important;}
