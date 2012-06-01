@@ -2,9 +2,31 @@
 #topbar{background:#f7f7f7;margin-bottom:10px;_zoom:1;line-height:1;}
 
 /* 头部 */
-#header{margin-bottom:20px;}
+#header{margin-bottom:10px;position:relative;border-top:15px solid #fff;}
 #header .form-search{padding-top:24px;}
 #header .last{text-align: right;padding-top:25px;}
+#header .bread{vertical-align:bottom;}
+
+.header-small {_border-top:0!important;_top:15px;}
+.header-small .logo{height:40px;}
+.header-small .logo{position:relative;top:-3px;}
+.header-small .logo h1{width:auto;margin-right:5px;}
+.header-small .logo img{height:40px;}
+.header-small .logo-side{bottom:0;}
+
+.logo-side{padding-top:0;font-size:14px;}
+.logo-side .logo-side-current{background:#fff;padding:0 6px 3px;border:1px solid #fff;border-bottom:none;z-index:3;white-space:nowrap;}
+.dropdown-open .logo-side-current{border-color:#cfcfcf;}
+.logo-side .dropdown-menu{width:260px;top:42px;font-size:12px;z-index:2;padding:0;}
+.logo-side table{*border:5px solid #fff;padding:5px;border-bottom:1px solid #cfcfcf;width:100%;display:block;}
+.logo-side td{padding:3px 0;}
+.logo-side .more-city{line-height:30px;padding:0 5px;}
+/* .header-small .logo .ddarrow{background: #FFFFFF;border: 1px solid #AAAAAA;float: right;height: 14px;left: 3px;line-height: 1;padding: 0 2px;position: relative;top: 4px;} */
+
+.header-small .last{padding-top:0!important;}
+.header-small .grid{height:35px;}
+.header-small .bread{padding-top:20px;}
+.header-small .topbar{padding-top:20px;}
 
 /* 面包屑导航 */
 #breadcrumb{padding:15px 0 10px;border-bottom:1px solid #ddd;}

@@ -4,6 +4,7 @@ html {
 	background: #fff;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
+	_background:#fff url(about:blank) no-repeat fixed 0 0;
 }
 
 /* 内外边距通常让各个浏览器样式的表现位置不同 */
@@ -26,11 +27,10 @@ audio, canvas, video {
 
 /* 要注意表单元素并不继承父级 font 的问题 */
 body, button, input, select, textarea {
-	font: 14px/1.5 'Arial', 'Microsoft Yahei';
+	font: 14px/1.5 'Arial', sans-serif;
 }
 
 input, select, textarea {
-	font-size:1em;
 	vertical-align:middle;
 	color:#666;
 }
@@ -103,7 +103,7 @@ caption, th {
 
 /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
 h1, h2, h3, h4, h5, h6 {
-	font:500 100%/1 Arial, "Microsoft Yahei", sans-serif;
+	font:500 100%/1 Arial, sans-serif;
 	font-weight:700\9; /* todo: make some font-family detection */
 }
 
@@ -186,10 +186,31 @@ small {
 /* 让内容以 border-box 显示 */
 .border-box{
 	-webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
-    box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box;
 }
+
+/* hidden属性 */
+[hidden] { display: none; }
+.\-attr-hidden { display: none; }
+
+
+/*
+@ 引用: http://aliceui.com/force-wrap/
+@ 名称: 强制换行
+@ 用法:
+	* 一般块级元素用：.textwrap
+	* table标签中需添加：.textwrap-table
+@ 例子:
+	<p class="textwrap">…</p>
+	<table class="textwrap textwrap-table"></table>
+*/
+
+.textwrap, .textwrap td, .textwrap th{word-wrap:break-word;word-break:break-all;}
+.textwrap-table{table-layout:fixed;}
+
+
 
 /*
 Variable Grid System.
@@ -292,8 +313,9 @@ body{ min-width:1000px}
  */
 .visited a{color:#5500bb;}
 
-.red, .highlight{color:#f50;}
-.green{color:#5ba533;}
+.red, .highlight{color:#f50!important;}
+.green{color:#5ba533!important;}
+.blue{color:#06c!important;}
 
 .hide {display: none;}
 .show{display: block;}
@@ -348,18 +370,26 @@ body{ min-width:1000px}
  * author: linjianfeng@baixing.com
  */
 .diamond{
-filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.7071067811865477,M21=0.7071067811865477,M22=0.7071067811865475, sizingMethod="auto expand");
 -ms-filter: "progid:DXImageTransform.Microsoft.Matrix(SizingMethod='auto expand', M11=0.7071067811865476, M12=-0.7071067811865475, M21=0.7071067811865475, M22=0.7071067811865476)";
 -moz-transform: rotate(45deg);-o-transform: rotate(45deg);-webkit-transform: rotate(45deg);-ms-transform: rotate(45deg);transform: rotate(45deg);
 }
-:root .diamond{filter:none;}
+:root .diamond{filter:none\9;}
+
+/* HR
+ * author: hejiachen@baixing.com
+ * Sampel: <hr class="blank10" />
+ */
+.blank10 {border:none;margin-bottom: 10px;}
+.line {border:none;border-bottom:1px solid #ececec;margin: 10px 0;}
+
+hr{border:none;border-bottom:1px solid #cfcfcf;margin-bottom:10px;*color:pink;*filter:chroma(color=pink);height:10px;*margin:-7px 0 2px;}
 
 /* Icons
  * author: linjianfeng@baixing.com
  */
 .icon{background:url("../images/icons.png") no-repeat 0 0;display:inline-block;*display:inline;*zoom:1;overflow:hidden;vertical-align:text-bottom;font-size:0;*line-height:0;/* fix 1px font bug in ie */}
 
-.icon-bag, .icon-car, .icon-house, .icon-friend, .icon-love, .icon-book, .icon-pet, .icon-doc, .icon-umbrella,.icon-time,.icon-play, .icon-mobile, .icon-connect, .icon-star, .icon-comment, .icon-flag{width:18px;height:18px;}
+.icon-bag, .icon-car, .icon-house, .icon-friend, .icon-love, .icon-book, .icon-pet, .icon-doc, .icon-umbrella,.icon-time,.icon-play, .icon-mobile, .icon-connect, .icon-star, .icon-comment, .icon-flag, .icon-support, .icon-against{width:18px;height:18px;}
 
 .icon-bag{background-position:2px 1px;}
 .icon-car{background-position:-41px 1px;} 
@@ -385,7 +415,7 @@ filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.70
 .icon-comment:hover, .button-hover .icon-comment, .button:hover .icon-comment{background-position:-167px -74px;}
 .icon-flag:hover, .button-hover .icon-flag, .button:hover .icon-flag{background-position:-195px -75px;}
 
-.icon-del, .icon-done, .icon-add, .icon-minus{width:13px;height:13px;}
+.icon-del, .icon-done, .icon-add, .icon-minus, .icon-del-green, .icon-done-green, .icon-add-green, .icon-minus-green{width:13px;height:13px;}
 
 .icon-del{background-position:-1px -105px;}
 .icon-done{background-position:-24px -105px;}
@@ -397,15 +427,24 @@ filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.70
 .icon-add:hover{background-position:-49px -123px;}
 .icon-minus:hover{background-position:-76px -123px;}
 
-.icon-phone, .icon-id, .icon-trade{width:18px;height:18px;}
+.icon-del-green{background-position:-1px -141px;}
+.icon-done-green{background-position:-24px -141px;}
+.icon-add-green{background-position:-49px -105px;}
+.icon-minus-green{background-position:-76px -105px;}
 
-.icon-phone{background-position:2px -76px;}
-.icon-trade{background-position:-22px -76px;}
-.icon-id{background-position:-50px -76px;}
 
-.icon-phone-done{background-position:2px -52px;}
-.icon-trade-done{background-position:-22px -52px;}
-.icon-id-done{background-position:-50px -52px;}
+.icon-phone, .icon-id, .icon-trade, .icon-MobileVerified, .icon-bizLicenseVerified, .icon-personalIDVerified{width:18px;height:18px;}
+
+.icon-phone, .icon-MobileVerified{background-position:2px -76px;}
+.icon-trade, .icon-bizLicenseVerified{background-position:-22px -76px;}
+.icon-id, .icon-personalIDVerified{background-position:-50px -76px;}
+
+.icon-phone-done, .icon-MobileVerified-done{background-position:2px -52px;}
+.icon-trade-done, .icon-bizLicenseVerified-done{background-position:-22px -52px;}
+.icon-id-done, .icon-personalIDVerified-done{background-position:-50px -52px;}
+
+.icon-support{background-image:url("/images/puerh/new-icons.png");background-position:0 -25px;} 
+.icon-against{background-image:url("/images/puerh/new-icons.png");background-position:0 0;}
 
 /* arrow
  * author: linjianfeng@baixing.com
@@ -417,7 +456,7 @@ filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.70
 .arrow-up:hover{border-bottom-color:#aaa;}
 .arrow-down:hover{border-top-color:#aaa;*zoom:1;}
 */
-.arrow{display:inline-block;height:0;border:5px solid transparent;*border-color:pink;font-size:0;width:0;overflow:hidden;*line-height:0;position:relative;top:-5px;vertical-align:text-bottom;*filter:chroma(color=pink);}
+.arrow{display:inline-block;height:0;padding:0!important;border:5px solid transparent;*border-color:pink;font-size:0;width:0;overflow:hidden;*line-height:0;position:relative;top:-5px;vertical-align:text-bottom;*filter:chroma(color=pink);}
 .arrow-up, .dropdown-open .arrow-down{border-bottom-color:#aaa;border-top-color: transparent;*border-top-color:pink;}
 .arrow-down, .dropdown-open .arrow-up{border-top-color:#aaa;margin-bottom:-5px;border-bottom-color:transparent;*border-bottom-color:pink;}
 .arrow-up:hover, .dropdown-open .arrow-down:hover{border-bottom-color:#999;border-top-color: transparent;*border-top-color:pink;}
@@ -450,18 +489,20 @@ filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.70
 .button-green, .nav{
 	color:#ffc;
 	border:1px solid #549812;
-	background: -webkit-gradient(linear, left top, left bottom, from(#59A905), to(#4a8A07));
-	background: -moz-linear-gradient(top, #59A905, #4a8A07);
-	background: -o-linear-gradient(top, #59A905, #4a8A07);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#59A905', endColorstr='#4a8A07')
+	background: #60A00D;
+	background: -webkit-gradient(linear, left top, left bottom, from(#72B717), to(#60A00D));
+	background: -moz-linear-gradient(top, #72B717, #60A00D);
+	background: -o-linear-gradient(top, #72B717, #60A00D);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#72B717', endColorstr='#60A00D')
 			 chroma(color=black);
 }
 .button-green:hover, .button-green-hover{
 	color:#fff;
-	background: -webkit-gradient(linear, left top, left bottom, from(#468A07), to(#59A905));
-	background: -moz-linear-gradient(top, #468A07, #59A905);
-	background: -o-linear-gradient(top, #468A07, #59A905);
-	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#468A07', endColorstr='#59A905')
+	background: #72B717;
+	background: -webkit-gradient(linear, left top, left bottom, from(#468A07), to(#72B717));
+	background: -moz-linear-gradient(top, #468A07, #72B717);
+	background: -o-linear-gradient(top, #468A07, #72B717);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#468A07', endColorstr='#72B717')
 			 chroma(color=black);
 }
 .button-filter{border:1px solid #d1e98e;padding:0 22px 0 5px;height:20px;line-height:20px;position:relative;background:#faffe9;cursor:default;}
@@ -485,12 +526,12 @@ filter:progid:DXImageTransform.Microsoft.Matrix(M11=0.7071067811865475,M12=-0.70
 /* .tag
  * author: linjianfeng@baixing.com
  */
-.tag{display:inline-block;padding:0 3px;background:#eee;margin:0 3px;border-radius:2px;}
-.tag-blue, .tag-green, .tag-red, a.tag:hover{color:#fff;}
+.tag{display:inline-block;padding:0 3px;padding:1px 3px 0\9;background:#eee;margin:0 3px;border-radius:2px;color:#888!important;}
+.tag-blue, .tag-green, .tag-red, a.tag:hover{color:#fff!important;}
 .tag-blue{background:#08c;}
 .tag-green{background:#5ba533;}
 .tag-red{background:#f36;}
-a.tag:hover{background:#888;text-decoration:none;}
+a.tag:hover{background:#888;text-decoration:none;color:#fff!important;}
 
 /* form 表单
  * author: linjianfeng@baixing.com
@@ -500,7 +541,7 @@ a.tag:hover{background:#888;text-decoration:none;}
     font-family:serif\0/; /* solution:win7 ie8 line-height bug */
 }
 .form-inline{display:inline-block;top:-3px;*display:inline;}
-.form-input, .form-textarea, .form-search .form-select{display:inline-block;*display:inline;*zoom:1;border:1px solid #cfcfcf;border-color:#CFCFCF #E2E2E2 #E2E2E2 #CFCFCF;font-size:12px;}
+.form-input, .form-textarea, .form-search .form-select{display:inline-block;*display:inline;*zoom:1;border:1px solid #cfcfcf;border-color:#CFCFCF #E2E2E2 #E2E2E2 #CFCFCF;}
 .form-input-big{height:28px;padding:0 10px;line-height:28px;}
 .form-input-35{width:35px;}
 .form-input-90{width:90px;}
@@ -513,8 +554,8 @@ a.tag:hover{background:#888;text-decoration:none;}
 .form-search .form-select{width:70px;line-height:28px;height:28px;position:relative;*top:-1px;left:-5px;left:-9px\9;cursor:pointer;text-align:center;background:#fff;
 left:-6px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
 }
-.mac.chrome .form-search .form-select, .ie-8 .form-search .form-select, .opera .form-search .form-select{top:1px;}
-.win7.ie-9 .form-search .form-select{top:2px;}
+.mac.chrome .form-search .form-select, .ie-8 .form-search .form-select, .ie-9 .form-search .form-select, .opera .form-search .form-select{top:1px;}
+.form-search .form-select, .form-search .form-input{font-size:12px;}
 .form-search .form-select-open{height:auto;}
 .form-select-open .form-select-menu{display:block;position:absolute;width:68px;padding:0 1px;text-align:left;right:-1px;top:-1px;border: 1px solid #cfcfcf;background:#fff;z-index:2;}
 .form-select-menu{background:#fff;display:none;}
@@ -533,29 +574,31 @@ left:-6px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
  * author: linjianfeng@baixing.com
  */
 .pagenav{height:24px;}
+.pagenav a{color:#333;}
 .pagenav-cell{display:inline-block;border:1px solid #cfcfcf;padding:0 10px;height:24px;line-height:24px;float:left;margin-right:5px;}
 .pagenav-cell-ellipsis{border:none;padding:0;}
 .pagenav-cell-current{background:#eee;}
-.pagenav-cell-next{background:#5ba533;border-color:#4c8928;color:#fff;}
+.pagenav .pagenav-cell-next{background:#5ba533;border-color:#4c8928;color:#fff;}
 .pagenav-cell:hover{background:#eee;text-decoration:none;}
 .pagenav-cell-ellipsis:hover{background:none;}
-.pagenav-cell-next:hover{background:#458324;}
+.pagenav .pagenav-cell-next:hover{background:#458324;}
 
 /* breadcrumb 面包屑导航
  * author: linjianfeng@baixing.com
  */
 .bread{color:#999;font-size:12px;}
-.bread-cell-current{color:#333;}
+.bread-cell-current{color:#888;}
 .bread-cell-cite{color:#888;}
 
 /* Group List 列表
  * author: linjianfeng@baixing.com
  */
 #glist{margin-left:-20px;_margin-left:-40px;}
+.glist a{color:#333;}
 .glist{margin-left:20px;width:180px;float:left;}
-.glist-title{background:#f8f8f8;padding:3px 5px;}
-.glist-title h3{display:inline-block;*display:inline;*zoom:1;line-height:1.5;}
-.glist-title a{color:#333;}
+.glist-title{padding:3px 5px;border-bottom:2px solid #82C727;background:#f7f7f7;}
+.glist-title h3{display:inline-block;*display:inline;*zoom:1;line-height:1.5;font-weight:800;}
+.glist-title h3 a{color:green;}
 .glist-title a:hover{color:#888;text-decoration:none;}
 .glist-title cite{font-size:12px;color:#888;}
 .glist-section{
@@ -563,7 +606,7 @@ padding-left:6px;
 _position:relative; /* fix 多一只猪的问题 */
 }
 .glist-section-border{border-bottom:1px dotted #cfcfcf;padding-bottom:5px;margin:0 0 5px;_zoom:1;}
-.glist-section-last{margin:0 0 5px;}
+.glist-section-last{margin:0 0 10px;}
 .glist-section a{display:inline-block;white-space:nowrap;_display:inline-block;_width:80px;min-width:80px;padding:5px 0;}
 .glist-section .glist-section-block{display:block;}
 .glist-section .glist-section-inlineblock{display:inline-block;_width:80px;_zoom:1;min-width:80px;}
@@ -595,7 +638,6 @@ _position:relative; /* fix 多一只猪的问题 */
 /* List
  * author: linjianfeng@baixing.com
  */
-.list{width:730px;}
 .list-item{border-bottom:1px solid #ebebeb;padding:10px 0;*display:inline;*zoom:1;width:100%;}
 .list-item:nth-child(odd){background:#fcfcfc;}
 .list-item:hover, .list-item-hover{background:#fcffee!important;}
@@ -681,27 +723,39 @@ _position:relative; /* fix 多一只猪的问题 */
 /* Topbar 顶部导航
  * author: linjianfeng@baixing.com
  */
-.topbar{background:#f8f8f8;height:24px;line-height:24px;color:#ccc;font-size:12px;width:980px;margin:0 auto;}
+.topbar{height:24px;line-height:24px;color:#ccc;font-size:12px;position:absolute;right:0;top:-5px;}
 .topbar a{color:#333;}
 .topbar a:hover{color:red;}
-.topbar-left{float:left;color:#333;}
-.topbar-right{float:right;}
-.topbar-right-text{color:#888;}
 .topbar .dropdown{display:inline!important;}
 
 /* Filter 类目筛选
  * author: linjianfeng@baixing.com
  */
-.filter{}
+/*.filter{}
 .filter a{color:#333;padding-right:3px;}
 .filter-item{float:left;width:326px;display:inline-block;margin-bottom:10px;}
 .filter .filter-item-cap{font-weight:700;color:#06c;}
+
 .filter-intype a{color:#06c;display:inline-block;margin-right:5px;}
 .filter-intype .filter-item{display:block;float:none;position:relative;padding-left:80px;width:auto;}
 .filter-intype .filter-item-cap{position:absolute;left:0;color:#333;}
 .filter-intype .filter-item-selected{color:#888;}
+
 .filter-block .filter-item{width:160px;padding-right:20px;font-size:12px;color:#888;}
-.filter-block .filter-item-cap{display:block;font-size:14px;}
+.filter-block .filter-item-cap{display:block;font-size:14px;}*/
+
+.filter{border:1px solid #cfcfcf;padding:15px 20px;font-size:12px;}
+.filter .form {color:#888;padding-bottom: 15px;margin-bottom: 10px;border-bottom:1px dotted #ddd;}
+.filter .form a{color:#06c;}
+.filter .form-input{height:22px;line-height:22px;}
+.filter .button{margin-right: 20px;}
+.filter a{color:#333;padding-right:3px;}
+.filter-item{margin-bottom:10px;padding-bottom:10px;border-bottom:1px dotted #ddd;}
+.filter .filter-item-cap{font-weight:700;color:#06c;display:inline-block;*display:inline;*zoom:1;width:120px;}
+.filter-toggle{text-align:center;}
+.filter-toggle a, .filter-toggle .arrow-down{color:#06c;border-top-color:#f50;}
+.filter-toggle .arrow-up{border-bottom-color:#f50;}
+.filter-toggle a:hover{text-decoration:none;}
 
 /* Dropdown 下拉菜单
  * author: linjianfeng@baixing.com
@@ -710,7 +764,7 @@ _position:relative; /* fix 多一只猪的问题 */
 .modal-title{background:#eee;height:30px;line-height:30px;padding:0 20px;}
 .modal-content{padding:15px 20px;}
 .modal .close{position:absolute;top:6px;right:20px;}
-.modal-backdrop{position:absolute;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,0.6);z-index:1001;}
+.modal-backdrop{position:absolute;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,0.6);background:rgba(0,0,0,0.6);background:#000\9;filter:alpha(opacity=80)\9;z-index:1001;}
 
 /* Dropdown 下拉菜单
  * author: linjianfeng@baixing.com
@@ -794,10 +848,8 @@ _position:relative; /* fix 多一只猪的问题 */
  */
 .logo{height:54px;vertical-align:text-bottom;font:12px/1.5 Tahoma, "Microsoft Yahei", sans-serif;}
 .logo h1{float:left;width:130px;height:54px;}
-.logo-side{padding-top:18px;vertical-align:middle;}
-.logo-side a, .logo-side{color:#888;line-height:1.4;}
-.logo-side .logo-side-current{font-size:14px;color:#333;}
-.logo-side-slogan{display:block;color:#888;}
+.logo-side{position:relative;height:40px;float:left;width:85px;bottom:-14px;}
+.logo-side .logo-side-current{position:absolute;bottom:-3px;}
 
 /* Nav
  * author: linjianfeng@baixing.com
