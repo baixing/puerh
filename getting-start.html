@@ -119,7 +119,7 @@
 …		</pre>
 		
 		<h3>3、栅格系统</h3>
-		<p>Puerh 使用 980px 宽、20 栏、10px 间隙的栅格系统。内容区域为 980px，撑开宽度为 1000px。所有栅格必须包含到 <code>.container</code> 内。使用 <code>.grid</code> 模块，扩展名 <code>.grid-N</code> N 代表 1~20 中的任意整数。</p>具体的使用如下：
+		<p>Puerh 使用 980px 宽、20 栏（每栏 <code>30px</code>）、10px 间隙的栅格系统。内容区域为 980px，撑开宽度为 1000px。所有栅格必须包含到 <code>.container</code> 内。使用 <code>.grid</code> 模块，扩展名 <code>.grid-N</code> N 代表 1~20 中的任意整数。</p>具体的使用如下：
 		<pre class="prettyprint">
 // 包含于 <b>.container</b> 中
 &lt;div class="container"&gt;
@@ -193,6 +193,101 @@
 @media all and (-webkit-min-device-pixel-ratio:0) { .webkit{property:value;} }
 @media all and (-webkit-min-device-pixel-ratio:10000),not all and (-webkit-min-device-pixel-ratio:0) { .opera{property:value;} }
 @media screen and (max-device-width: 480px) { .iphone-or-mobile-s-webkit{property:value;} }</pre>
+		<p>目前在网站中会自动添加 body class，显示方式如下：<code>浏览器</code> <code>版本号</code> <code>系统名</code></p>
+		<pre class="prettyprint">
+// 在 Body 中加 class
+&lt;body class='firefox firefox-12 mac'&gt;
+		
+// 目前支持的 class name
+浏览器：.firefox / .chrome / .safari / .ie / .opera / .maxthon / .netscape
+版本号：浏览器版本号取整：比如 firefox 12.03 会显示 firefox-12
+系统名：.mac / .win / .vista / .win7 / .ubuntu / .linux
+
+// 标记与使用：
+文件：Browser.php (/lib/) 
+调用：Browser::detect()</pre>
+
+		<p><b>注意：</b>别用轻易使用hack，IE下很多兼容性问题都是 <a href="http://haslayout.net/">has Layout</a> 引起的。试着给元素加上:</p>
+		<pre class="prettyprint">
+display: inline-blockheight: (除 auto外任何值)
+width: (除 auto外任何值)
+float: (left或 right)
+position: absolutewriting-mode: tb-rlzoom: (除 normal外任意值) </pre>
+
+		<h3>7、IE私有特性</h3>
+		<ul>
+			<li><b>expression</b>：无论什么时候，都不要使用它，用 Javascript 吧。更优雅，更灵活。</li>
+			<li><b>filter</b>:
+				<ul>
+			    	<li>应该尽量避免使用 AlphaImageLoader</li>
+			    	<li>可以适当在投影/发光/渐变/去色方面上使用</li>
+				</ul>
+			</li>
+			<li><b>IE bug</b>
+			<p>常见BUG，详见：http://sofish.de/1400</p>
+			</li>
+		</ul>
+		
+		<h3>8、关于模块化</h3>
+		<p>有两点需要注意的，一是，注意代码重用的模块化；一是，注意 HTML 结构的模块化，而不是分块。</p>
+		<ul>
+			<li>
+			<p><strong>我们是这样重用的</strong>：</p>
+			<pre class="prettyprint">
+&lt;div id=&quot;<strong>module-1</strong>&quot; class=&quot;module&quot;&gt;
+    &lt;h3&gt;TITLE&lt;/h3&gt;
+    &lt;p class=&quot;module-item&quot;&gt;
+        some text
+    &lt;/p&gt;
+&lt;/div&gt;
+&lt;div id=&quot;<strong>module-2</strong>&quot; class=&quot;module&quot;&gt;
+    &lt; h3&gt;TITLE&lt;/h3&gt;
+    &lt;p class=&quot;module-item&quot;&gt;
+        some text
+    &lt;/p&gt;
+&lt;/div&gt;</pre>
+			<pre class="prettyprint">
+/* module, reuse style in module scrope*/
+.module{}
+.module-status{}
+.module-item{}
+.module-status .module-1-item{}
+/* customize */
+<strong>#module-1</strong> .module-item{}
+<strong>#module-2</strong> .module-item{}</pre>
+			</li>
+			<li>
+			<p><strong>HTML 的模块化</strong>：我们应该这样写（他们的视觉是一体的，代码也应该是一体的）：</p>
+			<pre class="prettyprint">
+&lt;div id=&quot;<strong>module-1</strong>&quot; class=&quot;module&quot;&gt;
+&lt;h3&gt;TITLE&lt;/h3&gt;
+&lt;p class=&quot;module-item&quot;&gt;
+    some text
+&lt;/p&gt;
+&lt;/div&gt; &lt;!-- #module .module --&gt;</pre>
+			<p>而不是这样写：</p>
+			<pre class="prettyprint">
+&lt;h3&gt;TITLE&lt;/h3&gt;
+&lt;!-- 第一块 --&gt;
+&lt;div id=&quot;<strong>module-1</strong>&quot; class=&quot;module&gt;
+    &lt;p class=&quot;module-item&quot;&gt;
+        some text
+    &lt;/p&gt;
+&lt;/div&gt; &lt;!-- 第二块 --&gt;</pre>
+			</li>
+		</ul>
+		
+		<b>注意：</b>在样式的安全使用用，尽量把样式定义在相应的容器中，而不是作为全局使用
+		<pre class="prettyprint">
+// 全局样式：除非非常通用，是不允许新建全局样式的，如果你要建，请先问一下小鱼，不然可能随时被干掉（^^）
+.red{color:red!imporant;}
+
+// 作用域：限定在一定的容器中
+// 像 .hover 这样的选择器是非常普通的，如何使用？
+// 这样两个容器的 .hover 就不相互影响了，记得限定作用域
+.module-1 .hover{ ... }
+.module-2 .hover{ ... }
+ 		</pre>
 
 		<h2>二、JavaScript 组件</h2>
 		<p>目前 Puerh 的大部分组件都使用 Twitter Bootstrap 库的自定义 Javascript 插件。删除了其中网站不常用的 Carousel 等组件，修改 Tips、Modals 等插件以适合百姓网需求，增加 Validator 和 Linkage 组件。</p>
