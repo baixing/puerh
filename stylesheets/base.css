@@ -523,6 +523,13 @@ hr{border:none;border-bottom:1px solid #cfcfcf;margin-bottom:10px;*color:pink;*f
 .title{margin-bottom:20px;}
 .title cite{color:#888;font-size:12px;font-weight:500;}
 
+/* Headline
+ *author: zhanglin@baixing.com
+ */
+ .headline{display:block;padding:0 10px;height:36px;line-height:36px;background:#f7f7f7;border-top:2px solid #82c726;font-size:14px;font-weight:700;}
+ .headline a{color:#333;}
+ .headline-more{float:right;}
+ 
 /* .tag
  * author: linjianfeng@baixing.com
  */
@@ -550,7 +557,7 @@ a.tag:hover{background:#888;text-decoration:none;color:#fff!important;}
 .form-input-400{width:400px;}
 .form-error{border-color:#f30;}
 .form-textarea{height:90px;line-height:1.5;padding:5px 5px;vertical-align:text-top;}
-.form-input, .form-input-small{height:24px;line-height:24px;padding:0 5px;}
+.form-input, .form-input-small{height:24px;line-height:24px;padding:0 5px;font-size:12px;}
 .form-search .form-select{width:70px;line-height:28px;height:28px;position:relative;*top:-1px;left:-5px;left:-9px\9;cursor:pointer;text-align:center;background:#fff;
 left:-6px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
 }
@@ -623,8 +630,8 @@ _position:relative; /* fix 多一只猪的问题 */
 /* Images（图片展栏）
  * author: linjianfeng@baixing.com
  */
-.images{width:736px;position:relative;margin-left:-9px;}
-.images-item{display:inline-block;width:180px;float:left;overflow:hidden;margin:0 0 10px 4px;background:#f7f7f7;cursor:default;}
+.images{width:760px;position:relative;margin-left:-9px;}
+.images-item{display:inline-block;width:180px;float:left;overflow:hidden;margin:0 0 10px 10px;background:#f7f7f7;cursor:default;}
 .images-item img{height:180px;display:inline-block;}
 .images-item em, .images-item img, .images-item strong{cursor:pointer;}
 .images-item:hover{text-decoration:none;background:#fcffee;}
@@ -638,14 +645,17 @@ _position:relative; /* fix 多一只猪的问题 */
 /* List
  * author: linjianfeng@baixing.com
  */
+.list a:visited{color:#666;}
+.list a.tag:visited{color:#888;}
 .list-item{border-bottom:1px solid #ebebeb;padding:10px 0;*display:inline;*zoom:1;width:100%;}
 .list-item:nth-child(odd){background:#fcfcfc;}
 .list-item:hover, .list-item-hover{background:#fcffee!important;}
-.list-item-block{display:inline-block;_display:inline;_zoom:1;float:left;_width:80px;min-width:80px;position:relative;}
+.list-item-block{float:left;_width:100px;width:100px;white-space: nowrap;min-width:80px;position:relative;overflow:hidden;text-overflow:ellipsis;color:#888;}
 .list-item-block cite{color:#f50;}
-.list-item-block img{width:62px;height:64px;}
-.list-item-content{width:464px;margin-right:10px;float:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.list-item-block img{width:64px;height:64px;}
+.list-item-content{width:454px;margin-right:10px;float:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .list-item-title, .list-item-title:hover{background:none!important;}
+.list-item-title .list-item-content{color:#888;}
 .list-item-title .list-item-block,
 .list-item-title .list-item-content,
 .list-thumb .list-item-title .list-item-block{font-weight:700;line-height:1.5;height:21px;}
@@ -655,6 +665,7 @@ _position:relative; /* fix 多一只猪的问题 */
 .list .close{float:none;position:absolute;right:0;*right:10px;*margin-top:-3px;height:22px;line-height:22px;}
 
 .list-thumb .list-item-block{height:64px;line-height:64px;}
+.list-thumb .list-item-block img{float:left;}
 .list-thumb .list-item-content{padding-top:8px;}
 .list-thumb .list-item-title .list-item-content{padding:0;}
 .list-thumb .close{line-height:64px;line-height:1\9;top:21px\0/;}
@@ -694,16 +705,6 @@ _position:relative; /* fix 多一只猪的问题 */
 .list-aside .list-item:hover, .list-aside .list-item-hover{background:none!important;}
 .list-aside .list-item-more a {color: #666;}
 
-.list-wo{width:auto;border-top:1px solid #ebebeb;}
-.list-wo .list-item-content{padding-left:10px;padding-top:5px;}
-.list-wo .list-item-block{width:236px;text-align:right;height:50px;line-height:50px;font-size:12px;}
-.list-wo .list-item-block-label {text-align: left; padding-left:10px;}
-.list-wo .label{width:100px;height:32px;line-height:32px;font-size:14px;}
-.list-wo .list-item-content-meta{font-size:12px;}
-.list-wo .list-item-content-meta a{color:#888;}
-
-.list-mc {width:auto;border-top:1px solid #ebebeb;padding:5px;font-size:12px;}
-
 /* Tab
  * author: linjianfeng@baixing.com
  */
@@ -723,39 +724,36 @@ _position:relative; /* fix 多一只猪的问题 */
 /* Topbar 顶部导航
  * author: linjianfeng@baixing.com
  */
-.topbar{height:24px;line-height:24px;color:#ccc;font-size:12px;position:absolute;right:0;top:-5px;}
+.topbar{height:24px;line-height:24px;color:#ccc;font-size:12px;position:absolute;right:0;top:-5px;white-space:nowrap;}
 .topbar a{color:#333;}
 .topbar a:hover{color:red;}
+.topbar-right-text{color:#888;}
 .topbar .dropdown{display:inline!important;}
+.topbar .tag{height:18px;line-height:18px;}
 
 /* Filter 类目筛选
  * author: linjianfeng@baixing.com
  */
-/*.filter{}
+.filter{padding:6px 10px;border:1px solid #cfcfcf;}
 .filter a{color:#333;padding-right:3px;}
-.filter-item{float:left;width:326px;display:inline-block;margin-bottom:10px;}
-.filter .filter-item-cap{font-weight:700;color:#06c;}
-
-.filter-intype a{color:#06c;display:inline-block;margin-right:5px;}
-.filter-intype .filter-item{display:block;float:none;position:relative;padding-left:80px;width:auto;}
-.filter-intype .filter-item-cap{position:absolute;left:0;color:#333;}
-.filter-intype .filter-item-selected{color:#888;}
-
-.filter-block .filter-item{width:160px;padding-right:20px;font-size:12px;color:#888;}
-.filter-block .filter-item-cap{display:block;font-size:14px;}*/
-
-.filter{border:1px solid #cfcfcf;padding:15px 20px;font-size:12px;}
-.filter .form {color:#888;padding-bottom: 15px;margin-bottom: 10px;border-bottom:1px dotted #ddd;}
-.filter .form a{color:#06c;}
-.filter .form-input{height:22px;line-height:22px;}
-.filter .button{margin-right: 20px;}
-.filter a{color:#333;padding-right:3px;}
-.filter-item{margin-bottom:10px;padding-bottom:10px;border-bottom:1px dotted #ddd;}
-.filter .filter-item-cap{font-weight:700;color:#06c;display:inline-block;*display:inline;*zoom:1;width:120px;}
-.filter-toggle{text-align:center;}
+.filter-intype a{color:#333;display:inline-block;margin-right:5px;}
+.filter-intype .filter-item{display:block;float:none;position:relative;_height:30px;_zoom:1;min-height: 30px;padding:8px 0 0 60px;width:auto;margin-bottom:0;border-bottom:1px dotted #ddd;}
+.filter-intype .filter-item-cap{position:absolute;left:0;top:8px;}
+.filter-intype .filter-item-cap a{margin-right:0;}
+.filter-intype .filter-item-last{border:none;}
+.filter-intype div{padding-left:10px;margin-bottom:10px;}
+.filter-intype .filter-children{padding:10px;background:#fcffed;border:1px solid #cfebab;}
+.filter-intype .filter-item-selected{margin-left:-3px;}
+.filter-block .filter-item{float:left;width:170px;display:inline-block;padding:10px 0;border-top:1px dotted #ddd;padding-right:20px;font-size:12px;color:#888;}
+.filter-block .filter-item-cap{display:block;font-size:14px;color:#06c;}
+.filter-toggle{padding:10px 0;border-top:1px dotted #ddd;text-align:center;}
 .filter-toggle a, .filter-toggle .arrow-down{color:#06c;border-top-color:#f50;}
 .filter-toggle .arrow-up{border-bottom-color:#f50;}
 .filter-toggle a:hover{text-decoration:none;}
+.filter .form{padding:8px 0;}
+.filter .form-input{height:22px;line-height:22px;}
+.filter .form-submit{margin-right:20px;}
+
 
 /* Dropdown 下拉菜单
  * author: linjianfeng@baixing.com
@@ -839,47 +837,48 @@ _position:relative; /* fix 多一只猪的问题 */
 .flow-item-5{z-index:1;}
 
 .flow-5{height:150px;}
-.flow-5 .flow-item, .flow-item-menu{width:140px;}
+.flow-5 .flow-item, .flow-item-menu{width:150px;}
 .flow-item-head{color:#333}
 .flow-item-menu{position:absolute;top:35px;color:#333;line-height:36px;left:0\9;}
 
 /* Logo
  * author: linjianfeng@baixing.com
  */
-.logo{height:54px;vertical-align:text-bottom;font:12px/1.5 Tahoma, "Microsoft Yahei", sans-serif;}
+.logo{height:54px;vertical-align:text-bottom;font-size:12px;}
 .logo h1{float:left;width:130px;height:54px;}
-.logo-side{position:relative;height:40px;float:left;width:85px;bottom:-14px;}
-.logo-side .logo-side-current{position:absolute;bottom:-3px;}
+.logo-side{position:relative;height:40px;float:left;width:85px;bottom:-14px;font-size:14px;color:#999;}
+.logo-side .logo-side-current{position:absolute;bottom:-3px;background:#fff;padding:0 6px 3px;border:1px solid #fff;border-bottom:none;z-index:3;white-space:nowrap;}
+.dropdown-open .logo-side-current{border-color:#cfcfcf;}
+.logo-side .dropdown-menu, 
+.logo-bread .dropdown-menu{width:260px;top:42px;font-size:12px;z-index:2;padding:0;}
+
+.logo-side .dropdown-menu, .logo-bread .dropdown-menu{width:260px;top:42px;font-size:12px;z-index:2;padding:0;}
+.logo-side table, 
+.logo-bread table{border:5px solid #fff\9;width:100%\9;padding:5px;border-bottom:1px solid #cfcfcf;display:block;}
+.logo-side td, 
+.logo-bread td{padding:3px 0;}
+.logo-side .more-city, 
+.logo-bread .more-city{line-height:30px;padding:0 5px;}
+/* .header-small .logo .ddarrow{background: #FFFFFF;border: 1px solid #AAAAAA;float: right;height: 14px;left: 3px;line-height: 1;padding: 0 2px;position: relative;top: 4px;} */
 
 /* Nav
  * author: linjianfeng@baixing.com
  */
-.nav{border:1px solid #549712;border-bottom:3px solid #336609;padding-left:10px;}
+.nav{border:1px solid #549712;border-bottom:3px solid #498901;padding-left:10px;margin-bottom:10px;}
+.nav-home{margin-bottom:0;}
 .nav-item{float:left;display:inline-block;float:left;height:35px;overflow:hidden;}
-.nav-item-link{display:inline-block;height:35px;line-height:35px;line-height:38px\9;padding:0 16px;color:#ffc;}
-:root .nav-item-link{line-height:35px\9/;}
-.nav-item-link:hover, .nav-item-current .nav-item-link{color:#fff;background:#4A7E09;border-left:1px solid #336609;border-right:1px solid #336609;padding:0 15px;text-decoration:none;}
-
-/* vote
- * author: linjianfeng@baixing.com
- */
-.vote{width:350px;margin:0 auto;text-align:center;background:#eee;padding:15px 0;color:#666;}
-.vote-title{font-size:12px;}
-.vote-link{margin:8px 0 0px;display:none;}
-.vote-link a{background:#ddd;padding:3px 8px;}
-.vote-link a:hover{background:#fff;color:#08c;text-decoration:none;}
-.vote-link-tips{padding-top:5px;}
-.vote-link-tips span{display:inline-block;width:86px;font-size:12px;}
-.vote-link-tips-1{text-align:left;}
-.vote-link-tips-3{text-align:right;}
+.nav-item-link{display:inline-block;height:35px;line-height:35px;line-height:38px\9;line-height:34px\0;padding:0 16px;color:#ffc;}
+.win.ie-8 .nav-item-link{line-height:38px;}
+.nav-item-link:hover, .nav-item-current .nav-item-link{color:#fff;background:#498901;border-left:1px solid #3E7B0B;border-right:1px solid #3E7B0B;padding:0 15px;text-decoration:none;}
 
 /* Category Box
  * author: linjianfeng@baixing.com
  */
 .catbox{margin-left:-10px;position:relative;width:780px;}
+.catbox .list .list-item{_width:355px;_overflow:hidden;}
+.catbox .list .list-item cite{font-size:12px;color:#f50;}
 .catbox-item{width:365px;padding:10px;float:left;border-bottom:10px solid #fff;}
-.catbox-item-hover, .catbox-item:hover{background:#F3F8FF;}
-.catbox-item-title{margin-bottom: 10px;}
+.catbox .headline a{color:#888;}
 
 /* aside
  * author: linjianfeng@baixing.com
