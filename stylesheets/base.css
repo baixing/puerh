@@ -4,7 +4,6 @@ html {
 	background: #fff;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
-	_background:#fff url(about:blank) no-repeat fixed 0 0;
 }
 
 /* 内外边距通常让各个浏览器样式的表现位置不同 */
@@ -443,8 +442,8 @@ hr{border:none;border-bottom:1px solid #cfcfcf;margin-bottom:10px;*color:pink;*f
 .icon-trade-done, .icon-bizLicenseVerified-done{background-position:-22px -52px;}
 .icon-id-done, .icon-personalIDVerified-done{background-position:-50px -52px;}
 
-.icon-support{background-image:url("/images/puerh/new-icons.png");background-position:0 -25px;} 
-.icon-against{background-image:url("/images/puerh/new-icons.png");background-position:0 0;}
+.icon-support{background-image:url("../images/new-icons.png");background-position:0 -25px;} 
+.icon-against{background-image:url("../images/new-icons.png");background-position:0 0;}
 
 /* arrow
  * author: linjianfeng@baixing.com
@@ -557,12 +556,11 @@ a.tag:hover{background:#888;text-decoration:none;color:#fff!important;}
 .form-input-400{width:400px;}
 .form-error{border-color:#f30;}
 .form-textarea{height:90px;line-height:1.5;padding:5px 5px;vertical-align:text-top;}
-.form-input, .form-input-small{height:24px;line-height:24px;padding:0 5px;font-size:12px;}
+.form-input, .form-input-small{height:24px;line-height:24px;padding:0 5px;}
 .form-search .form-select{width:70px;line-height:28px;height:28px;position:relative;*top:-1px;left:-5px;left:-9px\9;cursor:pointer;text-align:center;background:#fff;
 left:-6px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
 }
 .mac.chrome .form-search .form-select, .ie-8 .form-search .form-select, .ie-9 .form-search .form-select, .opera .form-search .form-select{top:1px;}
-.form-search .form-select, .form-search .form-input{font-size:12px;}
 .form-search .form-select-open{height:auto;}
 .form-select-open .form-select-menu{display:block;position:absolute;width:68px;padding:0 1px;text-align:left;right:-1px;top:-1px;border: 1px solid #cfcfcf;background:#fff;z-index:2;}
 .form-select-menu{background:#fff;display:none;}
@@ -671,35 +669,33 @@ _position:relative; /* fix 多一只猪的问题 */
 .list-thumb .close{line-height:64px;line-height:1\9;top:21px\0/;}
 :root .list-thumb .close{line-height:64px\9;top:auto\9;}
 
-.list-5 .list-item-content{width:232px;}
+.list-singleline div.list-item-content{padding-top:0px;height:64px;line-height:64px;}
+
+.list-5 .list-item-content{width:260px;}
+.list-5 .list-item-block{width:60px;font-size:12px;}
 .list-5 .list-item-content-small a{font-size:12px;color:#888;}
 
-.list-3 .list-item-content{width:392px;}
+.list-3 .list-item{_height:20px;_overflow:hidden;}
+.list-3 .list-item-content{width:450px;}
+.list-3 .list-item-block{width:80px;}
 .list-3 .list-item-content-small a{font-size:12px;color:#888;}
 
-.list-2{width:330px;}
-.list-2 .list-item{border:none;_padding-bottom:0;}
-.list-2 .list-item-content{width:269px;}
-.list-2 .list-item-block{width:50px;text-align:right;overflow:hidden;text-overflow:ellipsis;min-width:0;white-space:nowrap;}
+.list-2{width:345px;_height:265px;}
+.list-2 .list-item{border:none;position:relative;padding:10px;border-bottom:1px dotted #cfcfcf;background:#fff;}
+.list-2 .list-item-open{height:20px;height:64px;background:#f7f7f7!important;_overflow:hidden;}
+.list-2 .list-item-open .list-item-content{width:246px;float:none;overflow:auto;white-space:normal;}
+.list-2 .list-item-open .hide{display:block;}
+.list-2 .list-item-content{display:block;width:310px;}
+.list-2 img{position:absolute;top:10px;right:10px;}
+.list-2 .list-item-content a{color:#333;}
+.list-2 .list-item-block{position:static;padding-top:5px;width: auto;}
 .list-2 .list-item:nth-child(odd){background:none;}
-.list-2 .list-item:hover, .list-2 .list-item-hover{background:none!important;}
-
-/* MicroControl List
- * author: hejiachen@baixing.com
- */
-.list-mc {width:auto;border-top:1px solid #ebebeb;padding:5px;font-size:12px;}
-
-/* Ads List
- * author: hejiachen@baixing.com
- */
-.list-ads .list-item-title {text-align:right}
-.list-ads .list-item-title a {color: black; font-weight: bold;}
-.list-ads .list-item em {font-size: 12px;color:#666;padding-left:3px;}
 
 /* 侧边
  * author: hejiachen@baixing.com
  */
 .list-aside {width:auto;}
+.list-aside .list-item-block{width:74px;min-width:0;}
 .list-aside .list-item {padding:5px 0;border:none;}
 .list-aside .list-item:nth-child(odd){background:none;}
 .list-aside .list-item:hover, .list-aside .list-item-hover{background:none!important;}
@@ -709,7 +705,7 @@ _position:relative; /* fix 多一只猪的问题 */
  * author: linjianfeng@baixing.com
  */
 .tab{position:relative;}
-.tab-title{border-bottom:1px solid #cfcfcf;padding-left:10px;}
+.tab-title{border-bottom:1px solid #cfcfcf;}
 .tab-title-item{display:inline-block;float:left;height:28px;line-height:28px;border:1px solid #cfcfcf;border-bottom-color:#cfcfcf;border-right:0;margin-top:1px;position:relative;z-index:1;top:1px;background:#fbfbfb;}
 .tab-title .active{border-top:2px solid #5ba533;border-bottom-color:#fff;z-index:2;margin-top:0;background:#fff;}
 .tab-title-item-last{border-right:1px solid #cfcfcf;}
@@ -754,15 +750,14 @@ _position:relative; /* fix 多一只猪的问题 */
 .filter .form-input{height:22px;line-height:22px;}
 .filter .form-submit{margin-right:20px;}
 
-
-/* Dropdown 下拉菜单
+/* Modal 弹出框
  * author: linjianfeng@baixing.com
  */
-.modal{position:absolute;z-index:1002;border:4px solid #434343;background:#fff;width:560px;}
+.modal{position:absolute;z-index:1002;border:4px solid #434343;background:#fff;width:600px;_overflow:hidden;}
 .modal-title{background:#eee;height:30px;line-height:30px;padding:0 20px;}
 .modal-content{padding:15px 20px;}
 .modal .close{position:absolute;top:6px;right:20px;}
-.modal-backdrop{position:absolute;top:0;left:0;height:100%;width:100%;background:rgba(0,0,0,0.6);background:rgba(0,0,0,0.6);background:#000\9;filter:alpha(opacity=80)\9;z-index:1001;}
+.modal-backdrop{position:absolute;top:0;left:0;height:100%;width:100%;background:#000\9;filter:alpha(opacity=40)\9;background:rgba(0,0,0,0.6);z-index:1001;}
 
 /* Dropdown 下拉菜单
  * author: linjianfeng@baixing.com
@@ -793,22 +788,23 @@ _position:relative; /* fix 多一只猪的问题 */
 /* Tips + Alert
  * author: linjianfeng@baixing.com
  */
-.tips, .alert{position:absolute;background: #fff8e8;border:1px solid #ffba00;padding:3px 25px 3px 10px;}
+.tips, .alert{position:absolute;background: #fff8e8;border:1px solid #ffe296;padding:3px 25px 3px 10px;font-size:12px;}
 .tips-angle{position:absolute;display:block;width:8px;height:8px;font-size:0;overflow:hidden;background:#fff8ef;border-left:1px solid #ffba00;border-top:1px solid #ffba00;top:2px;*top:0;left:10px;margin-top:-7px;margin-top:-9px\0/;}
 .tips-right .tips-angle{right:2px;*right:0;margin-right:-7px;margin-right:-5px\0/;left:auto;top:13px;border-left:none;border-right:1px solid #ffba00;}
 .tips-bottom .tips-angle{top:auto;bottom:2px;*bottom:0;margin-bottom:-7px;margin-bottom:-5px\0/;border:none;border-right:1px solid #ffba00;border-bottom:1px solid #ffba00;}
-.tips-left .tips-angle{left:2px;*left:0;right:auto;top:13px;margin-left:-7px;margin-left:-9px\0/;border-top:none;border-bottom:1px solid #ffba00;}
-.tips .close, .alert .close{position:absolute;right:5px;top:5px;}
+.tips-left .tips-angle{left:2px;*left:0;right:auto;top:13px;margin-left:-7px;margin-left:-9px\0/;border-top:none;border-bottom:1px solid #ffe296;}
+.tips .close, .alert .close{position:absolute;right:6px;top:6px;}
 :root .tips-angle{margin-top:-7px;}
 :root .tips-right .tips-angle{margin-right:-7px;}
 :root .tips-bottom .tips-angle{margin-bottom:-7px;}
 :root .tips-left .tips-angle{margin-left:-7px;}
 
-
-.alert{padding:10px;position:relative;}
+.alert{padding:5px 8px;position:relative;}
 .alert-title{margin-top:0;}
 .alert-ok{border:1px solid #d9eb9f;background:#fbffed;}
-.alert .close{top:10px;right:10px;}
+.alert-ok h3{font-weight: bold}
+.alert-fat{padding:10px;}
+.alert-fat .close{top:10px;right:10px;}
 
 /* Flow
  * author: linjianfeng@baixing.com
@@ -877,16 +873,84 @@ _position:relative; /* fix 多一只猪的问题 */
 .catbox{margin-left:-10px;position:relative;width:780px;}
 .catbox .list .list-item{_width:355px;_overflow:hidden;}
 .catbox .list .list-item cite{font-size:12px;color:#f50;}
+.catbox .list .list-item img{padding-right:10px;}
 .catbox-item{width:365px;padding:10px;float:left;border-bottom:10px solid #fff;}
 .catbox .headline a{color:#888;}
 
 /* aside
  * author: linjianfeng@baixing.com
  */
-.aside{float:right;width:170px;border:1px solid #ddd;padding:0 20px;margin-bottom:20px;font-size:12px;text-align:left;}
+.aside{color:#666;}
+.aside{border:1px solid #ddd;padding:0 10px;margin-bottom:20px;font-size:12px;line-height:1.85;text-align:left;}
 .aside-box{padding-bottom:10px;margin-bottom:10px;border-bottom:1px solid #eee;}
 .aside-box-noborder{border-bottom:none;}
 .aside-box-higher{line-height:2;}
+
+/* Table
+ * author: zhanglin@baixing.com
+ */
+.table {width: 100%;margin-bottom: 18px;}
+.table th,
+.table td {padding: 8px;line-height: 18px;text-align: left;vertical-align: top;border-top: 1px solid #dddddd;}
+.table th {font-weight: bold;}
+.table thead th {vertical-align: bottom;}
+.table thead th,
+.table thead td{border-top:none;}
+.table tbody + tbody {border-top: 2px solid #dddddd;}
+.table-condensed th,
+.table-condensed td {padding: 4px 5px;}
+.table-bordered {
+  border: 1px solid #dddddd;
+  border-collapse: separate;
+  *border-collapse: collapsed;
+  border-left: 0;
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+}
+.table-bordered th,
+.table-bordered td {border-left: 1px solid #dddddd;}
+.table-bordered caption + thead tr:first-child th,
+.table-bordered caption + tbody tr:first-child th,
+.table-bordered caption + tbody tr:first-child td,
+.table-bordered colgroup + thead tr:first-child th,
+.table-bordered colgroup + tbody tr:first-child th,
+.table-bordered colgroup + tbody tr:first-child td,
+.table-bordered thead:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child th,
+.table-bordered tbody:first-child tr:first-child td {border-top: 0;}
+.table-bordered thead:first-child tr:first-child th:first-child,
+.table-bordered tbody:first-child tr:first-child td:first-child {
+  -webkit-border-top-left-radius: 4px;
+          border-top-left-radius: 4px;
+  -moz-border-radius-topleft: 4px;
+}
+.table-bordered thead:first-child tr:first-child th:last-child,
+.table-bordered tbody:first-child tr:first-child td:last-child {
+  -webkit-border-top-right-radius: 4px;
+          border-top-right-radius: 4px;
+  -moz-border-radius-topright: 4px;
+}
+.table-bordered thead:last-child tr:last-child th:first-child,
+.table-bordered tbody:last-child tr:last-child td:first-child {
+  -webkit-border-radius: 0 0 0 4px;
+     -moz-border-radius: 0 0 0 4px;
+          border-radius: 0 0 0 4px;
+  -webkit-border-bottom-left-radius: 4px;
+          border-bottom-left-radius: 4px;
+  -moz-border-radius-bottomleft: 4px;
+}
+.table-bordered thead:last-child tr:last-child th:last-child,
+.table-bordered tbody:last-child tr:last-child td:last-child {
+  -webkit-border-bottom-right-radius: 4px;
+          border-bottom-right-radius: 4px;
+  -moz-border-radius-bottomright: 4px;
+}
+.table-striped tbody tr:nth-child(odd) td,
+.table-striped tbody tr:nth-child(odd) th {background-color: #f9f9f9;}
+.table tbody tr:hover td,
+.table tbody tr:hover th {background-color: #f5f5f5;}
+.html-table-first {white-space: nowrap;}
 
 /* TODO: Typeahead
  * author: linjianfeng@baixing.com

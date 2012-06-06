@@ -1,5 +1,10 @@
 body{border-top:5px solid #666;}
 code{background:#f7f7f7;border:1px solid #ddd;padding:0 5px;border-radius:3px;}
+pre{white-space: pre-wrap; /* css-3 */
+white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+white-space: -pre-wrap; /* Opera 4-6 */
+white-space: -o-pre-wrap; /* Opera 7 */
+word-wrap: break-word; /* Internet Explorer 5.5+ */}
 
 #header{margin:40px 10px 30px;height:69px;}
 #header .last{text-align:right;}
@@ -10,10 +15,12 @@ code{background:#f7f7f7;border:1px solid #ddd;padding:0 5px;border-radius:3px;}
 .navi .nav-orange{background:#f60;}
 .navi .current, .nav .current:hover{background:#333;}
 
-.table td, .table th{padding:5px 10px;}
-.table th{background:#f7f7f7;}
-.table a:hover, .table a:visited{text-decoration:none;color:#09f;}
-.table .table-ps{padding:15px 0 0;}
+.document-table td, 
+.document-table th{padding:5px 10px;}
+.document-table th{background:#f7f7f7;}
+.document-table a:hover, 
+.document-table a:visited{text-decoration:none;color:#09f;}
+.document-table .document-table-ps{padding:15px 0 0;}
 
 .document-cell{margin-bottom:30px;}
 .document-cell-box{margin-bottom:15px;}
