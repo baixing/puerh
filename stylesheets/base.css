@@ -556,7 +556,7 @@ a.tag:hover{background:#888;text-decoration:none;color:#fff!important;}
 .form-input-400{width:400px;}
 .form-error{border-color:#f30;}
 .form-textarea{height:90px;line-height:1.5;padding:5px 5px;vertical-align:text-top;}
-.form-input, .form-input-small{height:24px;line-height:24px;padding:0 5px;}
+.form-input, .form-input-small{height:22px;line-height:22px;padding:0 5px;}
 .form-search .form-select{width:70px;line-height:28px;height:28px;position:relative;*top:-1px;left:-5px;left:-9px\9;cursor:pointer;text-align:center;background:#fff;
 left:-6px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
 }
