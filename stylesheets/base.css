@@ -649,10 +649,10 @@ _position:relative; /* fix 多一只猪的问题 */
 .list-item{border-bottom:1px solid #ebebeb;padding:10px 0;*display:inline;*zoom:1;width:100%;}
 .list-item:nth-child(odd){background:#fcfcfc;}
 .list-item:hover, .list-item-hover{background:#fcffee!important;}
-.list-item-block{float:left;_width:100px;width:100px;white-space: nowrap;min-width:80px;position:relative;overflow:hidden;text-overflow:ellipsis;color:#888;}
+.list-item-block{float:left;_width:100px;width:100px;white-space: nowrap;min-width:80px;position:relative;overflow:hidden;text-overflow:ellipsis;color:#888;min-height:1px;}
 .list-item-block cite{color:#f50;}
 .list-item-block img{width:64px;height:64px;}
-.list-item-content{width:454px;margin-right:10px;float:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.list-item-content{width:454px;margin-right:10px;float:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:1px;}
 .list-item-title, .list-item-title:hover{background:none!important;}
 .list-item-title .list-item-content{color:#888;}
 .list-item-title .list-item-block,
@@ -673,8 +673,9 @@ _position:relative; /* fix 多一只猪的问题 */
 .list-singleline div.list-item-content{padding-top:0px;height:64px;line-height:64px;}
 
 .list-5 .list-item-content{width:260px;line-height:21px;}
-.list-5 .list-item-block{width:60px;font-size:12px;line-height:21px;}
+.list-5 .list-item-block{min-width:75px;width:79px;font-size:12px;line-height:21px;}
 .list-5 .list-item-content-small a{font-size:12px;color:#888;}
+.list-5 .list-item-title .list-item-block{font-size:14px;}
 
 .list-3 .list-item{_height:20px;_overflow:hidden;}
 .list-3 .list-item-content{width:450px;}
