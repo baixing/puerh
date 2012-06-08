@@ -649,10 +649,10 @@ _position:relative; /* fix 多一只猪的问题 */
 .list-item{border-bottom:1px solid #ebebeb;padding:10px 0;*display:inline;*zoom:1;width:100%;}
 .list-item:nth-child(odd){background:#fcfcfc;}
 .list-item:hover, .list-item-hover{background:#fcffee!important;}
-.list-item-block{float:left;_width:100px;width:100px;white-space: nowrap;min-width:80px;position:relative;overflow:hidden;text-overflow:ellipsis;color:#888;min-height:1px;}
+.list-item-block{float:left;_width:100px;width:100px;white-space: nowrap;min-width:80px;position:relative;overflow:hidden;text-overflow:ellipsis;color:#888;}
 .list-item-block cite{color:#f50;}
 .list-item-block img{width:64px;height:64px;}
-.list-item-content{width:454px;margin-right:10px;float:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-height:1px;}
+.list-item-content{width:454px;margin-right:10px;float:left;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
 .list-item-title, .list-item-title:hover{background:none!important;}
 .list-item-title .list-item-content{color:#888;}
 .list-item-title .list-item-block,
