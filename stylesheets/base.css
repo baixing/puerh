@@ -596,6 +596,14 @@ left:-6px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
 .bread-cell-current{color:#888;}
 .bread-cell-cite{color:#888;}
 
+/* Collapse 折叠
+ * author: linjianfeng@baixing.com
+ */
+.accordion{border:1px solid #cfcfcf;}
+.accordion .collapse{display:none;}
+.accordion .in{display:block;border-top: 1px solid #cfcfcf;}
+.accordion-heading, .accordion-body{padding:10px;}
+
 /* Group List 列表
  * author: linjianfeng@baixing.com
  */

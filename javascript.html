@@ -64,13 +64,13 @@
         <div class="document-cell">
             <h3 id="Modals" class="typo-h3"># Modals(弹出层)</h3>
             <div class="document-cell-box typo">
-            <h4>一、如何使用：</h4>
+            <h4 class="typo-h4">一、如何使用：</h4>
 <pre class="prettyprint">
 $('#myModal').modal(Options);
 </pre>
 			<p><strong>演示：</strong><button data-toggle="modal" data-target="#myModal">demo</button></p>
             
-            <h4>二、Options 对象</h4>
+            <h4 class="typo-h4">二、Options 对象</h4>
             
             <p>Modal 只有唯一的方法：<code>.modal(Options)</code>。传入的 Options 可以是对象，也可以是字符串。当传入的 Options 是对象时，使用下面的属性：</p>
             
@@ -130,7 +130,7 @@ $('#myModal').modal(Options);
             </tbody>
           </table>
           
-          <h4>三、HTML 标记：</h4>
+          <h4 class="typo-h4">三、HTML 标记：</h4>
           <p>在触发弹出框的元素添加 <code>data-toggle="modal"</code>，添加 <code>data-target="#弹出框ID"</code> 或 <code>href="弹出框ID"</code> 来指定弹出框。如：</p>
 <pre class="prettyprint">
 &lt;button data-toggle="modal" data-target="#myModal"&gt;demo&lt;/button&gt;
@@ -143,7 +143,7 @@ $('#myModal').modal(Options);
 </pre>		
 			<p>如果想让弹出框有动画效果，只需要给目标元素添加 <code>.fade</code> 这个 class，如上代码所示。</p>
             
-            <h4>四、支持事件</h4>
+            <h4 class="typo-h4">四、支持事件</h4>
             
             <table>
 	            <thead>
@@ -185,7 +185,7 @@ $('#myModal').on('hidden', function () {
         <div class="document-cell">
             <h3 id="Dropdowns" class="typo-h3"># Dropdowns（下拉菜单）</h3>
             <div class="document-cell-box typo">
-            <h4>一、如何使用：</h4>
+            <h4 class="typo-h4">一、如何使用：</h4>
             <p>有两种方法，一种是使用 javascript 来设置：</p>
 <pre class="prettyprint">
 $('.dropdown-toggle').dropdown()
@@ -213,7 +213,7 @@ $('.dropdown-toggle').dropdown()
                 </div> <!-- topbar-right -->
             </div> <!-- .topbar --> 
           
-            <h4>二、HTML 标记：</h4>
+            <h4 class="typo-h4">二、HTML 标记：</h4>
             <p>在触发下拉框需要添加 <code>data-target="#下拉框ID"</code> 或 <code>href="下拉框ID"</code> 来指定下拉框。如：</p>
 <pre class="prettyprint">
 &lt;ul&gt;
@@ -233,7 +233,7 @@ $('.dropdown-toggle').dropdown()
 		<div class="document-cell">
             <h3 id="Tabs" class="typo-h3"># Tabs（标签切换）</h3>
             <div class="document-cell-box typo">
-            <h4>一、如何使用：</h4>
+            <h4 class="typo-h4">一、如何使用：</h4>
 <pre class="prettyprint">
 // javascript 方式触发
 $('#myTab').tab('show')
@@ -250,7 +250,7 @@ $('#myTab').tab('show')
                 </div> <!-- .tab -->
             <!-- demo end -->
             
-          <h4>二、HTML 标记：</h4>
+          <h4 class="typo-h4">二、HTML 标记：</h4>
           <p>在触发点添加 <code>data-toggle="tab"</code> 自动触发 Tab，添加 <code>data-target="#对应Tab内容的ID"</code> 或者 <code>href="#对应Tab内容的ID"</code> 来指定对应的 Tab 内容显示。</p>
 <pre class="prettyprint">
 &lt;ul class="tab-title"&gt;
@@ -269,7 +269,7 @@ $('#myTab').tab('show')
 </pre>		
 			<p>也可以不使用 <code>data-toggle</code> 来触发，而是使用 javascript 手动触发。</p>
             
-            <h4>三、支持事件</h4>
+            <h4 class="typo-h4">三、支持事件</h4>
             
             <table>
 				<thead>
@@ -304,14 +304,14 @@ $('a[data-toggle="tab"]').on('shown', function (e) {
 		<div class="document-cell">
             <h3 id="Tips" class="typo-h3"># Tips（浮层提示条）</h3>
             <div class="document-cell-box typo">
-            <h4>一、如何使用：</h4>
+            <h4 class="typo-h4">一、如何使用：</h4>
 <pre class="prettyprint">
 // javasript 手动触发
 $('#tips').popover(options)
 </pre>
 			<p><strong>演示：</strong><button id="tips" data-content="Tips 的内容" title="标题">demo</button></p>
             
-            <h4>二、Options 对象</h4>
+            <h4 class="typo-h4">二、Options 对象</h4>
             
             <p>Tips 只有唯一的方法：.popover(Options)。传入的 Options 可以是对象，也可以是字符串。当传入的 Options 是对象时，使用下面的属性：</p>
             
@@ -399,7 +399,7 @@ $('#tips').popover(options)
           	</tbody>
           </table>
           
-          <h4>三、HTML 标记：</h4>
+          <h4 class="typo-h4">三、HTML 标记：</h4>
 <pre class="prettyprint">
 &lt;button id="tips" data-content="Tips 的内容" title="标题"&gt;demo&lt;/button&gt;
 </pre>		
@@ -409,7 +409,7 @@ $('#tips').popover(options)
 		<div class="document-cell">
             <h3 class="typo-h3" id="Alert"># Alert（可关闭消息）</h3>
             <div class="document-cell-box typo">
-            <h4>一、如何使用：</h4>
+            <h4 class="typo-h4">一、如何使用：</h4>
 <pre class="prettyprint">
 // 如果不使用选择器，则直接关掉 <code>.close</code> 用 <code>class="alert"</code> 的标签
 $(".alert").alert(Options)
@@ -419,14 +419,14 @@ $(".alert").alert(Options)
 				<strong>演示：</strong>hello world
 			</p>
             
-            <h4>二、Options 对象</h4>
+            <h4 class="typo-h4">二、Options 对象</h4>
             
             <p>Modal 只有唯一的方法：<code>.modal(Options)</code>。传入的 Options 是字符串时，关闭这个 Alert Message。代码如下：</p>
             
 <pre class="prettyprint">$(".alert").alert('close');
 </pre>
           
-          <h4>三、HTML 标记：</h4>
+          <h4 class="typo-h4">三、HTML 标记：</h4>
           <p>添加关闭按钮：</p>
 <pre class="prettyprint">&lt;a class="close" data-dismiss="alert" href="#"&gt;&times;&lt;/a&gt;
 
@@ -438,7 +438,7 @@ $(".alert").alert(Options)
 </pre>		
 			<p>如果想让弹出框有动画效果，只需要给目标元素添加 <code>.fade</code> 这个 class，如上代码所示。</p>
             
-            <h4>四、支持事件</h4>
+            <h4 class="typo-h4">四、支持事件</h4>
             
             <table>
 	            <thead>
@@ -471,13 +471,13 @@ $('#my-alert').bind('closed', function () {
         <div class="document-cell">
             <h3 id="Typeahead" class="typo-h3"># Typeahead（自动完成）</h3>
             <div class="document-cell-box typo">
-            <h4>一、如何使用：</h4>
+            <h4 class="typo-h4">一、如何使用：</h4>
 <pre class="prettyprint">$('.typeahead').typeahead();
 </pre>
 			<p><strong>演示：</strong> <input data-provide="typeahead" data-items="4" data-source='["Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Dakota","North Carolina","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"]'></p>
             <!-- demo end -->
             
-            <h4>二、Options 对象</h4>
+            <h4 class="typo-h4">二、Options 对象</h4>
             
             <p>Typeahead 只有唯一的方法：<code>.typeahead(Options)</code>。传入的 Options 对象有以下属性/方法：</p>
             
@@ -524,7 +524,7 @@ $('#my-alert').bind('closed', function () {
             </tbody>
           </table>
           
-          <h4>三、HTML 标记：</h4>
+          <h4 class="typo-h4">三、HTML 标记：</h4>
           <p>添加 <code>data-provide="typeahead"</code> 来获得自动完成。可以使用 <code>data-source="数组"</code> 来提供自动完成的项。也可以在 Options 中提供。</p>
 <pre class="prettyprint">
 &lt;input type="text" data-provide="typeahead" /&gt;
@@ -535,51 +535,45 @@ $('#my-alert').bind('closed', function () {
         <div class="document-cell">
             <h3 id="Collapse" class="typo-h3"># Collapse（折叠）</h3>
             <div class="document-cell-box typo">
-            <h4>一、如何使用：</h4>
+            <h4 class="typo-h4">一、如何使用：</h4>
 <pre class="prettyprint">$(".collapse").collapse();
 </pre>
 			<p><strong>演示：</strong></p>
-			<div id="accordion2" class="accordion">
-            <div class="accordion-group">
+			<div id="accordion2">
+            <div class="accordion">
               <div class="accordion-heading">
-                <a href="#collapseOne" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle">
+                <a href="#collapseOne" data-parent="#accordion2" data-toggle="collapse" class="collapse-toggle">
                   Collapsible Group Item #1
                 </a>
               </div>
               <div class="accordion-body collapse in" id="collapseOne">
-                <div class="accordion-inner">
                   Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
               </div>
             </div>
-            <div class="accordion-group">
+            <div class="accordion">
               <div class="accordion-heading">
-                <a href="#collapseTwo" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle">
+                <a href="#collapseTwo" data-parent="#accordion2" data-toggle="collapse" class="collapse-toggle">
                   Collapsible Group Item #2
                 </a>
               </div>
               <div class="accordion-body collapse" id="collapseTwo">
-                <div class="accordion-inner">
                   Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
               </div>
             </div>
-            <div class="accordion-group">
+            <div class="accordion">
               <div class="accordion-heading">
-                <a href="#collapseThree" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle">
+                <a href="#collapseThree" data-parent="#accordion2" data-toggle="collapse" class="collapse-toggle">
                   Collapsible Group Item #3
                 </a>
               </div>
               <div class="accordion-body collapse" id="collapseThree">
-                <div class="accordion-inner">
                   Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                </div>
               </div>
             </div>
           </div>
             <!-- demo end -->
             
-            <h4>二、Options 对象</h4>
+            <h4 class="typo-h4">二、Options 对象</h4>
             
             <p>Typeahead 只有唯一的方法：<code>.typeahead(Options)</code>。传入的 Options 对象有以下属性/方法：</p>
             
@@ -608,7 +602,7 @@ $('#my-alert').bind('closed', function () {
             </tbody>
           </table>
           
-          <h4>三、HTML 标记：</h4>
+          <h4 class="typo-h4">三、HTML 标记：</h4>
           <p>在触发点上添加 <code>data-toggle="collapse"</code> 和 <code>data-target</code> 将会自动添加折叠控制。<code>data-target</code> 接受一个 CSS selector（jQuery），指向要折叠的内容，记得在所指向的标签添加 <code>class="collapse"</code>。如果想让折叠的内容默认打开，可以添加额外的 class <code>in</code>。可以通过设置 <code>data-parent="#selector"</code> 来指定所属组，详见 Options 中的 <code>parent</code></p>
 <pre class="prettyprint">
 &lt;button class="btn btn-danger" data-toggle="collapse" data-target="#demo"&gt;
@@ -618,7 +612,7 @@ simple collapsible
 &lt;div id="demo" class="collapse in"&gt; … &lt;/div&gt;
 </pre>		
 
-           <h4>四、方法：<code>.collapse(options)</code></h4>
+           <h4 class="typo-h4">四、方法：<code>.collapse(options)</code></h4>
            
            <p>可以用于激活一个可折叠元素。接受传入一个 Object:</p>
 <pre class="prettyprint">
@@ -648,10 +642,17 @@ $('#myCollapsible').collapse({
                         <td>隐藏一个折叠元素</td>
                     </tr>
                 </tbody>
+            </table>
                 
                 
                 
-                <h4>四、支持事件：</h4>
+                <h4 class="typo-h4">四、支持事件：</h4>
+                
+<pre class="prettyprint">
+$('#myCollapsible').on('hidden', function () {
+// do something…
+})
+</pre>
            
                 <table>
                 <thead>
@@ -681,11 +682,6 @@ $('#myCollapsible').collapse({
                  </tr>
                 </tbody>
               </table>
-<pre class="prettyprint">
-$('#myCollapsible').on('hidden', function () {
-// do something…
-})
-</pre>
             
             
             
