@@ -48,10 +48,10 @@
             <th><a href="#Alert">Alert（可关闭消息）</a></th>
             <th><a href="#Typeahead">Typeahead（自动完成）</a></th>
             <th><a href="#Scrollspy">Scrollspy（滚动生成）</a></th>
-            <th>Lightbox（图片浏览浮层）</th>
+            <th><a href="#Collapse">Collapse（折叠）</a></th>
         </tr>
         <tr>
-            <th>Validator（表单验证）</th>
+            <th><a href="#Validator">Validator（表单验证）</a></th>
             <th>Linkage（联动操作）</th>
             <th></th>
             <th></th>
@@ -531,6 +531,166 @@ $('#my-alert').bind('closed', function () {
 </pre>		
             </div>
         </div> <!-- .document-cell #Typeahead-->
+        
+        <div class="document-cell">
+            <h3 id="Collapse" class="typo-h3"># Collapse（折叠）</h3>
+            <div class="document-cell-box typo">
+            <h4>一、如何使用：</h4>
+<pre class="prettyprint">$(".collapse").collapse();
+</pre>
+			<p><strong>演示：</strong></p>
+			<div id="accordion2" class="accordion">
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a href="#collapseOne" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle">
+                  Collapsible Group Item #1
+                </a>
+              </div>
+              <div class="accordion-body collapse in" id="collapseOne">
+                <div class="accordion-inner">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a href="#collapseTwo" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle">
+                  Collapsible Group Item #2
+                </a>
+              </div>
+              <div class="accordion-body collapse" id="collapseTwo">
+                <div class="accordion-inner">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+            <div class="accordion-group">
+              <div class="accordion-heading">
+                <a href="#collapseThree" data-parent="#accordion2" data-toggle="collapse" class="accordion-toggle">
+                  Collapsible Group Item #3
+                </a>
+              </div>
+              <div class="accordion-body collapse" id="collapseThree">
+                <div class="accordion-inner">
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </div>
+              </div>
+            </div>
+          </div>
+            <!-- demo end -->
+            
+            <h4>二、Options 对象</h4>
+            
+            <p>Typeahead 只有唯一的方法：<code>.typeahead(Options)</code>。传入的 Options 对象有以下属性/方法：</p>
+            
+			<table>
+            <thead>
+             <tr>
+               <th>Name</th>
+               <th>type</th>
+               <th>default</th>
+               <th>description</th>
+             </tr>
+            </thead>
+            <tbody>
+              <tr>
+               <td>parent</td>
+               <td>selector</td>
+               <td>false</td>
+               <td>对于指定同一个父节点的多个折叠标签，当其中一个显示，则其他的都会关闭。</td>
+             </tr>
+             <tr>
+               <td>toggle</td>
+               <td>boolean</td>
+               <td>true</td>
+               <td>交替显示/隐藏</td>
+             </tr>
+            </tbody>
+          </table>
+          
+          <h4>三、HTML 标记：</h4>
+          <p>在触发点上添加 <code>data-toggle="collapse"</code> 和 <code>data-target</code> 将会自动添加折叠控制。<code>data-target</code> 接受一个 CSS selector（jQuery），指向要折叠的内容，记得在所指向的标签添加 <code>class="collapse"</code>。如果想让折叠的内容默认打开，可以添加额外的 class <code>in</code>。可以通过设置 <code>data-parent="#selector"</code> 来指定所属组，详见 Options 中的 <code>parent</code></p>
+<pre class="prettyprint">
+&lt;button class="btn btn-danger" data-toggle="collapse" data-target="#demo"&gt;
+simple collapsible
+&lt;/button&gt;
+ 
+&lt;div id="demo" class="collapse in"&gt; … &lt;/div&gt;
+</pre>		
+
+           <h4>四、方法：<code>.collapse(options)</code></h4>
+           
+           <p>可以用于激活一个可折叠元素。接受传入一个 Object:</p>
+<pre class="prettyprint">
+$('#myCollapsible').collapse({
+    toggle: false
+})
+</pre>
+            <strong>Note: Options 也可以是一个字符串</strong>
+            <table>
+                <thead>
+                    <tr>
+                        <td>参数</td>
+                        <td>描述</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>toggle</td>
+                        <td>交替显示/隐藏一个元素</td>
+                    </tr>
+                    <tr>
+                        <td>show</td>
+                        <td>显示一个折叠元素</td>
+                    </tr>
+                    <tr>
+                        <td>hide</td>
+                        <td>隐藏一个折叠元素</td>
+                    </tr>
+                </tbody>
+                
+                
+                
+                <h4>四、支持事件：</h4>
+           
+                <table>
+                <thead>
+                 <tr>
+                   <th style="width: 150px;">Event</th>
+                   <th>描述</th>
+                 </tr>
+                </thead>
+                <tbody>
+                 <tr>
+                   <td>show</td>
+                   <td>折叠被打开的时候同时触发 <code>show</code> 事件</td>
+                 </tr>
+                 <tr>
+                   <td>shown</td>
+                   <td>折叠已经完全打开，触发此事件</td>
+                 </tr>
+                 <tr>
+                   <td>hide</td>
+                   <td>
+                    折腾被关闭时触发此事件
+                   </td>
+                 </tr>
+                 <tr>
+                   <td>hidden</td>
+                   <td>折腾已经完全关闭，触发此事件</td>
+                 </tr>
+                </tbody>
+              </table>
+<pre class="prettyprint">
+$('#myCollapsible').on('hidden', function () {
+// do something…
+})
+</pre>
+            
+            
+            
+            </div>
+        </div> <!-- .document-cell #Collapse-->
        
     </div> <!-- #document -->
     
