@@ -42,7 +42,7 @@
 
       dimension = this.dimension()
       scroll = $.camelCase(['scroll', dimension].join('-'))
-      actives = this.$parent && this.$parent.find('> .accordion-group > .in')
+      actives = this.$parent && this.$parent.find('> .accordion > .in')
 
       if (actives && actives.length) {
         hasData = actives.data('collapse')

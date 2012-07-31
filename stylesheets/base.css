@@ -599,10 +599,13 @@ left:-6px\0;line-height:29px\0;/* solution:win7 ie8 line-height bug */
 /* Collapse 折叠
  * author: linjianfeng@baixing.com
  */
-.accordion{border:1px solid #cfcfcf;margin-bottom:3px;}
+.accordion{border:1px solid #cfcfcf;border-bottom:none;}
+.accordion-heading{display: block;cursor:pointer;background:#f8f8f8;}
 .accordion .collapse{display:none;}
-.accordion .in{display:block;border-top:1px solid #cfcfcf;}
-.accordion-heading, .accordion-body{padding:10px;}
+.accordion .in{display:block;}
+.accordion-heading{padding:10px;}
+.accordion-body{border-top: 1px solid #cfcfcf;padding:0 10px;}
+
 
 /* Group List 列表
  * author: linjianfeng@baixing.com
