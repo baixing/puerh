@@ -673,8 +673,9 @@ _position:relative; /* fix 多一只猪的问题 */
 .list-singleline div.list-item-content{padding-top:0px;height:64px;line-height:64px;}
 
 .list-5 .list-item-content{width:260px;line-height:21px;}
-.list-5 .list-item-block{width:60px;font-size:12px;line-height:21px;}
+.list-5 .list-item-block{min-width:75px;width:79px;font-size:12px;line-height:21px;}
 .list-5 .list-item-content-small a{font-size:12px;color:#888;}
+.list-5 .list-item-title .list-item-block{font-size:14px;}
 
 .list-3 .list-item{_height:20px;_overflow:hidden;}
 .list-3 .list-item-content{width:450px;}
