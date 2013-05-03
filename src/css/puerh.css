@@ -131,3 +131,7 @@ h1, h2, h3, h4, h5, h6{font-weight: 500;font-weight: 800\9;font-family: Helvetic
 /* 强制文本换行 */
 .textwrap, .textwrap td, .textwrap th{word-wrap:break-word;word-break:break-all;}
 .textwrap-table{table-layout:fixed;}
+
+/* 下边距，Grid 已经有左右边距 */
+.sep {margin-bottom:1em;}
+.sep-big {margin-bottom:2em;}

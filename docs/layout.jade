@@ -36,6 +36,13 @@ html
     block content
 
 
+    #footer
+      .container
+        .grid.grid-20
+          small CopyRight 2013 Baixing LLC
+
     block scripts
     - scripts = ['/js/jquery-1.9.1.min.js', '/js/puerh.js']
     mixin script(scripts)
+    //if lt IE 8
+      script(src='/js/font.js?ver=1')
