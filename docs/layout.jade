@@ -19,7 +19,8 @@ html
     #header
       .container
         .grid
-          h1= title
+          h1
+            a(href="/")= title
           p
             |Puerh，百姓网 UI 库。旨在建立稳定、简洁、兼容的前端框架。兼容 Mac/Windows 下的 IE6+ / Firefox / Google Chrome 浏览器。
             |Puerh 的目标是构建一套适合百姓网的前端解决方案，从模块区分上，她包含：
@@ -34,7 +35,6 @@ html
             a(href="/js") JS 组件
 
     block content
-
 
     #footer
       .container
