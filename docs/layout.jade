@@ -1,7 +1,41 @@
+mixin style(sheets)
+  each sheet in sheets
+    link(rel='stylesheet', href=sheet)
+
+mixin script(scripts)
+  each src in scripts
+    script(src=src)
+
 doctype 5
 html
   head
     title= title
-    link(rel='stylesheet', href='/src/puerh.css')
+    - sheets = ['/css/puerh.css', '/css/font.css', '/css/grid.css']
+    mixin style(sheets)
+    include style
+
   body
+
+    #header
+      .container
+        .grid
+          h1= title
+          p
+            |Puerh，百姓网 UI 库。旨在建立稳定、简洁、兼容的前端框架。兼容 Mac/Windows 下的 IE6+ / Firefox / Google Chrome 浏览器。
+            |Puerh 的目标是构建一套适合百姓网的前端解决方案，从模块区分上，她包含：
+            a(href='/typography') Typography
+            |、
+            a(href="/grid") Grid
+            |、
+            a(href="/font") Font Icon
+            |、
+            a(href="/ui") UI 组件
+            |&nbsp;和&nbsp;
+            a(href="/js") JS 组件
+
     block content
+
+
+    block scripts
+    - scripts = ['/js/jquery-1.9.1.min.js', '/js/puerh.js']
+    mixin script(scripts)

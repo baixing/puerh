@@ -1,6 +1,6 @@
 var express = require('express')
   , router = require('./router')
-  , path = require('path');
+  , path = require('path')
 
 var app = express();
 
@@ -12,8 +12,8 @@ app.use(express.favicon());
 app.use(express.logger('dev'));
 app.use(express.bodyParser());
 app.use(express.methodOverride());
-  app.use(express.cookieParser('puerh_node_server'));
-  app.use(express.session());
+app.use(express.cookieParser('puerh_node_server'));
+app.use(express.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, '../src')));
 

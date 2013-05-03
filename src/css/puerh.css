@@ -87,9 +87,12 @@ button, input {
     *overflow: visible;
 }
 
-.clearfix:before, .clearfix:after {content: "";display: table;}
-.clearfix:after {clear: both;}
-.clearfix {*zoom: 1;}
+/* 一致化 horizonal rule */
+hr{border:none;border-bottom:1px solid #cfcfcf;margin-bottom:10px;*color:pink;*filter:chroma(color=pink);height:10px;*margin:-7px 0 2px;}
+
+.clearfix:before, .clearfix:after, .container:before, .container:after{content: "";display: table;}
+.clearfix:after, .container:after{clear: both;}
+.clearfix, .container{*zoom: 1;}
 
 /* 保证块/段落之间的空白隔行 */
 .typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr, .typo table,
@@ -124,3 +127,7 @@ h1, h2, h3, h4, h5, h6{font-weight: 500;font-weight: 800\9;font-family: Helvetic
 /* 高亮选中 */
 ::-moz-selection {background:#08c;color:#fff;}
 ::selection {background:#08c;color:#fff;}
+
+/* 强制文本换行 */
+.textwrap, .textwrap td, .textwrap th{word-wrap:break-word;word-break:break-all;}
+.textwrap-table{table-layout:fixed;}
