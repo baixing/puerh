@@ -1,17 +1,13 @@
 /*
 Variable Grid System.
 Learn more ~ http://www.spry-soft.com/grids/
-Based on 960 Grid System - http://960.gs/
-Licensed under GPL and MIT.
 */
 
-body{min-width:1000px;}
-
 /* layout container for the grid */
-.container{margin-left:auto;margin-right:auto;width:1000px;zoom:1;}
+.container{margin:0 auto;width:980px;position:relative;*zoom:1;}
 
 /* grid system */
-.grid{display:inline;float:left;margin-left:10px;margin-right:10px;}
+.grid{display:block;float:left;margin-right:20px;min-height:1px;}
 .grid-1{width:30px;}
 .grid-2{width:80px;}
 .grid-3{width:130px;}
@@ -33,6 +29,4 @@ body{min-width:1000px;}
 .grid-19{width:930px;}
 .grid-20{width:980px;}
 
-/* clear extra spaces */
-.first{margin-left:0;}
 .last{margin-right:0;}

@@ -2,39 +2,214 @@ extends layout
 
 block content
   .container#content
-    .grid.grid-20.typo
-      h2 排版测试示例
+    .grid.grid-5#nav
+      ul.list.affix-top(data-spy="affix", data-offset-top="132")
+        li.list-item
+          a(href="#paragraph") Paragraph
+        li.list-item
+          a(href="#heading") Header
+        li.list-item
+          a(href="#inline") Inline Elements
+        li.list-item
+          a(href="#embed") Embeded Content
+        li.list-item
+          a(href="#group") Grouping content
+        li.list-item
+          a(href="#table") Table
+        li.list-item
+          a(href="#form") Form
+        li.list-item
+          a(href="#util") Uitilities
 
-      p 區今來目時數花爭初軍步語，保許好們再比而新。多年輕角；的岸嗎氣展，正畫自？量望那名實有現同防大話參他生了合：她家會來幾！裡過不小人可，法知味本可解起一灣印賣兒關，來土人故樣結外。事想發點術一空；在上長向。傳連每本做跑男寶的以節回建，即用處一；動是主太能應相里訴明不一。少作海做知親全破春現我：間形身容簡。房市西人健必了一能是形後使天她開的何止……隊二臉大高書不常件！用們心。種爭我斷立城夜定高小身微小因照；影時了們的；客港要步。理快間的自形黨臺利教熱，健展類要何遊，我麼但、他在真，要筆候車政同他大狀景候老，青麼麼事險隊由題顧動常加為把的格直積小了本還業明親。案要否寫東人是並……角高生的你成成推注政有生業友支然我所連親樂於使覺站朋明樣心樂此還記的失相不朋！急最老來的一個想的傷醫不手交長以行等線物我，洋再來！期學教供對展的，散本眼頭青飯認上教，備果出英將的了！
-      p 經機市禮……木習很……歌的陽畫、有的賣，望深光設生歷病沒能知使它斷息，素病說下都經送價前讓看修我些來有實性。
+    .grid.grid-15.last.typo
+      h1#paragraph 段落中英混排 / Text-level semantics
+      p(hidden='hidden') This should be hidden in all browsers, apart from IE6
+      p
+        | 戲分漸樹不認許了際筆願前一風遠公師再實調致興家事在的，語笑油的，女幾到善師字何……教上些品、你全頭？來經未由看著會當裡。
+        | 方有現國便散；法構許事這的第，們見了調晚在坡？個雨命我常此座看兒高治父利來工利在要外女岸要想？業期在平馬下本方別們立不院生讀試會民接前手媽；說並言不成盡意覺角拿了多？
+      p
+        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.
+      address Address: somewhere, world
 
-      blockquote 言往跟怎有人灣政條關著以地爾拿們那利學頭升機才的臉著臺色。
+      hr#heading
+      h1 标题 / Heading 1
+      h2 标题 Heading 2
+      h3 标题 Heading 3
+      h4 标题 Heading 4
+      h5 标题 Heading 5
+      h6 标题 Heading 6
 
-      p 作送旅嚴等媽藥的子親樣如；坡子說，到地此天政組我公天長酒男在……家以裡吃負面光爭交了道，列愛術應天為家帶會位用轉，滿小生要國，是你望為還響拿樣在社文站於都教廣樹足的樂人書後活人我聲中是有心後。物自心戰，了來年、自本能！確農評時、人飯城面養當：一無處西明管字為素別時兒；歌氣天我作的二……明景夜接，了過實客，意年否口。
+      hr#inline
+      h1 行内元素 / Inline Elements
 
+      p
+        |印子陽放沒王候過然！
+        a(href='#') a element
+        |&nbsp;是不是一一現遊策&nbsp;
+        sup sup
+        |&nbsp;那子成展不天&nbsp;
+        abbr(title='Title text') abbr element with title&nbsp;
+        |&nbsp;政物聯兒腦求從
+        mark mark element
+        |&nbsp;速不又紅南見會法取絕&nbsp;
+        del del element
+        |&nbsp;不建有成險
+        sub sub
+        |&nbsp;已在家&nbsp;
+        u u element
+        |&nbsp;明只各達學起&nbsp;
+        strong strong element
+        |&nbsp;時式房事建後從，
+        b b element
+        |&nbsp;區運家……你且區密作報不了草&nbsp;
+        cite cite element
+        |&nbsp;許媽灣北；
+        code code element
+        |&nbsp;開大設春種家題須來八等便治中字國感非，
+        em em element
+        |&nbsp;美生生根，電色濟：
+        i i element
+        |&nbsp;朋和希身年持論物道高有道道來花病是班高化。
+
+      hr#embed
+      h1 嵌入媒介 / Embedded Content
+
+      h3 1. audio
+      audio(controls='controls')
+      h3 2. img
+      img(src='http://lorempixel.com/100/100', alt='')
+      a(href='#')
+        img(src='http://lorempixel.com/100/100', alt='')
+      h3 3. svg
+      svg(width='100px', height='100px')
+        circle(cx='100', cy='100', r='100', fill='#ff0000')
+      h3 4. video
+      video(controls='controls')
+      video
+
+      hr#group
+      h1 区块 / Grouping content
+      p
+        | Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.
+
+      h3 1. pre
+      pre
+        |Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et me.
+
+      h3 2. blockquote
+      blockquote
+        p
+          | Some sort of famous witty quote marked up with a > blockquote
+          | 和 a child <p
+          | element.
+        blockquote
+          | Even better philosophical quote marked up with just a > blockquote
+          | element.
+
+      h3 3. ordered list
+      ol
+        li list item 1
+        li
+          | list item 1
+          ol
+            li list item 2
+            li
+              | list item 2
+              ol
+                li list item 3
+                li list item 3
+            li list item 2
+            li list item 2
+        li list item 1
+        li list item 1
+
+      h3 4. unordered list
       ul
+        li list item 1
         li
-          p 看開好市這府。
-        li
-          p 事也庭知進如進……害之三樣斷她道產音飛神各過古理活書溫達高路行系散業來事紙生，營筆水政率濟的又制還個的要？聯布是腦有，少林大！支隊參想第果更也有例毒裡其心說十功世地人毛，那說知住大作前利通心口進……有來對類錢東，中了工國。何中考。刻親這全特。
+          | list item 1
+          ul
+            li list item 2
+            li
+              | list item 2
+              ul
+                li list item 3
+                li list item 3
+            li list item 2
+            li list item 2
+        li list item 1
+        li list item 1
 
-      p 留的害？不上維的，奇立市過的，時北住品歷人燈的以世適型力合入。過條有口時天好事算易心長力化境力中……們為的財公市太養化位灣性看甚地東研總境，資過面事車相事管們處的市水放風，立即模真受、子國停速河致觀長不人機區笑在色首可重治預力得又面、原的害然何機發果動還我？連了子都初……式進笑表所在、事一用放學前二家下和是出的子樣假來著和影放條；大父生門痛！學研期們務多辦安全水車，該請快一美事雖收！
+      h3 5. Define list
+      dl
+        dt Description name
+        dd Description value
 
-      p 天線政不！議比者她電黨就運上知信條力車；一在查，兩著物報候創羅生面麗。世學有社了情正稱中有……公你發大不告現老算，愛有山邊時教的集？
+      h3 6. figure
+      figure
+        img(src='http://lorempixel.com/400/200', alt='')
+        figcaption Figcaption content
 
-      p 名東說，者陽舉接的！
+      hr#table
+      h1 表格 / Tabular data
+      table
+        caption Jimi Hendrix - albums
+        thead
+          tr
+            th Album
+            th Year
+            th Price
+        tfoot
+          tr
+            th Album
+            th Year
+            th Price
+        tbody
+          tr
+            td Are You Experienced
+            td 1967
+            td $10.00
+          tr
+            td Axis: Bold as Love
+            td 1967
+            td $12.00
+          tr
+            td Electric Ladyl和
+            td 1968
+            td $10.00
+          tr
+            td B和 of Gypsys
+            td 1970
+            td $12.00
 
-      p 生獎師馬果之是假球，本氣政、質行就小社，背管市過單大當來通高：位的內還傳大直長不的成一黨子，不作火，從相山家，過等司布興？了灣名上容收了亮完選……表輕屋法求人件日制城經里在於分說中展，之用反數。財那斯人人價不力話靈陸中生高生的者場子家說不爸所由。山是期實無風就統，山個須老友小來球錯少爸想間就懷達治我提：緊回研動親坡一更們當出始老留地超就常助可地，水時讀；覺反觀，我質力而玩及神。
+      hr#form
+      h1 表单 / Forms
+      form
+        fieldset
+          legend
+            | legend of form
+          p
+            label
+              input(type='file')
+          p
+            label
+              input(type='radio', name='rad')
+              |&nbsp;Radio input
+          p
+            label
+              input(type='checkbox')
+              |&nbsp;Checkbox input
+          p
+            label
+              select
+                option Option 01
+                option Option 02
+          p
+            button button
+            |&nbsp;
+            input(type="button", value="input['type=button']")
 
-      hr
 
-      h3 一、這要幹嘛的？
 
-      p 產生沒有意義的文字組合（文章？），供排版時填充版面用，但不會因為字義而左右版型的判斷。文字、標點符號出現機率大致符合台灣文章習慣。聽說很多學排版的都會用這個工具。
 
-      h3 二、這能寫詩嗎？
 
-      p 隨你。
-
-      h3 三、有什麼類似的東西？
-      p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.

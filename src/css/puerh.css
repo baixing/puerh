@@ -7,7 +7,7 @@ html {color: #555;background: #fff;-webkit-text-size-adjust: 100%;-ms-text-size-
 body, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {margin: 0;padding: 0;}
 
 /* 重设 HTML5 标签, IE 需要在 js 中 createElement(TAG) */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {display: block;}
+article, aside, details, footer, header, hgroup, menu, nav, section {display: block;}
 
 /* HTML5 媒体文件跟 img 保持一致 */
 audio, canvas, video {display: inline-block;*display: inline;*zoom: 1;}
@@ -31,7 +31,7 @@ img {-ms-interpolation-mode: bicubic;}
 iframe {display: block;}
 
 /* 块/段落引用 */
-blockquote {margin: 1em 4em 1em 0;padding: 0.6em 1em;background: #f9f9f9;border-left: 0.4em solid #ddd;}
+blockquote {margin: 1em 0;padding: 0.6em 1em;background: #f9f9f9;border-left: 0.4em solid #ddd;}
 blockquote blockquote {padding: 0 0 0 1em;margin-left: 2em;}
 
 /* Firefox 以外，元素没有下划线，需添加 */
@@ -54,8 +54,8 @@ q:before, q:after {content: '';}
 /* 统一上标和下标 */
 sub, sup {font-size: 75%;line-height: 0;position: relative;vertical-align: text-top\9;}
 :root sub, :root sup{vertical-align: baseline; /* for ie9 and other mordern browsers */}
-sup {top: -0.5em;}
-sub {bottom: -0.25em;}
+sup {top: -0.8em;}
+sub {bottom: -0.3em;}
 
 /* 让链接在 hover 状态下显示下划线 */
 a:hover {text-decoration: underline;}
@@ -79,12 +79,18 @@ pre, code {font-family: "Courier New", Courier, monospace;white-space: pre-wrap;
 pre {border: 1px solid #ddd;border-left-width: 0.4em;background: #fbfbfb;padding: 10px;}
 
 /* 底部印刷体、版本等标记 */
-small {font-size: 12px;color: #888;}
+small,
+
+/* 图片说明 */
+figcaption {font-size:12px;color: #888;}
 
 /* 去除 IE6 input/button 多余的空白 */
 button, input {
     *width: auto;
     *overflow: visible;
+
+    /* 让 input 和 button 一样高 */
+    line-height:22px;
 }
 
 /* 一致化 horizonal rule */
@@ -116,13 +122,17 @@ h1, h2, h3, h4, h5, h6{font-weight: 500;font-weight: 800\9;font-family: Helvetic
 .typo li ul, .typo-ul ul, .typo-ol ul {list-style: circle;}
 
 /* 同 ul/ol，在文章中应用 table 基本格式 */
-.typo table th, .typo table td, .typo-table th, .typo-table td {border: 1px solid #ddd;padding: 5px 10px;}
+.typo table th, .typo table td, .typo-table th, .typo-table td , .typo table caption{border: 1px solid #ddd;padding: 5px 10px;}
 .typo table th, .typo-table th {background: #fbfbfb;}
 .typo table thead th, .typo-table thead th {background: #f1f1f1;}
+.typo table caption{border-bottom:none;font-weight:800;}
+
+.typo dt, .typo-dl dt{font-weight:800;}
+.typo dd, .typo-dl dd{color:#999;}
 
 /* 去除 webkit 中 input 和 textarea 的默认样式  */
 .typo-input, .typo-textarea{-webkit-appearance:none;border-radius:0;}
-.typo-em, .typo em {font-weight: 700;}
+.typo-em, .typo em , legend{font-weight: 700;}
 
 /* 高亮选中 */
 ::-moz-selection {background:#08c;color:#fff;}
@@ -135,3 +145,24 @@ h1, h2, h3, h4, h5, h6{font-weight: 500;font-weight: 800\9;font-family: Helvetic
 /* 下边距，Grid 已经有左右边距 */
 .sep {margin-bottom:1em;}
 .sep-big {margin-bottom:2em;}
+
+/* Utilities from bootstrap */
+.hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
+.input-block-level{display:block;width:100%;min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
+.close{float:right;font-size:20px;font-weight:bold;line-height:20px;color:#000000;text-shadow:0 1px 0 #ffffff;opacity:0.2;filter:alpha(opacity=20);}.close:hover,.close:focus{color:#000000;text-decoration:none;cursor:pointer;opacity:0.4;filter:alpha(opacity=40);}
+button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-appearance:none;}
+.pull-right{float:right;}
+.pull-left{float:left;}
+.hide{display:none;}
+.show{display:block;}
+.invisible{visibility:hidden;}
+.affix{position:fixed;top:0;}
+.fade{opacity:0;-webkit-transition:opacity 0.15s linear;-moz-transition:opacity 0.15s linear;-o-transition:opacity 0.15s linear;transition:opacity 0.15s linear;}.fade.in{opacity:1;}
+.collapse{position:relative;height:0;overflow:hidden;-webkit-transition:height 0.35s ease;-moz-transition:height 0.35s ease;-o-transition:height 0.35s ease;transition:height 0.35s ease;}.collapse.in{height:auto;}
+
+/* list
+ * author: linjianfeng@baixing.com
+ */
+.list{border:1px solid #f3f2f1;border-top:none;}
+.list-item a{display:block;padding:10px 15px;border-top:1px solid #f3f2f1;}
+.list-item a:hover{background:#1abc9c;text-decoration:none;color:#fff;}
