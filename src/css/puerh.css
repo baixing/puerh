@@ -13,7 +13,7 @@ article, aside, details, footer, header, hgroup, menu, nav, section {display: bl
 audio, canvas, video {display: inline-block;*display: inline;*zoom: 1;}
 
 /* 要注意表单元素并不继承父级 font 的问题 */
-body, button, input, select, textarea {font:500 14px/1.8 Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;}
+body, button, input, select, textarea {font:500 14px/1.8 Hiragino Sans GB, Microsoft Yahei, WenQuanYi Micro Hei,sans-serif;}
 
 /* 去掉各Table  cell 的边距并让其边重合 */
 table {border-collapse: collapse;border-spacing: 0;}
