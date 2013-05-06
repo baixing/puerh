@@ -3,4 +3,44 @@ extends layout
 block content
   .container
     .grid
-      |grid
+      .typo
+        h1 使用方法
+        p 栅格（Gridset）的总宽度为 980px，包含 20 栏，每栏 30px，间隙为 20px；只支持固定宽度，没有 Responsive 支持。这样使用：
+        pre
+          |&lt;div class="container"&gt;
+          |&nbsp;&nbsp;&lt;div class="grid grid-5"&gt; ... &lt;/div&gt;
+          |&nbsp;&nbsp;&lt;div class="grid grid-15&nbsp;
+          strong.highlight last
+          |"&gt; ... &lt;/div&gt;
+          |&lt;/div&gt;
+        p 当有多个栏的时候，最后一个栏需要添加一个&nbsp;
+          code .last
+          | &nbsp;classname。另外，值得注意的是百姓网有很多页面使用二栏风格，并且都比较一致区分左右栏，所以这个系统中有两个 classname 为它们的 Alias：
+
+        pre
+          |&lt;div class="container"&gt;
+          |&nbsp;&nbsp;&lt;div class="maincol"&gt; 主栏 &lt;/div&gt;
+          |&nbsp;&nbsp;&lt;div class="sidecol&nbsp;
+          strong.highlight last
+          |"&gt; 侧栏 &lt;/div&gt;
+          |&lt;/div&gt;
+
+      hr
+
+      h1.typo-h1 Gridset Demo
+
+      div.container#grid-demo
+        div.grid.grid-20 grid-20
+        div.grid.grid-1 1
+        div.grid.grid-2 grid-2
+        div.grid.grid-3 grid-3
+        div.grid.grid-4 grid-4
+        div.grid.grid-10.last grid-10
+        div.grid.grid-5 grid-5
+        div.grid.grid-6 grid-6
+        div.grid.grid-9.last grid-9
+        div.grid.grid-7 grid-7
+        div.grid.grid-8 grid-8
+        div.grid.grid-5.last grid-5
+        div.maincol maincol
+        div.sidecol.last sidecol
