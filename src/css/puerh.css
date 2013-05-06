@@ -75,6 +75,7 @@ u, .typo-u {text-decoration: underline;}
 mark {background: #fffdd1;}
 
 /* 代码片断 */
+code {border:1px dashed #eee;color:#27ae60;padding:0 3px;}
 pre, code {font-family: "Courier New", Courier, monospace;white-space: pre-wrap;word-wrap: break-word;}
 pre {border: 1px solid #ddd;border-left-width: 0.4em;background: #fbfbfb;padding: 10px;}
 
@@ -104,7 +105,7 @@ hr{border:none;border-bottom:1px solid #cfcfcf;margin-bottom:10px;*color:pink;*f
 .typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr, .typo table,
 .typo-p, .typo-pre, .typo-ul, .typo-ol, .typo-dl, .typo-form, .typo-hr, .typo-table {margin-bottom: 1em;}
 
-h1, h2, h3, h4, h5, h6{font-weight: 500;font-weight: 800\9;font-family: Helvetica Neue,Hiragino Sans GB,WenQuanYi Micro Hei,sans-serif;color:#333;}
+h1, h2, h3, h4, h5, h6{font-weight: 500;font-weight: 800\9;font-family: Helvetica Neue,Hiragino Sans GB,Microsoft Yahei, WenQuanYi Micro Hei,sans-serif;color:#333;}
 
 /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
 .typo h1, .typo h2, .typo h3, .typo h4, .typo h5, .typo h6,

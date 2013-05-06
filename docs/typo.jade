@@ -5,7 +5,7 @@ block content
     .grid.grid-5#nav
       ul.list.affix-top(data-spy="affix", data-offset-top="132")
         li.list-item
-          a(href="#Usage") Usage
+          a(href="#usage") Usage
         li.list-item
           a(href="#paragraph") Paragraph
         li.list-item
@@ -24,6 +24,18 @@ block content
           a(href="#util") Uitilities
 
     .grid.grid-15.last.typo
+
+      h1#usage 使用方法
+
+      p 需要排版的地方，在其父级元素添加&nbsp;
+        code .typo
+        |&nbsp; 即可。当只想用单独一个元素，或者让其显示和某个元素一样效果的时候，可以使用&nbsp;
+        code .typo-TAGNAME
+        |&nbsp;如&nbsp;
+        code div.typo-small
+        | &nbsp;可以获得&nbsp;
+        code .typo small
+        |&nbsp;一样的效果
 
       hr#paragraph
       h1 段落中英混排 / Text-level semantics
@@ -215,6 +227,23 @@ block content
 
       hr#util
       h1 小工具 / Utilities
+
+      h3 1. 清理浮动
+
+      pre .clearfix
+
+      h3 2. 强制换行
+
+      pre .textwrap /* 在 table 中使用 .textwrap-table */
+
+      h3 3. 左右浮动
+
+      pre .pull-right / .pull-left
+
+      h4 4. 脱离 .typo 单独使用
+
+      pre .typo-TAGNAME /* 比较 .typo-small */
+
 
 
 
