@@ -164,6 +164,6 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 /* list
  * author: linjianfeng@baixing.com
  */
-.list{border:1px solid #f3f2f1;border-top:none;}
+.list{border:1px solid #f3f2f1;border-top:none;background:#fff;}
 .list-item a{display:block;padding:10px 15px;border-top:1px solid #f3f2f1;}
-.list-item a:hover{background:#1abc9c;text-decoration:none;color:#fff;}
+.list-item a:hover, .list .active a{background:#ec5524;text-decoration:none;color:#fff;}
