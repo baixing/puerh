@@ -3,4 +3,10 @@ extends layout
 block content
   .container
     .grid.grid-20
-      img(src="http://lorempixel.com/980/500/people/")
+      style
+        html{background:url(http://lorempixel.com/980/500/nightlife/) no-repeat fixed center center / cover #000;}
+        #header{background:rgba(0,0,0,.6);}
+        #intro {height:500px;font:90px/500px Impact;color:#fff;opacity:0.6;}
+        #footer{position:fixed;bottom:0;background:rgba(0,0,0,.6);border-top:none;}
+      #intro
+        |Hello World;
