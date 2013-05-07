@@ -94,6 +94,8 @@ button, input {
     line-height:22px;
 }
 
+a{color:#ec5534;}
+
 /* 一致化 horizonal rule */
 hr{border:none;border-bottom:1px solid #cfcfcf;margin-bottom:10px;*color:pink;*filter:chroma(color=pink);height:10px;*margin:-7px 0 2px;}
 
@@ -164,6 +166,9 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 /* list
  * author: linjianfeng@baixing.com
  */
-.list{border:1px solid #f3f2f1;border-top:none;background:#fff;}
-.list-item a{display:block;padding:10px 15px;border-top:1px solid #f3f2f1;}
+.list{border:1px solid #f3f2f1;border-top:none;background:#fff;color:#333;}
+.list-item{position:relative;}
+.list-item a{display:block;padding:10px 15px;border-top:1px solid #f3f2f1;color:#333;line-height:1.1;}
 .list-item a:hover, .list .active a{background:#ec5524;text-decoration:none;color:#fff;}
+.list-item-badge {display:inline-block;color:#fff;position:absolute;right:15px;top:11px;line-height:16px;height:16px;background:#ec5524;border-radius:8px;padding:0 6px;font-size:12px;pointer-events:none;}
+.list-item:hover .list-item-badge, .list .active .list-item-badge{background:#fff;color:#ec5524;}
