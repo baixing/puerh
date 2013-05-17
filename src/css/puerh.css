@@ -76,8 +76,8 @@ mark {background: #fffdd1;}
 
 /* 代码片断 */
 code {border:1px dashed #eee;color:#27ae60;padding:0 3px;}
-pre, code {font-family: Consolas, Courier, Courier New, monospace;white-space: pre-wrap;word-wrap: break-word;}
-pre {background:#f8f8f8;padding:10px 15px;line-height:1.36;}
+pre, code {font-family: Inconslata, Consolas, Courier, Courier New, monospace;white-space: pre-wrap;word-wrap: break-word;}
+pre {background:#f9f9f9;padding:10px 15px;line-height:1.36;color:#555;text-shadow:1px 1px 1px #fff;}
 
 /* 底部印刷体、版本等标记 */
 small,
