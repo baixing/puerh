@@ -2,12 +2,16 @@ hr#tab
 h2.typo-h2 二、Tab
 .tab.sep
   ul.tab-title.clearfix
-    li.tab-title-item
-      a(data-toggle='tab', href='#') 全部
     li.tab-title-item.active
-      a(data-toggle='tab', href='#') 个人
+      a(data-toggle='tab', href='#tab-1') 全部
     li.tab-title-item
-      a(data-toggle='tab', href='#') 商家
+      a(data-toggle='tab', href='#tab-2') 个人
+    li.tab-title-item
+      a(data-toggle='tab', href='#tab-3') 商家
+  .tab-content
+    #tab-1.tab-content-pane.active #tab-1
+    #tab-2.tab-content-pane #tab-2
+    #tab-3.tab-content-pane #tab-3
 
 p.typo-p
   | CSS 和 JS 分开的，通过&nbsp;
