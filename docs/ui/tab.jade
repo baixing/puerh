@@ -1,0 +1,37 @@
+hr#tab
+h2.typo-h2 二、Tab
+.tab.sep
+  ul.tab-title.clearfix
+    li.tab-title-item
+      a(data-toggle='tab', href='#') 全部
+    li.tab-title-item.active
+      a(data-toggle='tab', href='#') 个人
+    li.tab-title-item
+      a(data-toggle='tab', href='#') 商家
+
+p.typo-p
+  | CSS 和 JS 分开的，通过&nbsp;
+  code data-toggle="tab"
+  |&nbsp;来指定元素本身是一个 tab 标签。通过&nbsp;
+  code href="#TARGET_ID"
+  |&nbsp;或者
+  code data-target="#TARGET_ID"
+  |&nbsp;来指定 tab 显示的内容。
+
+pre.sep
+  |&lt;div class="
+  b.highlight tab
+  |"&gt;
+  |  &lt;ul class="
+  b.highlight tab-title
+  |&nbsp;clearfix"&gt;
+  |    &lt;li class="
+  b.highlight tab-title-item
+  |"&gt;&lt;a href="#"&nbsp;
+  b.highlight data-toggle="tab"
+  |&gt;全部&lt;/a&gt;&lt;/li&gt;
+  |    &lt;li class="tab-title-item&nbsp;
+  b.highlight active
+  |"&gt;&lt;a href="#" data-toggle="tab"&gt;个人&lt;/a&gt;&lt;/li&gt;
+  |  &lt;/ul&gt;
+  |&lt;/div&gt;

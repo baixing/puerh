@@ -1,0 +1,38 @@
+ul.list.grid-5.pull-right
+  li.list-item
+    a(href="###") Item 1
+    cite.list-item-badge 12
+  li.list-item.active
+    a(href="###") Item 2
+  li.list-item
+    a(href="###") Item 3
+
+.typo
+  h2#list 一、列表 / List
+
+  p 列表使用有一点值得注意的是&nbsp;
+    code .list-item-badge
+    |&nbsp;被设置了&nbsp;
+    code pointer-events:none
+    |，即不可点的。需要可点的情况比较少，如果有需要，可以使用&nbsp;
+    code pointer-events:auto
+    |。结构如下：
+
+  pre
+    |&lt;ul class="
+    b.highlight list
+    |"&gt;
+    |&nbsp;&lt;li class="
+    b.highlight list-item
+    |"&gt;
+    |&nbsp;&nbsp;&lt;a href="#"&gt;Item 1&lt;/a&gt;
+    |&nbsp;&nbsp;&lt;cite class="
+    b.highlight list-item-badge
+    |"&gt;12&lt;/cite&gt;
+    |&nbsp;&lt;/li&gt;
+    |&nbsp;&lt;li class="list-item&nbsp;
+    b.highlight active
+    |"&gt;
+    |&nbsp;&nbsp;&lt;a href="###"&gt;Item 2&lt;/a&gt;
+    |&nbsp;&lt;/li&gt;
+    |&lt;/ul&gt;
