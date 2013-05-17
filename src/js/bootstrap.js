@@ -130,7 +130,7 @@
 
       if (this.isShown) return
 
-      $('body').addClass('modal-open');
+      $('body').addClass('modal-open').append(that.$element);
 
       // add by @sofish
       // set margin to adjust the window
