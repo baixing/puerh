@@ -1,3 +1,3 @@
 module.exports = function(req, res){
-  res.render('typo');
+  res.render('typo', { title: 'Typography'});
 }

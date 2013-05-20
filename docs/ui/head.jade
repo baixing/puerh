@@ -1,0 +1,35 @@
+hr#head
+h2 三、Head / Search
+
+.typo-p
+  |Topbar 为全局顶部导航，直接使用&nbsp;
+  code .head
+  |&nbsp; 这个 class。包含了标识和搜索。搜索的宽度可以自定义，在百姓网中主要有两种长度，一种用于顶部的 250px，一种用于 Listing 的是 180px。
+
+.head.clearfix.sep
+  .head-cnt
+    h1
+      a(href="http://baixing.com")
+        i.icon-cashBag
+        |乌鲁木齐百姓网
+
+    .head-search
+      form.search
+        input.input(placeholder="请输入关键词或分类名")
+        i.icon-search
+        input.search-trigger(type="submit", value="", title="搜索")
+      small 热门：
+        a(href="#") iPhone
+        |&nbsp;
+        a(href="#") 小米手机
+
+.typo-p 用于首页的如上例，使用 class&nbsp;
+  code .search
+  |&nbsp;用的 Listing 的使用 class&nbsp;
+  code .search.search-short
+  |&nbsp;：
+
+form.search.search-short
+  input.input(placeholder="搜索二级类目")
+  i.icon-search
+  input.search-trigger(type="submit", value="", title="搜索")

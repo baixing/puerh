@@ -1,3 +1,3 @@
 module.exports = function(req, res){
-  res.render('ui');
+  res.render('ui', { title: 'UI Components'});
 }

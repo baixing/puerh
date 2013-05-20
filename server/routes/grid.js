@@ -1,3 +1,3 @@
 module.exports = function(req, res){
-  res.render('grid');
+  res.render('grid', { title: 'Gridset'});
 }

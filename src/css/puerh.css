@@ -149,6 +149,12 @@ h1, h2, h3, h4, h5, h6{font-weight: 500;font-weight: 800\9;font-family: Helvetic
 .sep {margin-bottom:1em;}
 .sep-big {margin-bottom:2em;}
 
+/* input */
+.input{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;height:28px;}
+.input{border:1px solid #ddd;border:2px solid #e3e3e3;background:#fff;padding:3px 5px;}
+.input:focus, input.focus{background:#ffffe7;}
+.input.error, input.error{border-color:#f30;}
+
 /* Utilities from bootstrap */
 .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
 .input-block-level{display:block;width:100%;min-height:30px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
@@ -207,3 +213,26 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 .modal .close{position:absolute;top:10px;right:20px;}
 .modal-backdrop{position:absolute;top:0;left:0;height:100%;width:100%;background:#111\9;filter:alpha(opacity=30)\9;background:rgba(18,18,18,0.3);z-index:1001;}
 
+/* Head 顶部
+ * author: linjianfeng@baixing.com
+ */
+.head{background:#f2f1ec;height:40px;padding-top:15px;width:100%;}
+.head h1{width:230px;overflow:hidden;font-size:22px;line-height:55px;margin-top:-15px;}
+.head a{color:#333;}
+.head small a{color:#999;}
+.head h1 i{padding-right:5px;color:#ec5524;}
+.head h1 a:hover{text-decoration:none;}
+.head .head-nav {width:550px;overflow:hidden;font-size:16px;}
+.head h1, .head .head-search{float:left;}
+.head-search small{position:relative;top:-10px;left:10px;}
+
+
+/* Search
+ * author: linjianfeng@baixing.com
+ */
+.search{position:relative;width:250px;height:24px;border:2px solid #ed5624;background:#fff;border-radius:1px;display:inline-block;_display:inline;_zoom:1;}
+.search .input{width:100%;padding-right:35px;height:24px;border:none;background:none;font-size:12px;position:absolute;top:0;}
+.search .icon-search{display:block;width:24px;padding-left:4px;background:#ed5624;line-height:24px;text-align:center;color:#fff;}
+.search .icon-search, .search-trigger{display:block;height:24px;position:absolute;right:0;top:0;}
+.search .search-trigger{width:28px;opacity:0;filter:alpha(opacity=0);}
+.search-short{width:180px;}

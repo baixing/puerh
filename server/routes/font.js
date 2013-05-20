@@ -1,3 +1,3 @@
 module.exports = function(req, res){
-  res.render('font');
+  res.render('font', { title: 'Font Icon'});
 }
