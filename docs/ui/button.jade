@@ -1,0 +1,36 @@
+hr#button
+h2.typo-h2 六、Button
+
+.typo
+  p 这里需要注意的是，在 disabled 的状态，Button 的鼠标事件是没有的。不可点。下面为&nbsp;
+    code &lt;a/&gt;
+    |&nbsp;链接按钮：
+  p
+    a.button(href="#")
+      i.icon-post
+      |免费发布信息
+    |&nbsp;
+    a.button.button-hover(href="#")
+      i.icon-post
+      |免费发布信息
+    |&nbsp;
+    a.button.button-active(href="#")
+      i.icon-post
+      |免费发布信息
+    |&nbsp;
+    a.button.button-disabled(href="#")
+      i.icon-post
+      |免费发布信息
+  p
+    code &lt;input/&gt;
+    |&nbsp;和&nbsp;
+    code &lt;button/&gt;
+    |&nbsp;需要在排版的时候高度保持一致或者居中。
+
+  p
+    input.button(type="button", value="input[type=button]")
+    |&nbsp;
+    button.button button
+    |&nbsp;
+    input.button(type="submit", value="input[type=submit]:disabled", disabled)
+    |&nbsp;

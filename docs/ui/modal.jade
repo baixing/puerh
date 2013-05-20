@@ -12,6 +12,18 @@ h2.typo-h2 五、Modal
   code data-target="#TARGET_ID"
   |&nbsp;来指定这个 modal 指定的显示框。
 
+//- 这个放在 body 内
+#myModal.modal.fade
+  h4.modal-title 本操作需要您先注册百姓网
+  a.close(href='###', data-dismiss='modal') ×
+  .modal-content
+    | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+    | incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+    | nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    | Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+    | fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
+    | culpa qui officia deserunt mollit anim id est laborum.
+
 .modal.sep(style="position:relative;z-index:1;")
   h4.modal-title 本操作需要您先注册百姓网
   a.close(href='###', data-dismiss='modal') ×
@@ -39,16 +51,3 @@ pre
   |    Lorem ipsum dolor sit amet,
   |  &lt;/div&gt;
   |&lt;/div&gt;
-
-block extra
-  //- 这个放在 body 内
-  #myModal.modal.fade
-    h4.modal-title 本操作需要您先注册百姓网
-    a.close(href='###', data-dismiss='modal') ×
-    .modal-content
-      | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-      | incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-      | nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-      | Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-      | fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-      | culpa qui officia deserunt mollit anim id est laborum.
