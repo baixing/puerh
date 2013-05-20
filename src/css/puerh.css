@@ -141,6 +141,11 @@ h1, h2, h3, h4, h5, h6{font-weight: 500;font-weight: 800\9;font-family: Helvetic
 ::-moz-selection {background:#08c;color:#fff;}
 ::selection {background:#08c;color:#fff;}
 
+/* Placeholder Color */
+::-moz-placeholder {color: #aaa;}
+::-webkit-input-placeholder {color: #aaa;}
+::-ms-input-placeholder {color:#aaa;}
+
 /* 强制文本换行 */
 .textwrap, .textwrap td, .textwrap th{word-wrap:break-word;word-break:break-all;}
 .textwrap-table{table-layout:fixed;}
@@ -150,10 +155,28 @@ h1, h2, h3, h4, h5, h6{font-weight: 500;font-weight: 800\9;font-family: Helvetic
 .sep-big {margin-bottom:2em;}
 
 /* input */
-.input{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;height:28px;}
-.input{border:1px solid #ddd;border:2px solid #e3e3e3;background:#fff;padding:3px 5px;}
-.input:focus, input.focus{background:#ffffe7;}
-.input.error, input.error{border-color:#f30;}
+textarea{resize:none;}
+label input{margin-right:3px;}
+
+.input{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;height:32px;}
+.input{border:2px solid #ddd;background:#fff;padding:3px 5px;}
+.input:focus, input.focus{border-color:#51b4ff;}
+.input.error, input.error{border-color:#ec5524;}
+textarea.input{-moz-box-sizing:inherit;-webkit-box-sizing:inherit;box-sizing:inherit;height:auto;}
+
+form label{display:inline-block;margin-right:8px;}
+form .input{margin-right:5px;}
+
+.label{display:block;margin-bottom:1em;}
+
+.input-big{height:28px;padding:0 10px;line-height:28px;}
+.input-50, .input-smallest{width:50px;}
+.input-90, .input-smaller{width:90px;}
+.input-110, .input-small{width:110px;}
+.input-150, .input-medium, .input-6{width:150px;}
+.input-230, .input-large{width:230px;}
+.input-400, .input-larger, .input-60{width:400px;}
+.input-600, .input-largest{width:600px;}
 
 /* Utilities from bootstrap */
 .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}

@@ -1,0 +1,97 @@
+hr#form
+
+.typo
+  table.pull-right.grid-8
+    thead
+      tr
+        th
+          | size=
+        th
+          | 对应 class
+        th
+          | 实际长度
+    tbody
+      tr
+        td auto
+        td .form-input-auto
+        td 自适应
+      tr
+        td smallest
+        td .form-input-50
+        td 50px
+      tr
+        td smaller
+        td .form-input-90
+        td 90px
+      tr
+        td small
+        td .form-input-110
+        td 110px
+      tr
+        td medium
+        td .form-input-250
+        td 150px
+      tr
+        td large
+        td .form-input-230
+        td 400px
+      tr
+        td larger
+        td .form-input-400
+        td 400px
+      tr
+        td largest
+        td .form-input-460
+        td 600px
+
+  h2 七、Form
+
+  p Form 表单，一般的&nbsp;
+    code input:file
+    |&nbsp; 和 &nbsp;
+    code select
+    |&nbsp;参见&nbsp;
+    a(href="/typography") Typography
+    |。而发布表单上多长度的配置，可以参见 Github Wiki 上的&nbsp;
+    a(href="https://github.com/baixing/haojing/wiki/Fabu-%E8%BE%93%E5%85%A5%E6%A1%86%E5%A4%A7%E5%B0%8F%E9%85%8D%E7%BD%AE%E5%AF%B9%E7%85%A7%E8%A1%A8")
+      |Fabu 输入框大小配置对照表
+    |。另外&nbsp;
+    code textarea
+    |&nbsp;也可以使用
+    code input
+    |&nbsp;标签的 class。
+
+  form
+    .label
+      input.input(type="text", placeholder="Normal...")
+      label
+        input(type="checkbox")
+        |Hello
+      label
+        input(type="checkbox", checked)
+        |World
+    .label
+      input.input.focus(type="text", placeholder="On Focsu...")
+      small Hello Puerh!
+    .label
+      input.input.error(type="text", placeholder="On Error...")
+    .label
+      label
+        input(type="radio")
+        |Yes
+      label
+        input(type="radio", checked)
+        |No
+    .label
+      input.input.input-small(type="text", placeholder=".input-small")
+    .label
+      input.input.input-medium(type="text", placeholder=".input-medium")
+    .label
+      input.input.input-large(type="text", placeholder=".input-large")
+    .label
+      textarea.input(rows="3", cols="50", placeholder="textarea...")
+
+    pre
+      |&lt;input type="text" class="
+      b.highlight input input-small
+      |" placeholder=".input-small"&gt;
