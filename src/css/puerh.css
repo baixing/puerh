@@ -240,10 +240,32 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 /* Button
  * author: linjianfeng@baixing.com
  */
-.button{display:inline-block;height:32px;line-height:32px;padding:0 15px;background:#ec5524;color:#fff;border-radius:2px;}
+.button{display:inline-block;height:32px;line-height:32px;padding:0 15px;background:#ec5524;color:#fff;border-radius:2px;cursor:pointer;}
 .button i{position:relative;top:1px;margin-right:5px;}
 .button:hover, .button-hover{text-decoration:none;background:#ff7744;}
 .button:active, .button-active{background:#cb4a1e;}
 .button:disabled, .button-disabled{background:#999;pointer-events:none;}
 
 input.button, button.button{border:none;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;padding:0 10px;}
+
+.button-inline{
+    height:24px;
+    line-height:24px;
+    border-radius:0;
+    border:1px solid #dadada!important;
+    color:#888;
+    background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#F0EFEB));
+    background: -moz-linear-gradient(top, #ffffff, #F0EFEB);
+    background: -o-linear-gradient(top, #ffffff, #F0EFEB);
+    filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#F0EFEB')
+    chroma(color=black);
+}
+.button-inline:hover, .button-inline-hover{
+    color:#999;
+    border:1px solid #c1c1c1;
+    background: -webkit-gradient(linear, left top, left bottom, from(#F0EFEB), to(#ffffff));
+    background: -moz-linear-gradient(top, #F0EFEB, #ffffff);
+    background: -o-linear-gradient(top, #F0EFEB, #ffffff);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F0EFEB', endColorstr='#ffffff')
+    chroma(color=black);
+}
