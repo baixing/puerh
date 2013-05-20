@@ -21,16 +21,25 @@ h2.typo-h2 六、Button
     a.button.button-disabled(href="#")
       i.icon-post
       |免费发布信息
+  pre
+    |&lt;a class="
+    b.highlight button
+    |" href="#"&gt;
+    |   &lt;i class="icon-post"&gt;&lt;/i&gt;
+    |   免费发布信息
+    |&lt;/a&gt;
   p
     code &lt;input/&gt;
     |&nbsp;和&nbsp;
     code &lt;button/&gt;
     |&nbsp;需要在排版的时候高度保持一致或者居中。
-
   p
     input.button(type="button", value="input[type=button]")
     |&nbsp;
     button.button button
     |&nbsp;
     input.button(type="submit", value="input[type=submit]:disabled", disabled)
-    |&nbsp;
+  pre
+    |&lt;input class="
+    b.highlight button
+    |" type="button" value="HelloWorld" /&gt;
