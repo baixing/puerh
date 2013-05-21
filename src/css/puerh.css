@@ -153,6 +153,7 @@ h1, h2, h3, h4, h5, h6{font-weight: 500;font-weight: 800\9;font-family: Helvetic
 /* 下边距，Grid 已经有左右边距 */
 .sep {margin-bottom:1em;}
 .sep-big {margin-bottom:2em;}
+.debug{display:none;}
 
 /* input */
 textarea{resize:none;}
@@ -206,15 +207,15 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
  * author: linjianfeng@baixing.com
  */
 .tab{position:relative;}
-.tab-title{border-bottom:1px solid #f2f1ec;border-left:1px solid #f2f1ec;}
-.tab-title-item{display:inline-block;float:left;height:28px;line-height:28px;border:1px solid #f2f1ec;border-left:none;border-bottom:none;*position:relative;z-index:1;background:#f2f1ec;*zoom:1;}
+.tab-title{border-left:1px solid #f2f1ec;position:relative;z-index:2;}
+.tab-title-item{display:inline-block;float:left;height:32px;line-height:32px;border:1px solid #f2f1ec;border-left:none;border-bottom:none;*position:relative;z-index:1;background:#f2f1ec;*zoom:1;}
 .tab-title .active{z-index:2;margin-top:0;background:#fff;}
-.tab-title a{color:#333;padding:0 16px;line-height:28px;}
+.tab-title a{color:#333;padding:0 16px;line-height:32px;}
 .tab-title a:hover{text-decoration:none;}
-.tab-content{border:1px solid #f2f1ec;border-top:none;padding:10px 15px;}
+.tab-content{border:1px solid #f2f1ec;padding:10px 15px;position:relative;z-index:1;top:-1px;}
 .tab-content-pane{display:none;}
 .tab-content .active{display:block;}
-.tab-content-noborder{padding:10px 0;border:none;}
+.tab-content-noborder{padding:10px 0;border:none;border-top:1px solid #f2f1ec;}
 
 /* Alert
  * author: linjianfeng@baixing.com
@@ -304,7 +305,7 @@ input.button, button.button{border:none;-moz-box-sizing:border-box;-webkit-box-s
 /* Topbar 顶部导航
  * author: linjianfeng@baixing.com
  */
-#topbar{width:100%;background:#f8f8f8;height:28px;line-height:28px;font-size:12px;border-bottom: 1px solid #EBEBEB;}
+#topbar{width:100%;background:#f2f1ec;height:28px;line-height:28px;font-size:12px;border-bottom: 1px solid #EBEBEB;}
 .topbar{width:980px;margin:0 auto;position:relative;}
 .topbar, .topbar a, .topbar-right-text{color:#666;}
 .topbar a:hover{color:red;}
@@ -317,3 +318,6 @@ input.button, button.button{border:none;-moz-box-sizing:border-box;-webkit-box-s
 .topbar-right .topbar-mobile span{background:#f8f8f8;}
 .bigbang{background-position:-40px 1px; *background-position-y: 3px; color:#666;font-size:12px;position:relative;_padding-top:2px;_top:20px;left:-40px; white-space: nowrap;}
 .bigbang a{color:#333;position: absolute; bottom: -2px; display: inline-block; width: 280px;background-color: #fff;}
+
+/* footer copyright */
+.copyright{border-top:1px solid #ddd;padding-top:10px;margin-top:30px;margin-bottom:10px;}
