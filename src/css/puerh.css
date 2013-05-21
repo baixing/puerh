@@ -298,7 +298,7 @@ input.button, button.button{border:none;-moz-box-sizing:border-box;-webkit-box-s
  * author: linjianfeng@baixing.com
  */
 .media{border-bottom:1px solid #eee;padding:10px 0;}
-.media-cap{width:64px;height:64px;overflow:hidden;display:block;margin-right:10px;float:left;background:#f8f8f8;position:relative;top:3px;}
+.media-cap{width:64px;height:64px;overflow:hidden;display:block;margin-right:10px;float:left;background:#f8f8f8;}
 .media-cap img{width:64px;}
 
 
