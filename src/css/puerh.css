@@ -319,5 +319,17 @@ input.button, button.button{border:none;-moz-box-sizing:border-box;-webkit-box-s
 .bigbang{background-position:-40px 1px; *background-position-y: 3px; color:#666;font-size:12px;position:relative;_padding-top:2px;_top:20px;left:-40px; white-space: nowrap;}
 .bigbang a{color:#333;position: absolute; bottom: -2px; display: inline-block; width: 280px;background-color: #fff;}
 
+/* Pagenav
+ * author: linjianfeng@baixing.com
+ */
+.pagenav{margin:1em 0;}
+.pagenav a{color:#555;}
+.pagenav-cell{display:inline-block;background:#f2f1ec;padding:0 10px;height:28px;line-height:28px;margin-right: 0.3em;}
+.pagenav-cell-current{background:#999;pointer-events:none;color:#fff;}
+.pagenav .pagenav-cell-next{background:#ec5524;border-color:#4c8928;color:#fff;}
+.pagenav-cell:hover{background:#999;text-decoration:none;color:#fff;}
+.pagenav-cell-ellipsis{pointer-events:none;}
+.pagenav .pagenav-cell-next:hover{background:#ff7744;}
+
 /* footer copyright */
 .copyright{border-top:1px solid #ddd;padding-top:10px;margin-top:30px;margin-bottom:10px;}
