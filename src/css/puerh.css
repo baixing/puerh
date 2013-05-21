@@ -80,7 +80,7 @@ pre, code {font-family: Inconslata, Consolas, Courier, Courier New, monospace;wh
 pre {background:#f9f9f9;padding:10px 15px;line-height:1.36;color:#555;text-shadow:1px 1px 1px #fff;}
 
 /* 底部印刷体、版本等标记 */
-small,
+small, .typo-small,
 
 /* 图片说明 */
 figcaption {font-size:12px;color: #888;}
@@ -207,8 +207,8 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
  */
 .tab{position:relative;}
 .tab-title{border-bottom:1px solid #f2f1ec;border-left:1px solid #f2f1ec;}
-.tab-title-item{display:inline-block;float:left;height:28px;line-height:28px;border:1px solid #f2f1ec;border-left:none;border-bottom:none;*position:relative;z-index:1;background:#fff;*zoom:1;}
-.tab-title .active{z-index:2;margin-top:0;background:#f2f1ec;}
+.tab-title-item{display:inline-block;float:left;height:28px;line-height:28px;border:1px solid #f2f1ec;border-left:none;border-bottom:none;*position:relative;z-index:1;background:#f2f1ec;*zoom:1;}
+.tab-title .active{z-index:2;margin-top:0;background:#fff;}
 .tab-title a{color:#333;padding:0 16px;line-height:28px;}
 .tab-title a:hover{text-decoration:none;}
 .tab-content{border:1px solid #f2f1ec;border-top:none;padding:10px 15px;}
@@ -292,3 +292,28 @@ input.button, button.button{border:none;-moz-box-sizing:border-box;-webkit-box-s
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#F0EFEB', endColorstr='#ffffff')
     chroma(color=black);
 }
+
+/* Media
+ * author: linjianfeng@baixing.com
+ */
+.media{border-bottom:1px solid #eee;padding:10px 0;}
+.media-cap{width:64px;height:64px;overflow:hidden;display:block;margin-right:10px;float:left;background:#f8f8f8;position:relative;top:3px;}
+.media-cap img{width:64px;}
+
+
+/* Topbar 顶部导航
+ * author: linjianfeng@baixing.com
+ */
+#topbar{width:100%;background:#f8f8f8;height:28px;line-height:28px;font-size:12px;border-bottom: 1px solid #EBEBEB;}
+.topbar{width:980px;margin:0 auto;position:relative;}
+.topbar, .topbar a, .topbar-right-text{color:#666;}
+.topbar a:hover{color:red;}
+.topbar .notice-account{padding:0 6px;border-radius:6px;background:#080;color:#fff;}
+.topbar .notice-account:hover{color:#ffc;text-decoration:none;background:#9c0;}
+.topbar-right{position:absolute;right:0;top:0;color:#ddd;}
+.topbar-right a{padding:0 5px;}
+.topbar-right .topbar-mobile, .bigbang{background:url(http://static.baixing.net/images/head_icon.png) no-repeat -20px 0;padding-left:16px;}
+.topbar-right .topbar-mobile{padding-right:0;}
+.topbar-right .topbar-mobile span{background:#f8f8f8;}
+.bigbang{background-position:-40px 1px; *background-position-y: 3px; color:#666;font-size:12px;position:relative;_padding-top:2px;_top:20px;left:-40px; white-space: nowrap;}
+.bigbang a{color:#333;position: absolute; bottom: -2px; display: inline-block; width: 280px;background-color: #fff;}
