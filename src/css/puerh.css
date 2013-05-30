@@ -345,12 +345,21 @@ input.button, button.button{border:none;-moz-box-sizing:border-box;-webkit-box-s
 .topbar-mobile span{background:#f2f1ec;}
 
 
-/* Topbar 顶部导航
+/*
  * author: linjianfeng@baixing.com
  */
 .box{border:1px solid #f2f1ec;}
 .box-title{height:32px;padding:0 15px;line-height:32px;background:#f2f1ec;}
 .box-body{padding:15px;}
+
+
+
+/* note
+ * author: linjianfeng@baixing.com
+ */
+.note{background:#f2f1ec;height:32px;padding-right:10px;line-height:32px;background:#f2f1ec;}
+.note-cap{background:#27ae60;color:#fff;display:inline-block;height:32px;width:32px;position:relative;top:0;text-align:center;line-height:32px!important;margin-right:10px;}
+.note small{position:relative;top:-2px;}
 
 
 /* Feedback */
