@@ -345,6 +345,14 @@ input.button, button.button{border:none;-moz-box-sizing:border-box;-webkit-box-s
 .topbar-mobile span{background:#f2f1ec;}
 
 
+/* Topbar 顶部导航
+ * author: linjianfeng@baixing.com
+ */
+.box{border:1px solid #f2f1ec;}
+.box-title{height:32px;padding:0 15px;line-height:32px;background:#f2f1ec;}
+.box-body{padding:15px;}
+
+
 /* Feedback */
 .fixedBtn {display:none;position:fixed; right:-350px; top:275px; width:350px; height:155px;z-index:3;}
 * html .fixedBtn {position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop)+160);}
