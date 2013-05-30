@@ -13,7 +13,7 @@ article, aside, details, footer, header, hgroup, menu, nav, section {display: bl
 audio, canvas, video {display: inline-block;*display: inline;*zoom: 1;}
 
 /* 要注意表单元素并不继承父级 font 的问题 */
-body, button, input, select, textarea {font:500 14px/1.8 Hiragino Sans GB, Microsoft Yahei, WenQuanYi Micro Hei,sans-serif;}
+body, button, input, select, textarea {font:500 14px/1.8 Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei,sans-serif;}
 
 /* 去掉各Table  cell 的边距并让其边重合 */
 table {border-collapse: collapse;border-spacing: 0;}
@@ -82,17 +82,11 @@ pre {background:#f9f9f9;padding:10px 15px;line-height:1.36;color:#555;text-shado
 /* 底部印刷体、版本等标记 */
 small, .typo-small,
 
-/* 图片说明 */
+    /* 图片说明 */
 figcaption {font-size:12px;color: #888;}
 
 /* 去除 IE6 input/button 多余的空白 */
-button, input {
-    *width: auto;
-    *overflow: visible;
-
-    /* 让 input 和 button 一样高 */
-    line-height:22px;
-}
+button, input {*width: auto;*overflow: visible;line-height:22px; /* 让 input 和 button 一样高 */ }
 
 a{color:#ec5534;}
 
@@ -107,7 +101,7 @@ hr{border:none;border-bottom:1px solid #cfcfcf;margin-bottom:10px;*color:pink;*f
 .typo p, .typo pre, .typo ul, .typo ol, .typo dl, .typo form, .typo hr, .typo table,
 .typo-p, .typo-pre, .typo-ul, .typo-ol, .typo-dl, .typo-form, .typo-hr, .typo-table {margin-bottom: 1em;}
 
-h1, h2, h3, h4, h5, h6{font-weight: 500;font-weight: 800\9;font-family: Helvetica Neue,Hiragino Sans GB,Microsoft Yahei, WenQuanYi Micro Hei,sans-serif;color:#333;}
+h1, h2, h3, h4, h5, h6{font-weight: 500;font-family: Helvetica Neue, Microsoft Yahei, Hiragino Sans GB, WenQuanYi Micro Hei,sans-serif;color:#333;}
 
 /* 标题应该更贴紧内容，并与其他块区分，margin 值要相应做优化 */
 .typo h1, .typo h2, .typo h3, .typo h4, .typo h5, .typo h6,
@@ -146,6 +140,8 @@ h1, h2, h3, h4, h5, h6{font-weight: 500;font-weight: 800\9;font-family: Helvetic
 ::-webkit-input-placeholder {color: #aaa;}
 ::-ms-input-placeholder {color:#aaa;}
 
+:focus{outline:none;}
+
 /* 强制文本换行 */
 .textwrap, .textwrap td, .textwrap th{word-wrap:break-word;word-break:break-all;}
 .textwrap-table{table-layout:fixed;}
@@ -153,7 +149,7 @@ h1, h2, h3, h4, h5, h6{font-weight: 500;font-weight: 800\9;font-family: Helvetic
 /* 下边距，Grid 已经有左右边距 */
 .sep {margin-bottom:1em;}
 .sep-big {margin-bottom:2em;}
-.debug{display:none;}
+.required, .highlight{color:#ec5524;}
 
 /* input */
 textarea{resize:none;}
@@ -161,8 +157,8 @@ label input{margin-right:3px;}
 
 .input{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;height:32px;}
 .input{border:2px solid #ddd;background:#fff;padding:3px 5px;}
-.input:focus, input.focus{border-color:#51b4ff;}
-.input.error, input.error{border-color:#ec5524;}
+.input:focus, input.focus{border-color:#51b4ff;background:#fff;}
+.input.error, input.error, .error .input{border-color:#ec5524;}
 textarea.input{-moz-box-sizing:inherit;-webkit-box-sizing:inherit;box-sizing:inherit;height:auto;}
 
 form label{display:inline-block;margin-right:8px;}
@@ -197,9 +193,10 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
  * author: linjianfeng@baixing.com
  */
 .list{border:1px solid #f3f2f1;border-top:none;background:#fff;color:#333;}
-.list-item{position:relative;}
-.list-item a{display:block;padding:10px 15px;border-top:1px solid #f3f2f1;color:#333;line-height:1.1;}
+.list-item{position:relative;display:inline-block;width:100%;}
+.list-item a{display:block;padding:10px 15px;*zoom:1;border-top:1px solid #f3f2f1;color:#333;line-height:1.1;}
 .list-item a:hover, .list .active a{background:#ec5524;text-decoration:none;color:#fff;}
+.list-item a:hover{background:#ff7744;}
 .list-item-badge {display:inline-block;color:#fff;position:absolute;right:15px;top:11px;line-height:16px;height:16px;background:#ec5524;border-radius:8px;padding:0 6px;font-size:12px;pointer-events:none;}
 .list-item:hover .list-item-badge, .list .active .list-item-badge{background:#fff;color:#ec5524;}
 
@@ -220,9 +217,9 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 /* Alert
  * author: linjianfeng@baixing.com
  */
-.alert{padding:10px 15px;margin-bottom:1em;}
+.alert {padding:10px 15px;margin-bottom:1em;background:#fcf8e3;color:#c09853;}
+.alert a{color:#963;}
 .alert-header{font-size:18px;color:inherit;vertical-align:middle;}
-.alert{background:#fcf8e3;color:#c09853;}
 .alert-ok{background:#dff0d8;color:#468847;}
 .alert-error{background:#f2dede;color:#b94a48;}
 .alert .close{padding-top:3px;}
@@ -231,7 +228,7 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
  * author: linjianfeng@baixing.com
  */
 .modal{position:absolute;z-index:1002;box-shadow:1px 1px 2px 2px #aaa;background:#fff;width:600px;_overflow:hidden;}
-.modal-open{overflow:hidden;padding-right:15px;}
+.modal-open{overflow:hidden;padding-right:15px;(;padding-right: 0;);/* safari | chrome | opera */}
 .modal-title{height:42px;line-height:42px;padding:0 20px;font-size:16px;border-bottom:1px solid #ddd;}
 .modal-content{padding:15px 20px;}
 .modal .close{position:absolute;top:10px;right:20px;}
@@ -240,15 +237,20 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 /* Head 顶部
  * author: linjianfeng@baixing.com
  */
-.head{background:#f2f1ec;height:40px;padding-top:15px;width:100%;}
-.head h1{width:230px;overflow:hidden;font-size:22px;line-height:55px;margin-top:-15px;}
+.head{background:#f2f1ec;height:50px;padding-top:15px;width:100%;}
+.head h1{width:230px;overflow:hidden;font-size:24px;line-height:55px;margin-top:-10px;background:url(http://s.baixing.net/img/style/logo_36.png) no-repeat 0 11px;}
 .head a{color:#333;}
 .head small a{color:#999;}
-.head h1 i{padding-right:5px;color:#ec5524;}
+.head .logo{padding-left:38px;}
 .head h1 a:hover{text-decoration:none;}
-.head .head-nav {width:550px;overflow:hidden;font-size:16px;}
+.head .head-nav{width:550px;overflow:hidden;}
+.head .head-nav a, .head .head-nav{color:#333;font-size:18px;}
+.head-nav small{font-size:inherit;color:#aaa;}
 .head h1, .head .head-search{float:left;}
 .head-search small{position:relative;top:-10px;left:10px;}
+
+.tag{color:#999!important;background:#f2f1ec;border-radius:2px;padding:2px 5px;font-size:12px;}
+.tag:hover{text-decoration:none;}
 
 
 /* Search
@@ -264,7 +266,8 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 /* Button
  * author: linjianfeng@baixing.com
  */
-.button{display:inline-block;height:32px;line-height:32px;padding:0 15px;background:#ec5524;color:#fff;border-radius:2px;cursor:pointer;}
+.button{display:inline-block;height:32px;line-height:32px;padding:0 15px;background:#ec5524;color:#fff!important;border-radius:2px;cursor:pointer;}
+.button-grey{background:#666;}
 .button i{position:relative;top:1px;margin-right:5px;}
 .button:hover, .button-hover{text-decoration:none;background:#ff7744;}
 .button:active, .button-active{background:#cb4a1e;}
@@ -298,26 +301,15 @@ input.button, button.button{border:none;-moz-box-sizing:border-box;-webkit-box-s
  * author: linjianfeng@baixing.com
  */
 .media{border-bottom:1px solid #eee;padding:10px 0;}
-.media-cap{width:64px;height:64px;overflow:hidden;display:block;margin-right:10px;float:left;background:#f8f8f8;}
+.media-hover{background:rgb(255, 255, 245);}
+.media-cap{width:64px;height:64px;overflow:hidden;display:block;margin-right:10px;float:left;background:#f8f8f8;border:1px solid #f2f1ec;}
 .media-cap img{width:64px;}
+.media-body{line-height:1.75;}
+.media-body a{color:#963;}
+.media-label{line-height:1;width:100px;white-space:nowrap;display:inline-block;text-overflow:ellipsis;overflow:hidden;}
+.media-body-title a{color:#333;}
+.media-body-title a:hover{color:#ec5524;}
 
-
-/* Topbar 顶部导航
- * author: linjianfeng@baixing.com
- */
-#topbar{width:100%;background:#f2f1ec;height:28px;line-height:28px;font-size:12px;border-bottom: 1px solid #EBEBEB;}
-.topbar{width:980px;margin:0 auto;position:relative;}
-.topbar, .topbar a, .topbar-right-text{color:#666;}
-.topbar a:hover{color:red;}
-.topbar .notice-account{padding:0 6px;border-radius:6px;background:#080;color:#fff;}
-.topbar .notice-account:hover{color:#ffc;text-decoration:none;background:#9c0;}
-.topbar-right{position:absolute;right:0;top:0;color:#ddd;}
-.topbar-right a{padding:0 5px;}
-.topbar-right .topbar-mobile, .bigbang{background:url(http://static.baixing.net/images/head_icon.png) no-repeat -20px 0;padding-left:16px;}
-.topbar-right .topbar-mobile{padding-right:0;}
-.topbar-right .topbar-mobile span{background:#f8f8f8;}
-.bigbang{background-position:-40px 1px; *background-position-y: 3px; color:#666;font-size:12px;position:relative;_padding-top:2px;_top:20px;left:-40px; white-space: nowrap;}
-.bigbang a{color:#333;position: absolute; bottom: -2px; display: inline-block; width: 280px;background-color: #fff;}
 
 /* Pagenav
  * author: linjianfeng@baixing.com
@@ -331,5 +323,40 @@ input.button, button.button{border:none;-moz-box-sizing:border-box;-webkit-box-s
 .pagenav-cell-ellipsis{pointer-events:none;}
 .pagenav .pagenav-cell-next:hover{background:#ff7744;}
 
-/* footer copyright */
-.copyright{border-top:1px solid #ddd;padding-top:10px;margin-top:30px;margin-bottom:10px;}
+
+/* Topbar 顶部导航
+ * author: linjianfeng@baixing.com
+ */
+#topbar{width:100%;display:table;background:#f2f1ec;height:28px;line-height:28px;font-size:12px;border-bottom: 1px solid #ddd;}
+.topbar{width:980px;margin:0 auto;position:relative;padding:0 10px;}
+.topbar, .topbar a, .topbar-right-text{color:#666;}
+.topbar a:hover{color:red;}
+.topbar .notice-count{display:inline-block;height:14px;line-height:14px;padding:0 5px;border-radius:7px;background:#ec5524;color:#fff;}
+.topbar .notice-count:hover{color:#ffc;text-decoration:none;background:#cb4a1e;}
+.topbar-right{position:absolute;right:0;top:0;color:#ddd;}
+.topbar-right a{padding:0 5px;}
+.topbar small{color:#ddd;}
+
+.topbar-mobile{background:#f2f1ec url(http://static.baixing.net/images/head_icon.png) no-repeat -20px 0;padding-left:16px;}
+.topbar-mobile span{background:#f2f1ec;}
+
+
+/* Feedback */
+.fixedBtn {display:none;position:fixed; right:-350px; top:275px; width:350px; height:155px;z-index:3;}
+* html .fixedBtn {position:absolute;bottom:auto;top:expression(eval(document.documentElement.scrollTop)+160);}
+
+/* ie6 下反馈框问题 */
+.fixedBtn .feedback{hide-focus: expression(this.hideFocus=true);outline: none; display:inline-block; text-indent: -6000px; background: url('http://static.baixing.net/images/feedback.gif'); width:33px; height:101px; position:absolute; left:-33px; top:0; }
+.fixedBtn .feedback:hover { background-position: -33px 0; }
+.fixedBtn .top{display:inline-block; text-indent: -2000px; background: url('http://static.baixing.net/images/topbutton.png'); width:33px; height:61px; position:absolute; left:-33px;top:93px; }
+.fixedBtn .top:hover { background-position: -33px 0; }
+.feedbackCnt{border:none;padding:15px;background:#fff;}
+.feedbackCnt h3{font-size:14px;margin-bottom:10px;}
+.feedbackTips{font-size: 20px;height:180px;text-align:center;line-height:180px;background:#fff;}
+.feedbackCnt textarea{display:block;width:305px;height:100px;padding:5px;margin-bottom:10px;border:1px solid #cfcfcf;}
+.fb-open{border:1px solid #cfcfcf\9;borer-right:none;box-shadow:2px 2px 8px #aaa;}
+
+.debug{display:none;}
+
+.copyright{padding-top:15px;margin-top:30px;padding-bottom:30px;border-top:1px solid #f2f1ec;text-align:center;}
+.copyright a{color:#999;}
