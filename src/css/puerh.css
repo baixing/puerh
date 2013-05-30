@@ -310,6 +310,10 @@ input.button, button.button{border:none;-moz-box-sizing:border-box;-webkit-box-s
 .media-body-title a{color:#333;}
 .media-body-title a:hover{color:#ec5524;}
 
+.media-box{border:1px solid #eee;padding:0;}
+.media-box .media-cap{height:80px;border:none;background:#2ecc71;color:#fff;text-align:center;}
+.media-box .icon-envelope{font-size:24px;text-align:center;line-height:80px;}
+.media-box .media-body{padding:10px 10px 10px 0;}
 
 /* Pagenav
  * author: linjianfeng@baixing.com
