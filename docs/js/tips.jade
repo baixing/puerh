@@ -1,0 +1,28 @@
+h2.typo-h2 一、Tooltips
+
+.typo-p
+  |默认的 HTML Title 显示太慢了，而且不是很好看，如果 Tooltips 成为一个重要的提示路径，那么这个组件可以更好地解决这个问题。用&nbsp;
+  code data-toggle="tooltip"
+  |，可能通过&nbsp;
+  code data-toggle="tooltip"
+  |&nbsp;来指定 Tooltips 相对于当前元素的位置。
+
+style
+  #flatul{background: #f8f8f8;padding:30px 0;text-align:center;}
+  #flatul li{display:inline;margin:25px;}
+
+ul#flatul
+  li
+    a(data-placement='top', data-toggle='tooltip', href='#', title='Tooltip on top') Tooltip on top
+  li
+    a(data-placement='right', data-toggle='tooltip', href='#', title='Tooltip on right') Tooltip on right
+  li
+    a(title='Tooltip on bottom', data-placement='bottom', data-toggle='tooltip', href='#') Tooltip on bottom
+  li
+    a(title='Tooltip on left', data-placement='left', data-toggle='tooltip', href='#') Tooltip on left
+
+script
+  window.onload = function() {
+    $('[data-toggle=tooltip]').tooltip()
+  }
+

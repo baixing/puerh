@@ -2,5 +2,14 @@ extends layout
 
 block content
   .container
-    .grid
-      |js
+    .grid.grid-5
+      ul#nav.list.affix-top(data-spy="affix", data-offset-top="132")
+        li.list-item
+          a(href="#tips") 1. Tooltips
+        li.list-item
+          a(href="/ui#modal") Modal
+        li.list-item
+          a(href="/ui#tab") Tab
+
+    .grid.grid-15.last.ui
+      include js/tips
