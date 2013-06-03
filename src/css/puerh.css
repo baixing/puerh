@@ -155,8 +155,8 @@ h1, h2, h3, h4, h5, h6{font-weight: 500;font-family: Helvetica Neue, Microsoft Y
 textarea{resize:none;}
 label input{margin-right:3px;}
 
-.input{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;height:32px;vertical-align:middle;}
-.input{border:2px solid #ddd;background:#fff;padding:3px 5px;}
+.input{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;height:32px;*height:28px;vertical-align:middle;}
+.input{border:2px solid #ddd;background:#fff;padding:3px 5px;*padding:0;}
 .input:focus, input.focus{border-color:#51b4ff;background:#fff;}
 .input.error, input.error, .error .input{border-color:#ec5524;}
 textarea.input{-moz-box-sizing:inherit;-webkit-box-sizing:inherit;box-sizing:inherit;height:auto;vertical-align:text-top;}
@@ -193,7 +193,7 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
  * author: linjianfeng@baixing.com
  */
 .list{border:1px solid #f3f2f1;border-top:none;background:#fff;color:#333;}
-.list-item{position:relative;display:inline-block;width:100%;}
+.list-item{position:relative;display:inline;width:100%;}
 .list-item a{display:block;padding:10px 15px;*zoom:1;border-top:1px solid #f3f2f1;color:#333;line-height:1.1;}
 .list-item a:hover, .list .active a{background:#ec5524;text-decoration:none;color:#fff;}
 .list-item a:hover{background:#ff7744;}

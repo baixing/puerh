@@ -14,6 +14,8 @@ html
     - sheets = ['/css/puerh.css', '/css/font.css', '/css/grid.css']
     mixin style(sheets)
     include style
+    //if lt IE 8
+      script(src='/js/font.js?ver=1')
 
   body(data-spy="scroll", data-target="#nav")
 
@@ -50,5 +52,3 @@ html
     block scripts
     - scripts = ['/js/jquery-1.9.1.min.js', '/js/bootstrap.js', '/js/puerh.js']
     mixin script(scripts)
-    //if lt IE 8
-      script(src='/js/font.js?ver=1')
