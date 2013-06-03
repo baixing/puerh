@@ -67,8 +67,6 @@ window.onload = function() {
         'icon-ershou' : '&#xe038;'
     };
 
-    console.log($)
-
     $('i').each(function(i,el){
         var attr = el.getAttribute('data-icon')
             , c;

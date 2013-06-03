@@ -4,7 +4,7 @@ Learn more ~ http://www.spry-soft.com/grids/
 */
 
 /* layout container for the grid */
-.container, .wrapper{margin:0 auto;width:980px;position:relative;*zoom:1;}
+.container, .wrapper{margin:0 auto;width:980px;padding:0 10px;position:relative;*zoom:1;}
 
 /* grid system */
 .grid, .maincol, .sidecol{display:block;float:left;margin-right:20px;min-height:1px;}
