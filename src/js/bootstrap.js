@@ -968,7 +968,7 @@
 
       $tip
         .offset(offset)
-        .addClass(placement)
+        .addClass('tooltip-' + placement)
         .addClass('in')
 
       actualWidth = $tip[0].offsetWidth
