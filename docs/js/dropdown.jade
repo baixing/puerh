@@ -1,8 +1,6 @@
 hr#dropdown
-h2.typo-h2 二、下拉菜单
 
-#mydropdown.dropdown
-  a.dropdown-trigger(href='#mydropdown', data-toggle='dropdown') 下拉菜单
+span.open.dropdown.pull-right
   ul.dropdown-menu
     li
       a(href="#") item-1
@@ -10,3 +8,48 @@ h2.typo-h2 二、下拉菜单
       a(href="#") item-2
     li
       a(href="#") item-3
+    li
+      a(href="#") item-4
+
+h2.typo-h2 二、下拉菜单
+
+.typo-p.grid-11
+  |这是一个「
+  span#mydropdown.dropdown
+    a.dropdown-trigger(href='#mydropdown', data-toggle='dropdown') 下拉菜单
+    ul.dropdown-menu
+      li
+        a(href="#") item-1
+      li
+        a(href="#") item-2
+      li
+        a(href="#") item-3
+      li
+        a(href="#") item-4
+
+  |」，可以用&nbsp;
+  code data-toggle="dropdown"
+  |来实例化一个下拉菜单，用&nbsp;
+  code data-target="#TARGET_SELECTOR"
+  |&nbsp;或者&nbsp;
+  code href="#TARGET_SELECTOR"
+  |&nbsp;来指定弹出层。
+
+pre
+  |&lt;span class="
+  b.highlight dropdown
+  |"&gt;
+  |    &lt;a&nbsp;
+  b.highlight href="#ddmenu"
+  |&nbsp;
+  b.highlight data-toggle="dropdown"
+  |&gt;下拉菜单&lt;/a&gt;
+  |    &lt;ul id="ddmenu" class="
+  b.highlight dropdown-menu
+  |"&gt;
+  |        &lt;li&gt;&lt;a href="#"&gt;item-1&lt;/a&gt;&lt;/li&gt;
+  |        &lt;li&gt;&lt;a href="#"&gt;item-2&lt;/a&gt;&lt;/li&gt;
+  |        &lt;li&gt;&lt;a href="#"&gt;item-3&lt;/a&gt;&lt;/li&gt;
+  |        &lt;li&gt;&lt;a href="#"&gt;item-4&lt;/a&gt;&lt;/li&gt;
+  |    &lt;/ul&gt;
+  |&lt;/span&gt;

@@ -8,10 +8,10 @@ h2.typo-h2 一、Tooltips
   |&nbsp;来指定 Tooltips 相对于当前元素的位置。
 
 style
-  #flatul{background: #f8f8f8;padding:30px 0;text-align:center;}
+  #flatul{background:#fff;border:1px solid #f2f1ec;padding:15px 0;text-align:center;}
   #flatul li{display:inline;margin:25px;}
 
-ul#flatul
+ul#flatul.sep
   li
     a(data-placement='top', data-toggle='tooltip', href='#', title='Tooltip on top') Tooltip on top
   li
@@ -21,8 +21,20 @@ ul#flatul
   li
     a(title='Tooltip on left', data-placement='left', data-toggle='tooltip', href='#') Tooltip on left
 
+pre
+  |&lt;a title="Tooltip on top" href="#"&nbsp;
+  b data-toggle="
+  b.highlight tooltip
+  |"&nbsp;
+  b data-placement="
+  b.highlight top
+  |"&gt;
+  |   Tooltip on top
+  |&lt;/a&gt;
+
 script
   window.onload = function() {
     $('[data-toggle=tooltip]').tooltip()
   }
+
 
