@@ -1,5 +1,7 @@
 # Puerh
 
+> 示例: [http://engineer.baixing.com:3003]()
+
 Puerh，百姓网 UI 库。旨在建立稳定、简洁、兼容的前端框架。兼容 Mac/Windows 下的 IE6+ / Firefox / Google Chrome 浏览器。 Puerh 的目标是构建一套适合百姓网的前端解决方案，从模块区分上，她包含：[Typography][1]、[Grid][2]、[Font Icon][3]、[UI 组件][4] 和 [JS 组件][5]
 
 ### 一、目录结构
@@ -13,8 +15,8 @@ Puerh，百姓网 UI 库。旨在建立稳定、简洁、兼容的前端框架�
 └── readme.md                … 说明文档
 ````
 
-[1]:	http://localhost:3000/typography
-[2]:	http://localhost:3000/grid
-[3]:	http://localhost:3000/font
-[4]:	http://localhost:3000/ui
-[5]:	http://localhost:3000/js
+[1]:	/typography
+[2]:	/grid
+[3]:	/font
+[4]:	/ui
+[5]:	/js
