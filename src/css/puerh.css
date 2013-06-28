@@ -338,7 +338,7 @@ input.button, button.button{border:none;-moz-box-sizing:border-box;-webkit-box-s
 .media-body-title a:visited{color:#999;}
 
 .media-box{border:1px solid #eee;padding:0;min-height:64px;_height:64px;_zoom:1;}
-.media-box .media-cap{border:none;background:#2ecc71;color:#fff;text-align:center;margin-right:10px;}
+.media-box .media-cap{border:none;background:#2ecc71;color:#fff;text-align:center;margin-right:10px;height:auto;}
 .media-box .media-cap i{font-size:24px;text-align:center;line-height:64px;}
 .media-box .media-cap .icon-envelope{height:80px;line-height:80px;}
 .media-box .media-body{padding:10px 10px 10px 0;}
