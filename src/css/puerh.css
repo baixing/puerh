@@ -90,9 +90,6 @@ button, input {*width: auto;*overflow: visible;line-height:22px; /* 让 input �
 
 a{color:#ec5534;}
 
-/*nogreen*/
-a{color:#81ba15;}
-
 /* 一致化 horizonal rule */
 hr{border:none;border-bottom:1px solid #cfcfcf;margin-bottom:10px;*color:pink;*filter:chroma(color=pink);height:10px;*margin:-7px 0 2px;}
 
@@ -202,16 +199,13 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
  * author: linjianfeng@baixing.com
  */
 .list{border:1px solid #f3f2f1;border-top:none;background:#fff;color:#333;}
-.list-item{position:relative;display:inline;width:100%;}
+.list-item{position:relative;display:inline-block;_display:inline;width:100%;}
 .list-item a{display:block;padding:10px 15px;*zoom:1;border-top:1px solid #f3f2f1;color:#333;line-height:1.1;}
 .list-item a:hover, .list .active a{background:#ec5524;text-decoration:none;color:#fff;}
 .list-item a:hover{background:#ff7744;}
 .list-item-badge {display:inline-block;color:#fff;position:absolute;right:15px;top:11px;line-height:16px;height:16px;background:#ec5524;border-radius:8px;padding:0 6px;font-size:12px;pointer-events:none;}
 .list-item:hover .list-item-badge, .list .active .list-item-badge{background:#fff;color:#ec5524;}
 
-/*nogreen*/
-.list-item a:hover, .list .active a{background:#81ba15;}
-.list-item a:hover{background:#6fb301;}
 
 /* Tab
  * author: linjianfeng@baixing.com
@@ -262,24 +256,19 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
  * author: linjianfeng@baixing.com
  */
 .head{background:#f2f1ec;height:52px;padding-top:20px;width:100%;}
-.head h1{width:280px;overflow:hidden;font-size:24px;line-height:55px;margin-top:-10px;background:url(http://s.baixing.net/img/style/logo_36.png) no-repeat 0 11px;/*nogreen*/background:none;}
+.head h1{width:280px;overflow:hidden;font-size:24px;line-height:55px;margin-top:-10px;background:url(http://s.baixing.net/img/style/logo_36.png) no-repeat 0 11px;}
 .head a{color:#333;}
 .head small a{color:#999;}
-.head .logo{padding-left:38px;/*nogreen*/padding-left:0;}
+.head .logo{padding-left:38px;}
 .head h1 a:hover{text-decoration:none;}
 .head .head-nav a, .head .head-nav{color:#333;font-size:18px;}
-.head-nav .icon-arrowRight{font-size:14px;padding-left:5px;color:#ec5524;/*nogreen*/color:#81ba15;}
+.head-nav .icon-arrowRight{font-size:14px;padding-left:5px;color:#ec5524;}
 .head .head-nav{float:left;width:650px;}
 .head-nav small{font-size:inherit;color:#aaa;font-size:12px;}
 .head .head-nav small a{color:#888;}
 .head h1, .head .head-search{float:left;}
 .head-search .search{*float:left;}
 .head-search small{position:relative;top:-10px;left:10px;*top:5px;}
-
-/*nogreen*/
-.head .logo img{position:relative;top:3px;margin-left:5px;}
-.head a, .head .head-nav a, .head .head-nav{color:#999;}
-.head .logo{font-size:24px!important;}
 
 .tag{color:#999!important;background:#f2f1ec;border-radius:2px;padding:2px 5px;font-size:12px;}
 .tag-green{background:#27ae60;color:#fff!important;}
@@ -296,10 +285,6 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 .search .search-trigger{width:28px;opacity:0;filter:alpha(opacity=0);}
 .search-short{width:176px;}
 .search-short input{*width:100px;}
-
-/*nogreen*/
-.search{border-color:#81ba15;}
-.search .icon-search{background:#81ba15;}
 
 /* Button
  * author: linjianfeng@baixing.com
@@ -364,8 +349,6 @@ input.button, button.button{border:none;-moz-box-sizing:border-box;-webkit-box-s
 .media-box .media-body{padding:10px 10px 10px 0;}
 .media-body p{line-height:30px}
 
-/*nogreen*/
-.media-box .media-cap{background:#81ba15;}
 
 /* Pagenav
  * author: linjianfeng@baixing.com
@@ -379,9 +362,6 @@ input.button, button.button{border:none;-moz-box-sizing:border-box;-webkit-box-s
 .pagenav-cell-ellipsis{pointer-events:none;}
 .pagenav .pagenav-cell-next:hover{background:#ff7744;}
 
-/*nogreen*/
-.pagenav .pagenav-cell-next{background:#81ba15;}
-.pagenav .pagenav-cell-next:hover{background:#649b04;}
 
 
 /* Topbar 顶部导航
