@@ -252,6 +252,7 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 .modal .button{margin-right:5px;}
 .modal-load .modal-content{background:url(http://s.baixing.net/img/style/loading.gif) no-repeat center center;}
 
+
 /* Head 顶部
  * author: linjianfeng@baixing.com
  */
@@ -295,12 +296,6 @@ button.close{padding:0;cursor:pointer;background:transparent;border:0;-webkit-ap
 .button:hover, .button-hover{text-decoration:none;background:#ff7744;}
 .button:active, .button-active{background:#cb4a1e;}
 .button:disabled, .button-disabled{background:#999;pointer-events:none;}
-
-.button{background:#81ba15;}
-.button:hover, .button-hover{text-decoration:none;background:#81ba15;}
-.button:active, .button-active{background:#638f13;}
-.button-grey{background:#666;}
-
 
 input.button, button.button{border:none;-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;padding:0 10px 2px;_height:28px;_line-height:28px;}
 
