@@ -55,7 +55,7 @@ window.onload = function() {
       'icon-arrowTop' : '&#xe02d;',
       'icon-downTriangle' : '&#xe02e;',
       'icon-fangwu' : '&#xe02f;',
-      'icon-car' : '&#xe030;',
+      'icon-cheliang' : '&#xe030;',
       'icon-jiaoyou' : '&#xe031;',
       'icon-jianli' : '&#xe032;',
       'icon-chongwu' : '&#xe033;',
