@@ -11,5 +11,6 @@ module.exports = function (app) {
   app.get('/font', routes.font);
   app.get('/grid', routes.grid);
   app.get('/ui', routes.ui);
-  app.get('/js', routes.js);
+  app.get('/js', routes.js);  
+  app.get('/start', routes.start);
 };

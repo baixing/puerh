@@ -4,5 +4,6 @@ module.exports = {
   font: require('./font'),
   grid: require('./grid'),
   ui: require('./ui'),
-  js: require('./js')
+  js: require('./js'),
+  start: require('./start')
 };
