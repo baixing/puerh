@@ -1,0 +1,348 @@
+---
+layout: default
+title: UI Components
+base_url: "../"
+---
+
+<div class="grid grid-5">
+	<ul id="nav" data-spy="affix" data-offset-top="132" class="list affix-top">
+		<li class="list-item"><a href="#list">1. List</a>
+		</li>
+		<li class="list-item"><a href="#alert">2. Alert</a>
+		</li>
+		<li class="list-item"><a href="#modal">3. Modal</a>
+		</li>
+		<li class="list-item"><a href="#tab">4. Tab</a>
+		</li>
+		<li class="list-item"><a href="#head">5. Head / Search</a>
+		</li>
+		<li class="list-item"><a href="#button">6. Button</a>
+		</li>
+		<li class="list-item"><a href="#form">7. Form</a>
+		</li>
+		<li class="list-item"><a href="#media">8. media</a>
+		</li>
+		<li class="list-item"><a href="#pager">9. pager</a>
+		</li>
+		<li class="list-item"><a href="#box">10. box</a>
+		</li>
+		<li class="list-item"><a href="#note">11. note</a>
+		</li>
+	</ul>
+</div>
+<div class="grid grid-15 last ui">
+	<ul class="list grid-5 pull-right">
+		<li class="list-item"><a href="###">Item 1</a><cite class="list-item-badge">12</cite>
+		</li>
+		<li class="list-item active"><a href="###">Item 2</a>
+		</li>
+		<li class="list-item"><a href="###">Item 3</a>
+		</li>
+	</ul>
+	<div class="typo">
+		<h2 id="list">一、列表 / List</h2>
+		<p>列表使用有一点值得注意的是&nbsp;<code>.list-item-badge</code>&nbsp;被设置了&nbsp;<code>pointer-events:none</code>，即不可点的。需要可点的情况比较少，如果有需要，可以使用&nbsp;<code>pointer-events:auto</code>。结构如下：</p><pre>&lt;ul class="<b class="highlight">list</b>"&gt;
+&nbsp;&lt;li class="<b class="highlight">list-item</b>"&gt;
+&lt;a href="#"&gt;Item 1&lt;/a&gt;
+&lt;cite class="<b class="highlight">list-item-badge</b>"&gt;12&lt;/cite&gt;
+&nbsp;&lt;/li&gt;
+&nbsp;&lt;li class="list-item&nbsp;<b class="highlight">active</b>"&gt;
+&lt;a href="###"&gt;Item 2&lt;/a&gt;
+&nbsp;&lt;/li&gt;
+&lt;/ul&gt;</pre>
+	</div>
+	<hr id="alert">
+	<h2 class="typo-h2">二、Alert</h2>
+	<div class="typo-p">支持 3 种样式，默认添加&nbsp;<code>.alert</code>&nbsp;即可。绿色和红色的分别为<code>.alert-ok</code>&nbsp;和&nbsp;<code>.alert-error</code>。可以添加&nbsp;<code>.close(data-dismiss="alert")</code>&nbsp;来关闭这个提示。</div><pre class="typo-p">&lt;div class="<b class="highlight">alert</b>"&gt;
+&lt;i class="icon-info"&gt;&lt;/i&gt; 戲分漸樹不認許了際筆願前一風遠公師再實調致興家事在的
+&lt;a&nbsp;class="close"&nbsp;<b class="highlight">data-dismiss="alert"</b>&gt;×&lt;/a&gt;
+&lt;/div&gt;</pre>
+	<div class="alert"><i class="icon-info">&nbsp;</i>戲分漸樹不認許了際筆願前一風遠公師再實調致興家事在的<a data-dismiss="alert" class="close">&times;</a>
+	</div>
+	<div class="alert alert-ok"><i class="icon-cancel-circle">&nbsp;</i>戲分漸樹不認許了際筆願前一風遠公師再實調致興家事在的</div>
+	<div class="alert alert-error">
+		<h3 class="alert-header"><i class="icon-checkmark-circle">&nbsp;</i>如果这是一个标题</h3>戲分漸樹不認許了際筆願前一風遠公師再實調致興家事在的</div>
+	<hr id="modal">
+	<h2 class="typo-h2">三、Modal</h2>
+	<div class="typo-p">Modal 的使用可以点击这个&nbsp;<a href="#myModal" data-toggle="modal">Modal Demo</a>&nbsp; 试试。使用的时候，只要在一个触发点（如一个链接）指定一下&nbsp;<code>data-toggle="modal"</code>&nbsp;来指定这个触发点触发的是 Modal，用<code>href="#TARGET_ID"</code>&nbsp;或&nbsp;<code>data-target="#TARGET_ID"</code>&nbsp;来指定这个
+		modal 指定的显示框。</div>
+	<div id="myModal" class="modal fade">
+		<h4 class="modal-title">本操作需要您先注册百姓网</h4><a href="###" data-dismiss="modal" class="close">×</a>
+		<div class="modal-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+			dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+	</div>
+	<div style="position:relative;z-index:1;" class="modal sep">
+		<h4 class="modal-title">本操作需要您先注册百姓网</h4><a href="###" data-dismiss="modal" class="close">×</a>
+		<div class="modal-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+			dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+	</div><pre>&lt;a href="<b class="highlight">#myModal</b>"&nbsp;<b class="highlight">data-toggle="modal"</b>&gt;Modal Demo&lt;/a&gt;
+&nbsp;
+&lt;div id="<b class="highlight">myModal</b>" class="modal fade hide in"&gt;
+&lt;h4 class="modal-title"&gt;本操作需要您先注册百姓网&lt;/h4&gt;
+&lt;a href="###" data-dismiss="modal" class="close"&gt;×&lt;/a&gt;
+&lt;div class="modal-content"&gt;
+Lorem ipsum dolor sit amet,
+&lt;/div&gt;
+&lt;/div&gt;</pre>
+	<hr id="tab">
+	<h2 class="typo-h2">四、Tab</h2>
+	<div class="tab sep">
+		<ul class="tab-title clearfix">
+			<li class="tab-title-item active"><a data-toggle="tab" href="#tab-1">全部</a>
+			</li>
+			<li class="tab-title-item"><a data-toggle="tab" href="#tab-2">个人</a>
+			</li>
+			<li class="tab-title-item"><a data-toggle="tab" href="#tab-3">商家</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div id="tab-1" class="tab-content-pane active">#tab-1</div>
+			<div id="tab-2" class="tab-content-pane">#tab-2</div>
+			<div id="tab-3" class="tab-content-pane">#tab-3</div>
+		</div>
+	</div>
+	<p class="typo-p">CSS 和 JS 分开的，通过&nbsp;<code>data-toggle="tab"</code>&nbsp;来指定元素本身是一个 tab 标签。通过&nbsp;<code>href="#TARGET_ID"</code>&nbsp;或者<code>data-target="#TARGET_ID"</code>&nbsp;来指定 tab 显示的内容。</p><pre class="sep">&lt;div class="<b class="highlight">tab</b>"&gt;
+&lt;ul class="<b class="highlight">tab-title</b>&nbsp;clearfix"&gt;
+&lt;li class="<b class="highlight">tab-title-item</b>"&gt;&lt;a href="#"&nbsp;<b class="highlight">data-toggle="tab"</b>&gt;全部&lt;/a&gt;&lt;/li&gt;
+&lt;li class="tab-title-item&nbsp;<b class="highlight">active</b>"&gt;&lt;a href="#" data-toggle="tab"&gt;个人&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</pre>
+	<hr id="head">
+	<h2>五、Head / Search</h2>
+	<div class="typo-p">Topbar 为全局顶部导航，直接使用&nbsp;<code>.head</code>&nbsp; 这个 class。包含了标识和搜索。搜索的宽度可以自定义，在百姓网中主要有两种长度，一种用于顶部的 250px，一种用于 Listing 的是 180px。</div>
+	<div class="head clearfix sep">
+		<div class="head-cnt">
+			<h1><a href="http://baixing.com" class="logo">乌鲁木齐百姓网</a></h1>
+			<div class="head-search">
+				<form class="search search-short">
+					<input placeholder="请输入关键词或分类名" class="input"><i class="icon-search"></i>
+					<input type="submit" value="" title="搜索" class="search-trigger">
+				</form><small>热门：<a href="#">iPhone</a>&nbsp;<a href="#">小米手机</a></small>
+			</div>
+		</div>
+	</div>
+	<div class="typo-p">用于首页的如上例，使用 class&nbsp;<code>.search</code>&nbsp;用的 Listing 的使用 class&nbsp;<code>.search.search-short</code>&nbsp;：</div><pre class="typo-pre">&lt;form class="<b class="highlight">search search-short</b>"&gt;
+&lt;input class="input" placeholder="搜索二级类目"&gt;
+&lt;i class="icon-search"&gt;&lt;/i&gt;
+&lt;input type="submit" class="search-trigger" title="搜索" value=""&gt;
+&lt;/form&gt;</pre>
+	<form class="search search-short">
+		<input placeholder="搜索二级类目" class="input"><i class="icon-search"></i>
+		<input type="submit" value="" title="搜索" class="search-trigger">
+	</form>
+	<hr id="button">
+	<h2 class="typo-h2">六、Button</h2>
+	<div class="typo">
+		<p>这里需要注意的是，在 disabled 的状态，Button 的鼠标事件是没有的。不可点。下面为&nbsp;<code>&lt;a/&gt;</code>&nbsp;链接按钮：</p>
+		<p><a href="#" class="button"><i class="icon-post"></i>免费发布信息</a>&nbsp;<a href="#" class="button button-hover"><i class="icon-post"></i>免费发布信息</a>&nbsp;<a href="#" class="button button-active"><i class="icon-post"></i>免费发布信息</a>&nbsp;
+			<a href="#" class="button button-disabled"><i class="icon-post"></i>免费发布信息</a>
+		</p><pre>&lt;a class="<b class="highlight">button</b>" href="#"&gt;
+&lt;i class="icon-post"&gt;&lt;/i&gt;
+免费发布信息
+&lt;/a&gt;</pre>
+		<p><code>&lt;input/&gt;</code>&nbsp;和&nbsp;<code>&lt;button/&gt;</code>&nbsp;需要在排版的时候高度保持一致或者居中。</p>
+		<p>
+			<input type="button" value="input[type=button]" class="button">&nbsp;
+			<button class="button">button</button>&nbsp;
+			<input type="submit" value="input[type=submit]:disabled" disabled class="button">
+		</p><pre>&lt;input class="<b class="highlight">button</b>" type="button" value="HelloWorld" /&gt;</pre>
+		<p><a href="#" class="button button-inline">行内按钮</a>&nbsp;<a href="#" class="button button-inline button-inline-hover">行内按钮</a>
+		</p>
+	</div>
+	<hr id="form">
+	<div class="typo">
+		<table class="pull-right grid-8">
+			<thead>
+				<tr>
+					<th>size=</th>
+					<th>对应 class</th>
+					<th>实际长度</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>auto</td>
+					<td>.form-input-auto</td>
+					<td>自适应</td>
+				</tr>
+				<tr>
+					<td>smallest</td>
+					<td>.form-input-50</td>
+					<td>50px</td>
+				</tr>
+				<tr>
+					<td>smaller</td>
+					<td>.form-input-90</td>
+					<td>90px</td>
+				</tr>
+				<tr>
+					<td>small</td>
+					<td>.form-input-110</td>
+					<td>110px</td>
+				</tr>
+				<tr>
+					<td>medium</td>
+					<td>.form-input-250</td>
+					<td>150px</td>
+				</tr>
+				<tr>
+					<td>large</td>
+					<td>.form-input-230</td>
+					<td>400px</td>
+				</tr>
+				<tr>
+					<td>larger</td>
+					<td>.form-input-400</td>
+					<td>400px</td>
+				</tr>
+				<tr>
+					<td>largest</td>
+					<td>.form-input-460</td>
+					<td>600px</td>
+				</tr>
+			</tbody>
+		</table>
+		<h2>七、Form</h2>
+		<p>Form 表单，一般的&nbsp;<code>input:file</code>&nbsp; 和 &nbsp;<code>select</code>&nbsp;参见&nbsp;<a href="/typography">Typography</a>。而发布表单上多长度的配置，可以参见 Github Wiki 上的&nbsp;<a href="https://github.com/baixing/haojing/wiki/Fabu-%E8%BE%93%E5%85%A5%E6%A1%86%E5%A4%A7%E5%B0%8F%E9%85%8D%E7%BD%AE%E5%AF%B9%E7%85%A7%E8%A1%A8">Fabu 输入框大小配置对照表</a>。另外&nbsp;<code>textarea</code>&nbsp;也可以使用<code>input</code>&nbsp;标签的
+			class。</p>
+		<form>
+			<div class="label">
+				<input type="text" placeholder="Normal..." class="input">
+				<input type="submit" value="提交" class="input button">
+			</div>
+			<div class="label">
+				<label>
+					<input type="checkbox">Hello</label>
+				<label>
+					<input type="checkbox" checked>World</label>
+			</div>
+			<div class="label">
+				<input type="text" placeholder="On Focsu..." class="input focus"><small>Hello Puerh!</small>
+			</div>
+			<div class="label">
+				<input type="text" placeholder="On Error..." class="input error">
+			</div>
+			<div class="label">
+				<label>
+					<input type="radio">Yes</label>
+				<label>
+					<input type="radio" checked>No</label>
+			</div>
+			<div class="label">
+				<input type="text" placeholder=".input-small" class="input input-small">
+			</div>
+			<div class="label">
+				<input type="text" placeholder=".input-medium" class="input input-medium">
+			</div>
+			<div class="label">
+				<input type="text" placeholder=".input-large" class="input input-large">
+			</div>
+			<div class="label">
+				<textarea rows="3" cols="50" placeholder="textarea..." class="input"></textarea>
+			</div><pre>&lt;input type="text" class="<b class="highlight">input input-small</b>" placeholder=".input-small"&gt;</pre>
+		</form>
+	</div>
+	<hr id="media">
+	<div class="typo">
+		<h2>八、Media</h2>
+		<div class="typo-p">Media 是一个灵活的列表。</div>
+	</div>
+	<div id="medias" class="sep">
+		<div class="media">
+			<a href="#" class="media-cap">
+				<img src="http://img4.baixing.net/cd0cee9ad42c5170384f5049ddb17a0a.jpg_sq">
+			</a>
+			<div class="media-body">
+				<div class="media-body-title"><strong>出售进口雷克萨斯GS430一键启动最高配置或置换</strong><small class="pull-right">5月21日13:14 查看 31109 次</small>
+				</div>
+				<p class="typo-small">青浦 - 徐泾 - 沪青平公路1920号</p>
+				<p class="typo-small"><span class="highlight">21.8万元</span>&nbsp;/ 2006年 / 9.3万公里</p>
+			</div>
+		</div>
+		<div class="media">
+			<a href="#" class="media-cap">
+				<img src="http://img4.baixing.net/cd0cee9ad42c5170384f5049ddb17a0a.jpg_sq">
+			</a>
+			<div class="media-body">
+				<div class="media-body-title"><strong>出售进口雷克萨斯GS430一键启动最高配置或置换</strong><small class="pull-right">5月21日13:14 查看 31109 次</small>
+				</div>
+				<p class="typo-small">青浦 - 徐泾 - 沪青平公路1920号</p>
+				<p class="typo-small"><span class="highlight">21.8万元</span>&nbsp;/ 2006年 / 9.3万公里</p>
+			</div>
+		</div>
+		<div class="media">
+			<a href="#" class="media-cap">
+				<img src="http://img4.baixing.net/cd0cee9ad42c5170384f5049ddb17a0a.jpg_sq">
+			</a>
+			<div class="media-body">
+				<div class="media-body-title"><strong>出售进口雷克萨斯GS430一键启动最高配置或置换</strong><small class="pull-right">5月21日13:14 查看 31109 次</small>
+				</div>
+				<p class="typo-small">青浦 - 徐泾 - 沪青平公路1920号</p>
+				<p class="typo-small"><span class="highlight">21.8万元</span>&nbsp;/ 2006年 / 9.3万公里</p>
+			</div>
+		</div>
+	</div>
+	<div class="media media-box clearfix">
+		<div class="media-cap"><i class="icon-envelope"></i>
+		</div>
+		<div class="media-body form">戲分漸樹不認許了際筆願前一風遠公師再實調致興家事在的
+			<br>
+			<input type="text" placeholder="hello world" class="input">&nbsp;
+			<input type="button" value="submit" class="input button">
+		</div>
+	</div>
+	<hr id="pager">
+	<h2 class="typo-h2">九、Page Navigator</h2>
+	<div class="typo-p"></div>
+	<div class="pagenav clearfix"><a href="#" class="pagenav-cell">上一页</a><span class="pagenav-cell pagenav-cell-ellipsis">…</span><span class="pagenav-cell pagenav-cell-current">1</span><a href="#" class="pagenav-cell">2</a><a href="#" class="pagenav-cell">3</a><a href="#" class="pagenav-cell">4</a>
+		<a
+		href="#" class="pagenav-cell">5</a><a href="#" class="pagenav-cell">6</a><a href="#" class="pagenav-cell">7</a><a href="#" class="pagenav-cell">8</a><a href="#" class="pagenav-cell">9</a><a href="#" class="pagenav-cell">10</a><a href="#" class="pagenav-cell">11</a><span class="pagenav-cell pagenav-cell-ellipsis">…</span>
+			<a
+			href="#" class="pagenav-cell pagenav-cell-next">下一页</a>
+	</div>
+	<div class="pagenav clearfix"><a href="#" class="pagenav-cell">上一页</a><a href="#" class="pagenav-cell pagenav-cell-next">下一页</a><small>(2/4)</small>
+	</div>
+	<hr id="box">
+	<h2 class="typo-h2">十、Box</h2>
+	<div class="typo-p"><code>.box</code>&nbsp;的宽度可以自定义。比如&nbsp;<code>class="box grid grid-6"</code>。</div>
+	<div class="box sep">
+		<div class="box-title">标题 Heading</div>
+		<div class="box-body">
+			<div class="typo-p">戲分漸樹不認許了際筆願前一風遠公師再實調致興家事在的。戲分漸樹不認許了際筆願前一風遠公師再實調致興家事在的。戲分漸樹不認許了際筆願前一風遠公師再實調致興家事在的。</div>
+			<form>
+				<div class="label">
+					<input type="text" placeholder="Normal..." class="input">
+					<input type="submit" value="提交" class="input button">
+				</div>
+				<div class="label">
+					<label>
+						<input type="checkbox">Hello</label>
+					<label>
+						<input type="checkbox" checked>World</label>
+				</div>
+			</form>
+		</div>
+	</div><pre>&lt;div class="<b class="highlight">box</b>"&gt;
+&lt;div class="<b class="highlight">box-title</b>"&gt;标题 Heading&lt;/div&gt;
+&lt;div class="<b class="highlight">box-body</b>"&gt;
+&lt;div class="typo-p"&gt;戲分漸樹不認許了際筆願前一風遠公師再實調致興家事在的。戲分漸樹不認許了際筆願前一風遠公師再實調致興家事在的。戲分漸樹不認許了際筆願前一風遠公師再實調致興家事在的。&lt;/div&gt;
+&lt;form&gt;
+&lt;div class="label"&gt;
+ &lt;input type="text" class="input" placeholder="Normal..."&gt;
+ &lt;input type="submit"class="input button" value="提交"&gt;
+&lt;/div&gt;
+&lt;div class="label"&gt;
+ &lt;label&gt;&lt;input type="checkbox"&gt;Hello&lt;/label&gt;
+ &lt;label&gt;&lt;input type="checkbox" checked=""&gt;World&lt;/label&gt;
+&lt;/div&gt;
+&lt;/form&gt;
+&lt;/div&gt;
+&lt;/div&gt;</pre>
+	<hr id="note">
+	<h2 class="typo-h2">十一、Note</h2>
+	<h3 class="note sep"><i class="note-cap icon-clock"></i>类目名称&nbsp;<small>(1234)</small></h3><pre>&lt;h3 class="<b class="highlight">note</b>"&gt;
+&lt;i class="<b class="highlight">note-cap icon-clock</b>"&gt;&lt;/i&gt;
+类目名称&nbsp;
+&lt;small&gt;(1234)&lt;/small&gt;
+&lt;/h3&gt;</pre>
+</div>

@@ -1,0 +1,204 @@
+---
+layout: default
+title: Typography
+base_url: "../"
+---
+
+<div class="grid grid-5">
+	<ul id="nav" data-spy="affix" data-offset-top="132" class="list affix-top">
+		<li class="list-item"><a href="#usage">Usage</a>
+		</li>
+		<li class="list-item"><a href="#paragraph">Paragraph</a>
+		</li>
+		<li class="list-item"><a href="#heading">Header</a>
+		</li>
+		<li class="list-item"><a href="#inline">Inline Elements</a>
+		</li>
+		<li class="list-item"><a href="#embed">Embeded Content</a>
+		</li>
+		<li class="list-item"><a href="#group">Grouping content</a>
+		</li>
+		<li class="list-item"><a href="#table">Table</a>
+		</li>
+		<li class="list-item"><a href="#form">Form</a>
+		</li>
+		<li class="list-item"><a href="#util">Uitilities</a>
+		</li>
+	</ul>
+</div>
+<div class="grid grid-15 last">
+	<h1 id="usage">使用方法</h1>
+	<p>需要排版的地方，在其父级元素添加&nbsp;<code>.typo</code>&nbsp; 即可。当只想用单独一个元素，或者让其显示和某个元素一样效果的时候，可以使用&nbsp;<code>.typo-TAGNAME</code>&nbsp;如&nbsp;<code>div.typo-small</code>&nbsp;可以获得&nbsp;<code>.typo small</code>&nbsp;一样的效果</p>
+	<hr id="paragraph">
+	<h1>段落中英混排 / Text-level semantics</h1>
+	<p hidden="hidden">This should be hidden in all browsers, apart from IE6</p>
+	<p>戲分漸樹不認許了際筆願前一風遠公師再實調致興家事在的，語笑油的，女幾到善師字何……教上些品、你全頭？來經未由看著會當裡。 方有現國便散；法構許事這的第，們見了調晚在坡？個雨命我常此座看兒高治父利來工利在要外女岸要想？業期在平馬下本方別們立不院生讀試會民接前手媽；說並言不成盡意覺角拿了多？
+	</p>
+	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum
+		sociis natoque penatibus et m. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.</p><address>Address: somewhere, world</address>
+	<hr id="heading">
+	<h1>标题 / Heading 1</h1>
+	<h2>标题 Heading 2</h2>
+	<h3>标题 Heading 3</h3>
+	<h4>标题 Heading 4</h4>
+	<h5>标题 Heading 5</h5>
+	<h6>标题 Heading 6</h6>
+	<hr id="inline">
+	<h1>行内元素 / Inline Elements</h1>
+	<p>印子陽放沒王候過然！<a href="#">a element</a>&nbsp;是不是一一現遊策&nbsp;<sup>sup</sup>&nbsp;那子成展不天&nbsp;<abbr title="Title text">abbr element with title&nbsp;</abbr>&nbsp;政物聯兒腦求從
+		<mark>mark element</mark>&nbsp;速不又紅南見會法取絕&nbsp;<del>del element</del>&nbsp;不建有成險<sub>sub</sub>&nbsp;已在家&nbsp;<u>u element</u>&nbsp;明只各達學起&nbsp;<strong>strong element</strong>&nbsp;時式房事建後從，<b>b element</b>&nbsp;區運家……你且區密作報不了草&nbsp;<cite>cite element</cite>&nbsp;許媽灣北；<code>code element</code>&nbsp;開大設春種家題須來八等便治中字國感非，<em>em element</em>&nbsp;美生生根，電色濟：<i>i element</i>&nbsp;朋和希身年持論物道高有道道來花病是班高化。</p>
+	<hr
+	id="embed">
+		<h1>嵌入媒介 / Embedded Content</h1>
+		<h3>1. audio</h3>
+		<audio controls="controls"></audio>
+		<h3>2. img</h3>
+		<img src="http://lorempixel.com/100/100" alt="">
+		<a href="#">
+			<img src="http://lorempixel.com/100/100" alt="">
+		</a>
+		<h3>3. svg</h3>
+		<svg width="100px" height="100px">
+			<circle cx="100" cy="100" r="100" fill="#ff0000"></circle>
+		</svg>
+		<h3>4. video</h3>
+		<video controls="controls"></video>
+		<video></video>
+		<hr id="group">
+		<h1>区块 / Grouping content</h1>
+		<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et m.</p>
+		<h3>1. pre</h3><pre>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et me.</pre>
+		<h3>2. blockquote</h3>
+		<blockquote>
+			<p>Some sort of famous witty quote marked up with a > blockquote 和 a child
+				<p element.</p>
+					<blockquote>Even better philosophical quote marked up with just a > blockquote element.
+					</blockquote>
+		</blockquote>
+		<h3>3. ordered list</h3>
+		<ol>
+			<li>list item 1</li>
+			<li>list item 1
+				<ol>
+					<li>list item 2</li>
+					<li>list item 2
+						<ol>
+							<li>list item 3</li>
+							<li>list item 3</li>
+						</ol>
+					</li>
+					<li>list item 2</li>
+					<li>list item 2</li>
+				</ol>
+			</li>
+			<li>list item 1</li>
+			<li>list item 1</li>
+		</ol>
+		<h3>4. unordered list</h3>
+		<ul>
+			<li>list item 1</li>
+			<li>list item 1
+				<ul>
+					<li>list item 2</li>
+					<li>list item 2
+						<ul>
+							<li>list item 3</li>
+							<li>list item 3</li>
+						</ul>
+					</li>
+					<li>list item 2</li>
+					<li>list item 2</li>
+				</ul>
+			</li>
+			<li>list item 1</li>
+			<li>list item 1</li>
+		</ul>
+		<h3>5. Define list</h3>
+		<dl><dt>Description name</dt>
+			<dd>Description value</dd>
+		</dl>
+		<h3>6. figure</h3>
+		<figure>
+			<img src="http://lorempixel.com/400/200" alt="">
+			<figcaption>Figcaption content</figcaption>
+		</figure>
+		<hr id="table">
+		<h1>表格 / Tabular data</h1>
+		<table>
+			<caption>Jimi Hendrix - albums</caption>
+			<thead>
+				<tr>
+					<th>Album</th>
+					<th>Year</th>
+					<th>Price</th>
+				</tr>
+			</thead>
+			<tfoot>
+				<tr>
+					<th>Album</th>
+					<th>Year</th>
+					<th>Price</th>
+				</tr>
+			</tfoot>
+			<tbody>
+				<tr>
+					<td>Are You Experienced</td>
+					<td>1967</td>
+					<td>$10.00</td>
+				</tr>
+				<tr>
+					<td>Axis: Bold as Love</td>
+					<td>1967</td>
+					<td>$12.00</td>
+				</tr>
+				<tr>
+					<td>Electric Ladyl和</td>
+					<td>1968</td>
+					<td>$10.00</td>
+				</tr>
+				<tr>
+					<td>B和 of Gypsys</td>
+					<td>1970</td>
+					<td>$12.00</td>
+				</tr>
+			</tbody>
+		</table>
+		<hr id="form">
+		<h1>表单 / Forms</h1>
+		<form>
+			<fieldset>
+				<legend>legend of form</legend>
+				<p>
+					<label>
+						<input type="file">
+					</label>
+				</p>
+				<p>
+					<label>
+						<input type="radio" name="rad">&nbsp;Radio input</label>
+				</p>
+				<p>
+					<label>
+						<input type="checkbox">&nbsp;Checkbox input</label>
+				</p>
+				<p>
+					<label>
+						<select>
+							<option>Option 01</option>
+							<option>Option 02</option>
+						</select>
+					</label>
+				</p>
+				<p>
+					<button>button</button>&nbsp;
+					<input type="button" value="input['type=button']">
+				</p>
+			</fieldset>
+		</form>
+		<hr id="util">
+		<h1>小工具 / Utilities</h1>
+		<h3>1. 清理浮动</h3><pre>.clearfix</pre>
+		<h3>2. 强制换行</h3><pre>.textwrap /* 在 table 中使用 .textwrap-table */</pre>
+		<h3>3. 左右浮动</h3><pre>.pull-right / .pull-left</pre>
+		<h4>4. 脱离 .typo 单独使用</h4><pre>.typo-TAGNAME /* 比较 .typo-small */</pre>
+</div>

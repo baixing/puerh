@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{ page.title }} - Puerh</title>
+	<link href="{{ page.base_url }}css/puerh.css" rel="stylesheet">
+	<link href="{{ page.base_url }}css/font.css" rel="stylesheet">
+	<link href="{{ page.base_url }}css/grid.css" rel="stylesheet">
+	<style>
+	#header{background:#2c3e50;padding:10px 0 30px;margin-bottom:20px;}
+	#header{color:#fff;}
+	#header h1, #header a{color:#2ecc71;}
+	#content{padding-bottom:100px;}
+	#source{position:fixed;_position:absolute;right:0;top:0;display:block;}
+	#footer{padding:20px 0;width:100%;margin-top:30px;border-top:1px solid #eee;background:#fff;}
+
+	#fonts .box1{display:block;width:240px;float:left;font-size:16px;margin-bottom:10px;vertical-align:middle;}
+	#fonts{font-family:Courier New, Courier, monospace;}
+	#fonts .box1 i{display:inline-block;margin-right:5px;}
+
+	#nav a{color:#27ae60;line-height:1.2;}
+	#nav a:hover{color:#fff;}
+	.highlight{color:#ec5524;}
+
+	.affix.list{width:230px;}
+	#nav a:hover{background:#1abc9c;}
+
+	#grid-demo .grid, #grid-demo .sidecol, #grid-demo .maincol{background:#f8f8f8;text-align:center;margin-bottom:1em;height:40px;color:#999;font:italic 1em/40px Georgia, serif;}
+	</style>
+	<!--[if lt IE 8]><script src="/js/font.js?ver=1"></script><![endif]-->
+</head>
+
+<body data-spy="scroll" data-target="#nav">
+	<div id="header">
+		{% include header.html %}
+	</div>
+
+	<div class="container">
+		{{ content }}
+	</div>
+
+	<div id="footer">
+		<div class="container">
+			<div class="grid grid-20">
+				<small>CopyRight 2013 Baixing LLC</small>
+			</div>
+		</div>
+	</div><a href="https://github.com/baixing/Puerh" id="source" name=
+	"source"><img src=
+	"http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a><script src="{{ page.base_url }}js/jquery-1.9.1.min.js"></script><script src="{{ page.base_url }}js/bootstrap.js"></script><script src="{{ page.base_url }}js/puerh.js"></script>
+</body>
+</html>
