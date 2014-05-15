@@ -1,0 +1,106 @@
+---
+layout: default
+title: JS Components
+---
+
+<div class="grid grid-5">
+	<ul id="nav" data-spy="affix" data-offset-top="132" class="list affix-top">
+		<li class="list-item"><a href="#tips">1. Tooltips</a>
+		</li>
+		<li class="list-item"><a href="#dropdown">2. Dropdown</a>
+		</li>
+		<li class="list-item"><a href="#modal">3. Modal</a>
+		</li>
+		<li class="list-item"><a href="#tab">4. Tab</a>
+		</li>
+	</ul>
+</div>
+<div class="grid grid-15 last ui">
+	<h2 id="tips" class="typo-h2">一、Tooltips</h2>
+	<div class="typo-p">默认的 HTML Title 显示太慢了，而且不是很好看，如果 Tooltips 成为一个重要的提示路径，那么这个组件可以更好地解决这个问题。用&nbsp;<code>data-toggle="tooltip"</code>，可能通过&nbsp;<code>data-toggle="tooltip"</code>&nbsp;来指定 Tooltips 相对于当前元素的位置。</div>
+	<style>
+		#flatul {
+			background: #fff;
+			border: 1px solid #f2f1ec;
+			padding: 15px 0;
+			text-align: center;
+		}
+		#flatul li {
+			display: inline;
+			margin: 25px;
+		}
+	</style>
+	<ul id="flatul" class="sep">
+		<li><a data-placement="top" data-toggle="tooltip" href="#" title="Tooltip on top">Tooltip on top</a>
+		</li>
+		<li><a data-placement="right" data-toggle="tooltip" href="#" title="Tooltip on right">Tooltip on right</a>
+		</li>
+		<li><a title="Tooltip on bottom" data-placement="bottom" data-toggle="tooltip" href="#">Tooltip on bottom</a>
+		</li>
+		<li><a title="Tooltip on left" data-placement="left" data-toggle="tooltip" href="#">Tooltip on left</a>
+		</li>
+	</ul><pre>&lt;a title="Tooltip on top" href="#"&nbsp;<b>data-toggle="</b><b class="highlight">tooltip</b>"&nbsp;<b>data-placement="</b><b class="highlight">top</b>"&gt;
+Tooltip on top
+&lt;/a&gt;</pre>
+	<script>
+		window.onload = function () {
+			$('[data-toggle=tooltip]').tooltip()
+		}
+	</script>
+	<hr id="dropdown"><span class="open dropdown pull-right"><ul class="dropdown-menu"><li><a href="#">item-1</a></li><li><a href="#">item-2</a></li><li><a href="#">item-3</a></li><li><a href="#">item-4</a></li></ul></span>
+	<h2 class="typo-h2">二、下拉菜单</h2>
+	<div class="typo-p grid-11">这是一个「<span id="mydropdown" class="dropdown"><a href="#mydropdown" data-toggle="dropdown" class="dropdown-trigger">下拉菜单</a><ul class="dropdown-menu"><li><a href="#">item-1</a></li><li><a href="#">item-2</a></li><li><a href="#">item-3</a></li><li><a href="#">item-4</a></li></ul></span>」，可以用&nbsp;<code>data-toggle="dropdown"</code>来实例化一个下拉菜单，用&nbsp;<code>data-target="#TARGET_SELECTOR"</code>&nbsp;或者&nbsp;<code>href="#TARGET_SELECTOR"</code>&nbsp;来指定弹出层。</div><pre>&lt;span class="<b class="highlight">dropdown</b>"&gt;
+&lt;a&nbsp;<b class="highlight">href="#ddmenu"</b>&nbsp;<b class="highlight">data-toggle="dropdown"</b>&gt;下拉菜单&lt;/a&gt;
+&lt;ul id="ddmenu" class="<b class="highlight">dropdown-menu</b>"&gt;
+&lt;li&gt;&lt;a href="#"&gt;item-1&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#"&gt;item-2&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#"&gt;item-3&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="#"&gt;item-4&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/span&gt;</pre>
+	<hr id="modal">
+	<h2 class="typo-h2">三、Modal</h2>
+	<div class="typo-p">Modal 的使用可以点击这个&nbsp;<a href="#myModal" data-toggle="modal">Modal Demo</a>&nbsp; 试试。使用的时候，只要在一个触发点（如一个链接）指定一下&nbsp;<code>data-toggle="modal"</code>&nbsp;来指定这个触发点触发的是 Modal，用<code>href="#TARGET_ID"</code>&nbsp;或&nbsp;<code>data-target="#TARGET_ID"</code>&nbsp;来指定这个
+		modal 指定的显示框。</div>
+	<div id="myModal" class="modal fade">
+		<h4 class="modal-title">本操作需要您先注册百姓网</h4><a href="###" data-dismiss="modal" class="close">×</a>
+		<div class="modal-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+			dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+	</div>
+	<div style="position:relative;z-index:1;" class="modal sep">
+		<h4 class="modal-title">本操作需要您先注册百姓网</h4><a href="###" data-dismiss="modal" class="close">×</a>
+		<div class="modal-content">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
+			dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</div>
+	</div><pre>&lt;a href="<b class="highlight">#myModal</b>"&nbsp;<b class="highlight">data-toggle="modal"</b>&gt;Modal Demo&lt;/a&gt;
+&nbsp;
+&lt;div id="<b class="highlight">myModal</b>" class="modal fade hide in"&gt;
+&lt;h4 class="modal-title"&gt;本操作需要您先注册百姓网&lt;/h4&gt;
+&lt;a href="###" data-dismiss="modal" class="close"&gt;×&lt;/a&gt;
+&lt;div class="modal-content"&gt;
+Lorem ipsum dolor sit amet,
+&lt;/div&gt;
+&lt;/div&gt;</pre>
+	<hr id="tab">
+	<h2 class="typo-h2">四、Tab</h2>
+	<div class="tab sep">
+		<ul class="tab-title clearfix">
+			<li class="tab-title-item active"><a data-toggle="tab" href="#tab-1">全部</a>
+			</li>
+			<li class="tab-title-item"><a data-toggle="tab" href="#tab-2">个人</a>
+			</li>
+			<li class="tab-title-item"><a data-toggle="tab" href="#tab-3">商家</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div id="tab-1" class="tab-content-pane active">#tab-1</div>
+			<div id="tab-2" class="tab-content-pane">#tab-2</div>
+			<div id="tab-3" class="tab-content-pane">#tab-3</div>
+		</div>
+	</div>
+	<p class="typo-p">CSS 和 JS 分开的，通过&nbsp;<code>data-toggle="tab"</code>&nbsp;来指定元素本身是一个 tab 标签。通过&nbsp;<code>href="#TARGET_ID"</code>&nbsp;或者<code>data-target="#TARGET_ID"</code>&nbsp;来指定 tab 显示的内容。</p><pre class="sep">&lt;div class="<b class="highlight">tab</b>"&gt;
+&lt;ul class="<b class="highlight">tab-title</b>&nbsp;clearfix"&gt;
+&lt;li class="<b class="highlight">tab-title-item</b>"&gt;&lt;a href="#"&nbsp;<b class="highlight">data-toggle="tab"</b>&gt;全部&lt;/a&gt;&lt;/li&gt;
+&lt;li class="tab-title-item&nbsp;<b class="highlight">active</b>"&gt;&lt;a href="#" data-toggle="tab"&gt;个人&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</pre>
+</div>

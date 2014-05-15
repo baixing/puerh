@@ -1,0 +1,243 @@
+---
+layout: default
+title: Start
+---
+
+<div class="grid grid-5">
+	<ul id="nav" data-spy="affix" data-offset-top="132" class="list affix-top">
+		<li class="list-item"><a href="#css">一、CSS 组件</a>
+		</li>
+		<li class="list-item"><a href="#css-ns">&nbsp;&nbsp;1、命名规范</a>
+		</li>
+		<li class="list-item"><a href="#css-comment">&nbsp;&nbsp;2、注释规范</a>
+		</li>
+		<li class="list-item"><a href="#css-grid">&nbsp;&nbsp;3、栅格系统</a><a href="#css-grid">&nbsp;&nbsp;3、栅格系统</a>
+		</li>
+		<li class="list-item"><a href="#css-typo">&nbsp;&nbsp;4、排版类：TYPO.CSS</a>
+		</li>
+		<li class="list-item"><a href="#css-tools">&nbsp;&nbsp;5、小工具</a>
+		</li>
+		<li class="list-item"><a href="#css-hack">&nbsp;&nbsp;6、兼容：CSS Hack</a>
+		</li>
+		<li class="list-item"><a href="#css-ie">&nbsp;&nbsp;7、IE 私有特性</a>
+		</li>
+		<li class="list-item"><a href="#css-module">&nbsp;&nbsp;8、关于模块化</a>
+		</li>
+		<li class="list-item"><a href="#js">二、 JavaScript</a>
+		</li>
+		<li class="list-item"><a href="#feedback">三、反馈</a>
+		</li>
+	</ul>
+</div>
+<div class="grid grid-15 last">
+	<div class="typo">
+		<h1>Getting Start</h1>
+		<hr>
+		<p>Puerh 是百姓网 UI 库的简称。名字源自于在想为框架命名时办公桌上的一包普尔茶，因此取名“普尔（Puerh）”，希望所构建的百姓网 UI 简洁但像普尔茶一样有韵味。这个文档将介绍如何使用 Puerh 来构建 Web 界面。</p>
+		<h2 id="css">一、CSS 组件</h2>
+		<p>所有组件均通过兼容测试、使用统一的命名注释规范。包括栅格系统、排版样式和组件样式。所有组件样式包含于&nbsp;<code>puerh.css</code>&nbsp;中。</p>
+		<blockquote>组件兼容要求：Mac/Win 系统下的 IE6+ / Google Chrome / Firefox / Safari</blockquote>
+		<h3 id="css-ns">1、命名规范</h3>
+		<p>使用嵌套式命名法（暂且这样称呼吧）。组件是一个整体，理应包含于一个容器中；为了便于重用，在 CSS 中我们配合 class 选择器来做模块；另外为了使命名更长度和语义上更易懂。做如下约定：</p>
+		<ol>
+			<li><b>HTML class 属性：使用小写字母作为 class 名，使用嵌套式命名。</b>
+				<p>统一命名规范，让属性值与 HTML 属性一致，均使用小写。所谓的嵌套式命名，即以父级元素的名字作为子元素的命名前缀。比如&nbsp;<code>.tab</code>&nbsp;组件名的子模块，应该是&nbsp;<code>.tab-模块名</code>，而模块的下一级则是&nbsp;<code>.tab-模块名-子模块名</code>。每一级都以上一级名称加上“-”作为前缀使用。</p>
+			</li>
+			<li><b>组件：使用单个单词</b>
+				<p>尽量使用一个单词命名，比如&nbsp;<code>.list</code>、<code>.flow</code>、<code>.filter</code>&nbsp;等，不要使用像<code>headerMeta</code>、<code>header-meta</code>&nbsp;这样的写法，一来命名太长，二来不符合嵌套规范。</p>
+			</li>
+			<li><b>模块 = 组件名 + 模块名</b>
+				<p>假设我们需要写一个 Tab 组件，Tab 是一个整体，包含在 &nbsp;<code>.tab</code>&nbsp;这个 class 中，有触发点&nbsp;<code>.tab-trigger</code>&nbsp;和内容区&nbsp;<code>.tab-content</code>。触发点中有不同的点，内容区中有不同的内容模块。使用嵌套式的命名方法，有这样的结构：</p><pre class="prettyprint">&lt;div class="tab"&gt;                                         --- 组件名
+&lt;ul class="tab-trigger"&gt;                                --- 模块名
+&lt;li class="tab-trigger-item"&gt;item 1&lt;/li&gt;
+&lt;li class="tab-trigger-item"&gt;item 2&lt;/li&gt;            --- 子模块
+&lt;li class="tab-trigger-item"&gt;item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="tab-content"&gt;                               --- 模块名
+&lt;div class="tab-content-item"&gt;content 1&lt;/div&gt;
+&lt;div class="tab-content-item"&gt;content 2&lt;/div&gt;        --- 子模块
+&lt;div class="tab-content-item"&gt;content 3&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt; &lt;!-- .tab --&gt;</pre>
+			</li>
+			<li><b>扩展 = 组件名 + 扩展名</b>
+				<p>假设我们有一个竖排的 Tab 组件，除了把 Tab 的触发点从上面移到左边，外观上并没有其他变化。这时复用模块将可以减少重复的代码并且只作局部调整省去重复劳动。可以给组件增加一个扩展名。如：</p><pre class="prettyprint">&lt;div class="tatab-vertical"&gt;            --- 组件名 + 扩展名
+&lt;ul class="tab-trigger"&gt;
+...
+&lt;/ul&gt;
+&lt;div class="tab-content"&gt;
+...
+&lt;/div&gt;
+&lt;/div&gt; &lt;!-- .tab .tab-vertical--&gt;</pre>
+			</li>
+			<li><b>状态 = 模块名 + 状态名</b>
+				<p>仍以 Tab 为例。触发点是有状态的。激活状态的标签通常和其他标签显示不同的样式，非激活状态的内容更是明显，一般都是隐藏的。因此我们需要给模块一个状态。会有这样的代码：</p><pre class="prettyprint">&lt;div class="tab"&gt;
+&lt;ul class="tab-trigger"&gt;
+&lt;li class="tab-trigger-item tab-trigger-item-active"&gt;item 1&lt;/li&gt;      --- 状态名
+&lt;li class="tab-trigger-item"&gt;item 2&lt;/li&gt;
+&lt;li class="tab-trigger-item"&gt;item 3&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class="tab-content"&gt;
+&lt;div class="tab-content-item tab-content-item-active"&gt;content 1&lt;/div&gt; --- 状态名
+&lt;div class="tab-content-item"&gt;content 2&lt;/div&gt;
+&lt;div class="tab-content-item"&gt;content 3&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt; &lt;!-- .tab --&gt;</pre>
+			</li>
+			<p>另外，值得一提的是，模块和组件一样，都可以有扩展名，命名方法同扩展命名。</p>
+		</ol>
+		<h4>命名中的注意点：</h4>
+		<ol>
+			<li>同组件不嵌套，即 .tab &gt; .tab 的方式是不被允许的，可以是 .tab1 &gt; .tab2 的方式</li>
+			<li>组件层级嵌套最好不要超过4级，1-2-3-4，如果大于4级，则考虑是否将一个组件分拆成多个</li>
+			<li>icon 使用统一的命名方式</li>
+		</ol>
+		<h4>Icons 的命名方式：</h4>
+		<p>所有小图标均使用 <code>.icon</code>命名。使用 CSS Sprites 方式合并图片，用<code>.icon .icon-扩展</code>来设定图片的背景位置。具体可以参考 Icons 组件的实现。</p>
+		<h3 id="css-comment">2、注释规范</h3>
+		<p>注释旨在指明团队协作中的创作、个性者和代码作用。在 CSS 中，无论块组还是单行注释，均使用 <code>/* 注释 */</code>。由于中文注释可能导致代码失效，但中文作为团队最有效的沟通文字，最好的使用方法是，保证在<code>/*</code>和<code>*/</code>之间的中文前后都有空格，以保证 CSS 不会失效。</p>
+		<p>在组件中，主要使用的两种注释如下：</p><pre class="prettyprint">/* form 表单                                                         --- 简单描述
+&nbsp;* author: sofish@163.com                                           --- 作者
+&nbsp;* require: button                                                  --- 依赖（可选）
+&nbsp;*/
+.form{
+font-family:serif\0/; /* solution:win7 ie8 line-height bug */      --- 行内注释
+}
+…</pre>
+		<h3 id="css-grid">3、栅格系统</h3>
+		<p>Puerh 使用 980px 宽、20 栏（每栏&nbsp;<code>30px</code>）、10px 间隙的栅格系统。内容区域为 980px，撑开宽度为 1000px。所有栅格必须包含到&nbsp;<code>.container</code>&nbsp;内。使用<code>.grid</code>&nbsp;模块，扩展名&nbsp;<code>.grid-N</code>&nbsp;N 代表 1~20 中的任意整数。具体的使用如下：</p><pre class="prettyprint">// 包含于 .container 中
+&lt;div class="container"&gt;
+&lt;div class="grid grid-20"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&nbsp;
+// 嵌套使用：需要用于 b .first/.last 类
+&lt;div class="container"&gt;
+&lt;div class="grid grid-20"&gt;
+&lt;div class="grid grid-5 first"&gt;…&lt;/div&gt;      --- 第一个容器
+&lt;div class="grid grid-5"&gt;…&lt;/div&gt;            --- 中间可以多个
+&lt;div class="grid grid-10 last"&gt;…&lt;/div&gt;      --- 最后一个容器
+&lt;/div&gt;
+&lt;/div&gt;</pre>
+		<h3 id="css-typo">4、排版类：TYPO.CSS</h3>
+		<p>在 Puerh 中使用开源的 TYPO.CSS 作为排版样式。这个库不同于一般的 CSS Reset，在提供 Reset 的同时，提供适合中文并且最大化兼容种系统的排版方法。在需要排版的地方使用 <code>.typo</code>作为父容器的类，或在单独需要使用的时候，使用<code>.typo-TAGNAME</code>的方式单独使用。具体使用方式参考：</p><pre class="prettyprint">// 在 b .typo 内使用标签，将对应相应语义显示
+&lt;div class="typo"&gt;
+&lt;h3&gt;Title&lt;/h3&gt;
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;item 1&lt;/li&gt;
+&lt;li&gt;item 2&lt;/li&gt;
+&lt;/ul&gt;
+..
+&lt;/div&gt;
+// 在没有 .typo 的情况下使用 b .typo-TAGNAME
+&lt;h3 class="typo-h3"&gt;Title&lt;/h3&gt;
+&lt;ul class="typo-ul"&gt;
+&lt;li&gt;item 1&lt;/li&gt;
+&lt;li&gt;item 2&lt;/li&gt;
+&lt;/ul&gt;</pre>
+		<h3 id="css-tools">5、小工具</h3>
+		<ol>
+			<li>CLEARFIX: 清理浮动，在浮动元素的父节点添加<pre class="prettyprint">&lt;ul class="clearfix"&gt;
+&lt;li class="float-item"&gt;…&lt;/li&gt;
+&lt;li class="float-item"&gt;…&lt;/li&gt;
+..
+&lt;/ul&gt;</pre>
+			</li>
+			<li>CLOSE: 关闭按钮<pre class="prettyprint">&lt;div class="close" data-dismiss="alert"&gt;×&lt;/div&gt;</pre>
+			</li>
+		</ol>
+		<h3 id="css-hack">6、兼容：CSS Hack</h3>
+		<p>兼容是 CSS 中最大的难点。各种 hack 可以帮助你快速解决问题，但不一定是解决问题的真正方法。所以，hack 应该尽量避免使用。很多时候都是写法决定 bug，在有时间允许的情况下，请多进行测试以找到最佳方式。</p><pre class="prettyprint">.all-IE{property:value\9;}
+:root .IE-9{property:value\0/;}
+.gte-IE-8{property:value\0;}
+.lte-IE-7{*property:value;}
+.IE-7{+property:value;}
+.IE-6{_property:value;}
+.not-IE{property//:value;}
+@-moz-document url-prefix() { .firefox{property:value;} }
+@media all and (-webkit-min-device-pixel-ratio:0) { .webkit{property:value;} }
+@media all and (-webkit-min-device-pixel-ratio:10000),not all and (-webkit-min-device-pixel-ratio:0) { .opera{property:value;} }
+@media screen and (max-device-width: 480px) { .iphone-or-mobile-s-webkit{property:value;} }</pre>
+		<p>目前在网站中会自动添加 body class，显示方式如下：<code>浏览器</code><code>版本号</code><code>系统名</code>
+		</p><pre class="prettyprint">// 在 Body 中加 class
+&lt;body class='firefox firefox-12 mac'&gt;
+&nbsp;
+// 目前支持的 class name
+浏览器：.firefox / .chrome / .safari / .ie / .opera / .maxthon / .netscape
+版本号：浏览器版本号取整：比如 firefox 12.03 会显示 firefox-12
+系统名：.mac / .win / .vista / .win7 / .ubuntu / .linux
+&nbsp;
+// 标记与使用：
+文件：Browser.php (/lib/)
+调用：Browser::detect()</pre>
+		<p>注意：别用轻易使用hack，IE下很多兼容性问题都是<a href="http://haslayout.net/">has Layout</a>引起的。试着给元素加上:</p><pre class="prettyprint">display: inline-blockheight: (除 auto外任何值)
+width: (除 auto外任何值)
+float: (left或 right)
+position: absolutewriting-mode: tb-rlzoom: (除 normal外任意值)</pre>
+		<h3 id="css-ie">7、IE私有特性</h3>
+		<ol>
+			<li>expression：无论什么时候，都不要使用它，用 Javascript 吧。更优雅，更灵活。</li>
+			<li>filter:
+				<ol>
+					<li>应该尽量避免使用 AlphaImageLoader</li>
+					<li>可以适当在投影/发光/渐变/去色方面上使用</li>
+				</ol>
+			</li>
+			<li>IE bug
+				<p>常见BUG，详见：http://sofish.de/1400</p>
+			</li>
+		</ol>
+		<h3 id="css-module">8、关于模块化</h3>
+		<p>有两点需要注意的，一是，注意代码重用的模块化；一是，注意 HTML 结构的模块化，而不是分块。</p>
+		<ol>
+			<li><strong>我们是这样重用的：</strong><pre class="prettyprint">&lt;div id="strong module-1" class="module"&gt;
+&lt;h3&gt;TITLE&lt;/h3&gt;
+&lt;p class="module-item"&gt;
+some text
+&lt;/p&gt;
+&lt;/div&gt;
+&lt;div id="strong module-2" class="module"&gt;
+&lt;h3&gt;TITLE&lt;/h3&gt;
+&lt;p class="module-item"&gt;
+some text
+&lt;/p&gt;
+&lt;/div&gt;</pre><pre class="prettyprint">/* module, reuse style in module scrope*/
+.module{}
+.module-status{}
+.module-item{}
+.module-status .module-1-item{}
+/* customize */<strong>#module-1 .module-item{}</strong><strong>#module-2 .module-item{}</strong></pre>
+			</li>
+			<li><strong>HTML 的模块化：我们应该这样写（他们的视觉是一体的，代码也应该是一体的）：</strong><pre class="prettyprint">&lt;div id="strong module-1" class="module"&gt;
+&lt;h3&gt;TITLE&lt;/h3&gt;
+&lt;p class="module-item"&gt;
+some text
+&lt;/p&gt;
+&lt;/div&gt; &lt;!-- #module .module --&gt;</pre>
+				<p>而不是这样写：</p><pre class="prettyprint">&lt;h3&gt;TITLE&lt;/h3&gt;
+&lt;!-- 第一块 --&gt;
+&lt;div id="strong module-1" class="module&gt;
+&lt;p class="module-item"&gt;
+some text
+&lt;/p&gt;
+&lt;/div&gt; &lt;!-- 第二块 --&gt;</pre>
+				<p class="typo-small">注意：在样式的安全使用用，尽量把样式定义在相应的容器中，而不是作为全局使用</p><pre class="prettyprint">// 全局样式：除非非常通用，是不允许新建全局样式的，如果你要建，请先问一下小鱼，不然可能随时被干掉（^^）
+.red{color:red!imporant;}
+&nbsp;
+// 作用域：限定在一定的容器中
+// 像 .hover 这样的选择器是非常普通的，如何使用？
+// 这样两个容器的 .hover 就不相互影响了，记得限定作用域
+.module-1 .hover{ ... }
+.module-2 .hover{ ... }</pre>
+			</li>
+		</ol>
+		<hr>
+		<h2 id="js">二、JavaScript 组件</h2>
+		<p>目前 Puerh 的大部分组件都使用 Twitter Bootstrap 库的自定义 Javascript 插件。删除了其中网站不常用的 Carousel 等组件，修改 Tips、Modals 等插件以适合百姓网需求，增加 Validator 和 Linkage 组件。</p>
+		<p>具体使用方法参见：<a href="/js">JavaScript 组件»</a>
+		</p>
+		<hr>
+		<h2 id="feedback">三、反馈</h2>
+		<p>Puerh 将会一直在使用、一直测试完善。在使用过程中遇到问题，如若有任何问题、建议、批评，或者要请吃饭的，外观设计中的找&nbsp;<a href="mailto:sundengjia@baixing.com">@登甲</a>，在使用和代码上的问题请找&nbsp;<a href="mailto:linjianfeng@baixing.com">@小鱼</a>。</p>
+	</div>
+</div>
