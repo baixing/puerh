@@ -170,10 +170,13 @@ font-family:serif\0/; /* solution:win7 ie8 line-height bug */      --- 行内注
 // 标记与使用：
 文件：Browser.php (/lib/)
 调用：Browser::detect()</pre>
-		<p>注意：别用轻易使用hack，IE下很多兼容性问题都是<a href="http://haslayout.net/">has Layout</a>引起的。试着给元素加上:</p><pre class="prettyprint">display: inline-blockheight: (除 auto外任何值)
+		<p>注意：别用轻易使用hack，IE下很多兼容性问题都是<a href="http://haslayout.net/">has Layout</a>引起的。试着给元素加上:</p><pre class="prettyprint">display: inline-block
+height: (除 auto外任何值)
 width: (除 auto外任何值)
 float: (left或 right)
-position: absolutewriting-mode: tb-rlzoom: (除 normal外任意值)</pre>
+position: absolute
+writing-mode: tb-rl
+zoom: (除 normal外任意值)</pre>
 		<h3 id="css-ie">7、IE私有特性</h3>
 		<ol>
 			<li>expression：无论什么时候，都不要使用它，用 Javascript 吧。更优雅，更灵活。</li>
