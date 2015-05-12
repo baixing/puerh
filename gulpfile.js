@@ -3,6 +3,7 @@ var uglify = require('gulp-uglify')
 var minify = require('gulp-minify-css')
 var rename = require('gulp-rename')
 var del = require('del')
+var release = require('gulp-gh-pages')
 
 var DEST = 'dist'
 var SRC_SCRIPTS = 'src/js/*.js'
@@ -14,6 +15,8 @@ gulp.task('build', gulp.parallel('scripts', 'styles'))
 
 gulp.task('clean', cleanDest)
 gulp.task('cleanbuild', gulp.series('clean', 'build'))
+
+gulp.task('release', release)
 
 gulp.task('default', gulp.series('clean', 'build'))
 
@@ -39,4 +42,11 @@ function buildStyles(){
 
 function cleanDest(cb){
   return del(DEST, cb)
+}
+
+function release(){
+  return gulp.src('./dist/**/*')
+    .pipe(release({
+      branch: 'dist'
+    }))
 }
