@@ -25,19 +25,19 @@ gulp.task('default', gulp.series('clean', 'build'))
  */
 
 function buildScripts(){
-  var output = gulp.dest(DEST + '/js')
   return gulp.src(SRC_SCRIPTS)
+    .pipe(gulp.dest(DEST + '/js'))
     .pipe(uglify())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(output)
+    .pipe(gulp.dest(DEST + '/js'))
 }
 
 function buildStyles(){
-  var output = gulp.dest(DEST + '/css')
   return gulp.src(SRC_STYLES)
+    .pipe(gulp.dest(DEST + '/css'))
     .pipe(minify())
     .pipe(rename({ suffix: '.min' }))
-    .pipe(output)
+    .pipe(gulp.dest(DEST + '/css'))
 }
 
 function cleanDest(cb){
