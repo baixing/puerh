@@ -11,7 +11,7 @@ html
   head
     - pageTitle = title === 'Puerh' ? 'Puerh' : title + ' - Puerh'
     title= pageTitle
-    - sheets = ['/css/puerh.css', 'http://baixing.github.io/baicons/baicons.css', '/css/grid.css']
+    - sheets = ['/css/puerh.css', '/css/grid.css', 'http://baixing.github.io/baicons/baicons.css']
     mixin style(sheets)
     include style
     //if lt IE 8
@@ -48,7 +48,7 @@ html
     #footer
       .container
         .grid.grid-20
-          small CopyRight 2013 Baixing LLC
+          small CopyRight 2015 Baixing LLC
 
     a#source(href="https://github.com/baixing/puerh")
       img(src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png")
