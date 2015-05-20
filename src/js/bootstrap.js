@@ -96,6 +96,8 @@
     this.options = options
     this.$element = $(content)
       .delegate('[data-dismiss="modal"]', 'click.dismiss.modal', $.proxy(this.hide, this))
+      // edit by @liuning-geek
+    this.isPushSetPosQueue = false;
   }
 
   Modal.prototype = {
@@ -135,9 +137,12 @@
       // add by @sofish
       // set margin to adjust the window
       this.setPos(that.$element);
-      $(window).bind('scroll resize', function(){
-        that.setPos(that.$element);
-      });
+
+      // edit by @liuning-geek
+      if (!that.isPushSetPosQueue) {
+        that.isPushSetPosQueue = true;
+        pushSetPosQueue(function() { that.setPos(that.$element); });
+      }
 
       if(data) data['setPos'] = this.setPos;
 
@@ -192,9 +197,27 @@
 
   }
 
+  /* MODAL PRIVATE PROPERTY
+   * ===================== */
+
+  // add by @liuning-geek
+  var setPosQueue = [];
 
   /* MODAL PRIVATE METHODS
    * ===================== */
+
+  // add by @liuning-geek
+  function pushSetPosQueue(func) {
+    // If this is the first time a push in the window binding events
+    if (setPosQueue.length === 0) {
+      $(window).bind('scroll resize', function(){
+        for (var i = 0, len = setPosQueue.length; i < len; i++)
+          setPosQueue[i]();
+      });
+    }
+
+    setPosQueue.push(func);
+  }
 
   function hideWithTransition() {
     var that = this
