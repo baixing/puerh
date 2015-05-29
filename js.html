@@ -115,3 +115,8 @@ Lorem ipsum dolor sit amet,
 	<table class="table table-bordered table-striped"><tbody><tr><th style="width:80px">配置项</th><th style="width:120px">类型</th><th>默认值</th><th>说明</th></tr><tr><td>animation</td><td>boolean</td><td>true</td><td>是否应用CSS动画效果。</td></tr><tr><td>html</td><td>boolean</td><td>false</td><td>在 popover 中填入 html。如果为 false 的话，将会使用 jquery 的 text 方法填充内容。要避免XSS攻击的话最好使用纯文本填充。</td></tr><tr><td>placement</td><td>string | function</td><td>'right'</td><td>弹出的位置：top | bottom | left | right</td></tr><tr><td>selector</td><td>string</td><td>false</td><td>提供此项的话，弹出层将置于指定元素上。</td></tr><tr><td>trigger</td><td>string</td><td>'click'</td><td>触发事件：click | hover | focus | manual</td></tr><tr><td>title</td><td>string | function</td><td>''</td><td>弹出层标题。</td></tr><tr><td>content</td><td>string | function</td><td>''</td><td>弹出层内容。</td></tr><tr><td>delay</td><td>number | object</td><td>0</td><td>弹出层显示和隐藏的延时（不影响 manual 触发）。对象的话，格式为 { show: 500, hide: 100}</td></tr><tr><td>container</td><td>string | false</td><td>false</td><td>指定弹出层元素从属的父元素。如 container: 'body'</td></tr></tbody></table>
 
 </div>
+
+<script>window.onload = function() {
+  $('[data-toggle=popover]').popover()
+}
+</script>
