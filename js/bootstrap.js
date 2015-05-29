@@ -1,3 +1,4 @@
+// linjianfeng@baixing.com
 /* ===================================================
  * bootstrap-transition.js v2.3.1
  * http://twitter.github.com/bootstrap/javascript.html#transitions
@@ -96,6 +97,8 @@
     this.options = options
     this.$element = $(content)
       .delegate('[data-dismiss="modal"]', 'click.dismiss.modal', $.proxy(this.hide, this))
+    // edit by @liuning
+    this.isPushSetPosQueue = false;
   }
 
   Modal.prototype = {
@@ -111,9 +114,13 @@
     // calculate the element height
     ,
     setPos: function(el){
-      var toTop = $(document).scrollTop(),
-        winHeight = $(window).height(),
-        winWidth = $(window).width(),
+      if (!el) el = this.$element;
+      // 获取元素所在window
+      var doc = el[0].ownerDocument;
+      var win = doc.defaultView || doc.parentWindow;
+      var toTop = $(doc).scrollTop(),
+        winHeight = $(win).height(),
+        winWidth = $(win).width(),
         height = el.height(),
         width = el.width();
       el.css({
@@ -135,9 +142,12 @@
       // add by @sofish
       // set margin to adjust the window
       this.setPos(that.$element);
-      $(window).bind('scroll resize', function(){
-        that.setPos(that.$element);
-      });
+
+      // edit by @liuning
+      if (!that.isPushSetPosQueue) {
+        that.isPushSetPosQueue = true;
+        pushSetPosQueue(function() { that.setPos(that.$element); });
+      }
 
       if(data) data['setPos'] = this.setPos;
 
@@ -192,9 +202,27 @@
 
   }
 
+  /* MODAL PRIVATE PROPERTY
+   * ===================== */
+
+  // add by @liuning
+  var setPosQueue = [];
 
   /* MODAL PRIVATE METHODS
    * ===================== */
+
+  // add by @liuning
+  function pushSetPosQueue(func) {
+    // If this is the first time a push in the window binding events
+    if (setPosQueue.length === 0) {
+      $(window).bind('scroll resize', function(){
+        for (var i = 0, len = setPosQueue.length; i < len; i++)
+          setPosQueue[i]();
+      });
+    }
+
+    setPosQueue.push(func);
+  }
 
   function hideWithTransition() {
     var that = this
@@ -2295,5 +2323,450 @@
     if ($this.data('typeahead')) return
     $this.typeahead($this.data())
   })
+
+}(window.jQuery);
+
+
+~function($){
+
+  /* hover 自动切换 class
+   * @author sofish, linjianfeng@baixing.com
+   * @param klass {String} 添加/删除的 class
+   */
+  $.fn.hoverClass = function (klass){
+
+    var that = this;
+
+    that.on('mouseenter', function(){
+      $(this).addClass(klass);
+    })
+
+    that.on('mouseleave', function(){
+      $(this).removeClass(klass);
+      // trick to fixed the browser bug on chrome & ie
+      $(this).css('display');
+    })
+  };
+
+}(jQuery);
+
+$.fn.queryComplete = function (category, city, key) {
+  this.length && this.each && this.each(function () {
+    cityEnglishName = city || '';
+    categoryBase = category || '';
+    key = key || '';
+    $(this).autocomplete({
+      source: function(request, response) {
+        var url;
+        if (categoryBase == 'root')
+          url = '/suggest';
+        else
+        //autocomplete是朝歌的ajax接口，似乎没人用了，就没有牵
+          url = '/ajax/tag/autocomplete/?category=' + categoryBase + '&cityEnglishName=' + cityEnglishName + '&key=' + key
+
+        $.getJSON(url, request, function(data, status, xhr){
+          //暂时需要判断data是否是数组，否则字符串也会被认为是数据，而实际上是后端扔出来的错误信息
+          //todo: 后端错误应该给status code
+          if ($.isArray(data)) response(data)
+        })
+      },
+      select: function (e, value) {
+        var data = value.item;
+
+        if(!data) return;
+
+        if (categoryBase === "root") {
+          window.location.assign('http://' + cityEnglishName + '.baixing.com/' + data.category + '/?query=' + data.value)
+        } else if (data.id) {
+          window.location.assign('http://' + cityEnglishName + '.baixing.com/' + categoryBase + '/' + data.id + '/')
+        }
+      },
+      autoFocus: true
+    }).data("autocomplete")._renderItem = function (ul, item) {
+      return $("<li></li>")
+        .data("item.autocomplete", item)
+        .append("<a>" + item.label + "</a>")
+        .appendTo(ul);
+    };
+  })
+
+  return this;
+}
+
+~function () {
+  var fillUp, defaults, selected = 0
+
+  fillUp = function(val, source, fix) {
+    if (val.indexOf('@') > 0) {
+      var vals = val.split('@');
+      source = $.grep(source, function (item) {
+        return !vals[1] || item.indexOf(vals[1]) > 0
+      });
+      val = vals[0];
+    }
+
+    return $.map(source, function (item) {
+      return fix === 'prefix' ? (item + val) : (val + item);
+    });
+  }
+
+  defaults = {
+    method:'keyup',
+    source:[],
+    placement: 'subfix',
+    container:$('<ul class="fillup"></ul>'),
+    hoverClass:'hover'
+  }
+
+  /* 自动补全
+   * @param options [Object] 自定义项
+   *  {
+   *    method: {String} || 'keyup',                  // 触发 input 自动补全的方法
+   *    source: {Array} || [],                        // 补全前/后缀源
+   *    placement: {String} || 'subfix',              // 补全的位置
+   *    container: {jQuery Object} || $('<ul/>'),     // 补全后放置数据的容器
+   *    hoverClass: {String} || 'hover'               // 补全项鼠标经过时的 className
+   *  }
+   */
+  $.fn.fillUp = function (options) {
+    var $this = this
+      , options = $.extend(1, defaults, options);
+
+    if (!options.container.closest('html').length) { // if container is detached
+      $this.after(options.container);
+    }
+
+    $this.on(options.method, function (e) {
+      var val = $this.val(), arr, ul, li, klass;
+
+      ul = options.container.hide().html('');
+      if (!val) return;
+
+      arr = fillUp.call(this, val, options.source, options.placement);
+      klass = options.hoverClass;
+
+      if (e.which == 40) selected++
+      else if (e.which == 38) selected--
+
+      selected = Math.min(arr.length - 1, Math.max(0, selected));
+
+      $this.data('value', arr[selected]);
+
+      $.each(arr, function (i, item) {
+        ul.append($('<li />').addClass(item == arr[selected] ? klass : '').text(item));
+      });
+
+      var offset = ul.offsetParent().offset();
+
+      ul.data('styled') ? ul.show() : ul.css({
+        left: $this.offset().left - offset.left,
+        top: $this.offset().top - offset.top + $this.outerHeight()
+      }).show()
+
+      ul.on('click', 'li', function () {
+        $this.val($(this).text());
+        ul.hide();
+      });
+
+      ul.on('mouseenter', 'li', function () {
+        $(this).addClass(klass);
+      });
+
+      ul.on('mouseleave', 'li', function () {
+        $(this).removeClass(klass);
+      });
+    });
+
+    return $this;
+  }
+}(jQuery);
+
+/*! http://mths.be/placeholder v2.0.7 by @mathias */
+;(function(window, document, $) {
+
+  var isInputSupported = 'placeholder' in document.createElement('input'),
+    isTextareaSupported = 'placeholder' in document.createElement('textarea'),
+    prototype = $.fn,
+    valHooks = $.valHooks,
+    hooks,
+    placeholder;
+
+  if (isInputSupported && isTextareaSupported) {
+
+    placeholder = prototype.placeholder = function() {
+      return this;
+    };
+
+    placeholder.input = placeholder.textarea = true;
+
+  } else {
+
+    placeholder = prototype.placeholder = function() {
+      var $this = this;
+      $this
+        .filter((isInputSupported ? 'textarea' : ':input') + '[placeholder]')
+        .not('.placeholder')
+        .bind({
+          'focus.placeholder': clearPlaceholder,
+          'blur.placeholder': setPlaceholder
+        })
+        .data('placeholder-enabled', true)
+		  .each(setPlaceholder)
+
+      return $this;
+    };
+
+    placeholder.input = isInputSupported;
+    placeholder.textarea = isTextareaSupported;
+
+    hooks = {
+      'get': function(element) {
+        var $element = $(element);
+        return $element.data('placeholder-enabled') && $element.hasClass('placeholder') ? '' : element.value;
+      },
+      'set': function(element, value) {
+        var $element = $(element);
+        if (!$element.data('placeholder-enabled')) {
+          return element.value = value;
+        }
+        if (value == '') {
+          element.value = value;
+          // Issue #56: Setting the placeholder causes problems if the element continues to have focus.
+          if (element != document.activeElement) {
+            // We can't use `triggerHandler` here because of dummy text/password inputs :(
+            setPlaceholder.call(element);
+          }
+        } else if ($element.hasClass('placeholder')) {
+          clearPlaceholder.call(element, true, value) || (element.value = value);
+        } else {
+          element.value = value;
+        }
+        // `set` can not return `undefined`; see http://jsapi.info/jquery/1.7.1/val#L2363
+        return $element;
+      }
+    };
+
+    isInputSupported || (valHooks.input = hooks);
+    isTextareaSupported || (valHooks.textarea = hooks);
+
+    $(function() {
+      // Look for forms
+      $(document).delegate('form', 'submit.placeholder', function() {
+        // Clear the placeholder values so they don't get submitted
+        var $inputs = $('.placeholder', this).each(clearPlaceholder);
+        setTimeout(function() {
+          $inputs.each(setPlaceholder);
+        }, 10);
+      });
+    });
+
+    // Clear placeholder values upon page reload
+    $(window).bind('beforeunload.placeholder', function() {
+      $('.placeholder').each(function() {
+        this.value = '';
+      });
+    });
+
+  }
+
+  function args(elem) {
+    // Return an object of element attributes
+    var newAttrs = {},
+      rinlinejQuery = /^jQuery\d+$/;
+    $.each(elem.attributes, function(i, attr) {
+      if (attr.specified && !rinlinejQuery.test(attr.name)) {
+        newAttrs[attr.name] = attr.value;
+      }
+    });
+    return newAttrs;
+  }
+
+  function clearPlaceholder(event, value) {
+    var input = this,
+      $input = $(input);
+    if (input.value == $input.attr('placeholder') && $input.hasClass('placeholder')) {
+      if ($input.data('placeholder-password')) {
+        $input = $input.hide().next().show().attr('id', $input.removeAttr('id').data('placeholder-id'));
+        // If `clearPlaceholder` was called from `$.valHooks.input.set`
+        if (event === true) {
+          return $input[0].value = value;
+        }
+        $input.focus();
+      } else {
+        input.value = '';
+        $input.removeClass('placeholder');
+        input == document.activeElement && input.select();
+      }
+    }
+  }
+
+  function setPlaceholder() {
+    var $replacement,
+      input = this,
+      $input = $(input),
+      $origInput = $input,
+      id = this.id;
+    if (input.value == '') {
+      if (input.type == 'password') {
+        if (!$input.data('placeholder-textinput')) {
+          try {
+            $replacement = $input.clone().attr({
+              'type': 'text'
+            });
+          } catch(e) {
+            $replacement = $('<input>').attr($.extend(args(this), {
+              'type': 'text'
+            }));
+          }
+          $replacement
+            .removeAttr('name')
+            .data({
+              'placeholder-password': true,
+              'placeholder-id': id
+            })
+            .bind('focus.placeholder', clearPlaceholder);
+          $input
+            .data({
+              'placeholder-textinput': $replacement,
+              'placeholder-id': id
+            })
+            .before($replacement);
+        }
+        $input = $input.removeAttr('id').hide().prev().attr('id', id).show();
+        // Note: `$input[0] != input` now!
+      }
+      $input.addClass('placeholder');
+      $input[0].value = $input.attr('placeholder');
+    } else {
+      $input.removeClass('placeholder');
+    }
+  }
+
+  $(function(){
+    $('input, textarea').placeholder();
+  });
+
+}(this, document, jQuery));
+
+
+/* TODO: refactor to an individual script file */
+!function(){
+  $.fn.more = function(option) {
+    if (option === undefined) option = {};
+    var threshold = option.threshold;
+    if (threshold === undefined) threshold = 10;
+    var visible = option.visible;
+    if (visible === undefined) visible = threshold - 1;
+    var skip = option.skip;
+    if (skip === undefined) skip = 'strong';
+
+    $(this).each(function(){
+      var list = $(this).children();
+      if (list.size() > threshold) {
+        var more = $('<a href="javascript:void(0)">更多»</a>');
+        more.on('click', function(){
+          list.show();
+          $(this).hide();
+        });
+        list.eq(visible - 1).nextAll().not(skip).hide();
+        list.last().after(more)
+      }
+    });
+  }
+}();
+
+
+!function ($) {
+
+  "use strict"; // jshint ;_;
+
+
+ /* TIP PUBLIC CLASS DEFINITION
+  * =============================== */
+
+  var Tip = function (element, options) {
+    this.init('tip', element, options)
+    var self = this
+    this.$element.on('shown',function(){
+      self.tip().on('click', '[data-dismiss="tip"]', $.proxy(self.destroy,self))
+    })
+  }
+
+  Tip.prototype = $.extend({}, $.fn.popover.Constructor.prototype, {
+
+    constructor: Tip
+
+  , setContent: function () {
+      var $tip = this.tip()
+        , title = this.getTitle()
+        , content = this.getContent()
+
+      $tip.find('.tip-content')[this.options.html ? 'html' : 'text'](content)
+
+      $tip.removeClass('fade top bottom left right in')
+    }
+
+  , applyPlacement: function(offset, placement){
+      var $tip = this.tip()
+      var pos = this.getPosition()
+      var actualWidth = $tip[0].offsetWidth
+      var actualHeight = $tip[0].offsetHeight
+      switch (placement) {
+        case 'top-left':
+          offset = {top: pos.top - actualHeight, left: pos.left}
+          this.arrow().css('left',pos.width/2+'px');
+          break
+        case 'top-right':
+          offset = {top: pos.top - actualHeight, left: pos.left + pos.width - actualWidth}
+          this.arrow().css('right',pos.width/2+'px');
+          break
+        case 'bottom-left':
+          offset = {top: pos.top + pos.height, left: pos.left}
+          this.arrow().css('left',pos.width/2+'px');
+          break
+        case 'bottom-right':
+          offset = {top: pos.top + pos.height, left: pos.left + pos.width - actualWidth}
+          this.arrow().css('right',pos.width/2+'px');
+          break
+      }
+      $.fn.popover.Constructor.prototype.applyPlacement.call(this, offset, placement)
+    }
+
+  , arrow: function(){
+      return this.$arrow = this.$arrow || this.tip().find(".arrow")
+    }
+  })
+
+
+ /* TIP PLUGIN DEFINITION
+  * ======================= */
+
+  var old = $.fn.tip
+
+  $.fn.tip = function (option) {
+    return this.each(function () {
+      var $this = $(this)
+        , data = $this.data('tip')
+        , options = typeof option == 'object' && option
+      if (!data) $this.data('tip', (data = new Tip(this, options)))
+      if (typeof option == 'string') data[option]()
+    })
+  }
+
+  $.fn.tip.Constructor = Tip
+
+  $.fn.tip.defaults = $.extend({} , $.fn.popover.defaults, {
+    trigger: 'manual'
+  , template: '<div class="tip"><div class="arrow"></div><button type="button" class="close" data-dismiss="tip">&times;</button><div class="tip-content"></div></div>'
+  })
+
+
+ /* TIP NO CONFLICT
+  * =================== */
+
+  $.fn.tip.noConflict = function () {
+    $.fn.tip = old
+    return this
+  }
 
 }(window.jQuery);
