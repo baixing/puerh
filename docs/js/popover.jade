@@ -1,0 +1,347 @@
+hr#popover
+h2.typo-h2 五、Popover
+
+div.bs-docs-example(style="padding:20px; margin: 1em 0; background-color: #F1F1F1")
+  a.button(data-toggle='popover', data-content='Popover 内容文本文本文本。', data-original-title='Popover Title', data-placement='top') 点击显示 Popover
+
+p.typo-p 通过 js 生成 popover：
+pre.sep
+  $('#example').popover('options')
+
+p.typo-p 可以用元素上的 data 属性（data-animation=""）或直接传递 JS 对象来配置 popover：
+table.table.table-bordered.table-striped
+  tr
+    th(style="width:80px") 配置项
+    th(style="width:120px") 类型
+    th 默认值
+    th 说明
+  tr
+    td animation
+    td boolean
+    td true
+    td 是否应用CSS动画效果。
+  tr
+    td html
+    td boolean
+    td false
+    td 在 popover 中填入 html。如果为 false 的话，将会使用 jquery 的 text 方法填充内容。要避免XSS攻击的话最好使用纯文本填充。
+  tr
+    td placement
+    td string | function
+    td 'right'
+    td 弹出的位置：top | bottom | left | right
+  tr
+    td selector
+    td string
+    td false
+    td 提供此项的话，弹出层将置于指定元素上。
+  tr
+    td trigger
+    td string
+    td 'click'
+    td 触发事件：click | hover | focus | manual
+  tr
+    td title
+    td string | function
+    td ''
+    td 弹出层标题。
+  tr
+    td content
+    td string | function
+    td ''
+    td 弹出层内容。
+  tr
+    td delay
+    td number | object
+    td 0
+    td 弹出层显示和隐藏的延时（不影响 manual 触发）。对象的话，格式为 { show: 500, hide: 100}
+  tr
+    td container
+    td string | false
+    td false
+    td 指定弹出层元素从属的父元素。如 container: 'body'
+
+script
+  window.onload = function() {
+    $('[data-toggle=popover]').popover()
+  }
+
+style
+  table {
+    max-width: 100%;
+    background-color: transparent;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  .table {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .table th,
+  .table td {
+    padding: 8px;
+    line-height: 20px;
+    text-align: left;
+    vertical-align: top;
+    border-top: 1px solid #dddddd;
+  }
+
+  .table th {
+    font-weight: bold;
+  }
+
+  .table thead th {
+    vertical-align: bottom;
+  }
+
+  .table caption + thead tr:first-child th,
+  .table caption + thead tr:first-child td,
+  .table colgroup + thead tr:first-child th,
+  .table colgroup + thead tr:first-child td,
+  .table thead:first-child tr:first-child th,
+  .table thead:first-child tr:first-child td {
+    border-top: 0;
+  }
+
+  .table tbody + tbody {
+    border-top: 2px solid #dddddd;
+  }
+
+  .table .table {
+    background-color: #ffffff;
+  }
+
+  .table-condensed th,
+  .table-condensed td {
+    padding: 4px 5px;
+  }
+
+  .table-bordered {
+    border: 1px solid #dddddd;
+    border-collapse: separate;
+    *border-collapse: collapse;
+    border-left: 0;
+    -webkit-border-radius: 4px;
+       -moz-border-radius: 4px;
+            border-radius: 4px;
+  }
+
+  .table-bordered th,
+  .table-bordered td {
+    border-left: 1px solid #dddddd;
+  }
+
+  .table-bordered caption + thead tr:first-child th,
+  .table-bordered caption + tbody tr:first-child th,
+  .table-bordered caption + tbody tr:first-child td,
+  .table-bordered colgroup + thead tr:first-child th,
+  .table-bordered colgroup + tbody tr:first-child th,
+  .table-bordered colgroup + tbody tr:first-child td,
+  .table-bordered thead:first-child tr:first-child th,
+  .table-bordered tbody:first-child tr:first-child th,
+  .table-bordered tbody:first-child tr:first-child td {
+    border-top: 0;
+  }
+
+  .table-bordered thead:first-child tr:first-child > th:first-child,
+  .table-bordered tbody:first-child tr:first-child > td:first-child,
+  .table-bordered tbody:first-child tr:first-child > th:first-child {
+    -webkit-border-top-left-radius: 4px;
+            border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+  }
+
+  .table-bordered thead:first-child tr:first-child > th:last-child,
+  .table-bordered tbody:first-child tr:first-child > td:last-child,
+  .table-bordered tbody:first-child tr:first-child > th:last-child {
+    -webkit-border-top-right-radius: 4px;
+            border-top-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+  }
+
+  .table-bordered thead:last-child tr:last-child > th:first-child,
+  .table-bordered tbody:last-child tr:last-child > td:first-child,
+  .table-bordered tbody:last-child tr:last-child > th:first-child,
+  .table-bordered tfoot:last-child tr:last-child > td:first-child,
+  .table-bordered tfoot:last-child tr:last-child > th:first-child {
+    -webkit-border-bottom-left-radius: 4px;
+            border-bottom-left-radius: 4px;
+    -moz-border-radius-bottomleft: 4px;
+  }
+
+  .table-bordered thead:last-child tr:last-child > th:last-child,
+  .table-bordered tbody:last-child tr:last-child > td:last-child,
+  .table-bordered tbody:last-child tr:last-child > th:last-child,
+  .table-bordered tfoot:last-child tr:last-child > td:last-child,
+  .table-bordered tfoot:last-child tr:last-child > th:last-child {
+    -webkit-border-bottom-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+    -moz-border-radius-bottomright: 4px;
+  }
+
+  .table-bordered tfoot + tbody:last-child tr:last-child td:first-child {
+    -webkit-border-bottom-left-radius: 0;
+            border-bottom-left-radius: 0;
+    -moz-border-radius-bottomleft: 0;
+  }
+
+  .table-bordered tfoot + tbody:last-child tr:last-child td:last-child {
+    -webkit-border-bottom-right-radius: 0;
+            border-bottom-right-radius: 0;
+    -moz-border-radius-bottomright: 0;
+  }
+
+  .table-bordered caption + thead tr:first-child th:first-child,
+  .table-bordered caption + tbody tr:first-child td:first-child,
+  .table-bordered colgroup + thead tr:first-child th:first-child,
+  .table-bordered colgroup + tbody tr:first-child td:first-child {
+    -webkit-border-top-left-radius: 4px;
+            border-top-left-radius: 4px;
+    -moz-border-radius-topleft: 4px;
+  }
+
+  .table-bordered caption + thead tr:first-child th:last-child,
+  .table-bordered caption + tbody tr:first-child td:last-child,
+  .table-bordered colgroup + thead tr:first-child th:last-child,
+  .table-bordered colgroup + tbody tr:first-child td:last-child {
+    -webkit-border-top-right-radius: 4px;
+            border-top-right-radius: 4px;
+    -moz-border-radius-topright: 4px;
+  }
+
+  .table-striped tbody > tr:nth-child(odd) > td,
+  .table-striped tbody > tr:nth-child(odd) > th {
+    background-color: #f9f9f9;
+  }
+
+  .table-hover tbody tr:hover > td,
+  .table-hover tbody tr:hover > th {
+    background-color: #f5f5f5;
+  }
+
+  table td[class*="span"],
+  table th[class*="span"],
+  .row-fluid table td[class*="span"],
+  .row-fluid table th[class*="span"] {
+    display: table-cell;
+    float: none;
+    margin-left: 0;
+  }
+
+  .table td.span1,
+  .table th.span1 {
+    float: none;
+    width: 44px;
+    margin-left: 0;
+  }
+
+  .table td.span2,
+  .table th.span2 {
+    float: none;
+    width: 124px;
+    margin-left: 0;
+  }
+
+  .table td.span3,
+  .table th.span3 {
+    float: none;
+    width: 204px;
+    margin-left: 0;
+  }
+
+  .table td.span4,
+  .table th.span4 {
+    float: none;
+    width: 284px;
+    margin-left: 0;
+  }
+
+  .table td.span5,
+  .table th.span5 {
+    float: none;
+    width: 364px;
+    margin-left: 0;
+  }
+
+  .table td.span6,
+  .table th.span6 {
+    float: none;
+    width: 444px;
+    margin-left: 0;
+  }
+
+  .table td.span7,
+  .table th.span7 {
+    float: none;
+    width: 524px;
+    margin-left: 0;
+  }
+
+  .table td.span8,
+  .table th.span8 {
+    float: none;
+    width: 604px;
+    margin-left: 0;
+  }
+
+  .table td.span9,
+  .table th.span9 {
+    float: none;
+    width: 684px;
+    margin-left: 0;
+  }
+
+  .table td.span10,
+  .table th.span10 {
+    float: none;
+    width: 764px;
+    margin-left: 0;
+  }
+
+  .table td.span11,
+  .table th.span11 {
+    float: none;
+    width: 844px;
+    margin-left: 0;
+  }
+
+  .table td.span12,
+  .table th.span12 {
+    float: none;
+    width: 924px;
+    margin-left: 0;
+  }
+
+  .table tbody tr.success > td {
+    background-color: #dff0d8;
+  }
+
+  .table tbody tr.error > td {
+    background-color: #f2dede;
+  }
+
+  .table tbody tr.warning > td {
+    background-color: #fcf8e3;
+  }
+
+  .table tbody tr.info > td {
+    background-color: #d9edf7;
+  }
+
+  .table-hover tbody tr.success:hover > td {
+    background-color: #d0e9c6;
+  }
+
+  .table-hover tbody tr.error:hover > td {
+    background-color: #ebcccc;
+  }
+
+  .table-hover tbody tr.warning:hover > td {
+    background-color: #faf2cc;
+  }
+
+  .table-hover tbody tr.info:hover > td {
+    background-color: #c4e3f3;
+  }
