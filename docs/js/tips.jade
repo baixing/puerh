@@ -3,8 +3,8 @@ h2.typo-h2 一、Tooltips
 .typo-p
   |默认的 HTML Title 显示太慢了，而且不是很好看，如果 Tooltips 成为一个重要的提示路径，那么这个组件可以更好地解决这个问题。用&nbsp;
   code data-toggle="tooltip"
-  |，可能通过&nbsp;
-  code data-toggle="tooltip"
+  |，可以通过&nbsp;
+  code data-placement="right"
   |&nbsp;来指定 Tooltips 相对于当前元素的位置。
 
 style
@@ -36,5 +36,3 @@ script
   window.onload = function() {
     $('[data-toggle=tooltip]').tooltip()
   }
-
-
