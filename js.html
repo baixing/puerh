@@ -44,11 +44,6 @@ title: JS Components
 	</ul><pre>&lt;a title="Tooltip on top" href="#"&nbsp;<b>data-toggle="</b><b class="highlight">tooltip</b>"&nbsp;<b>data-placement="</b><b class="highlight">top</b>"&gt;
 Tooltip on top
 &lt;/a&gt;</pre>
-	<script>
-		window.onload = function () {
-			$('[data-toggle=tooltip]').tooltip()
-		}
-	</script>
 	<hr id="dropdown"><span class="open dropdown pull-right"><ul class="dropdown-menu"><li><a href="#">item-1</a></li><li><a href="#">item-2</a></li><li><a href="#">item-3</a></li><li><a href="#">item-4</a></li></ul></span>
 	<h2 class="typo-h2">二、下拉菜单</h2>
 	<div class="typo-p grid-11">这是一个「<span id="mydropdown" class="dropdown"><a href="#mydropdown" data-toggle="dropdown" class="dropdown-trigger">下拉菜单</a><ul class="dropdown-menu"><li><a href="#">item-1</a></li><li><a href="#">item-2</a></li><li><a href="#">item-3</a></li><li><a href="#">item-4</a></li></ul></span>」，可以用&nbsp;<code>data-toggle="dropdown"</code>来实例化一个下拉菜单，用&nbsp;<code>data-target="#TARGET_SELECTOR"</code>&nbsp;或者&nbsp;<code>href="#TARGET_SELECTOR"</code>&nbsp;来指定弹出层。</div><pre>&lt;span class="<b class="highlight">dropdown</b>"&gt;
@@ -117,6 +112,7 @@ Lorem ipsum dolor sit amet,
 </div>
 
 <script>window.onload = function() {
+	$('[data-toggle=tooltip]').tooltip()
   $('[data-toggle=popover]').popover()
 }
 </script>
