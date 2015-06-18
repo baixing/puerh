@@ -62,9 +62,13 @@ table.table.table-bordered.table-striped
     td 指定弹出层元素从属的父元素。如 container: 'body'
 
 script
-  window.onload = function() {
-    $('[data-toggle=popover]').popover()
-  }
+  (function(){
+    var noConflict = window.onload
+    window.onload = function() {
+      $('[data-toggle=popover]').popover()
+      if(typeof noConflict === 'function') noConflict()
+    }
+  })()
 
 style
   table {

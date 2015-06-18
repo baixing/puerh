@@ -33,6 +33,10 @@ pre
   |&lt;/a&gt;
 
 script
-  window.onload = function() {
-    $('[data-toggle=tooltip]').tooltip()
-  }
+  (function(){
+    var noConflict = window.onload
+    window.onload = function() {
+      $('[data-toggle=tooltip]').tooltip()
+      if(typeof noConflict === 'function') noConflict()
+    }
+  })()
